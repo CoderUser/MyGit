@@ -1,0 +1,90 @@
+<style>
+	<#include "/huamao/minivip/css/pay.css"/>
+	<#include "/huamao/minivip/css/groupon_pay.css"/>
+</style>
+
+<div class="a-order">
+	<ul class="a-order-info">
+		<li class="bg-c4">一uhuihiuh嘿嘿 后悔<span>&#165;50</span></li>
+		<li class="bg-c4">${languageMap.Amount}<span class="a-order-count g-dis-flex"><em id="minus">-</em><input id='qty' type='number' min="1" value="1"><em id="plus">+</em></li>
+		<li class="bg-c4">${languageMap.GrandTotal}<span id="total">&#165;50</span></li>
+		<li class="bg-c4">${languageMap.Tel}<span>46554645</span></li>
+	</ul>
+	<ul class="a-pay-type">
+		<li class="vip-card bg-c4">
+			<label class="a-pay-radio">
+				<p class="g-dis-flex">
+					<span>${languageMap.MembershipCardPay}</span>
+					<span>${languageMap.Balance}：&#165;</span>
+				</p>
+				<input type="radio" name="pay-type" value="vip" checked><i class="bg-c8 g-border bd-c5"></i>
+			</label>
+		</li>
+		<li class="wechat bg-c4">
+			<label class="a-pay-radio">
+				<p class="g-dis-flex">
+					<span>${languageMap.WeChatPay}</span>
+					<span>${languageMap.WeChatVersion}</span>
+				</p>
+				<input type="radio" name="pay-type" value="wechat" checked><i class="bg-c8 g-border bd-c5"></i>
+			</label>
+		</li>
+		<li class="alipay bg-c4">
+			<label class="a-pay-radio">
+				<p class="g-dis-flex">
+					<span>${languageMap.AliPay}</span>
+					<span>${languageMap.AliVersion}</span>
+				</p>
+				<input type="radio" name="pay-type" value="ali"><i class="bg-c8 g-border bd-c5"></i>
+			</label>
+		</li>
+	</ul>
+	<button class="g-btn-full" id="btn-charge">${languageMap.ConfirmRecharge}</button>
+</div>
+
+<script>
+	(function(_TApi)
+	{
+		VNavigatorBar.updateTitle("${languageMap.PayOrder}");
+		if(_TApi.hasClass(VNavigatorBar.navToolbar, 'bar-bd-btm')) _TApi.removeClass(VNavigatorBar.navToolbar, 'bar-bd-btm');
+
+		var _minus = _TApi.$id('minus'),
+			_plus = _TApi.$id('plus'),
+			_qty = _TApi.$id('qty'),
+			_total = _TApi.$id('total'),
+			_btnCharge = _TApi.$id('btn-charge'),
+			_typeRadio = _TApi.$name('pay-type'),
+			_price = 50, _type, _amount;
+
+		changeTotal(_qty.value);
+		function changeTotal(qty)
+		{
+			_amount = _price * qty;
+			_total.innerHTML = '&#165;' + _amount;
+			_btnCharge.innerHTML = '${languageMap.ConfirmRecharge} &#165;' + _amount;
+		}
+		_minus.onclick = function()
+		{
+			var _num = parseInt(_qty.value) - 1;
+			if (_num > 0) _qty.value = _num;
+			changeTotal(_qty.value);
+		}
+		_plus.onclick = function()
+		{
+			_qty.value = parseInt(_qty.value) + 1;
+			changeTotal(_qty.value);
+		}
+
+		_btnCharge.onclick = function()
+		{
+			for(var i = 0, count = _typeRadio.length; i < count; i++)
+				if(_typeRadio[i].checked) _type = _typeRadio[i].value;
+
+			console.log('type:' + _type);
+			console.log('amount:' + _amount);
+			location.hash = "#VPayResult";
+		}
+
+
+	})(window.TApi ||{});
+</script>

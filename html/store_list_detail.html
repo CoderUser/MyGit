@@ -1,0 +1,19 @@
+<#list storeInfoList as item>
+	<a class="bg-c4" href="#VStoreDetail/${item.storeCode}">
+		<dl class="g-dis-flex">
+			<dt>
+				<img src="<#if item.brandLogoId??>${properties.fileServerUrl}file/get?fileid=${item.brandLogoId}<#else>${properties.fileServerUrl}file/get?fileid=${item.tenantPhotoId}</#if>" alt="">
+			</dt>
+			<dd>
+				<p>${item.brandName}
+					<span class="star-dark">
+						<em class="star-light" data="${item.rating}"></em>
+					</span>
+				</p>
+				<p>${item.telephone}</p>
+				<p>${item.location}</p>
+				<p>${item.openingHrs}</p>
+			</dd>
+		</dl>
+	</a>
+</#list>

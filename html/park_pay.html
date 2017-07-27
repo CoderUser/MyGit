@@ -1,0 +1,55 @@
+<style>
+	<#include "/huamao/minivip/css/pay.css"/>
+	<#include "/huamao/minivip/css/park_pay.css"/>
+</style>
+
+<div class="a-park-pay">
+	<ul class="park-time">
+		<li class="bg-c4">${languageMap.ApproachTime}：2017-07-19 18:09:35</li>
+		<li class="bg-c4">${languageMap.leavingTime}：2017-07-19 20:09:35</li>
+		<li class="bg-c4">${languageMap.Parking}：2h<span class="g-fr">${languageMap.Total}：&#165;<em>50</em></span></li>
+	</ul>
+	<ul class="use-discount">
+		<li class="use-bonus bg-c4 g-dis-flex">
+			<dl>
+				<dt>${languageMap.UsingIntegralDeduction}<span class="txt-c1">(100分=￥1.00)</span></dt>
+				<dd>${languageMap.IntegralAvailable}：500</dd>
+			</dl>
+			<p>
+				<span class="txt-c6">-&#165;<em>5.00</em></span>
+				<input class="bg-c2" type="number" id="ipt-bonus" min=0 max="500" value="500">
+				<label><input type="checkbox" id="ipt-use-bonus" checked hidden/><i class="bg-c2"></i></label>
+			</p>
+		</li>
+		<li class="use-coupon bg-c4">
+			<a href="#VParkCoupon/tc" class="bg-txt2">${languageMap.ParkingCoupon}<span class="g-fr txt-c6">2张可用</span></a>
+		</li>
+	</ul>
+	<p>${languageMap.PaymentMethod}</p>
+	<ul class="a-pay-type">
+		<li class="vip-card bg-c4">
+			<label class="a-pay-radio">
+				<p>${languageMap.StorageCard}<span class="txt-c1">(${languageMap.Balance}：&#165;500)</span></p>
+				<input type="radio" name="pay-type" value="vip" checked hidden><i class="bg-c2"></i>
+			</label>
+		</li>
+		<li class="alipay bg-c4">
+			<label class="a-pay-radio">
+				<p>${languageMap.Alipay}</p>
+				<input type="radio" name="pay-type" value="ali" hidden><i class="bg-c2"></i>
+			</label>
+		</li>
+		<li class="wechat bg-c4">
+			<label class="a-pay-radio">
+				<p>${languageMap.Wechat}</p>
+				<input type="radio" name="pay-type" value="wechat" hidden><i class="bg-c2"></i>
+			</label>
+		</li>
+	</ul>
+	<div class="pay-footer bg-c1 txt-c1">
+		<p>${languageMap.Payables} &#165; <em>45</em><span>${languageMap.Discount} &#165;<em>5</em></span></p>
+		<button id="btn-confirm" class="g-btn-small bg-c2 txt-c5">${languageMap.ConfirmPay}</button>
+	</div>
+</div>
+
+<script><#include "/huamao/minivip/js/park_pay.js"/></script>

@@ -1,0 +1,29 @@
+<style><#include "/huamao/minivip/css/groupon_detail.css"/></style>
+
+<div class="a-groupon-detail">
+	<img src="${properties.fileServerUrl}file/get?fileid=${coverId}">
+	<a class="groupon-info bg-c4" href="">
+		<h3>${name}</h3>
+		<p class="a-info-content">${desci}</p>
+		<p class="a-info-map">${storeLocation}</p>
+	</a>
+	<#if contents??>
+		<div class="a-detail-con bg-c4">
+			<h3 class="g-border-btm bd-c3">${languageMap.Details}</h3>
+			<div class="detail-txt">${contents}</div>
+		</div>
+	</#if>
+</div>
+
+<div class="a-groupon-footer bg-c4 g-border-top bd-c7">
+	<p class="txt-c1"><#if sellingPrice??><span class="txt-c2">&#165;<em>${sellingPrice}</em></span></#if><#if originPrice??><span class="origin-price">&#165;${originPrice}</span></#if></p>
+	<a class="g-btn-small bg-c13" href="#VGrouponPay">${languageMap.BuyNow!'buynow'}</a>
+</div>
+
+<script>
+	(function(_TApi)
+	{
+		VNavigatorBar.updateTitle("${languageMap.GrouponDetails}");
+		if(_TApi.hasClass(VNavigatorBar.navToolbar, 'bar-bd-btm')) _TApi.removeClass(VNavigatorBar.navToolbar, 'bar-bd-btm');
+	})(window.TApi ||{});
+</script>

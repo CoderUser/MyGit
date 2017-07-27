@@ -1,0 +1,73 @@
+<style>
+	.a-coupons-txt img{
+		display: block;
+		margin: 2rem auto .1rem;
+		width: .77rem;
+	}
+	.a-coupons-txt p{
+		line-height:.4rem;
+		text-align:center;
+		margin: .2rem auto;
+	}
+	.a-coupons-btn{
+		text-align: center;
+		margin-top: .6rem;
+		overflow: hidden;
+	}
+	.a-coupons-btn a:nth-child(1){
+		display: block;
+		width: 2rem;
+		height: .6rem;
+		line-height: .6rem;
+		color: #fff;
+		border-radius: .5rem;
+		background-color: #E9CD8A;
+		float: left;
+		margin-left: 20%;
+	}
+	.a-coupons-btn a:nth-child(2){
+		display: block;
+		width: 2rem;
+		height: .6rem;
+		line-height: .6rem;
+		color: #E9CD8A;
+		border-radius: .5rem;
+		background-color: #fff;
+		float: right;
+		margin-right: 20%;
+	}
+</style>
+
+<div class="a-coupons-txt">
+	<img src="${templateUrl}/huamao/minivip/resource/icons/icon-pay-success.png">
+	<p id="txt"></p>
+</div>
+<div class="a-coupons-btn g-clearfix">
+	<a href="#VCoupon">${languageMap.Coupon}</a>
+	<a href="#VHome">${languageMap.GoHome}</a>
+</div>
+
+<script>
+	(function(_TApi)
+	{
+
+		var _pageStack = AppContext.pageStack[AppContext.pageStack.length - 2],
+			_txt = _TApi.$id('txt'),
+			_title, _desci;
+		if(_pageStack.indexOf('VGrouponPay') > 0)
+		{
+			_title = "${languageMap.GrouponSuccess}"
+			_desci = "${languageMap.GrouponTxt}"
+		}
+		else if(_pageStack.indexOf('VBonusItemDetail') > 0)
+		{
+			_title = "${languageMap.BonusSuccess}"
+			_desci = "${languageMap.BonusTxt}"
+		}
+
+		VNavigatorBar.updateTitle(_title);
+		if(_TApi.hasClass(VNavigatorBar.navToolbar, 'bar-bd-btm')) _TApi.removeClass(VNavigatorBar.navToolbar, 'bar-bd-btm');
+		_txt.innerHTML = _desci;
+
+	})(window.TApi ||{});
+</script>

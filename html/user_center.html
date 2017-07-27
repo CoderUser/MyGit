@@ -1,0 +1,35 @@
+<style>
+	.a-user-center{
+		font-size:.3rem;
+		margin-top:.1rem;
+	}
+	.a-user-center button{
+		position:absolute;
+		bottom:.4rem;
+		left:7.5%;
+	}
+</style>
+
+<div class="a-user-center">
+	<ul class="g-arrow-rt">
+		<li>
+			<a href="#VUserInfo">${languageMap.ChangeData}</a>
+		</li>
+		<li>
+			<a href="#VModifyMobile">${languageMap.ChangePhone}</a>
+		</li>
+		<li>
+			<a href="#VVipAuthorize/reset">${languageMap.ChangePwd}</a>
+		</li>
+	</ul>
+
+	<button class="g-btn-big" onclick="TApi.vip.doLogout();">${languageMap.LoginOut}</button>
+</div>
+
+<script>
+	(function(_TApi) {
+
+		VNavigatorBar.updateTitle("${languageMap.UserCenter}");
+		if(_TApi.hasClass(VNavigatorBar.navToolbar, 'bar-bd-btm')) _TApi.removeClass(VNavigatorBar.navToolbar, 'bar-bd-btm');
+	})(window.TApi || {});
+</script>

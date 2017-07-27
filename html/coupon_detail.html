@@ -1,0 +1,73 @@
+<style>
+	.a-coupon-detail{
+		padding:.3rem 0;
+	}
+	.a-coupon-desc {
+		width: 90%;
+		margin-bottom:.5rem;
+		text-align: center;
+		line-height: .5rem;
+		border-radius: .12rem;
+	}
+	.a-coupon-desc h3 {
+		font-size:.3rem;
+	}
+	.a-coupon-code {
+		position:relative;
+		width: 80%;
+		padding:.3rem 0 .5rem;
+		margin: auto;
+		text-align: center;
+	}
+	.a-coupon-code p {
+		position:relative;
+		line-height:.6rem;
+		font-size:.3rem;
+		border-bottom:1px dashed #ddd;
+	}
+	.a-coupon-code p:before,
+	.a-coupon-code p:after{
+		position:absolute;
+		content:'';
+		width:.5rem;
+		height:.5rem;
+		bottom:-.25rem;
+		border-radius:50%;
+		z-index:9;
+	}
+	.a-coupon-code p:before{
+		left:-.25rem;
+	}
+	.a-coupon-code p:after{
+		right:-.25rem;
+	}
+	.a-coupon-code .bar-code {
+		width: 80%;
+		margin:.2rem auto 0;
+	}
+	.a-coupon-code .QR-code {
+		width: 70%;
+		margin: .5rem auto 0;
+	}
+</style>
+
+<div class="a-coupon-detail">
+	<div class="a-coupon-desc g-bg-radius">
+		<h3>券名称</h3>
+		<p>${languageMap.ExpiryDate}：2017/05/06-2017/06/15</p>
+	</div>
+
+	<div class="a-coupon-code bg-c2">
+		<img src="http://172.31.7.204:1841/img/bar-code.jpg" class="bar-code">
+		<p class='txt-c5'>1300 6660 2494 953078</p>
+		<img src="http://172.31.7.204:1841/img/QR-code.jpg" class="QR-code">
+	</div>
+</div>
+
+<script>
+	(function(_TApi)
+	{
+		VNavigatorBar.updateTitle("${languageMap.CouponDetail}");
+		if(_TApi.hasClass(VNavigatorBar.navToolbar, 'bar-bd-btm')) _TApi.removeClass(VNavigatorBar.navToolbar, 'bar-bd-btm');
+	})(window.TApi || {});
+</script>

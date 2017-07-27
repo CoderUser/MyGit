@@ -1,0 +1,33 @@
+<style>
+	.a-login{
+		margin-top:.1rem;
+	}
+	.a-login p{
+		width:80%;
+		margin:.2rem auto;
+		font-size:.26rem;
+	}
+	.a-login-ipt label{
+		display:block;
+		width:100%;
+		padding-left:.5rem;
+		height:.8rem;
+		line-height:.8rem;
+		font-size:.3rem;
+	}
+	.a-login-ipt input{
+		padding-left:.3rem;
+		font-size:.25rem;
+	}
+</style>
+
+<div class="a-login">
+	<div class="a-login-ipt bg-c4">
+		<label>${languageMap.UserName}<input type="text" id="user-name" placeholder="${languageMap.InputUserName}"></label>
+		<label class="g-border-top bd-c3">${languageMap.PassWord}<input type="password" id="user-pwd" placeholder="${languageMap.InputPassWord}"></label>
+	</div>
+	<button class="g-btn-big" id="btn-confirm">${languageMap.Login}</button>
+	<p><a href="#VVipAuthorize/register">${languageMap.Register}</a><a class="g-fr" href="#VVipAuthorize/reset">${languageMap.Forgetpwd}</a></p>
+</div>
+
+<script><#include "/huamao/minivip/js/login.js"/></script>

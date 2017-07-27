@@ -1,0 +1,42 @@
+<style>
+	.a-coupon a{
+		display:block;
+	}
+	.a-coupon dl{
+		padding:.3rem .2rem;
+	}
+	.a-coupon dl dt{
+		width:2.25rem;
+		height:auto;
+		max-height:1.5rem;
+		overflow:hidden;
+	}
+	.a-coupon dl dd{
+		padding:0 .2rem;
+		font-size:.26rem;
+		justify-content: space-around;
+		flex-direction: column;
+		-webkit-flex:1;
+		flex:1;
+	}
+</style>
+
+<div class="a-coupon">
+	<a href="#VCouponDetail">
+		<dl class="g-bg-radius g-dis-flex">
+			<dt><img src="http://172.31.1.177:1841/test/img/coupon.jpg" /></dt>
+			<dd class="g-dis-flex">
+				<p>加州券特惠工作日午餐一人份</p>
+				<p>${languageMap.ExpiryDate}：2017/05/06-2017/06/15</p>
+			</dd>
+		</dl>
+	</a>
+</div>
+
+<script>
+	(function(_TApi)
+	{
+		VNavigatorBar.updateTitle("${languageMap.MyCoupon}");
+		if(_TApi.hasClass(VNavigatorBar.navToolbar, 'bar-bd-btm')) _TApi.removeClass(VNavigatorBar.navToolbar, 'bar-bd-btm');
+	})(window.TApi || {});
+</script>

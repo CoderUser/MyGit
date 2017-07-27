@@ -1,0 +1,17 @@
+<style><#include "/huamao/minivip/css/activity_detail.css"/></style>
+
+<div class="a-aty-detail">
+	<img src="${properties.fileServerUrl}file/get?fileid=${coverId}">
+	<h3 class="bg-c4"><span>${name}</span></h3>
+	<div class="a-aty-con">${contents}</div>
+	<button class="g-btn-full" id="btn-get">${languageMap.Receive}</button>
+</div>
+
+<div class="a-aty-popup" id="aty-popup">
+	<h3 class="bg-c11">${languageMap.Question}</h3>
+	<p class="txt-c5">${question}</p>
+	<input type="text" id="ipt-answer" placeholder="${languageMap.InputAnswer}">
+	<button class="g-btn-big" id="btn-confirm">${languageMap.Submit}</button>
+</div>
+
+<script><#include "/huamao/minivip/js/activity_detail.js"/></script>

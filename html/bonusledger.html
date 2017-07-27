@@ -1,0 +1,35 @@
+<style>
+	.a-bonus li {
+		flex-direction: column;
+		margin: 0.1rem 0.15rem 0px;
+	}
+	.a-bonus li p {
+		justify-content: space-between;
+	}
+	.a-bonus li p:first-child{
+		padding-bottom:.2rem;
+	}
+</style>
+
+<ul class="a-bonus">
+	<#list vipBonusBalLedger as item>
+		<li class="g-bg-radius">
+			<p class="g-dis-flex">
+				<span>${item.ledgerdatetime}</span>
+				<span>${item.action}</span>
+			</p>
+			<p class="g-dis-flex">
+				<span><#if item.purchaseamount??>${languageMap.Amount}：&#165;${item.purchaseamount}</#if></span>
+				<span>${item.bonus}${languageMap.Bonus}</span>
+			</p>
+		</li>
+	</#list>
+</ul>
+
+<script>
+	(function(_TApi)
+	{
+		VNavigatorBar.updateTitle("${languageMap.MyBonus}");
+		if(_TApi.hasClass(VNavigatorBar.navToolbar, 'bar-bd-btm')) _TApi.removeClass(VNavigatorBar.navToolbar, 'bar-bd-btm');
+	})(window.TApi ||{});
+</script>

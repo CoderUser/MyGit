@@ -1,0 +1,24 @@
+<style><#include "/huamao/minivip/css/user_info.css"/></style>
+
+<div class='a-userinfo'>
+	<ul>
+		<li class="bg-c4 g-dis-flex">
+			<span>${languageMap.Username}</span>
+			<input id="user-name" type="text" value="${vipName}" />
+		</li>
+		<li class="bg-c4">
+			<span>${languageMap.Sex}</span>
+			<div class="a-choose" id="sex" data="${sex}">
+				<label><input type="radio" name="sex" value="M" hidden><i>${languageMap.Man}</i></label>
+				<label><input type="radio" name="sex" value="F" hidden><i>${languageMap.Woman}</i></label>
+			</div>
+		</li>
+		<li class="bg-c4 g-dis-flex">
+			<span>${languageMap.Birthday}</span>
+			<input id="birthday" value="${birthDay}" type="text" readonly />
+		</li>
+	</ul>
+	<button class="g-btn-big" id="btn-confirm">${languageMap.Submit}</button>
+</div>
+
+<script><#include "/huamao/minivip/js/user_info.js"/></script>

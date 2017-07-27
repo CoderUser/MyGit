@@ -1,0 +1,36 @@
+<style><#include "/huamao/minivip/css/feedback.css"/></style>
+
+<div class="a-fb">
+<!-- name -->
+    <div class="a-fb-name bg-c4 g-border-btm bd-c3">
+        <span class="txt-c4">${languageMap.Name}</span>
+        <input class="txt-c4" type="text" name="name" placeholder="${languageMap.EnterName}" id="fb_username">
+    </div>
+
+<!-- mobile -->
+    <div class="a-fb-mobi bg-c4 g-border-btm bd-c3">
+        <span class="txt-c4">${languageMap.Mobile}</span>
+        <input class="txt-c4" type="tel" name="mobile" placeholder="${languageMap.EnterMobile}" id="fb_mobi">
+    </div>
+
+<!-- feedback -->
+    <div class="a-fb-detail bg-c4">
+        <span class="txt-c4">${languageMap.FeedbackDetail}</span>
+        <div class="a-fb-detaildiv">
+            <div class="a-fb-detailinfo bg-c2">
+                <textarea class="txt-c4" placeholder="${languageMap.EnterFeedback}" id="fb_textarea" maxlength="100"></textarea>
+                <span class="txt-c4" id="fb_span">0/100</span>
+            </div>
+            <div class="a-fb-detailimg bg-c2">
+                <label><input type="file" name="img" accept="image/*" id="fb_upload" hidden>${languageMap.UpLoadImg}</label>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- submit -->
+<button class="g-btn-big" id="fb_fb">${languageMap.Submit}</button>
+
+<script><#include "/huamao/minivip/js/send_authcode.js"/></script>
+<script><#include "/huamao/minivip/js/feedback.js"/></script>

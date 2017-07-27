@@ -1,0 +1,88 @@
+<style>
+	.a-bouns-detail{
+		position: relative;
+		padding:.2rem;
+	}
+	.a-bouns-detail img{
+		width:80%;
+		margin:0 auto;
+	}
+	.a-bouns-detail p{
+		line-height: .34rem;
+		font-size: .28rem;
+		padding: .5rem .2rem .1rem;
+	}
+	.a-bouns-detail-content{
+		margin-top: .16rem;
+		margin-bottom: .1rem;
+		padding-bottom: 1.1rem;
+	}
+	.a-bouns-detail-content dt{
+		height: .8rem;
+		line-height: .8rem;
+		padding-left: .3rem;
+	}
+	.a-bouns-detail-content dd{
+		min-height: 2rem;
+		padding-bottom:.2rem;
+		margin-top: 1px;
+		padding: .2rem .3rem;
+		line-height:.4rem;
+	}
+	.a-bouns-detail-content dd img{
+		margin:.2rem auto;
+	}
+	.a-bouns-detail-footer{
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		height: .98rem;
+		padding: 0 .3rem 0 .2rem;
+		position: fixed;
+		bottom: 0;
+	}
+	.a-bouns-detail-footer button{
+		line-height: .6rem;
+	}
+</style>
+
+<div class="a-bouns-detail bg-c4">
+	<img src="http://172.31.7.204:1841/img/detail-img.png">
+	<p>PaulFrank家纺四件套</p>
+</div>
+
+<dl class="a-bouns-detail-content">
+	<dt class="bg-c4">${languageMap.GoodDescrip}</dt>
+	<dd class="bg-c4">
+		<p>家纺四件套，包括枕套*2，被单，床单</p>
+		<img src="http://172.31.7.204:1841/img/detail-img.png">
+	</dd>
+</dl>
+
+<div class="a-bouns-detail-footer g-dis-flex bg-c4">
+	<span>182000${languageMap.Fen}</span>
+	<button class="g-btn-small txt-c1 bg-c1" id="btn-exchange">${languageMap.RedeemNow}</button>
+</div>
+
+<script>
+	(function(_TApi)
+	{
+		VNavigatorBar.updateTitle("${languageMap.BonusMall}");
+		if(!_TApi.hasClass(VNavigatorBar.navToolbar, 'bar-bd-btm')) _TApi.addClass(VNavigatorBar.navToolbar, 'bar-bd-btm');
+
+		var _btnExchange = _TApi.$id('btn-exchange');
+		_btnExchange.onclick = function()
+		{
+			_TApi.Popup.confirm({
+				title: '${languageMap.Prompt}',
+				msg: '兑换“PaulFrank家纺四件套”需要消耗182000积分~确定兑换？',
+				showCancel: true,
+				callbackYes: function()
+				{
+					//to do
+					location.hash = "#VPayResult";
+				}
+			})
+		}
+	})(window.TApi ||{});
+</script>

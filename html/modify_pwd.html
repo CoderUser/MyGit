@@ -1,0 +1,51 @@
+<style type="text/css">
+	.a-modify-pwd {
+		margin-top: .3rem;
+	}
+	.a-modify-pwd li {
+		height: .8rem;
+		line-height: .8rem;
+		font-size: .25rem;
+		margin-bottom: 1px;
+	}
+	.a-modify-pwd li span {
+		margin-right: .3rem;
+		width: 1.5rem;
+		text-align: right;
+		display: inline-block;
+	}
+	.a-modify-pwd li input{
+		-webkit-flex:1;
+		flex:1;
+	}
+	.g-btn-small{
+		float:right;
+		margin: .15rem .2rem;
+		font-size: .24rem;
+	}
+</style>
+<div class="a-modify-pwd">
+	<ul>
+		<li class='bg-c4 g-dis-flex'>
+			<span>${languageMap.MobilePhone}</span>
+			<input id="user-tel" type="tel" name="phone" maxlength="11"/>
+		</li>
+		<li class='bg-c4 g-dis-flex'>
+			<span>${languageMap.AuthCode}</span>
+			<input id="authcode" type="text" placeholder="${languageMap.InputCode}"/>
+			<button id='btn-authcode' class="g-btn-small">${languageMap.GetCode}</button>
+		</li>
+		<li class='bg-c4 g-dis-flex'>
+			<span>${languageMap.InputPwd}</span>
+			<input id="password" type="password" placeholder="${languageMap.InputPassword}" />
+		</li>
+		<li class='bg-c4 g-dis-flex'>
+			<span>${languageMap.ConfirmPwd}</span>
+			<input id="re-password" type="password" placeholder="${languageMap.SubmitInputPassword}"/>
+		</li>
+	</ul>
+	<button class="g-btn-big" id='btn-confirm'>${languageMap.Confirm}</button>
+</div>
+
+<script><#include "/huamao/minivip/js/send_authcode.js"/></script>
+<script><#include "/huamao/minivip/js/modify_pwd.js"/></script>
