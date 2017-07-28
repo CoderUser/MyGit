@@ -1,0 +1,64 @@
+.z-store a{
+    display:block;
+    padding:.2rem;
+    margin-bottom:.1rem;
+}
+.z-store dl dt{
+    width:2.6rem;
+    height:1.75rem;
+    background:#000;
+    margin-left:.1rem;
+    border-radius:.1rem;
+    overflow:hidden;
+}
+.z-store dl dt img{
+    width:100%;
+    height:100%;
+}
+.z-store dl dd{
+    padding:0 .2rem;
+    font-size:.28rem;
+    -webkit-flex:1;
+    flex:1;
+}
+.z-store dd p{
+    font-size:.22rem;
+    padding-left:.35rem;
+    line-height:.4rem;
+    background-repeat:no-repeat;
+    background-position:center left;
+    background-size:.3rem auto;
+}
+.z-store dd p:first-child{
+    position:relative;
+    padding-left:0;
+    font-size:.28rem;
+    line-height:.5rem;
+}
+.z-store dd p:nth-child(2){
+    background-image:url("${templateUrl}/huamao/minivip/resource/icons/icon-tel.png");
+}
+.z-store dd p:nth-child(3){
+    background-image:url("${templateUrl}/huamao/minivip/resource/icons/icon-address.png");
+}
+.z-store dd p:nth-child(4){
+    background-image:url("${templateUrl}/huamao/minivip/resource/icons/icon-time.png");
+}
+
+.star-dark {
+    position:absolute;
+    width: 1.6rem;
+    height: .22rem;
+    right:.0rem;
+    top:.1rem;
+    background: url("${templateUrl}/huamao/minivip/resource/icons/icon-star.png") repeat-x;
+    background-size: .32rem auto;
+}
+.star-light {
+    background: url("${templateUrl}/huamao/minivip/resource/icons/icon-star-selected.png") repeat-x;
+    background-size: .32rem auto;
+    height: .22rem;
+    position: absolute;
+    left: 0;
+}
+.star-light[data]

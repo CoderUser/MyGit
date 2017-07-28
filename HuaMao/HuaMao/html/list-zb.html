@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Title</title>
+    <style>
+        .z-nav-bar {
+            width: 100%;
+            z-index: 30;
+            font-size: .28rem;
+        }
+        .z-nav-bar .z-nav-list {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            background: #FFF;
+            border-bottom: 1px solid #c6c0b3;
+            text-align: center;
+            height: .84rem;
+            line-height: .84rem;
+        }
+        .z-nav-bar .z-nav-list .dropdown-toggle:first-child {
+            border: 0;
+        }
+        .z-nav-bar .z-nav-list .dropdown-toggle .nav-head-name {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            max-width: 80%;
+            vertical-align: middle;
+            text-overflow: ellipsis;
+        }
+        .z-nav-bar .z-nav-list .dropdown-toggle {
+            display: block;
+            position: relative;
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+            -ms-flex: 1;
+            border-left: 1px solid #c6c0b3;
+            width: 100%;
+            text-align: left;
+            text-align: center;
+            color: #666;
+        }
+        .z-nav-bar .z-nav-list .dropdown-toggle.caret:after {
+            content: '';
+            width: 0;
+            height: 0;
+            display: inline-block;
+            border-top: .15rem solid #B7B7B7;
+            border-left: .09rem solid transparent;
+            border-right: .09rem solid transparent;
+            border-bottom: 0;
+            margin-left: .12rem;
+        }
+        .z-nav-bar .z-dropdown-wrapper .dropdown-module.category-active, .z-nav-bar .z-dropdown-wrapper .dropdown-module.csp-active, .nav-bar .z-dropdown-wrapper .dropdown-module.region-active, .nav-bar .z-dropdown-wrapper .dropdown-module.sort-active {
+            height: auto;
+        }
+        .z-nav-bar .z-dropdown-wrapper .scroller-wrapper .dropdown-list a {
+            display: block;
+            color: #333;
+            -webkit-transform: translate3d(0,0,0);
+            border-bottom: 1px solid #ddd8cd;
+            line-height: .87rem;
+            height: .87rem;
+            position: relative;
+        }
+        .z-nav-bar .z-dropdown-wrapper .scroller-wrapper {
+            position: relative;
+        }
+        .z-nav-bar .z-dropdown-wrapper .scroller-wrapper .dropdown-scroller .dropdown-list-wrapper {
+            width: 100%;
+            background: #fff;
+        }
+        .z-nav-bar .z-dropdown-wrapper .scroller-wrapper .dropdown-scroller .dropdown-list-wrapper>div.active {
+            display: block;
+        }
+        .z-nav-bar .z-dropdown-wrapper .scroller-wrapper .dropdown-list {
+            width: 100%;
+            /*display: none;*/
+        }
+        .z-nav-bar .z-dropdown-wrapper .scroller-wrapper .dropdown-list a span {
+            margin: 0;
+            display: block;
+            margin-right: .6rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            text-align: left;
+            margin-left: .4rem;
+        }
+        .z-nav-bar .z-dropdown-wrapper .scroller-wrapper .dropdown-list a .quantity {
+            position: absolute;
+            right: 0;
+            top: 0;
+            text-align: right;
+            margin-right: .2rem;
+            font-size: .24rem;
+            color: #999;
+        }
+        .sort-wrapper{
+            display: none;
+        }
+        .category-wrapper{
+            display: none;
+        }
+        .show{
+            display: block;
+        }
+        .cover{
+            color: tomato;
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="z-nav-bar">
+    <div class="z-nav-list" id="z-nav-list">
+        <a href="#" class="dropdown-toggle">楼层</a>
+        <a href="#" class="dropdown-toggle">业态</a>
+    </div>
+    <div class="z-dropdown-wrapper">
+        <div id="dropdownModule" class="dropdown-module -active">
+            <div id="dropdownScroller" class="scroller-wrapper">
+                <div class="dropdown-scroller">
+                    <div class="dropdown-list-wrapper">
+                        <div class="category-wrapper" id="category-wrapper">
+                            <div class="dropdown-list">
+                                <a href="#"><span>全部</span></a>
+                                <a href="#"><span>L3 超市</span></a>
+                                <a href="#"><span>L2 百货</span></a>
+                                <a href="#"><span>火锅</span></a>
+                                <a href="#"><span>自助餐</span></a>
+                                <a href="#"><span>美食</span></a>
+                            </div>
+                        </div>
+                        <div class="sort-wrapper" id="sort-wrapper">
+                            <div class="dropdown-list" id="list-right">
+                                <a>默认排序</a>
+                                <a>离我最近</a>
+                                <a>评价最高</a>
+                                <a>最新发布</a>
+                                <a>人气最高</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function hasClass(ele, cls) {
+        return ele.className.match(new RegExp("(\\s|^)" + cls + "(\\s|$)"));
+    }
+    //为指定的dom元素添加样式
+    function addClass(ele, cls) {
+        if (!this.hasClass(ele, cls)) ele.className += " " + cls;
+    }
+    //删除指定dom元素的样式
+    function removeClass(ele, cls) {
+        if (hasClass(ele, cls)) {
+            var reg = new RegExp("(\\s|^)" + cls + "(\\s|$)");
+            ele.className = ele.className.replace(reg, " ");
+        }
+    }
+    //如果存在(不存在)，就删除(添加)一个样式
+    function toggleClass(ele,cls){
+        if(hasClass(ele,cls)){
+            removeClass(ele, cls);
+        }else{
+            addClass(ele, cls);
+        }
+    }
+    //调用
+    function toggleClassTest(){
+        var ele = document. getElementsByTagName('body')[0];
+        toggleClass(ele,"night-mode");
+    }
+
+    (function (_TApi) {
+        var _navList = document.getElementById("z-nav-list"),
+            _navToggle = _navList.getElementsByTagName("a"),
+            _listLeft = document.getElementById("category-wrapper"),
+            _liftRight = document.getElementById("sort-wrapper");
+
+        document.addEventListener('click', function(e)
+        {
+            var _target = e.target;
+            switch (_target.className)
+            {
+                case 'a-store-dropbtn':
+                    hideFiter();
+                    _bgMask.style.display = 'block';
+                    addClass(_target.nextElementSibling, 'show');
+                    addClass(_target, 'store-active');
+                    break;
+                case 'options':
+                    var _sibling =_TApi.$tag('li', _target.parentNode),
+                        _parentSibling = _TApi.$cls('store-active', _target.parentNode.parentNode)[0];
+                    for(var i = 0; i < _sibling.length; i++)
+                        if(hasClass(_sibling[i], 'active'))
+                            removeClass(_sibling[i], 'active');
+                    addClass(_target, 'active');
+                    removeClass(_target.parentNode, 'show');
+                    removeClass(_parentSibling, 'store-active');
+                    _parentSibling.innerText = _target.innerText;
+                    _bgMask.style.display = 'none';
+                    loadListItem(true);
+                    break;
+                default:
+                    if(_target.className.indexOf("a-store-dropbtn") < 0)
+                        hideFiter();
+            }
+        })
+
+    })();
+</script>
+<script src="../js/util.js"></script>
+<script src="../js/Application.js"></script>
+
+</body>
+</html>

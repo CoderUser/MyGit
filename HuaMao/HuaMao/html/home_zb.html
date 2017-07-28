@@ -1,0 +1,51 @@
+<style><#include "../css/indexmain.css"/></style>
+
+<!--group-->
+<#if grouponList?? && grouponList?size gt 0>
+
+<div class="group">
+    <p class="list-txt">${languageMap.Group}</p>
+    <#list grouponList as item>
+
+    <div class="groupList">
+        <a href="#">
+            <div class="pic">
+                <img class="leftImg" src="${properties.fileServerUrl}file/get?fileid=${item.XF_COVER.XF_IMAGE}">
+            </div>
+            <div class="group-txt">
+                <p>${item.XF_NAME}</p>
+                <p>${item.XF_DESCI}</p>
+                <p class="txt-color">${item.XF_SELLINGPRICE}<del>${item.XF_ORIGINPRICE}</del></p>
+            </div>
+        </a>
+    </div>
+    </#list>
+
+</div>
+</#if>
+
+<!--store-->
+<#if storeList?? && storeList?size gt 0>
+
+<div class="store">
+    <p class="list-txt-store">${languageMap.StoreList}</p>
+    <#list storeList as item>
+
+    <div class="storeList">
+        <a href="#VStore-${item.XF_STORECODE}">
+            <div class="pic">
+                <img class="leftImg" src="<#if item.XF_BRANDLOGO??>${item.XF_BRANDLOGO}<#else>${item.XF_PHOTO}</#if>">
+            </div>
+
+            <div class="store-txt">
+                <p>${item.XF_DESCI}</p>
+                <span class="phone">${item.XF_TELEPHONE}</span>
+                <span class="place">${item.XF_LOCATION}</span>
+                <span class="time">${item.XF_OPENINGHRS}</span>
+            </div>
+        </a>
+    </div>
+    </#list>
+
+</div>
+</#if>

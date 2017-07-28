@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Title</title>
+    <style>
+        /*CSS源代码*/
+        /* Common style */
+        body,h1,h2,h3,h4,h5,h6,p,form{ margin:0;}
+        ul{ margin:0; padding:0; list-style:none;}
+        a img,input,button,textarea{ border:none;}
+        a,input,button,textarea,select{ outline:none;}
+        table{ border-collapse:collapse; border-spacing:0; width:100%;}
+        h1{ text-indent:-9999px;}
+
+        /* Link Style */
+        a{ text-decoration:none;}
+        a:link{ color:#333;}
+        a:visited{ color:#333;}
+        a:hover{ color:#be0000;}
+        a:active{ color:#be0000;}
+
+        /* Font Style */
+        body{ font:0.36rem '微软雅黑',tahoma,Srial,helvetica,sans-serif; color:#333;}
+        h1,h2,h3,h4,h5,h6{ font-size:100%;}
+        .normal{ font-weight:normal;}
+        body .color6{ color:#666;}
+        .t_cen{ text-align:center;}
+        .red,body a.red{ color:#be0000;}
+
+        /* Body Style */
+        .con{ width:10.6rem; padding:0 0.1rem; margin:0 auto;}
+        .con_2{ width:10.8rem; margin:0 auto;}
+        .hide{ overflow:hidden;}
+        .fl{ float:left;}
+        .fr{ float:right;}
+
+        /* content */
+        .menu{ width:100%; height:1.08rem; position:fixed; z-index:2; border-bottom:1px solid #bbb; background:#eaeaea; top:0;}
+        .menu_nav{ line-height:1.08rem; color:#d3d3d3;}
+        .menu_nav span{ display:inline-block; width:32.6%; text-align:center; color:#333;}
+        .menu_nav span{ background:url(../images/arow_1.png) 82% center no-repeat; background-size:0.18rem 0.1rem;}
+        .menu_nav .menu_this{ color:#be0000; background:url(../images/arow_2.png) 82% center no-repeat; background-size:0.18rem 0.1rem;}
+        .menu_down_bg{ width:100%; background:#fff;}
+        .menu_down{ display:none; background:#fff;}
+        .menu_sort{ width:100%; position:relative; height:4.8rem; overflow-y:scroll; background:#f5f5f5;}
+        .menu_sort h2{ width:50%; height:0.8rem; line-height:0.8rem; vertical-align:middle; font-weight:normal; clear:both; background:#fff;}
+        .menu_sort li h2:active,.menu_sort li .sort_this{ background:#f5f5f5;}
+        .menu_sort h2 span,.menu_sort h2 a{ display:block;}
+        .menu_sort h2 span{ padding-left:0.8rem;}
+        .menu_sort h2 font{ color:#999;}
+        .sort_1{ background:url(../images/menu_1.png) 0.2rem center no-repeat; background-size:0.38rem 0.39rem;}
+        .sort_2{ background:url(../images/menu_2.png) 0.2rem center no-repeat; background-size:0.38rem 0.39rem;}
+        .sort_3{ background:url(../images/menu_3.png) 0.2rem center no-repeat; background-size:0.38rem 0.39rem;}
+        .sort_4{ background:url(../images/menu_4.png) 0.2rem center no-repeat; background-size:0.38rem 0.39rem;}
+        .sort_5{ background:url(../images/menu_5.png) 0.2rem center no-repeat; background-size:0.38rem 0.39rem;}
+        .sort_6{ background:url(../images/menu_6.png) 0.2rem center no-repeat; background-size:0.38rem 0.39rem;}
+        .sort_this .sort_1{ background:url(../images/menu_11.png) 0.2rem center no-repeat; background-size:0.38rem 0.39rem;}
+        .sort_this .sort_2{ background:url(../images/menu_22.png) 0.2rem center no-repeat; background-size:0.38rem 0.39rem;}
+        .sort_this .sort_3{ background:url(../images/menu_33.png) 0.2rem center no-repeat; background-size:0.38rem 0.39rem;}
+        .sort_this .sort_4{ background:url(../images/menu_44.png) 0.2rem center no-repeat; background-size:0.38rem 0.39rem;}
+        .sort_this .sort_5{ background:url(../images/menu_55.png) 0.2rem center no-repeat; background-size:0.38rem 0.39rem;}
+        .sort_this .sort_6{ background:url(../images/menu_66.png) 0.2rem center no-repeat; background-size:0.38rem 0.39rem;}
+        .menu_open{ display:none; width:50%; height:4.8rem; overflow-y:scroll; position:absolute; top:0; right:0; background:#f5f5f5;}
+        .menu_open a{ display:block; height:0.8rem; line-height:0.8rem; text-indent:0.6rem;}
+        .menu_open a:active{ background:#ddd;}
+        .menu_open a font{ color:#999; float:right; margin-right:0.3rem;}
+        .menu_far{ width:100%; background:#fff;}
+        .menu_far a{ display:block; height:0.8rem; line-height:0.8rem; clear:both; text-indent:0.8rem;}
+        .menu_far a:active,.menu_far .far_this{ background:#f5f5f5;}
+        .menu_bg{ display:none; width:100%; height:100%; position:fixed; z-index:1; background:rgba(0,0,0,0.5);}
+        .list{ width:100%; font-size:0.32rem; margin:1.08rem 0 0;}
+        .list li{ width:100%; border-bottom:1px solid #dedede; padding:0.3rem 0; background:#fff;}
+        .list .list_box{ display:block; color:#333;}
+        .list_img{ float:left; width:4.06rem; height:2.54rem; padding:0.09rem; border:0.03rem solid #b3b3b3; margin-right:0.3rem; overflow:hidden;}
+        .list_img img{ width:100%; height:100%;}
+        .list_box span{ display:block; float:left; width:6rem;}
+        .list_box h3{ font-size:0.42rem; height:0.6rem; line-height:0.6rem; overflow:hidden;}
+        .list_box p{ height:0.9rem; margin:0.2rem 0 0.45rem; line-height:0.45rem; overflow:hidden;}
+        .list_box font{ font-size:0.36rem;}
+        .list_box em{ font-style:normal; margin-top:0.05rem; display:inline-block; padding-left:0.26rem; background:url(../images/list_far.png) left center no-repeat; background-size:0.2rem 0.26rem;}
+
+    </style>
+</head>
+<body>
+<!-- HTML代码片段中请勿添加<body>标签 //-->
+<div class="menu">
+    <div class="con_2 menu_nav">
+        <span>全部分类</span>|<span>商圈</span>|<span>离我最近</span>
+    </div>
+    <div class="menu_down_bg">
+        <div class="con_2 menu_down">
+            <ul class="menu_sort">
+                <li>
+                    <h2 class="sort_this"><a href=""><span class="sort_1">全部分类<font>（124）</font></span></a></h2>
+                </li>
+                <li>
+                    <h2><span class="sort_2">餐饮<font>（124）</font></span></h2>
+                    <div class="menu_open">
+                        <a href="">全部</a>
+                        <a href="">火锅<font>1512</font></a>
+                        <a href="">蛋糕<font>15</font></a>
+                        <a href="">甜品<font>151</font></a>
+                        <a href="">自助餐<font>512</font></a>
+                        <a href="">小吃快餐<font>10</font></a>
+                        <a href="">火锅<font>1512</font></a>
+                        <a href="">蛋糕<font>15</font></a>
+                        <a href="">甜品<font>151</font></a>
+                        <a href="">自助餐<font>512</font></a>
+                        <a href="">小吃快餐<font>10</font></a>
+                    </div>
+                </li>
+                <li>
+                    <h2><span class="sort_3">电影<font>（78）</font></span></h2>
+                    <div class="menu_open">
+                        <a href="">电影<font>1512</font></a>
+                    </div>
+                </li>
+                <li>
+                    <h2><span class="sort_4">KTV<font>（24）</font></span></h2>
+                    <div class="menu_open">
+                        <a href="">KTV<font>1512</font></a>
+                    </div>
+                </li>
+                <li>
+                    <h2><span class="sort_5">美容美发<font>（10）</font></span></h2>
+                    <div class="menu_open">
+                        <a href="">美容美发<font>1512</font></a>
+                    </div>
+                </li>
+                <li>
+                    <h2><span class="sort_6">健身保健<font>（22）</font></span></h2>
+                    <div class="menu_open">
+                        <a href="">健身保健<font>1512</font></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="con_2 menu_down">
+            <ul class="menu_sort">
+                <li>
+                    <h2 class="sort_this"><span>附近<font>（124）</font></span></h2>
+                    <div class="menu_open">
+                        <a href="">1千米</a>
+                        <a href="">3千米</a>
+                        <a href="">全程</a>
+                    </div>
+                </li>
+                <li>
+                    <h2><span>桓台县<font>（124）</font></span></h2>
+                    <div class="menu_open">
+                        <a href="">全部</a>
+                        <a href="">信誉楼<font>1512</font></a>
+                        <a href="">喜乐佳<font>15</font></a>
+                    </div>
+                </li>
+                <li>
+                    <h2><span>沂源县<font>（78）</font></span></h2>
+                    <div class="menu_open">
+                        <a href="">沿东路<font>1512</font></a>
+                    </div>
+                </li>
+                <li>
+                    <h2><span>张店区<font>（24）</font></span></h2>
+                    <div class="menu_open">
+                        <a href="">美食街<font>1512</font></a>
+                    </div>
+                </li>
+                <li>
+                    <h2><span>淄川区<font>（10）</font></span></h2>
+                    <div class="menu_open">
+                        <a href="">全部<font>1512</font></a>
+                    </div>
+                </li>
+                <li>
+                    <h2><span>博山区<font>（22）</font></span></h2>
+                    <div class="menu_open">
+                        <a href="">中心路<font>1512</font></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="con_2 menu_down">
+            <div class="menu_far">
+                <a href="" class="far_this">智能排序</a>
+                <a href="">好评优先</a>
+                <a href="">离我最近</a>
+                <a href="">人均最低</a>
+                <a href="">人均最高</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="menu_bg"></div>
+<ul class="list">
+    <li>
+        <a href="" class="con hide list_box">
+            <div class="list_img"><img src="images/img_1.jpg"></div>
+            <span class="hide">
+            	<h3 class="normal">【地王大厦】金钱豹 自助餐</h3>
+                <p class="color6">全场5折、6折、7折限量订购，邀您一起共享美味。</p>
+                <strong class="normal red">今天剩余 <font>3</font> 份</strong>
+                <em class="fr color6"><50m</em>
+            </span>
+        </a>
+    </li>
+    <li>
+        <a href="" class="con hide list_box">
+            <div class="list_img"><img src="images/img_1.jpg"></div>
+            <span class="hide">
+            	<h3 class="normal">【地王大厦】金钱豹 自助餐</h3>
+                <p class="color6">全场5折、6折、7折限量订购，邀您一起共享美味。</p>
+                <strong class="normal red">今天剩余 <font>3</font> 份</strong>
+                <em class="fr color6"><50m</em>
+            </span>
+        </a>
+    </li>
+    <li>
+        <a href="" class="con hide list_box">
+            <div class="list_img"><img src="images/img_1.jpg"></div>
+            <span class="hide">
+            	<h3 class="normal">【地王大厦】金钱豹 自助餐</h3>
+                <p class="color6">全场5折、6折、7折限量订购，邀您一起共享美味。</p>
+                <strong class="normal red">今天剩余 <font>3</font> 份</strong>
+                <em class="fr color6"><50m</em>
+            </span>
+        </a>
+    </li>
+    <li>
+        <a href="" class="con hide list_box">
+            <div class="list_img"><img src="images/img_1.jpg"></div>
+            <span class="hide">
+            	<h3 class="normal">【地王大厦】金钱豹 自助餐</h3>
+                <p class="color6">全场5折、6折、7折限量订购，邀您一起共享美味。</p>
+                <strong class="normal red">今天剩余 <font>3</font> 份</strong>
+                <em class="fr color6"><50m</em>
+            </span>
+        </a>
+    </li>
+    <li>
+        <a href="" class="con hide list_box">
+            <div class="list_img"><img src="images/img_1.jpg"></div>
+            <span class="hide">
+            	<h3 class="normal">【地王大厦】金钱豹 自助餐</h3>
+                <p class="color6">全场5折、6折、7折限量订购，邀您一起共享美味。</p>
+                <strong class="normal red">今天剩余 <font>3</font> 份</strong>
+                <em class="fr color6"><50m</em>
+            </span>
+        </a>
+    </li>
+</ul>
+
+
+
+<!-- 推荐开源CDN来选取需引用的外部JS //-->
+<script type="text/javascript" src="http://cdn.gbtags.com/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    /*Javascript代码片段*/
+    $(document).ready(function(){
+        var deviceWidth=$(window).outerWidth();
+        if(deviceWidth>1080){
+            $("html").css("font-size","100px");
+        }else{
+            $("html").css("font-size",deviceWidth/1080*100+'px');
+        }
+        var menu_t=$(".menu_nav span");
+        var menu_c=$(".menu_down");
+        var menu_bg=$(".menu_bg");
+
+        menu_t.each(function(index){
+            $(this).click(function(){
+                $(this).siblings("span").removeClass("menu_this");
+                $(this).addClass("menu_this");
+                var m_this=menu_c.eq(index);
+                m_this.siblings("div").hide();
+                m_this.toggle();
+
+                if(m_this.is(':visible')){
+                    $(this).addClass("menu_this");
+                }
+                else{
+                    $(this).removeClass("menu_this");
+                }
+
+                if(menu_c.is(':visible')){
+                    menu_bg.show();
+                    $("html,body").css({"height":"100%","overflow":"hidden"});
+
+                }
+                else{
+                    menu_bg.hide();
+                    $("html,body").css({"height":"auto","overflow":"auto"});
+                }
+            });
+        });
+
+//二级
+        var down_t=$(".menu_sort h2");
+        var down_c=$(".menu_open");
+
+        down_t.each(function(){
+            $(this).click(function(){
+                down_t.removeClass("sort_this");
+                $(this).addClass("sort_this");
+                down_c.hide();
+                $(this).next("div").show();
+            });
+        });
+
+//点击背景隐藏
+        menu_bg.click(function(){
+            $(this).hide();
+            menu_t.removeClass("menu_this");
+            menu_c.hide();
+            down_t.removeClass("sort_this");
+            down_c.hide();
+            $("html,body").css({"height":"auto","overflow":"auto"});
+        });
+
+    });
+</script>
+
+</body>
+</html>

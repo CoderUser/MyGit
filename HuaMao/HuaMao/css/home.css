@@ -1,0 +1,100 @@
+.nav-toolbar #nav-custom{
+	width: .5rem;
+	height: 100%;
+	background:url("http://172.31.1.177:1841/test/img/icon-notice.png") no-repeat center right;
+	background-size:.45rem auto;
+}
+.a-home-banner{
+	width:100%;
+	max-height:3.5rem;
+	overflow:hidden;
+}
+.a-home-menu{
+	width:100%;
+}
+.a-home-group h3,
+.a-home-store h3{
+	position:relative;
+	width:100%;
+	font-size:.28rem;
+	line-height:.8rem;
+	padding-left:.4rem;
+}
+.a-home-group h3:before,
+.a-home-store h3:before{
+	content:"";
+	position:absolute;
+	width:.06rem;
+	height:.26rem;
+	left:.24rem;
+	top:.28rem;
+}
+.a-home-group a,
+.a-home-store a{
+	display:block;
+}
+.a-home-group dl dt,
+.a-home-store dl dt{
+	width:2.6rem;
+	height:auto;
+	max-height:1.7rem;
+	background:#000;
+	overflow:hidden;
+}
+.a-home-group dl dd,
+.a-home-store dl dd{
+	padding:0 .2rem;
+	font-size:.28rem;
+	-webkit-flex:1;
+	flex:1;
+}
+.a-home-group dl dd p{
+	line-height:.4rem;
+	padding-bottom:.2rem;
+}
+.a-home-group dl dd p:nth-child(2){
+	font-size:.24rem;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.a-home-group dl dd p:nth-child(3){
+	padding-bottom:0;
+}
+.a-home-group dl dd p:nth-child(3) span:last-child{
+	font-size:.24rem;
+	padding-left:.1rem;
+	color:#fefefe;
+	text-decoration:line-through;
+}
+.a-home-store{
+	margin-top:.1rem;
+}
+.a-home-store dt{
+	margin-left:.1rem;
+	border-radius:.1rem;
+	overflow:hidden;
+}
+.a-home-store dd p{
+	font-size:.22rem;
+	padding-left:.35rem;
+	line-height:.4rem;
+	background-repeat:no-repeat;
+	background-position:center left;
+	background-size:.3rem auto;
+}
+.a-home-store dd p:first-child{
+	padding-left:0;
+	font-size:.28rem;
+	line-height:.5rem;
+}
+.a-home-store dd p:nth-child(2){
+	background-image:url("${templateUrl}/huamao/minivip/icons/icon-tel.png");
+}
+.a-home-store dd p:nth-child(3){
+	background-image:url("${templateUrl}/huamao/minivip/icons/icon-location.png");
+}
+.a-home-store dd p:nth-child(4){
+	background-image:url("${templateUrl}/huamao/minivip/icons/icon-time.png");
+}
+

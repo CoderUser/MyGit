@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <title>js实现下拉选择</title>
+    <style>
+        *{ margin: 0; padding: 0; } #outDiv{ margin:100px auto; width: 200px; } #outDiv span{ display:block; height:25px; line-height: 25px; font-size: 13px; padding-left: 5px; border:1px solid; background: url(../images/xjt.png) no-repeat right; cursor: pointer; } #outDiv ul{ border: 1px solid; border-top: none; height: 125px; display: none; } #outDiv ul li{ list-style-type: none; height: 25px; line-height: 25px; padding-left: 5px; cursor: pointer; font-size: 13px; }
+
+    </style>
+
+</head>
+<body>
+<div id="outDiv"><span>请选择分类</span>
+    <ul id="ul">
+        <li>ASP开发</li>
+        <li>.Net开发</li>
+        <li>PHP开发</li>
+        <li>Javascript开发</li>
+        <li>Java特效</li>
+    </ul>
+</div>
+
+<script>
+    //使用变量，类似JSON类型的js对象方式进行事件处理程序的相关逻辑封装，主要解决了浏览器兼容性问题
+    //单独写进js中，便于html多次进行调运
+    var eventUtil = {
+        //添加事件
+        addEventHandle:function(element,eventType,fn){
+            if(element.addEventListener){//非IE
+                element.addEventListener(eventType,fn,false);
+            }else if(element.attachEvent){//IE
+                element.attachEvent('on'+eventType,fn);//这里拼接上'on',调运的时候不要加on，使用click等。
+            }else{//不支持DOM2级，使用DOM0级方式
+                element['on'+eventType] = fn;//这里使用[]方式实现对象的属性添加，相当于.的作用
+            }
+        },
+        //删除事件
+        removeEventHandle:function(element,eventType,fn){
+            if(element.removeEventListener){//非IE,不带'on'
+                element.removeEventListener(eventType,fn,false);//这里传入fn，是因为DOM2级或DOM0级都可以一次给一个元素的同一个事件绑定多个程序，所以需要传入具体的程序fn进行删除
+            }else if(element.detachEvent){//IE,带'on'
+                element.detachEvent('on'+eventType,fn);
+            }else{//不支持DOM2级，使用DOM0级方式
+                element['on'+eventType] = fn;
+            }
+
+        },
+        //获取事件对象
+        getEvent:function(event){
+            return event?event:window.event;
+        },
+        //获取事件类型
+        getType:function(event){
+            event = event?event:window.event;
+            return event.type;
+        },
+        //获取执行事件的目标元素
+        getTarget:function(event){
+            event = event?event:window.event;
+            return event.target||event.srcElement;
+        },
+        //禁用默认行为
+        preventDefault:function(event){
+            event = event?event:window.event;
+            if(event.preventDefault){
+                event.preventDefault();//非IE
+            }else{
+                event.returnValue = false;//针对IE
+            }
+
+        },
+        //阻止传播冒泡
+        stopPropagation:function(event){
+            event = event?event:window.event;
+            if(event.stopPrapagation){
+                event.stopPrapagation();//非IE
+            }else{
+                event.cancelBubble = true;//针对IE
+            }
+        }
+    }
+</script>
+<script>
+    /**
+     结合鼠标和键盘事件实现下拉列表的选择，赋值过程
+     难点：鼠标、键盘事件的逻辑衔接
+     注意一点：键盘事件document.onkeyup是在txtElement.onclick事件内部的，
+     意味着只有点击倒三角，下拉列表显示出来，才进行键盘事件的逻辑注册
+     */
+    window.onload = function(){
+        var outDiv = document.getElementById('outDiv'),
+            txtElement = outDiv.getElementsByTagName('span')[0];
+        selectUl = document.getElementById('ul'),
+            selectLis = selectUl.getElementsByTagName('li'),
+            selectIndex = -1;
+        //展开选择列表
+        txtElement.onclick = function(event){
+            selectUl.style.display = 'block';
+            eventUtil.stopPropagation(event);
+            //绑定键盘事件：选择列表打开的情况下，上键实现上移(38)、下键实现下移(40)、回车键(13)实现选择
+            document.onkeyup = function(event){
+                event = event?event:window.event;
+                var keyCode = event.keyCode;
+                for (var i = 0; i < selectLis.length; i++) {
+                    selectLis[i].style.background = 'none';
+                }
+                if(keyCode == 38){//上移
+                    if(selectIndex<=0){
+                        selectIndex = selectLis.length-1;
+                    }else{
+                        selectIndex--;
+                    }
+                }
+                if(keyCode == 40){//下移
+                    if(selectIndex<0||selectIndex==selectLis.length-1){
+                        selectIndex = 0;
+                    }else{
+                        selectIndex++;
+                    }
+                }
+                selectLis[selectIndex].style.background = '#ccc';
+                //回车键选择条目并关闭列表
+                if(keyCode == 13 && selectIndex!=-1){
+                    event = event?event:window.event;
+                    txtElement.innerHTML = selectLis[selectIndex].innerHTML;
+                    selectUl.style.display = 'none';
+                    selectLis[selectIndex].style.background = 'none';
+                    selectIndex = -1;
+                }
+            }
+        }
+        //关闭选择列表
+        document.onclick = function(){
+            selectUl.style.display = 'none';
+        }
+        //选择列表事件：1、移入移出背景色 2、onclick：关闭列表，给span赋值，需要阻止冒泡，因为外层div点击需要展开
+        for (var i = 0; i < selectLis.length; i++) {
+            selectLis[i].index = i;
+            selectLis[i].onmouseover = function(){
+                if(selectIndex!=-1){
+                    selectLis[selectIndex].style.background = 'none';//清空键盘事件产生的样式
+                }
+                selectIndex = this.index;//通过鼠标事件重新设置选中索引
+                this.style.background = '#ccc';
+            }
+            selectLis[i].onmouseout = function(){
+                this.style.background = '#fff';
+            }
+            selectLis[i].onclick = function(){//这里没有阻止冒泡，是为了使用document.onclick逻辑
+                txtElement.innerHTML = this.innerHTML;
+            };
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<style><#include "../css/home.css"/></style>
+
+<div class="a-home">
+	<!--cms banner-->
+	<div class="a-home-banner">
+
+	</div>
+
+	<!--cms menu-->
+	<div class="a-home-menu">
+
+	</div>
+
+	<!--group-->
+	<#if grouponList?? && grouponList?size gt 0>
+		<div class="a-home-group">
+			<h3 >${languageMap.Group}</h3>
+			<!--list cms group-->
+			<#list grouponList as item>
+				<a href="#VGroup-${item.XF_CPBATCHNO}">
+					<dl class="g-bg-radius g-dis-flex">
+						<dt>
+							<img src="${properties.fileServerUrl}file/get?fileid=${item.XF_COVER.XF_IMAGE}" alt="">
+						</dt>
+						<dd>
+							<p>${item.XF_NAME}</p>
+							<p>${item.XF_DESCI}</p>
+							<p><#if item.XF_SELLINGPRICE??><span class="a-price-color">&#165;${item.XF_SELLINGPRICE}</span></#if><#if item.XF_ORIGINPRICE??><span>&#165;${item.XF_ORIGINPRICE}</span></#if></p>
+						</dd>
+					</dl>
+				</a>
+			</#list>
+		</div>
+	</#if>
+
+	<!--store-->
+	<#if storeList?? && storeList?size gt 0>
+		<div class="a-home-store">
+			<h3>${languageMap.StoreList}</h3>
+			<!--list cms tenant-->
+			<#list storeList as item>
+				<a href="#VStore-${item.XF_STORECODE}">
+					<dl class="g-bg-radius g-dis-flex">
+						<dt>
+							<img src="<#if item.XF_BRANDLOGO??>${item.XF_BRANDLOGO}<#else>${item.XF_PHOTO}</#if>" alt="">
+						</dt>
+						<dd>
+							<p>${item.XF_DESCI}</p>
+							<p>${item.XF_TELEPHONE}</p>
+							<p>${item.XF_LOCATION}</p>
+							<p>${item.XF_OPENINGHRS}</p>
+						</dd>
+					</dl>
+				</a>
+			</#list>
+		</div>
+	</#if>
+</div>
+
+<script><#include "../js/home.js"/></script>

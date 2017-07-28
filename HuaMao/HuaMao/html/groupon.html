@@ -1,0 +1,32 @@
+﻿<style><#include "/huamao/minivip/css/groupon_list.css"/></style>
+<div class="a-store-search bg-c4">
+    <input class="a-ipt-search" type="text" id="search" required="required" placeholder="${languageMap.Keyword!'请输入团购关键字'}">
+    <span class="a-store-icon" onclick="search()"></span>
+</div>
+<!-- <#if groupList??>
+<#list groupList as item>
+<div class="a-group" id="a-group">
+<div class="a-gruoplist bg-c4" id="group-list">
+        <a href="#" id="group-list-start">
+            <div class="a-group-pic">
+                <img class="a-group-img" src="${item.pic}">
+            </div>
+            <div class="a-group-txt">
+                <p>${item.XF_NAME}</p>
+                <p>${item.XF_CONTENTS}</p>
+                <p class="a-group-txt-color">${item.XF_SELLINGPRICE}<del>${item.XF_ORIGINPRICE}</del></p>
+            </div>
+        </a>
+    </div>
+</div>
+</#list>
+</#if> -->
+
+
+<div class="a-group" id="group-groupList">
+    <div id="itemlist">
+
+        <div id="nomore">${languageMap.NoMore}...</div>
+    </div>
+</div>
+<script><#include "/huamao/minivip/js/groupon_list.js"/></script>

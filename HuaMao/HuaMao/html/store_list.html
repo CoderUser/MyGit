@@ -1,0 +1,62 @@
+﻿<style>
+    <#include "/huamao/minivip/css/store_list.css"
+    /
+    >
+</style>
+<div class="z-store-search bg-c4">
+    <input class="z-ipt-store bg-c8" type="text" id="search" required="required"
+           placeholder="${languageMap.KeyWord!'请输入团购关键字'}" name="">
+    <span class="z-store-icon" onclick="validatorNull()"></span>
+</div>
+<div class="a-store-list">
+    <ul class="a-store-tab bg-c4">
+        <li class="a-store-list-left" id="dropdown-left">
+            <a id="a-store-left" href="#" class="a-store-dropbtn">${languageMap.Floor!'楼层'}</a>
+            <div class="a-store-content" id="list-left">
+                <a href="#">${languageMap.Sort!'ALL 智能排序'}</a>
+                <a href="#">${languageMap.International!'L3 国际时尚/潮流女装'}</a>
+                <a href="#">${languageMap.Gnna!'L2 国际精品/个性男装'}</a>
+                <a href="#">${languageMap.MainForce!'L1 主力店'}</a>
+                <a href="#">${languageMap.Catering!'B1 餐饮店'}</a>
+                <a href="#">${languageMap.Depot!'B2 停车场'}</a>
+            </div>
+        </li>
+        <li class="a-store-list-right" id="dropdown-right">
+            <a id="a-store-right" href="#" class="a-store-dropbtn">${languageMap.Type!'业态'}</a>
+            <div class="a-store-content" id="list-right">
+                <a href="#">${languageMap.AllShop!'ALL 全部商铺'}</a>
+                <a href="#">${languageMap.SuitDress!'女装'}</a>
+                <a href="#">${languageMap.MenClothing!'男装'}</a>
+                <a href="#">${languageMap.Shoes!'鞋子/包/皮具'}</a>
+                <a href="#">${languageMap.Accessory!'餐饮店珠宝/钟表/饰品'}</a>
+                <a href="#">${languageMap.CraftHome!'工艺/家居'}</a>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+<div class="z-store">
+    <a class="bg-c4" href="#VStoreDetail/${item.storeCode}">
+        <dl class="g-dis-flex">
+            <dt>
+                <img src="http://172.31.1.204:1841/icons/icon-sotre01.png" alt="">
+            </dt>
+            <dd>
+                <p>FFFFFFFFF
+                    <span class="star-dark">
+                        <em class="star-light" data="${item.rating}"></em>
+                    </span>
+                </p>
+                <p>020-00000000</p>
+                <p>L1 117商铺</p>
+                <p>10:00am-10:00pm</p>
+            </dd>
+        </dl>
+    </a>
+</div>
+
+
+<script>
+    <#include "/huamao/minivip/js/store_list.js" / >
+</script>
