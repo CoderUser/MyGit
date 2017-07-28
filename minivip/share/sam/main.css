@@ -1,0 +1,137 @@
+.nav-toolbar {
+    position: relative;
+    width: 100%;
+    height: .95rem;
+    background: #1f2126;
+    text-align: center;
+    line-height: .95rem;
+    color: #e0cfa7;
+    font-size: .36rem;
+}
+
+.nav-toolbar .iconfont-back {
+    position: absolute;
+    width: 1rem;
+    height: 100%;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background: url(../icons/icon-goback.png) no-repeat center center;
+    background-size: .44rem auto;
+}
+
+.nav-toolbar #nav-custom {
+    position: absolute;
+    font-size: .28rem;
+    right: 0.3rem;
+    top: 0;
+}
+
+.g-bg-radius {
+    width: 95%;
+    margin: .1rem auto 0;
+    padding: .18rem;
+    background: #1f2126;
+    border-radius: .1rem;
+}
+
+.g-border {
+    border-width: 1px;
+    border-style: solid;
+}
+
+.g-border-top {
+    border-top-width: 1px;
+    border-top-style: solid;
+}
+
+.g-border-btm {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+
+/*sam*/
+
+.g-border-rt {
+    border-right-width: 1px;
+    border-right-style: solid;
+}
+
+.g-border-lf {
+    border-left-width: 1px;
+    border-left-style: solid;
+}
+
+
+/*end*/
+
+.g-btn-small {
+    display: inline-block;
+    padding: 0 .3rem;
+    line-height: .5rem;
+    border-radius: .1rem;
+}
+
+.g-btn-big {
+    display: block;
+    width: 85%;
+    height: .6rem;
+    margin: .4rem auto;
+    line-height: .6rem;
+    font-size: .3rem;
+    border-radius: .1rem;
+}
+
+.g-btn-full {
+    position: absolute;
+    width: 100%;
+    height: .98rem;
+    line-height: .98rem;
+    bottom: 0;
+    font-size: .3rem;
+}
+
+.g-ipt {}
+
+.g-ipt-txt {}
+
+.g-arrow-rt li {
+    position: relative;
+    width: 100%;
+    height: .8rem;
+    line-height: .8rem;
+    background: #26282c;
+    border-bottom: 1px solid #404040;
+}
+
+.g-arrow-rt li a {
+    display: block;
+    width: 94%;
+    margin: auto;
+}
+
+.g-arrow-rt li:last-child {
+    border-bottom: none;
+}
+
+.g-arrow-rt li:before {
+    position: absolute;
+    content: ">";
+    width: .16rem;
+    height: .3rem;
+    font-size: .4rem;
+    right: .3rem;
+    font-family: sans-serif;
+    font-weight: 900;
+}
+
+
+
+
+
+/*date picker*/
+
+.date_btn_box {
+    background-color: #ae9d76;
+}

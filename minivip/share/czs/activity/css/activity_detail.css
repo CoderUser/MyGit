@@ -1,0 +1,179 @@
+@charset "utf-8";
+@import url("common/common.css");
+
+/*头部*/
+
+.top {
+	width: 100%;
+	height: .88rem;
+	background: #1f2126;
+}
+.top p {
+	font-size: .34rem;
+	color: #e0cfa7;
+	
+	text-align: center;
+	line-height: .88rem;
+}
+.back img {
+	position: absolute;
+	top: .28rem;
+	left: .23rem;
+	height: .34rem;
+}
+
+/*内容部分*/
+
+.activity-detail-content {
+	width: 100%;
+	height: 2.52rem;
+}
+.activity-detail-content img{
+	width: 100%;
+}
+.activity-detail-title {
+	position: relative;
+	width: 100%;
+	height: .8rem;
+	background: #26282c;
+}
+.activity-detail-title p {
+	font-size: .28rem;
+	color: #e0cfa7;
+	text-align: center;
+	line-height: .8rem;
+}
+.activity-detail-title img {
+	position: absolute;
+	height: .21rem;
+}
+.activity-detail-title img:nth-child(2) {
+	top: .26rem;
+	left: 2.55rem;
+}
+.activity-detail-title img:nth-child(3) {
+	top: .28rem;
+	right: 2.56rem;
+}
+
+.activity-detail-rule {
+	width: 100%;
+	height: 7.77rem;
+	background: #fff;
+	font-size: .26rem;
+	color: #000;
+}
+.activity-detail-rule a {
+	display: block;
+	width: 100%;
+	height: 4.2rem;
+	text-align: center;
+}
+.activity-detail-rule a img {
+	width: 6.27rem;
+	padding-top: .3rem;
+}
+.activity-detail-rule p {
+	margin-left: .62rem;
+	margin-bottom: .13rem;
+}
+.activity-detail-rule p:nth-child(2) {
+	margin-top: .13rem;
+	margin-bottom: .29rem;
+}
+.activity-detail-rule p:nth-child(5) {
+	margin-bottom: 0;
+}
+
+/*尾部*/
+
+footer {
+	width: 100%;
+	height: 1.36rem;
+	line-height: 1.36rem;
+	background: #ae9d76;
+}
+footer p {
+	font-size: .28rem;
+	color: #fff;
+	text-align: center;
+}
+
+/*弹窗*/
+
+.activity-detail-up {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.5);
+}
+
+.activity-detail-up .pop-up {
+	width: 6rem;
+	height: 3.82rem;
+	margin: 0 auto ;
+	margin-top: 3.54rem;
+}
+.activity-detail-up .pop-up > p {
+	width: 100%;
+	height: .8rem;
+	background: #1f2126;
+	
+	font-size: .29rem;
+	color: #e0cfa7;
+	line-height: .8rem;
+	text-align: center;
+	margin-bottom: .02rem;
+}
+.activity-detail-up .pop-up .up-buttom {
+	width: 100%;
+	height: 3rem;
+	background: #fff;
+}
+
+.activity-detail-up .pop-up .up-buttom p {
+	font-size: .26rem;
+	color: #000;
+	padding-left: .31rem;
+	padding-top: .3rem;
+}
+.activity-detail-up .pop-up .up-buttom .inp {
+	width: 5.37rem;
+	height: .78rem;
+	line-height: .1rem;
+	margin-left: .31rem;
+	margin-top: .29rem;
+	border: .01rem solid #808080;
+}
+.activity-detail-up .pop-up .up-buttom .inp input {
+	width: 5.04rem;
+	height: .3rem;
+	margin-left: .16rem;
+	font-size: .27rem;
+	border: 0;
+}
+
+.activity-detail-up .pop-up .up-buttom .g-btn-round {
+	width: 3rem;
+	height: .6rem;
+	background: #ae9d76;
+	
+	font-size: .26rem;
+	margin: 0 auto;
+	text-align: center;
+	line-height: .6rem;
+	border-radius: .06rem;
+	margin-top: .35rem;
+	margin-bottom: .4rem;
+}
+
+
+
+
+
+
+
+

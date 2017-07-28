@@ -1,0 +1,144 @@
+/*override ext*/
+
+#ext-viewport > .x-body {
+    background: #404040;
+}
+
+
+/*override main*/
+
+.g-btn-full,
+.g-btn-big {
+    background: #ae9d76;
+    color: #fff;
+}
+
+.a-price-color {
+    color: #e34d78;
+}
+
+
+/*current dot*/
+
+.a-home-banner .cms-banner .dotModule_new span,
+.a-menu-dotlist li {
+    background: #fff;
+}
+
+.a-home-banner .cms-banner .dotModule_new span.selected,
+.a-menu-dotlist li.curr {
+    background: #e9cd8a;
+}
+
+
+/*home menu gradient*/
+
+.a-menu-wrapper li a {
+    background: -webkit-linear-gradient(#ffecbe, #e3c173, #ffeec6, #e3c173);
+}
+
+
+/*override page*/
+
+.a-home-menu,
+.a-home-group h3,
+.a-home-store h3,
+.a-about li {
+    background: #26282c;
+}
+
+.a-home-group h3:before,
+.a-home-store h3:before {
+    background: #e9cd8a;
+}
+
+.a-menu-wrapper li a {}
+
+
+/*sam*/
+
+.c-text-golden {
+    color: rgb(174, 157, 118);
+}
+
+.c-btn-golden {
+    background-color: rgb(174, 157, 118);
+    color: rgb(255, 255, 255);
+}
+
+.c-main-golden {
+    background-color: rgb(38, 40, 44);
+}
+
+
+/*end*/
+
+/*---- ldp ----*/
+.a-user,
+.a-user-list li,
+.a-user-center li,
+.a-collect li,
+.a-recharge-select .a-recharge-cur,
+.a-recharge li:first-of-type,
+.a-collect li,
+.a-user-info li,
+.a-recharge-ali,
+.a-recharge-wechat,
+.a-recharge-pay .a-recharge-radio input+i:after,
+.a-modify-phone li,
+.a-modify-pwd li,
+.a-comment-list li,
+.a-comment,
+.a-comment-content,
+.a-comment-check {
+    background-color: #26282c;
+}
+
+
+.a-user-btn,
+.recharge-btn,
+.a-comment-btn {	
+	background: #ad9d75;
+	color: #fff;	
+}
+
+.a-recharge-select span {
+	background: #fff;
+	color: #000;
+}
+.a-recharge-select .a-recharge-cur {
+	color: #dfcfad;
+}
+
+.a-ali-i,
+.a-comment-check{
+	border: 1px solid #dfcfad;
+}
+
+.a-collect {
+	border-top: 1px solid #948665;
+}
+
+/* placeholder颜色 */
+::-webkit-input-placeholder {
+	/* WebKit browsers */
+	color: #dfcfad;
+}
+:-moz-placeholder {
+	/* Mozilla Firefox 4 to 18 */
+	color: #dfcfad;
+}
+::-moz-placeholder {
+	/* Mozilla Firefox 19+ */
+	color: #dfcfad;
+}
+:-ms-input-placeholder {
+	/* Internet Explorer 10+ */
+	color: #dfcfad;
+}
+
+.g-user-btn,
+.get-identify-code {
+	background-color: #af9d75;
+}
+/*---- end ----*/

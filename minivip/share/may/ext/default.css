@@ -1,0 +1,99 @@
+/*override main*/
+input, textarea{color:#e0cfa7;}
+::-webkit-input-placeholder { color: #e0cfa7; letter-spacing:0;}
+
+/*override ext*/
+#ext-viewport > .x-body {
+	background: #404040;
+}
+.bar-bd-btm{border-bottom:1px solid #736b56;}
+
+/*override main*/
+.g-btn-full,
+.g-btn-small,
+.g-btn-big {
+	background: #ae9d76;
+	color: #fff;
+}
+
+/*background color*/
+.bg-c1{background: #ae9d76;}
+.bg-c2{background: #fff;}
+.bg-c3{background: #e9cd8a;}
+.bg-c4{background: #26282c;}
+.bg-c5{background: #d6d7d8;}
+.bg-c6{background: #edcc90;}
+.bg-c7{background: #b19c79;}
+.bg-c8{background: #404040;}
+.bg-c9{background: #2f2d2d;}
+.bg-c10{background: #999;}
+.bg-c11{background: #1f2126;}
+.bg-c12{background: #0a041c;}
+.bg-c13{background: #e34d78;}
+
+/*text color*/
+.txt-c1{color: #fff;}
+.txt-c2{color: #e34d78;}
+.txt-c3{color: #8e782e;}
+.txt-c4{color: #e0cfa7;}
+.txt-c5{color: #000;}
+.txt-c6{color: #ff4c4c;}
+
+/*border color*/
+.bd-cl{border-color:#958765}
+.bd-c2{border-color:#363227}
+.bd-c3{border-color:#404040}
+.bd-c4{border-color:#edcc90}
+.bd-c5{border-color:#edc98f}
+.bd-c6{border-color:#e9cd8a}
+.bd-c7{border-color:#dcdcdc}
+.bd-c8{border-color:#9b8b64}
+
+/*gradient background*/
+.bg-gradient1{
+	background: -webkit-linear-gradient(#ffecbe, #e3c173, #ffeec6, #e3c173);
+}
+
+/*before*/
+.bg-before-c1:before{background: #e9cd8a;}
+.a-choose i:before{
+	border:.03rem solid #edcc90;
+}
+.a-choose input:checked + i:after{
+	background:#edcc90;
+}
+.a-code-img p:before,
+.a-code-img p:after{
+	background:#080809;
+}
+.coupon-list:before,
+.coupon-list:after,
+.a-coupon-code p:before,
+.a-coupon-code p:after{
+	background:#404040;
+}
+
+/*current dot*/
+.a-home-banner .cms-banner .dotModule_new span,
+.a-menu-dotlist li {
+	background: #fff;
+}
+.a-home-banner .cms-banner .dotModule_new span.selected,
+.a-menu-dotlist li.curr {
+	background: #e9cd8a;
+}
+
+/*current color*/
+.a-footer li.curr a{
+	color:#e9cd8a;
+}
+.a-calendar ul li span.curr:before{
+	border:1px solid #edcc90;
+}
+.a-recharge-select label input:checked + span{
+	background:#26282c;
+	color:#e0cfa7;
+	border:1px solid #918266;
+}
+
+

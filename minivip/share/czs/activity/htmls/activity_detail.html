@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,user-scalable=no" />
+		<link rel="stylesheet" href="../css/activity_detail.css"/>
+	</head>
+	<!--<style><#include "../css/activity_detail.css"/></style>-->
+	<body>
+		<div class="web">
+			<header>
+				<div class="top">
+					<div class="back"><img src="../img/details/back.png"/></div>
+					<p>活动详情</p>
+				</div>
+			</header>
+			<section>
+				<div class="activity-detail-content">
+					<img src="../img/activitys/new-summer.png"/>
+				</div>
+				<div class="activity-detail-title">
+					<p>新品特惠活动</p>
+					<img src="../img/details/title-left.png"/>
+					<img src="../img/details/title-right.png"/>
+				</div>
+				<div class="activity-detail-rule">
+					<a href=""><img src="../img/details/two-bg.png"/></a>
+					<p>使用规则</p>
+					<p>1.使用日期2017-05-16-2017-05-26</p>
+					<p>2.不能兑换现金</p>
+					<p>3.仅限以下品牌使用</p>
+				</div>
+			</section>
+			<footer>
+				<p>领取活动券</p>
+			</footer>
+			
+			<!--弹窗-->
+			
+			<div class="activity-detail-up">
+				<div class="pop-up">
+					<p>问卷调查</p>
+					<div class="up-buttom">
+						<p>你最常购买的服装品牌是？</p>
+						<div class="inp"><input type="text" placeholder="请输入你的答案" value="" /></div>
+						<div class="g-btn-round">提交</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth / 750 > 1) {
+							docEl.style.fontSize = '100px';
+						} else if(clientWidth / 750 < 0.4) {
+							docEl.style.fontSize = '40px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+						}
+					};
+
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+		<script src="../js/activity_detail.js" charset="utf-8"></script>
+		<!--<script><#include "../js/main.js"></script>
+		<script><#include "../js/activity_detail.js" charset="utf-8"/></script>-->
+	</body>
+</html>
