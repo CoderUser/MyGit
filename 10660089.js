@@ -1,5 +1,8 @@
 /**
- * Created by ww on 2016/12/1.
+ * Created by ww on 2017/07/28
+
+    git fetch origin
+    git reset --hard origin/master
  */
 
 /*---------------------------------运营配置-----------------------------------*/
