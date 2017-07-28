@@ -1,0 +1,172 @@
+.z-store-search{
+	position: relative;
+	text-align: center;
+	z-index:3;
+}
+.z-ipt-store{
+	height: .5rem;
+	padding-left: .15rem;
+	font-size: .26rem;
+	-webkit-appearance: none;
+	width: 70%;
+	border: 1px solid #e0cfa7;
+	border-radius: .5rem;
+	margin: 0.16rem auto;
+	color: #e0cfa7;
+}
+
+.z-store-icon{
+	display: block;
+	position: absolute;
+	background-image: url(${templateUrl}/huamao/minivip/resource/icons/icon-search.png);
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: .3rem auto;
+	background-position-x: 95%;
+	height: .46rem;
+	width: .4rem;
+	right: 20%;
+	top: 20%;
+}
+.a-store-tab {
+	position:relative;
+	height: .8rem;
+	line-height:.8rem;
+	margin: 0;
+	padding: 0;
+	border-top:1px solid rgba(255,255,255,.5);
+	border-bottom:1px solid #404040;
+	z-index:3;
+}
+.a-store-tab > li:nth-child(2){
+	border-left:1px solid rgba(255,255,255,.5);
+}
+
+.a-store-tab > li{
+	width: 50%;
+	line-height:.8rem;
+	text-align: center;
+
+}
+.a-store-dropbtn {
+	position:relative;
+	display: block;
+}
+.a-store-dropbtn:after{
+	content:'';
+	position:absolute;
+	width:.4rem;
+	height:.4rem;
+	right:.2rem;
+	top:.2rem;
+	background: url("${templateUrl}/huamao/minivip/resource/icons/icon-down.png") no-repeat center center;
+	background-size: .4rem auto;
+	transition:.3s;
+
+}
+.store-active:after{
+	transform: rotate(180deg);
+}
+
+.a-store-content {
+	display: none;
+	position: absolute;
+	left: 0;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.a-store-content li {
+	line-height:.8rem;
+	padding: 0 .75rem;
+	text-align: left;
+	background-color: #26282C;
+	margin-bottom:1px;
+}
+.show {
+	display: block;
+	width: 100%;
+	z-index: 9;
+}
+.active{
+	color: #f50057;
+}
+.z-store{
+	position:relative;
+}
+/*.z-store .list-detail{
+	transform: translateY(-.4rem);
+}*/
+.z-store a{
+	display:block;
+	padding:.2rem;
+	margin-top:.1rem;
+}
+.z-store dl dt{
+	width:2.6rem;
+	height:1.75rem;
+	background:#000;
+	margin-left:.1rem;
+	border-radius:.1rem;
+	overflow:hidden;
+}
+.z-store dl dt img{
+	width:100%;
+	height:100%;
+}
+.z-store dl dd{
+	padding:0 .2rem;
+	font-size:.28rem;
+	-webkit-flex:1;
+	flex:1;
+}
+.z-store dd p{
+	font-size:.22rem;
+	padding-left:.35rem;
+	line-height:.4rem;
+	background-repeat:no-repeat;
+	background-position:center left;
+	background-size:.3rem auto;
+}
+.z-store dd p:first-child{
+	position:relative;
+	padding-left:0;
+	font-size:.28rem;
+	line-height:.5rem;
+}
+.z-store dd p:nth-child(2){
+	background-image:url("${templateUrl}/huamao/minivip/resource/icons/icon-tel.png");
+}
+.z-store dd p:nth-child(3){
+	background-image:url("${templateUrl}/huamao/minivip/resource/icons/icon-address.png");
+}
+.z-store dd p:nth-child(4){
+	background-image:url("${templateUrl}/huamao/minivip/resource/icons/icon-time.png");
+}
+
+.star-dark{
+	background: url("http://172.31.1.204:1841/icons/icon-star-down.png");
+	background-size: .32rem .22rem;
+	background-repeat-y: no-repeat;
+	width: 1.56rem;
+	height: .22rem;
+	position: relative;
+	float: right;
+	top: .2rem;
+}
+.star-light{
+	background: url("http://172.31.1.204:1841/icons/icon-star-up.png");
+	background-size: .32rem .22rem;
+	background-repeat-y: no-repeat;
+	width: 0.96rem;
+	height: .22rem;
+	position: absolute;
+	left: 0;
+}
+.a-mask{
+	display:none;
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0;
+	background:rgba(255,255,255,.5);
+	z-index:2;
+}

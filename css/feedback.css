@@ -1,0 +1,98 @@
+.a-fb {
+    margin: auto;
+}
+
+.a-fb-name,
+.a-fb-mobi {
+    height: 0.9rem;
+    overflow: hidden;
+}
+
+.a-fb-detail {
+    overflow: hidden;
+}
+
+.a-fb-name span,
+.a-fb-mobi span,
+.a-fb-detail span {
+    line-height: 0.9rem;
+    font-size: 0.28rem;
+    float: left;
+    display: inline-block;
+    width: 15%;
+    text-align: right;
+}
+
+.a-fb-name input,
+.a-fb-mobi input {
+    line-height: 0.5rem;
+    font-size: 0.26rem;
+    float: left;
+    display: inline-block;
+    margin: 0.2rem 4.8%;
+    text-align: left;
+    background: none;
+    border: none;
+}
+
+.a-fb-detaildiv {
+    float: left;
+    width: 75.4%;
+    margin: 0.25rem 4.8%;
+    overflow: hidden;
+}
+
+.a-fb-detailinfo {
+    width: 100%;
+    height: 3.1rem;
+    border-radius: 0.1rem;
+    padding: 0.1rem 0.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.a-fb-detailinfo textarea {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 2.5rem;
+    resize: none;
+    border: none;
+}
+
+.a-fb-detailinfo span {
+    display: block;
+    width: 100%;
+    line-height: 0.4rem;
+    height: 0.4rem;
+    text-align: right;
+    font-size: 0.28rem;
+}
+
+.a-fb-detailimg {
+    width: 100%;
+    height: 3.3rem;
+    border-radius: 0.1rem;
+    padding: 0.1rem 0.1rem;
+}
+
+.a-fb-detailimg label{
+    display: block;
+    height: 100%;
+	text-align: center;
+	line-height: 3.7rem;
+	font-size: 0.28rem;
+    background: url(${templateUrl}/huamao/minivip/resource/icons/icon-camera.png) no-repeat center top 30%;
+    background-size: .96rem auto;
+}
+
+.a-fb-btn {
+    position: absolute;
+    display: block;
+    width: 80%;
+    height: 0.6rem;
+    font-size: 0.3rem;
+    border: none;
+    border-radius: 0.1rem;
+    margin: 0 10%;
+    bottom: 0.4rem;
+}

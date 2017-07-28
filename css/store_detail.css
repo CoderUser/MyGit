@@ -1,0 +1,239 @@
+.mb-div {
+	margin-bottom: .2rem;
+}
+
+.a-store-detail-head{
+	padding-top:.15rem;
+}
+
+.brand-img{
+	width: 6.8rem;
+	margin: 0 auto;
+	border-radius:.15rem;
+	overflow: hidden;
+}
+
+.a-store-detail-content {
+	padding: .2rem .35rem;
+}
+
+.a-store-detail-head .store-name {
+	justify-content: space-between;
+	padding-bottom:.2rem;
+}
+
+.star-dark {
+	background: url(http://172.31.7.204:1841/img/icon-star-down.png);
+	background-size: .32rem .22rem;
+	background-repeat-y: no-repeat;
+	width: 1.56rem;
+	height: .22rem;
+	position: relative;
+}
+
+.star-light {
+	background: url(http://172.31.7.204:1841/img/icon-star-up.png);
+	background-size: .32rem .22rem;
+	background-repeat-y: no-repeat;
+	width: .8rem;
+	height: .22rem;
+	position: absolute;
+	left: 0;
+}
+
+.a-store-detail-head p{
+	line-height:.45rem;
+	padding-left: .35rem;
+	background-repeat:no-repeat;
+	background-position:center left;
+	background-size:.3rem auto;
+}
+
+.a-store-detail-head .store-phone {
+	background-image:url("${templateUrl}/huamao/minivip/resource/icons/icon-tel.png");
+}
+
+.a-store-detail-head .store-addr {
+	background-image:url("${templateUrl}/huamao/minivip/resource/icons/icon-address.png");
+}
+
+.a-store-detail-head .store-time {
+	background-image:url("${templateUrl}/huamao/minivip/resource/icons/icon-time.png");
+}
+
+.a-store-desc h3,
+.a-store-detail-recommend h3,
+.a-store-detail-group h3 {
+	height: .8rem;
+	line-height: .8rem;
+	font-size: .28rem;
+	padding-left: .4rem;
+	margin-bottom:1px;
+}
+
+.a-store-desc p {
+	text-indent: 2em;
+	line-height: .36rem;
+	font-size: .25rem;
+	padding: .25rem .4rem;
+}
+
+.a-store-detail-line {
+	width: 100%;
+	height: 1px;
+	display: block;
+}
+
+
+.a-store-detail-recommend li {
+	padding: .3rem .3rem 0;
+	border-right-width: 1px;
+	border-right-style: solid;
+}
+
+.a-store-detail-recommend li img {
+	width: 2.6rem;
+	height: 1.6rem;
+}
+
+.a-store-detail-recommend li p {
+	line-height: .8rem;
+}
+
+.a-store-detail-group dt img {
+	width: 2.6rem;
+	height: 1.6rem;
+	margin-right: .2rem;
+}
+
+.a-store-detail-group dd {
+	display: flex;
+	display: -webkit-flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.a-store-detail-group a {
+	margin: .3rem 0 .3rem .22rem;
+	display: inline-block;
+}
+
+.a-store-detail-group .txt-c1 {
+	margin-left: .15rem;
+	text-decoration: line-through;
+}
+
+.a-store-comment a{
+	display:block;
+	position:relative;
+	height: .8rem;
+	padding-left:.3rem;
+	padding-right:.6rem;
+	line-height:.8rem;
+	margin-bottom:1px;
+	font-size:.28rem;
+}
+
+.a-store-comment a:after{
+	content:'';
+	position:absolute;
+	width:.15rem;
+	height:100%;
+	right:.3rem;
+	top:0;
+	background:url("${templateUrl}/huamao/minivip/resource/icons/icon-right.png") no-repeat center center;
+	background-size:100% auto;
+}
+
+.a-comment-list li {
+	padding: .2rem .7rem .2rem .32rem;
+	margin-top: 1px;
+	font-size:.26rem;
+}
+
+.a-comment-list h3 {
+	background-image: url("${templateUrl}/huamao/minivip/resource/icons/icon-user-selected.png");
+	background-repeat: no-repeat;
+	background-size: .35rem auto;
+	background-position: left center;
+	padding-left: .35rem;
+	margin-bottom: .2rem;
+}
+.a-comment-list p{
+	padding-left: .35rem;
+	line-height:.4rem;
+}
+
+.a-store-detail-footer{
+	width: 100%;
+	height: .98rem;
+	display: flex;
+	display: -webkit-flex;
+}
+
+.a-store-detail-footer li{
+	display: flex;
+	display: -webkit-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+	width: 25%;
+	height: 100%;
+}
+.a-store-detail-footer li i{
+	width: .38rem;
+	height: .4rem;
+	background-size: .38rem .4rem;
+	background-position: center;
+	display: block;
+	margin: auto;
+}
+.a-store-detail-footer li:nth-of-type(1) i{
+	background-image: url("${templateUrl}/huamao/minivip/resource/icons/icon-comment.png");
+}
+.a-store-detail-footer li:nth-of-type(2) i{
+	background-image: url("${templateUrl}/huamao/minivip/resource/icons/icon-local.png");
+}
+.a-store-detail-footer li:nth-of-type(3) i{
+	background-image: url("${templateUrl}/huamao/minivip/resource/icons/icon-like.png");
+}
+.a-store-detail-footer li:nth-of-type(4) i{
+	background-image: url("${templateUrl}/huamao/minivip/resource/icons/icon-share.png");
+}
+
+
+.a-recommend-mask{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.6);
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+}
+.a-recommend-mask div{
+	width: 6.33rem;
+	position: fixed;
+	left: 50%;
+	top: 30%;
+	transform: translateX(-3.17rem);
+}
+.a-recommend-mask img{
+	width: 6.33rem;
+	height: 3.9rem;
+}
+.a-recommend-mask p{
+	width: 6.33rem;
+	height: .8rem;
+	line-height: .8rem;
+	text-align: center;
+}
+.a-recommend-mask span{
+	width: .6rem;
+	height: 1rem;
+	background: url("${templateUrl}/huamao/minivip/resource/icons/icon-popup-close.png") no-repeat;
+	background-size: 100%;
+	position: absolute;
+	right: 0;
+	top: -1rem;
+}

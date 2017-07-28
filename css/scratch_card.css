@@ -1,0 +1,78 @@
+.game-con{
+
+	min-height:100%;
+	padding-top:.5rem;
+	background-image:url("${templateUrl}/huamao/minivip/resource/games/bg-ggk.png");
+	background-repeat:repeat-y;
+	background-color:#0a041c;
+	background-size: 100% auto;
+}
+.game-canvas{
+	position:relative;
+	width:80%;
+	padding:.9rem 0 .6rem;
+	margin:.8rem auto;
+	background:#fff2b9;
+	border-radius:.2rem;
+}
+.game-canvas:before{
+	position:absolute;
+	content:'';
+	width:4.39rem;
+	height:1.3rem;
+	top:-.66rem;
+	left:50%;
+	margin-left:-2.2rem;
+	background:url("${templateUrl}/huamao/minivip/resource/games/txt-try.png") no-repeat center center;
+	background-size:100% auto;
+}
+.game-canvas p{
+	width:4.4rem;
+	height:2.02rem;
+	margin:0 auto;
+	text-align:center;
+	font-size:.28rem;
+	padding-top: .3rem;
+	line-height: .5rem;
+	color:#262626;
+	background:#ffed9e;
+	border:.04rem dashed #8d8b80;
+	border-radius:.1rem;
+}
+.game-canvas p span{
+	display:block;
+	color:#f64456;
+	font-size:.35rem;
+}
+.game-canvas canvas{
+	position:absolute;
+	width:4.4rem;
+	height:2.02rem;
+	top: .9rem;
+	left: 50%;
+	margin-left: -2.2rem;
+	border:.04rem dashed #8d8b80;
+	border-radius:.1rem;
+}
+.game-canvas button{
+	display:block;
+	width:50%;
+	margin:.6rem auto 0;
+	line-height:.8rem;
+	font-size:.28rem;
+	color:#000;
+	background:#ff4545;
+	border-radius:.5rem;
+	box-shadow: 0 4px 2px #bb1a1a;
+}
+.game-rule{
+	width:84%;
+	margin:0 auto;
+	padding-bottom:.5rem;
+	line-height:.5rem;
+	color:#e0cfa7;
+}
+.game-rule h3{
+	padding-left:.05rem;
+	border-bottom:1px solid #e0cfa7;
+}

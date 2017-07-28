@@ -1,0 +1,136 @@
+.game-con{
+	background:#050504;
+}
+.game-con > img{
+	display:none;
+}
+.game-top,
+.game-mid,
+.game-down{
+	position:relative;
+}
+.game-top p{
+	position:absolute;
+	color:#fff;
+	right:.5rem;
+	bottom:0;
+	text-decoration:underline;
+}
+.game-canvas{
+	position:absolute;
+	width:5.6rem;
+	height:5.6rem;
+	top: .55rem;
+	left: .97rem;
+}
+.game-canvas canvas{
+	width:100%;
+}
+.game-canvas img{
+	position:absolute;
+	width:1.12rem;
+	height:auto;
+	top: 50%;
+	margin-top: -0.9rem;
+	left: 50%;
+	margin-left: -.56rem;
+
+}
+.game-down button{
+	position:absolute;
+	width:40%;
+	line-height:.72rem;
+	top:.7rem;
+	left:30%;
+	background:#fffb7f;
+	border-radius:.1rem;
+	box-shadow: 0 0 3px #fff;
+}
+.popup-prize,
+.popup-fail{
+	display:none;
+	width:70%;
+	top: 45%;
+	background:#fff;
+	border-radius:.15rem;
+	overflow:initial;
+}
+.popup-fail{
+	top:32%;
+}
+.popup-fail h3,
+.popup-prize h3{
+	position:relative;
+	width:100%;
+	height:1.22rem;
+	color:#262626;
+	background:#f64456;
+	border-radius:.15rem .15rem 0 0;
+}
+.popup-fail h3:before,
+.popup-prize h3:before{
+	position:absolute;
+	content:"";
+	width:5.58rem;
+	height:4.67rem;
+	bottom:0;
+	left:-.05rem;
+	background:url("${templateUrl}/huamao/minivip/resource/games/tip-prize.png") no-repeat center bottom;
+	background-size:5.58rem auto;
+}
+.popup-fail h3:before{
+	width:3.87rem;
+	height:2.21rem;
+	left: -.2rem;
+	background:url("${templateUrl}/huamao/minivip/resource/games/tip-fail.png") no-repeat left bottom;
+	background-size:3.87rem auto;
+}
+.popup-fail p{
+	margin:.4rem auto;
+	color: #262626;
+	font-size: .28rem;
+	line-height: .5rem;
+	text-align:center;
+}
+.popup-prize p{
+	width:50%;
+	margin:.4rem auto;
+	padding:.3rem 0;
+	color:#262626;
+	font-size:.28rem;
+	text-align:center;
+	background:#ffcf6b;
+	border:.06rem solid #874d00;
+	border-radius:.08rem;
+}
+.popup-prize p span{
+	display:block;
+	font-size:.22rem;
+}
+.popup-prize p em{
+	font-size:.42rem;
+	color:#f64456;
+}
+.popup-fail button,
+.popup-prize button{
+	display:block;
+	width:46%;
+	margin:0 auto .4rem;
+	background:#fffb7f;
+	line-height:.7rem;
+	border-radius:.16rem;
+	box-shadow: inset 0 -2px rgba(255,171,38,.5);
+}
+.popup-fail .close,
+.popup-prize .close{
+	position:absolute;
+	width:.51rem;
+	height:.51rem;
+	top: -3.1rem;
+	right: -.25rem;
+	background:url("${templateUrl}/huamao/minivip/resource/games/icon-close.png") no-repeat center center;
+	background-size:100% 100%;
+}
+.popup-fail .close{
+	top:-.8rem;
+}

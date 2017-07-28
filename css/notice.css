@@ -1,0 +1,23 @@
+.a-message {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    padding: .24rem;
+    margin-top: 1px;
+}
+.a-message a{
+    color: #e0cfa7;
+}
+.a-message p{
+    margin-bottom: .2rem;
+}
+.a-message p:nth-child(2){
+    float: right;
+    position: absolute;
+    right: .24rem;
+    top: .24rem;
+}
+.a-message p:nth-child(3){
+    float: left;
+    font-size: .2rem;
+}

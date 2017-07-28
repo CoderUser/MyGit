@@ -1,0 +1,130 @@
+.a-park-pay{
+	margin-top: .1rem;
+	font-size:.26rem;
+}
+.park-time li{
+	height: .8rem;
+	line-height: .8rem;
+	padding: 0 .31rem;
+	margin-bottom: 1px;
+}
+.use-discount{
+	margin-top:.1rem;
+}
+.use-bonus{
+	padding: .2rem .31rem;
+	margin-bottom:1px;
+	line-height:.4rem;
+	align-items: center;
+}
+.use-bonus dl{
+	-webkit-flex:1;
+	flex:1;
+}
+.use-bonus dd{
+	font-size:.24rem;
+}
+.use-bonus dt span{
+	font-size:.2rem;
+	padding-left:.2rem;
+}
+.use-bonus p{
+	position:relative;
+	padding-right:.5rem;
+	width:45%;
+	text-align:right;
+}
+.use-bonus input[type=number]{
+	width:1.15rem;
+	height:.44rem;
+	line-height:.44rem;
+	padding-right:.1rem;
+	text-align:right;
+	border-radius:.1rem;
+	margin-left:.1rem;
+}
+.use-discount input[type=checkbox] + i {
+	position: absolute;
+	display: block;
+	width: .36rem;
+	height: .36rem;
+	top: 50%;
+	margin-top:-.18rem;
+	right: 0;
+	border-radius: 50%;
+}
+.use-discount input[type=checkbox]:checked + i:after {
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 0;
+	width: .36rem;
+	height:.36rem;
+	background-color: #000;
+	background-image: url("${templateUrl}/huamao/minivip/resource/icons/icon-radio-selected.png");
+	background-size: 100% 100%;
+	border-radius: 50%;
+}
+.use-coupon{
+	position:relative;
+	line-height:1.1rem;
+	padding: 0 .31rem;
+}
+.use-coupon a{
+	display:block;
+	padding-right:.5rem;
+}
+.use-coupon:after{
+	content:'';
+	position:absolute;
+	width:.15rem;
+	height:100%;
+	right:.3rem;
+	top:0;
+	background:url("${templateUrl}/huamao/minivip/resource/icons/icon-right.png") no-repeat center center;
+	background-size:100% auto;
+}
+.a-park-pay > p{
+	line-height:.83rem;
+	padding:0 .31rem;
+}
+.a-pay-type li{
+	padding-right: .46rem;
+	background-position: .59rem center;
+}
+
+.a-pay-radio {
+    padding-left: 1.04rem;
+    }
+.a-pay-radio input:checked+i:after{
+	width:.47rem;
+	height:.47rem;
+	background-color: #000;
+}
+.a-pay-radio p{
+	font-size:.3rem;
+}
+.a-pay-radio p span{
+	font-size:.24rem;
+	padding-left:.1rem;
+}
+.pay-footer{
+	position:fixed;
+	width:100%;
+	height:.98rem;
+	bottom:0;
+}
+.pay-footer p{
+	padding: .15rem .3rem;
+	font-size:.3rem;
+}
+.pay-footer span{
+	display:block;
+	font-size:.26rem;
+}
+.pay-footer button{
+	position:absolute;
+	line-height:.6rem;
+	right:.3rem;
+	top:.2rem;
+}

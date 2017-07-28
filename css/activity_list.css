@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+/*内容部分*/
+
+/*菜单*/
+.activity-list-nva:nth-child(3){
+	/*display: none;*/
+}
+.activity-list-nva {
+	width: 100%;
+	height: .8rem;
+}
+
+.activity-list-menu li {
+	position: relative;
+	float: left;
+	font-size: .25rem;
+	text-align: center;
+	line-height: .8rem;
+	
+	width: 50%;
+	height: .8rem;
+}
+.activity-list-menu:after{
+	content: "";
+	clear: both;
+}
+/*点击效果*/
+.menu-click:after {
+	content: "";
+	width: 3rem;
+	height: .08rem;
+	background: #e9cd8a;
+	
+	position: absolute;
+	left: .38rem;
+	top: .73rem;
+}
+
+
+/*内容部分*/
+.activity-list-content:nth-child(3){
+	display: none;
+}
+.activity-list-content{
+	width: 100%;
+}
+.activity-list-content a{
+	display: block;
+	font-size: 0;
+	margin-bottom: .09rem;
+}
+.activity-list-content a:last-child{
+	margin-bottom: 0;
+}

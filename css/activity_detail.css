@@ -1,0 +1,75 @@
+#ext-viewport > .x-body{
+	background:#fff;
+}
+.a-aty-detail h3{
+	position:relative;
+	line-height:.8rem;
+	font-size:.3rem;
+	text-align:center;
+}
+.a-aty-detail h3:before,
+.a-aty-detail h3:after{
+	position:absolute;
+	content:"";
+	width:.24rem;
+	height:.24rem;
+	top:.28rem;
+}
+.a-aty-detail h3:before{
+	background:url("http://172.31.1.177:1841/test/img/icon-before.png") no-repeat center right;
+	background-size:100% 100%;
+}
+.a-aty-detail h3:after{
+	background:url("http://172.31.1.177:1841/test/img/icon-after.png") no-repeat center left;
+	background-size:100% 100%;
+}
+.a-aty-detail h3 span{
+	padding-left:.35rem;
+	padding-right:.1rem;
+}
+.a-aty-con{
+	width:80%;
+	margin:.2rem auto;
+}
+.a-aty-con p{
+	font-size:.28rem;
+	color:#000;
+	padding:.2rem 0;
+	line-height:.5rem;
+}
+.a-aty-detail button{
+	position:absolute;
+	bottom:0;
+}
+.a-aty-popup{
+	display:none;
+	width: 80%;
+	border-radius: 0;
+	background:#fff;
+}
+.a-aty-popup h3{
+	line-height:.8rem;
+	text-align:center;
+	font-size:.3rem;
+}
+.a-aty-popup p{
+	width:90%;
+	font-size:.28rem;
+	padding: .3rem 5%;
+	line-height: .5rem;
+}
+.a-aty-popup input{
+	display:block;
+	width:90%;
+	margin:0 auto;
+	padding-left:.1rem;
+	line-height:.8rem;
+	color:#808080;
+	background:#f1f1f1;
+	border:1px solid #808080;
+}
+.a-aty-popup button{
+	width:50%;
+	line-height:.6rem;
+	font-size:.28rem;
+}

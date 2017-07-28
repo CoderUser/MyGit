@@ -1,0 +1,106 @@
+/********head*********/
+.indexHead{
+    color: #E0CFA7;
+    background-color: #1F2126;
+    overflow: hidden;
+    text-align: center;
+    border-bottom: .01rem solid;
+}
+.indexHead a{
+    position: absolute;
+    left: .2rem;
+    top: 2.5%;
+}
+.indexHead h1{
+    font-size: .36rem;
+}
+.left img{
+    width: .4rem;
+    float: left;
+}
+
+.a-top-pic img{
+    width: 100%;
+}
+.a-detail-info{
+    padding: .27rem .32rem;
+}
+.a-detail-info a{
+    display: block;
+    background-image: url(../image/arrowleft.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: .5rem auto;
+}
+.a-info-map{
+    background-image: url(http://172.31.1.204:1841/icons/icon-map.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: .3rem auto;
+    padding-left: .4rem;
+}
+li, dd{
+    font-size: .24rem;
+}
+.a-info-content{
+    margin: .25rem auto;
+}
+.a-bottom-pic{
+    margin: .2rem .37rem;
+    margin-bottom: 1.2rem;
+}
+.a-bottom-pic img{
+    width: 100%;
+}
+.a-meal-detail{
+}
+.a-meal-detail p{
+    margin: .27rem .32rem;
+    padding-top: .2rem;
+}
+.a-meal-detail ul{
+    padding-bottom: .24rem;
+    padding-left: .32rem;
+    display: block;
+}
+.a-meal-detail ul li{
+    line-height: .4rem;
+}
+.a-meal-detail ul li span{
+    float: right;
+    padding-right: .32rem;
+}
+.a-now-buy{
+    position: fixed;
+    bottom: 0;
+    overflow: hidden;
+    width: 100%;
+}
+.a-now-buy a{
+    display: block;
+}
+.a-now-buy p:nth-child(1){
+    float: left;
+    display: block;
+    height: .6rem;
+    line-height: .6rem;
+    margin: .2rem .3rem;
+    font-size: .5rem;
+    color: #E34D78;
+}
+.a-now-buy p:nth-child(2){
+    float: right;
+    width: 1.8rem;
+    color: #fff;
+    background-color: #E34D78;
+    border-radius: .1rem;
+    text-align: center;
+    height: .6rem;
+    line-height: .6rem;
+    margin: .2rem .3rem;
+}
+.a-now-buy p del{
+    color: #fff;
+    font-size: .24rem;
+    margin-left: .2rem;
+}
