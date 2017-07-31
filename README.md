@@ -21,8 +21,8 @@ upload
 
 
 
-/**
- * Created by zb on 2017/07/28
-    git fetch origin
-    git reset --hard origin/master
- */
+
+Created by zb on 2017/07/28
+git fetch origin
+git reset --hard origin/master
+
