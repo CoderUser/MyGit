@@ -17,3 +17,12 @@ upload
 第四步 git push -u origin master:master 
 
 提交到Git仓库。这里master为我自己的分支的名称，实际应用中，你要改成自己的分支的名称
+
+
+
+
+/**
+ * Created by zb on 2017/07/28
+    git fetch origin
+    git reset --hard origin/master
+ */
