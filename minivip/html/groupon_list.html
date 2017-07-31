@@ -2,35 +2,19 @@
 
 <div class="a-gruoplist bg-c4" id="group-list">
     <#list grouponList as item>
-    <a href="#VGrouponDetail/${cpBatchNo}" id="group-list-start">
+    <a href="#VGrouponDetail/${item.cpBatchNo}" id="group-list-start">
         <dl class="a-group-bg g-dis-flex">
             <dt>
-                <img class="a-group-img" src="${properties.fileServerUrl}file/get?fileid=${coverId}">
+                <img class="a-group-img" src="${properties.fileServerUrl}file/get?fileid=${item.coverId}">
             </dt>
             <dd>
                 <p>${item.name}</p>
                 <p>${item.goodsName}</p>
-                <p><#if sellingPrice??><span class="txt-c2">&#165;${sellingPrice}</span></#if>
-                <#if originPrice??><span>&#165;${originPrice}<span></#if></p>
+                <p><#if sellingPrice??><span class="txt-c2">&#165;${item.sellingPrice}</span></#if>
+                <#if originPrice??><span>&#165;${item.originPrice}<span></#if></p>
             </dd>
         </dl>
     </a>
-    <#/list>
+    </#list>
 </div>
-<#/if>
-
-<!-- 
-<div class="a-gruoplist bg-c4" id="group-list">
-        <a href="#VGrouponDetail/${cpBatchNo}" id="group-list-start">
-            <dl class="a-group-bg g-dis-flex">
-                <dt>
-                    <img class="a-group-img" src="http://172.31.1.204:1841/icons/little.png">
-                </dt>
-                <dd>
-                    <p>我们家书房</p>
-                    <p>饮品三选一，苹果汁，橙汁，西瓜汁，百香果，火龙果</p>
-                    <p><span class="txt-c2">¥28.9</span><span>¥35</span></p>
-                </dd>
-            </dl>
-        </a>
-    </div> -->
+</#if>

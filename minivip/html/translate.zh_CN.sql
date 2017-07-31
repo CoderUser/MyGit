@@ -227,6 +227,8 @@ insert into xf_langmap(xf_langtype, xf_functionid, xf_msgid, xf_content) values 
 delete from xf_langmap where xf_langtype = 'zh_CN' and xf_functionid = 'HuaMao.MiniVip.groupon';
 insert into xf_langmap(xf_langtype, xf_functionid, xf_msgid, xf_content) values ('zh_CN', 'HuaMao.MiniVip.groupon', 'Groupon', '团购');
 insert into xf_langmap(xf_langtype, xf_functionid, xf_msgid, xf_content) values ('zh_CN', 'HuaMao.MiniVip.groupon', 'Keyword', '请输入团购关键字');
+insert into xf_langmap(xf_langtype, xf_functionid, xf_msgid, xf_content) values ('zh_CN', 'HuaMao.MiniVip.groupon', 'MarkedWords', '关键字不能为空');
+
 
 delete from xf_langmap where xf_langtype = 'zh_CN' and xf_functionid = 'HuaMao.MiniVip.groupondetail';
 insert into xf_langmap(xf_langtype, xf_functionid, xf_msgid, xf_content) values ('zh_CN', 'HuaMao.MiniVip.groupondetail', 'BuyDetails', '团购详情');

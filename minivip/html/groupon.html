@@ -1,13 +1,15 @@
 <style><#include "/huamao/minivip/css/groupon_list.css"/></style>
 <div class="a-store-search bg-c4">
-    <input class="a-ipt-search" type="text" id="search" required="required" placeholder="${languageMap.Keyword!'请输入团购关键字'}">
+    <input class="a-ipt-search" type="text" id="search" required="required" placeholder="${languageMap.Keyword}">
     <span class="a-store-icon" id="a-btn-search"></span>
 </div>
 
 <div class="a-group-list" id="group-groupList">
-<div id="itemlist">
-
-<div id="nomore">${languageMap.NoMore}...</div>
-</div>
+	<div id="itemlist">
+		<div id="itemcat-detail">
+            
+        </div>
+		<div id="nomore">${languageMap.NoMore}...</div>
+	</div>
 </div>
 <script><#include "/huamao/minivip/js/groupon_list.js"/></script>

@@ -134,7 +134,7 @@
 			success: function(response)
 			{
 				var responseObj = JSON.parse(response.responseText);
-				if (config.callback) config.callback(responseObj.html, 2);
+				if (config.callback) config.callback(responseObj.html, 1);
 			}
 		});
 	}

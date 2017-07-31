@@ -154,6 +154,7 @@ insert into xf_langmap(xf_langtype, xf_functionid, xf_msgid, xf_content) values 
 delete from xf_langmap where xf_langtype = 'en' and xf_functionid = 'HuaMao.MiniVip.groupon';
 insert into xf_langmap(xf_langtype, xf_functionid, xf_msgid, xf_content) values ('en', 'HuaMao.MiniVip.groupon', 'Groupon', 'Group Buying');
 insert into xf_langmap(xf_langtype, xf_functionid, xf_msgid, xf_content) values ('en', 'HuaMao.MiniVip.groupon', 'Keyword', 'Please enter the buy keyword');
+insert into xf_langmap(xf_langtype, xf_functionid, xf_msgid, xf_content) values ('en', 'HuaMao.MiniVip.groupon', 'MarkedWords', 'Keyword cannot be empty');
 
 delete from xf_langmap where xf_langtype = 'en' and xf_functionid = 'HuaMao.MiniVip.groupondetail';
 insert into xf_langmap(xf_langtype, xf_functionid, xf_msgid, xf_content) values ('en', 'HuaMao.MiniVip.groupondetail', 'BuyDetails', 'Group purchase details');

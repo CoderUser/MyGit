@@ -11,7 +11,7 @@
 
 	if(_iptUseBonus.checked) {
 		_iptBonus.readOnly = false;
-		myChange();
+		_iptBonus.onchange = myChange;
 	} else {
 		_iptBonus.readOnly = true;
 	}
@@ -20,17 +20,19 @@
 		if(!this.checked) {
 			_iptBonus.readOnly = true;
 			_iptBonus.value = 0;
-			_elmEm[1].innerText = 0;
-			_elmEm[2].innerText = (_elmEm[0].innerText - _iptBonus.value / 100).toFixed(2);
-			_elmEm[3].innerText = _iptBonus.value / 100;
+			myValue();
 		} else {
 			_iptBonus.readOnly = false;
 			_iptBonus.value = 500;
-			_elmEm[1].innerText = _iptBonus.value / 100;
-			_elmEm[2].innerText = _elmEm[0].innerText - _iptBonus.value / 100;
-			_elmEm[3].innerText = _iptBonus.value / 100;
-			myChange();
+			myValue();
+			_iptBonus.onchange = myChange;
 		}
+	}
+	
+	function myValue(){
+		_elmEm[1].innerText = _iptBonus.value / 100;
+		_elmEm[2].innerText = _elmEm[0].innerText - _iptBonus.value / 100;
+		_elmEm[3].innerText = _iptBonus.value / 100;
 	}
 
 	function myChange() {
@@ -38,9 +40,7 @@
 		_money = _num.toFixed(2);
 		if(parseInt(_money) > parseInt(_elmEm[0].innerText)) {
 			_iptBonus.value = 500;
-			_elmEm[1].innerText = _iptBonus.value / 100;
-			_elmEm[2].innerText = _elmEm[0].innerText - _iptBonus.value / 100;
-			_elmEm[3].innerText = _iptBonus.value / 100;
+			myValue();
 			alert("不能超出应付款的值,请重新输入！");
 			return;
 		} else {
@@ -48,8 +48,9 @@
 			_elmEm[2].innerText = (_elmEm[0].innerText - _money).toFixed(2);
 			_elmEm[3].innerText = _money;
 		}
+
 	}
-myChange();
+
 	_btnConfirm.onclick = function() {
 		for(var i = 0; i < _typeRadio.length; i++) {
 			if(_typeRadio[i].checked) {
