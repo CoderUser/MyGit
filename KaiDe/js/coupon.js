@@ -7,33 +7,32 @@
      4.hasClass:判断样式是否存在*/
 
     /*function hasClass(obj, cls) {
-     return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
-     }
+        return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+    }
 
-     function addClass(obj, cls) {
-     if (!this.hasClass(obj, cls)) obj.className += " " + cls;
-     }
+    function addClass(obj, cls) {
+        if (!this.hasClass(obj, cls)) obj.className += " " + cls;
+    }
 
-     function removeClass(obj, cls) {
-     if (hasClass(obj, cls)) {
-     var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
-     obj.className = obj.className.replace(reg, ' ');
-     }
-     }
+    function removeClass(obj, cls) {
+        if (hasClass(obj, cls)) {
+            var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+            obj.className = obj.className.replace(reg, ' ');
+        }
+    }
 
-     function toggleClass(obj, cls) {
-     if (hasClass(obj, cls)) {
-     removeClass(obj, cls);
-     } else {
-     addClass(obj, cls);
-     }
-     }
+    function toggleClass(obj, cls) {
+        if (hasClass(obj, cls)) {
+            removeClass(obj, cls);
+        } else {
+            addClass(obj, cls);
+        }
+    }*/
 
-     function toggleClassTest() {
-     var obj = document.getElementById('test');
-     toggleClass(obj, "testClass");
-     }
-     */
+    function toggleClassTest() {
+        var obj = document.getElementById('test');
+        toggleClass(obj, "testClass");
+    }
     var _couponCfm = _TApi.$id("z-coupon-cfm"),
         _couponFooter = _TApi.$id('z-coupon-footer'),
         _couponFilter = _TApi.$id('nav-custom'),
@@ -46,9 +45,8 @@
         var userName = user.getAttribute('data-uname');
         var userId = user.getAttribute('data-uid');
         */
-
         // 使用setAttribute设置 data- 属性
-        //user.setAttribute('data-site', 'http://www.css88.com');
+        //user.setAttribute('data-site', 'hhhh');
 
 
         var el = document.querySelector('#z-coupon-cfm');
@@ -59,9 +57,9 @@
         _bgMask.style.display = 'none';
 
     }
-    function test(type,status) {
+    function filter(type,status) {
 
-        var _parkingId = document.querySelector('#z-parking-btn'),
+        /*var _parkingId = document.querySelector('#z-parking-btn'),
             _couponId = _TApi.$id('z-coupon-cfm'),
             _parkingListId = _TApi.$id('z-coupon-list'),
             _parkingListInfo;
@@ -74,19 +72,104 @@
         if(_couponInfo == _parkingListInfo)
         _TApi.addClass(_parkingListId, 'active');
         console.log(_couponId.dataset.info);
-        console.log(_parkingId.dataset.info);
+        console.log(_parkingId.dataset.info);*/
+        var _couponId = _TApi.$id('z-coupon');
 
-        ///////////////////////
+        var _list = _couponId.getElementsByClassName('z-coupon-list');
+        var _len = _list.length;
+        console.log(_list);
+        console.log(_len);
+        var _list1 = _list[0].getAttribute('data-info');
+        console.log(_list1);
+
         console.log('---------------');
 
-        var typeInfo = type.getAttribute('data-info');
-        var statusInfo = status.getAttribute('data-info');
+
+        if(type && status){
+
+
+            var typeInfo = type.getAttribute('data-info');
+            var statusInfo = status.getAttribute('data-status');
+
+            console.log(type);
+            console.log(status);
+            console.log('--------zzzzzzzzzzzzz-------');
+            console.log(typeInfo);
+            console.log(statusInfo);
+            for(var i = 0; i < _len; i++){
+                var _listInfo = _list[i].getAttribute('data-info'),
+                    _listStatus = _list[i].getAttribute('data-status');
+                _list[i].style.display = 'none';
+
+                if(typeInfo == _listInfo && statusInfo == _listStatus){
+
+                    _list[i].style.display = 'block';
+                    //this.style.display = 'block';
+                }
+            }
+
+        }else if(type){
+            var typeInfo = type.getAttribute('data-info');
+
+            console.log(type);
+            console.log('--------zzzzzzzzzzzzz-------');
+            console.log(typeInfo);
+            for(var i = 0; i < _len; i++){
+                var _listInfo = _list[i].getAttribute('data-info');
+                _list[i].style.display = 'none';
+
+                if(typeInfo == _listInfo){
+                    _list[i].style.display = 'block';
+
+                }
+            }
+
+        }else if(status){
+            var statusInfo = status.getAttribute('data-status');
+
+            console.log(type);
+            console.log(status);
+            console.log('--------zzzzzzzzzzzzz-------');
+            console.log(statusInfo);
+            for(var i = 0; i < _len; i++){
+                var _listStatus = _list[i].getAttribute('data-status');
+                _list[i].style.display = 'none';
+
+                if(statusInfo == _listStatus){
+
+                    _list[i].style.display = 'block';
+                }
+            }
+        }
+
+
+/////////////////
+        /*var typeInfo = type.getAttribute('data-info');
+        var statusInfo = status.getAttribute('data-status');
+
+        console.log(type);
+        console.log(status);
+        console.log('--------zzzzzzzzzzzzz-------');
         console.log(typeInfo);
         console.log(statusInfo);
+        for(var i = 0; i < _len; i++){
+            var _listInfo = _list[i].getAttribute('data-info'),
+                _listStatus = _list[i].getAttribute('data-status');
+            _list[i].style.display = 'none';
+
+            if(typeInfo == _listInfo && statusInfo == _listStatus){
+
+                _list[i].style.display = 'block';
+            }else if(typeInfo == _listInfo){
+                _list[i].style.display = 'block';
+
+            }
+        }*/
+        ///////////////////////
 
     }
 
-    function getInfo() {
+    /*function getInfo() {
         //获取筛选信息
         TAjax.request({
             path: PosServicePath.CONTENT_MASKASREAD,
@@ -100,8 +183,7 @@
                 console.log(responseObj);
             }
         });
-    }
-
+    }*/
     document.addEventListener('click', function (e) {
         var _target = e.target;
         switch (_target.className) {
@@ -120,7 +202,7 @@
                         _TApi.addClass(_target, 'curr');
                     }
                 }
-                a = _target;
+                //a = _target;
                 break;
             case 'z-coupon-stabtn':
                 var _status = _TApi.$tag('span', _target.parentNode);
@@ -133,27 +215,62 @@
                         _TApi.addClass(_target, 'curr');
                     }
                 }
-                b = _target;
+                //b = _target;
                 break;
+            //取消
             case 'z-coupon-cancel':
                 hideFooter();
                 break;
+            //重置
             case 'z-coupon-resetting':
-
+                var _couponType = _TApi.$id('z-coupon-type'),
+                    _couponStatus = _TApi.$id('z-coupon-status'),
+                    _typeActive = _couponType.getElementsByClassName('curr'),
+                    _statusActive = _couponStatus.getElementsByClassName('curr');
+                for (var j = 0; j < _typeActive.length; j++){
+                    if (_TApi.hasClass(_typeActive[j], 'curr')) {
+                        _TApi.removeClass(_typeActive[j], 'curr');
+                    }
+                }
+                for (var i = 0; i < _statusActive.length; i++){
+                    if (_TApi.hasClass(_statusActive[i], 'curr')) {
+                        _TApi.removeClass(_statusActive[i], 'curr');
+                    }
+                }
+                //hideFooter();
                 break;
+            //确定
             case 'z-coupon-confirm':
-                console.log(a);
-                console.log(b);
-                test(a,b);
+
+                var _couponType = _TApi.$id('z-coupon-type'),
+                    _couponStatus = _TApi.$id('z-coupon-status'),
+                    _typeActive = _couponType.getElementsByClassName('curr'),
+                    _statusActive = _couponStatus.getElementsByClassName('curr');
+
+                for (var i = 0; i < _typeActive.length; i++){
+                    if (_TApi.hasClass(_typeActive[i], 'curr')) {
+                        //var _typeInfo = _typeActive[i].getAttribute('data-info');
+                        console.log(_typeActive[i]);
+                        _typeInfo = _typeActive[i];
+                    }
+                }
+                for (var j = 0; j < _statusActive.length; j++){
+                    if (_TApi.hasClass(_statusActive[j], 'curr')) {
+                        //var _statusInfo = _statusActive[j].getAttribute('data-status');
+                        console.log(_statusActive[j]);
+                        _statusInfo = _statusActive[j];
+
+                    }
+                }
+
+                filter(_typeInfo,_statusInfo);
                 hideFooter();
                 //getInfo();
-
                 break;
             default:
-                /*if (_target.className.indexOf("a-store-dropbtn") < 0)
-                    hideFooter();*/
+                if (_target.className.indexOf("z-coupon") < 0)
+                    hideFooter();
         }
     })
-
 
 })(window.TApi || {});

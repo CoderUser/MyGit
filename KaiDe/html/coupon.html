@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/default.css">
 
 </head>
-<body>
+<body class="z-coupon-body">
 
 <div id="nav-toolbar" class="nav-toolbar">
     <div id="nav-title">我的折扣券</div>
@@ -20,59 +20,103 @@
     <div class="z-coupon-custom" id="nav-custom"></div>
 </div>
 <div class="z-coupon" id="z-coupon">
-    <div class="z-coupon-list" data-info="coupon" id="z-coupon-list">
+    <div class="z-coupon-list" data-info="coupon" data-status="unused" id="z-coupon-list">
         <a href="#">
             <dl class="z-coupon-bg g-dis-flex">
-                <dt></dt>
+                <dt><span>优惠券</span></dt>
                 <dd>
                     <p>券号：SDGDF464131379797</p>
                     <p>店铺：山楂树之恋</p>
                     <p>生效日期：2017-08-08</p>
                     <p>过期日期：2017-09-09</p>
                 </dd>
-                <span class="z-coupon-value">￥50</span>
+                <span class="z-coupon-value"><em>￥</em>50</span>
             </dl>
         </a>
     </div>
-    <div class="z-coupon-list" data-info="parking">
+    <div class="z-coupon-list" data-info="parking" data-status="unused">
         <a href="#">
             <dl class="z-coupon-bg2 g-dis-flex">
-                <dt></dt>
+                <dt><span>停车券</span></dt>
                 <dd>
                     <p>券号：97946431364649797</p>
                     <p>生效日期：2017-08-08</p>
                     <p>过期日期：2017-08-08</p>
                 </dd>
-                <span class="z-coupon-value">￥50</span>
+                <span class="z-coupon-value">50<em>h</em></span>
 
             </dl>
         </a>
     </div>
-    <div class="z-coupon-list" data-info="used">
+    <div class="z-coupon-list" data-info="coupon" data-status="used">
         <a href="#">
             <dl class="z-coupon-bg3 g-dis-flex">
-                <dt></dt>
+                <dt><span>优惠券</span></dt>
                 <dd>
                     <p>券号：64643131316464664</p>
                     <p>生效日期：2017-08-08</p>
                     <p>过期日期：2017-08-08</p>
                 </dd>
-                <span class="z-coupon-value">￥50</span>
-
+                <span class="z-coupon-value"><em>￥</em>50</span>
+                <i></i>
             </dl>
         </a>
     </div>
-    <div class="z-coupon-list" data-info="expire">
+
+    <div class="z-coupon-list" data-info="coupon" data-status="used">
         <a href="#">
             <dl class="z-coupon-bg3 g-dis-flex">
-                <dt></dt>
+                <dt><span>优惠券</span></dt>
+                <dd>
+                    <p>券号：64643131316464664</p>
+                    <p>生效日期：2017-08-08</p>
+                    <p>过期日期：2017-08-08</p>
+                </dd>
+                <span class="z-coupon-value"><em>￥</em>50</span>
+                <i></i>
+            </dl>
+        </a>
+    </div>
+    <div class="z-coupon-list" data-info="parking" data-status="used">
+        <a href="#">
+            <dl class="z-coupon-bg3 g-dis-flex">
+                <dt><span>停车券</span></dt>
                 <dd>
                     <p>券号：9797979646464</p>
                     <p>生效日期：2017-08-08</p>
                     <p>过期日期：2017-08-08</p>
                 </dd>
-                <span class="z-coupon-value">￥50</span>
+                <span class="z-coupon-value">50<em>h</em></span>
+                <i></i>
+            </dl>
+        </a>
+    </div>
+    <div class="z-coupon-list" data-info="parking" data-status="used">
+        <a href="#">
+            <dl class="z-coupon-bg3 g-dis-flex">
+                <dt><span>停车券</span></dt>
+                <dd>
+                    <p>券号：9797979646464</p>
+                    <p>生效日期：2017-08-08</p>
+                    <p>过期日期：2017-08-08</p>
+                </dd>
+                <span class="z-coupon-value">50<em>h</em></span>
+                <i></i>
+            </dl>
+        </a>
+    </div>
 
+    <div class="z-coupon-list" data-info="parking" data-status="expire">
+        <a href="#">
+            <dl class="z-coupon-bg3 g-dis-flex">
+                <dt><span>停车券</span></dt>
+                <dd>
+                    <p>券号：9797979646464</p>
+                    <p>生效日期：2017-08-08</p>
+                    <p>过期日期：2017-08-08</p>
+                </dd>
+                <span class="z-coupon-value">50<em>h</em></span>
+                <i class="expire"></i>
             </dl>
         </a>
     </div>
@@ -86,11 +130,11 @@
             <span class="z-coupon-cfm" id="z-coupon-cfm" data-info="coupon">优惠券</span>
             <span class="z-coupon-cfm" id="z-parking-btn" data-info="parking">停车券</span>
         </div>
-        <div class="z-coupon-status">
+        <div class="z-coupon-status" id="z-coupon-status">
             <p>状态：</p>
-            <span class="z-coupon-stabtn" data-info="unusedbtn">未使用</span>
-            <span class="z-coupon-stabtn" data-info="usedbtn">已使用</span>
-            <span class="z-coupon-stabtn" data-info="expirebtn">已过期</span>
+            <span class="z-coupon-stabtn" data-status="unused">未使用</span>
+            <span class="z-coupon-stabtn" data-status="used">已使用</span>
+            <span class="z-coupon-stabtn" data-status="expire">已过期</span>
         </div>
 
     </div>
