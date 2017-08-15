@@ -1,0 +1,47 @@
+<style>
+	.a-activity-nav li{
+		width:50%;
+		line-height:.8rem;
+		text-align:center;
+		font-size:.26rem;
+	}
+	.a-activity-nav li span{
+		display:block;
+		width:80%;
+		margin:0 auto;
+	}
+	.a-activity-nav li.curr span{
+		border-bottom:.08rem solid;
+	}
+	.a-activity-con a{
+		display:block;
+		width:100%;
+		margin-bottom:.1rem;
+	}
+</style>
+<div class="a-activity">
+	<ul class="a-activity-nav g-dis-flex bg-c4" id="activity-nav">
+		<li class="g-border-rt bd-c3"><span class="bd-c6">${languageMap.LatestActivity}</span></li>
+		<li><span class="bd-c6">${languageMap.Members}</span></li>
+	</ul>
+	<#if newCampaign?? && newCampaign?size gt 0>
+		<div class="a-activity-con">
+			<#list newCampaign as item>
+				<a href="#VActivityDetail/${item.cpBatchNo}">
+					<img src="${properties.fileServerUrl}file/get?fileid=${item.coverId}" />
+				</a>
+			</#list>
+		</div>
+	</#if>
+	<#if vipCampaign?? && vipCampaign?size gt 0>
+		<div class="a-activity-con">
+			<#list vipCampaign as item>
+				<a href="#VActivityDetail/${item.cpBatchNo}">
+					<img src="${properties.fileServerUrl}file/get?fileid=${item.coverId}" />
+				</a>
+			</#list>
+		</div>
+	</#if>
+</div>
+
+<script><#include "/huamao/minivip/js/activity_list.js"/></script>

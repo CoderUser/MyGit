@@ -1,0 +1,24 @@
+<style>
+	<#include "../css/refund.css"/>
+</style>
+<section class="refund_msg">
+	<div class="refund_type">
+		<p>${languageMap.RefundType}</p>
+		<p><input class="check" checked="" type="radio" id="refund-rd"><label for="refund-rd">${languageMap.RefundOnly}</label></p>
+	</div>
+	<div class="refund_reason">
+		<p>${languageMap.RefundReason}</p>
+		<select name="${languageMap.SelectRefundReason}">
+		<option value="${languageMap.SlowDelivery}">${languageMap.SlowDelivery}</option>
+		<option value="${languageMap.NoMatch}">${languageMap.NoMatch}</option>
+		<option value="${languageMap.Broken}">${languageMap.Broken}</option>
+		<option value="${languageMap.Other}">${languageMap.Other}</option>
+	</select>
+	</div>
+</section>
+
+<section class="refund_dsc">
+	<p>${languageMap.RefundDsc}</p>
+	<textarea placeholder="${languageMap.RefundMsg}" rows="5"></textarea>
+</section>
+<button class="submit_btn">${languageMap.Ok}</button>

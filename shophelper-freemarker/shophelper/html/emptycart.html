@@ -1,0 +1,19 @@
+<style>
+	#ext-viewport .x-layout-card-item{ background: #efefef;}
+	.EmptyCartImg{ width: 30%; margin: 45% auto 0;}
+	.EmptyCartImg img{ width: 100%;}
+	.EmptyCart p{ line-height: .84rem; font-size: .28rem; text-align: center; color: #999;}
+	.EmptyCart button{display: block; margin: 0 auto; background: #f9272a; border-radius: .1rem; color: #fff; font-size: .24rem; line-height: .52rem;}
+	.EmptyCart button a{display: inline-block; color: #fff; padding: 0 .12rem;}
+
+	#search-icon{position:absolute;width:.8rem;height:.8rem;line-height:.74rem;right:.4rem;bottom:.5rem;font-size:.48rem;text-align:center;border-radius:100%;color:white;z-index:9;background: url(${templateUrl}/shophelper/resource/icon/barcode_64.png) no-repeat center center; background-size: .5rem auto;background-color:rgba(255, 82, 84, .8);}
+</style>
+
+<section class="EmptyCart">
+	<div class="EmptyCartImg"><img src="${templateUrl}/shophelper/resource/icon/ico71.png"/></div>
+	<p>${languageMap.Empty}</p>
+	<button><a href="#VItemCategory">${languageMap.GoShopping}</a></button>
+</section>
+<span id="search-icon"></span>
+
+<script><#include"../js/emptycart.js"/></script>

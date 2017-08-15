@@ -1,0 +1,37 @@
+<style><#include "/huamao/minivip/css/roulette.css"/></style>
+
+<div class="game-con">
+	<img id="coupon-img" src="${templateUrl}/huamao/minivip/resource/games/icon-coupon.png"/>
+	<img id="bonus-img"  src="${templateUrl}/huamao/minivip/resource/games/icon-bonus.png"/>
+	<div class="game-top">
+		<img src="http://172.31.1.177:1841/games/turntable/img/bg-r1.jpg"/>
+		<p>规则说明</p>
+	</div>
+	<div class="game-mid">
+		<img src="${templateUrl}/huamao/minivip/resource/games/bg-r2.jpg"/>
+		<div class="game-canvas">
+			<canvas class="item" id="canvas"></canvas>
+			<img id="pointer" src="${templateUrl}/huamao/minivip/resource/games/icon-pointer.png"/>
+		</div>
+
+	</div>
+	<div class="game-down">
+		<img src="${templateUrl}/huamao/minivip/resource/games/bg-r3.jpg"/>
+		<button id="btn-start">立即抽奖</button>
+	</div>
+	<div class="popup-prize" id="success">
+		<h3></h3>
+		<p id="succ_txt">获得电影票一张<span>价值<em>20元</em></span></p>
+		<button>查看奖品</button>
+		<span class="close"></span>
+	</div>
+	<div class="popup-fail" id="fail">
+		<h3></h3>
+		<p>您与奖励擦肩而过！<br>换个姿势看看~</p>
+		<button>查看奖品</button>
+		<span class="close"></span>
+	</div>
+</div>
+
+<script><#include "/huamao/minivip/js/roulette.js"/></script>
+

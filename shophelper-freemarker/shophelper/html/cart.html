@@ -1,0 +1,80 @@
+<style><#include"../css/cart.css"/></style>
+
+<#if cartlist??>
+	<section class="cart-con" id="cartTable">
+        <#list cartlist as item>
+			<div class="cart_list g-dis-flex" id="${item.itemOrgId}_${item.plu}_${item.rowId}" data-rowid="${item.rowId}" data-href="#VItemDetail/${item.itemOrgId}_${item.style}" data-sellingprice="${item.sellingPrice}" data-orgid="${item.itemOrgId}" data-plu="${item.plu}">
+                <div class="cart_list_ctr">
+                    <input class="check check-item" title="" type="checkbox" data-rowid="${item.rowId}" data-orgid="${item.itemOrgId}" data-plu="${item.plu}"/>
+                    <div><i class="delete"></i></div>
+                </div>
+				<div class="cart_list_con">
+					<dl class="cart_info g-dis-flex">
+						<dt class="item-img" style="background-image: url(${item.photoSrc});"></dt>
+						<dd>
+							<p>${item.itemDesc}</p>
+                            <p>(${item.itemOrgId} - ${item.plu})</p>
+                            <p>${item.longDesc}</p>
+							<div class="arr">
+								<div>
+									${languageMap.Color}<div class="con">${item.itemColor}</div>
+								</div>
+								<div>
+									${languageMap.Size}<div class="con">${item.itemSize}</div>
+								</div>
+                                <div class="qty">
+                                    ${languageMap.Quantity}
+                                    <div class="con">
+                                        <span class="quantity-decrease">-</span>
+                                        <input type="number" class="quantity" value=1 data-subtotal="${item.sellingPrice}" />
+                                        <span class="quantity-increase">+</span>
+                                    </div>
+                                </div>
+							</div>
+                            <div class="arr amt">
+                                <div>
+                                    ${languageMap.Price}<div class="con">$<span class="subtotal">${item.sellingPrice}</span></div>
+                                </div>
+                                <div>
+                                    ${languageMap.Discount}<div class="con">$<span class="discount">0.00</span></div>
+                                </div>
+								<div class="prom-desci-wrapper"></div>
+                                <div class="line"></div>
+                                <div>
+                                    ${languageMap.Amount}：<div class="con">$<span class="item-netamt"></span></div>
+                                </div>
+                            </div>
+						</dd>
+					</dl>
+				</div>
+			</div>
+        </#list>
+	</section>
+</#if>
+
+<#if tempSales??>
+    <#list tempSales as item>
+        <div hidden id="temp-sales-tender" data-basecurrcode="${item.baseCurrCode}" data-tendercode="${item.tenderCode}" data-tendertype="${item.tenderType}" data-paymethod="${item.payMethod}" data-currcode="${item.currCode}" data-buyexchrate="${item.buyExchRate}"></div>
+    </#list>
+</#if>
+
+<div id="lineup-qrcode-dialog" class="dialog-wrapper" style="display: none;">
+    <div class="hdr">${languageMap.LineUpQrcode}<button class="close-btn"></button></div>
+    <div class="con">
+        <p></p>
+        <p><b></b></p>
+    </div>
+    <div class="ftr"><button class="done-btn">${languageMap.Confirm}</button></div>
+</div>
+
+<div id="lineup-input-dialog" class="dialog-wrapper" style="display: none;">
+    <div class="hdr">${languageMap.LineUpInput}<button class="close-btn"></button></div>
+    <div class="con">
+        <p>
+            <input id="lineup-ipt" class="g-ipt" type="number" maxlength="5" size="5" placeholder="${languageMap.LineUpNum}" style="text-transform: uppercase" onkeypress='return TApi.cart.checkLineUpInput(event);'/><button class="scan-btn">${languageMap.Scan}</button>
+        </p>
+    </div>
+    <div class="ftr"><button class="done-btn">${languageMap.Confirm}</button></div>
+</div>
+
+<script><#include"../js/cart.js"/></script>

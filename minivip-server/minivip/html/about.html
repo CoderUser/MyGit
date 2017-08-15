@@ -1,0 +1,47 @@
+<style>
+	.a-about img {
+		width: 100%;
+		height: auto;
+		max-height: 3.5rem;
+	}
+	
+	.a-about li {
+		justify-content: space-between;
+		height: .8rem;
+		line-height: .8rem;
+		margin-bottom: 1px;
+		padding: 0 .7rem 0 .3rem;
+		font-size: .28rem;
+		margin-bottom: 1px;
+	}
+	
+	.a-about li:first-child {
+		background-image:url("${templateUrl}/huamao/minivip/resource/icons/icon-tel.png");
+		background-repeat: no-repeat;
+		background-position: center right .3rem;
+		background-size: .3rem auto;
+	}
+</style>
+
+<ul class="a-about" id="about">
+	<img src="${properties.fileServerUrl}file/get?fileid=${coverId}">
+	<ul class="bg-c4">
+		<li class="g-dis-flex g-border-btm bd-c3">
+			<span>${languageMap.MallTel}</span>
+			<span>${telephone}</span>
+		</li>
+		<li class="g-dis-flex g-border-btm bd-c3">
+			<span>${languageMap.MallInfo}</span>
+		</li>
+	</ul>
+</ul>
+
+<script>
+	(function(_TApi) {
+		VNavigatorBar.updateTitle("${languageMap.AboutMall}");
+		if(_TApi.hasClass(VNavigatorBar.navToolbar, 'bar-bd-btm')) _TApi.removeClass(VNavigatorBar.navToolbar, 'bar-bd-btm');
+
+
+
+	})(window.TApi || {});
+</script>

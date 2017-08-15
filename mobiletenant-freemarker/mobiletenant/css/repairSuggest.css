@@ -1,0 +1,18 @@
+.repair-suggest{padding-top: .2rem;}
+.repair-suggest input,
+.repair-suggest textarea{border: none; width: 100%; padding: 0; color: #888; background: none;}
+.repair-suggest input:focus{box-shadow: none;}
+.repair-suggest .dispose p{ font-size: .2rem; color: #999; border-top: 1px solid #d0dbdd; padding:.2rem 0 .06rem;}
+.repair-suggest .dispose p em{ font-style: normal; color: #fe1406;}
+.repair-suggest .dispose p span{float: right;}
+.repair-suggest-img li{float: left;  margin: .08rem .16rem; position: relative; display: table; width: 1rem; height: 1rem;; background: #ccc; }
+.repair-suggest-img li:last-child{ display: block; background:url(../resource/icon/upload-img-ico.png) no-repeat center center #ccc; background-size: .5rem auto;}
+.repair-suggest-img li a{ width: 100%; height: 100%; display: table-cell; vertical-align: middle; overflow: hidden;}
+.repair-suggest-img li img{ max-width: 1rem; max-height: 1rem; display: block; margin: 0 auto;}
+.repair-suggest-img li i{position: absolute; font-style: normal; font-family:arial; width: .3rem; height: .3rem; right: -.14rem; top: -.14rem; line-height: .26rem; font-size: .26rem; text-align: center; border-radius: 50%; color: #fff; }
+.repair-suggest-img li span{display: block;  width: 1rem; height: 1rem; overflow: hidden;}
+.repair-suggest-img input{border: none;font-size:100px; opacity:0; filter:alpha(opacity=0);}
+.repair-suggest > p{ width: 90%; margin: .2rem auto;}
+.repair-suggest p button{ width: 45%; float: left;}
+.repair-suggest p .btn_del{background: #d0767a;}
+.repair-suggest p button:last-child{ float: right;}

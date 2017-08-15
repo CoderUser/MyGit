@@ -1,0 +1,31 @@
+<style><#include "../css/notice.css" /></style>
+
+<#if notice??>
+	<ul class="notice">
+		<#list notice as item>
+			<li>
+				<p class="txt-color">${item.dateFrom}</p>
+				<div class="notice-down">
+					<div class="notice-con write-bg">
+						<h3>${item.title}</h3>
+						<article>${item.content}</article>
+						<p>${languageMap.EndDate}: ${item.dateTo}</p>
+					</div>
+				</div>
+			</li>
+		</#list>
+	</ul>
+</#if>
+
+<script>
+	(function(_TApi)
+	{
+		var showBadge = true;	//todo
+		VNavigatorBar.updateTitle("${languageMap.MallNotice}");
+		VNavigatorBar.showCustomButton({
+			text: "${languageMap.MyNotice}",
+			href: "#VMynotice",
+			showBadge: showBadge
+		});
+	})(window.TApi);
+</script>

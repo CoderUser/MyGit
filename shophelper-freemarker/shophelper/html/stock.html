@@ -1,0 +1,37 @@
+<style><#include "../css/stock.css"/></style>
+
+<section id="stock-form">
+	<div class="stock">
+		<p>
+			<button id="store-zone-btn">${languageMap.SelectStoreZone}<i></i></button>
+		</p>
+		<p>
+			<button id="store-btn">${languageMap.SelectStore}<i></i></button>
+		</p>
+		<p>
+			<button id="scan-btn">&nbsp;</button><input id="style" class="itemcode" type="text" placeholder="${languageMap.ItemCode}" style="text-transform: uppercase" />
+		</p>
+		<p>
+			<button id="go-btn">${languageMap.Go}</button>
+		</p>
+	</div>
+	<div class="tc_UserMsg" id="tc_UserMsg">
+		<p class="tc_UserMsg_h"><span id="UserMsg_close">${languageMap.Cancel}</span><span id="UserMsg_title"></span><span id="UserMsg_confirm">${languageMap.Confirm}</span></p>
+		<div class="selStore" id="selStore" style="display: none;">
+			<ul>
+				<#if storeList??>
+					<#list storeList as item>
+						<li><label>${item.storename}</label>
+							<input id="sc_${item.idx}" class="curr" name="rb-store" type="checkbox" value="${item.storecode}">
+						</li>
+					</#list>
+				</#if>
+			</ul>
+		</div>
+		<div class="selStorePref" id="selStorePref" style="display: none; height: 13.5rem;">
+			<ul></ul>
+		</div>
+	</div>
+</section>
+
+<script><#include"../js/stock.js" /></script>

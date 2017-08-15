@@ -1,0 +1,50 @@
+#ext-viewport .x-layout-card-item{ background: #efefef;}
+.tc_bg{ display: none; position: fixed; width: 100%; height: 100%; top: 0; left: 0; background: #000; opacity: .9; z-index: 9; overflow: hidden;}
+
+.UserMsg02,.UserMsg01,.UserMsg>div{ background: #f1f1f1; color: #666; margin: 0 .16rem; margin-top: .16rem; box-sizing: border-box; overflow: hidden;}
+.UserMsg li{ line-height: .7rem; font-size: .28rem; font-weight: bold; color: #333; border-bottom: 1px solid #999; padding: .06rem 0 0.06rem .6rem;}
+.UserMsg li:last-child{border-bottom: 0;}
+.UserMsg li span,.UserMsg>div>span{ float: right; color: #777; font-size: .26rem; font-weight: normal; padding-right: .2rem;}
+.UserMsg li a{display: inline-block; width: 100%;}
+.UserMsg li a span{color: #777;}
+/*.UserMsg01 li:first-child span{ background: none;}*/
+/*.UserMsg01 li:first-child{padding-left:0;}*/
+.UserMsg>div{ line-height: .7rem; font-size: .3rem; font-weight: bold; color: #000; border-bottom: 1px solid #eee; padding: .06rem 0 0.06rem .1rem;}
+.UserMsg01 li:nth-child(1){background-image: url(${templateUrl}/shophelper/resource/icon/ico72.png); background-size: .4rem auto;}
+.UserMsg01 li:nth-child(2){background-image: url(${templateUrl}/shophelper/resource/icon/ico73.png); background-size: .4rem auto;}
+.UserMsg01 li:nth-child(3){background-image: url(${templateUrl}/shophelper/resource/icon/ico74.png); background-size: .4rem auto;}
+.UserMsg02 li:nth-child(1){background-image: url(${templateUrl}/shophelper/resource/icon/ico75.png); background-size: .4rem auto;}
+.UserMsg02 li:nth-child(2){background-image: url(${templateUrl}/shophelper/resource/icon/ico76.png); background-size: .4rem auto;}
+.UserMsg02 li:nth-child(3){background-image: url(${templateUrl}/shophelper/resource/icon/ico77.png); background-size: .4rem auto;}
+.UserMsg02 li:nth-child(4){background-image: url(${templateUrl}/shophelper/resource/icon/ico78.png); background-size: .4rem auto;}
+.UserMsg02 li:nth-child(5){background-image: url(${templateUrl}/shophelper/resource/icon/ico78.png); background-size: .4rem auto;}
+.UserMsg01 li, .UserMsg02 li{background-position: .06rem center; background-repeat:no-repeat;}
+.UserMsg02>li:nth-child(1) span{background: url(${templateUrl}/shophelper/resource/icon/arr-right.png) no-repeat center right; background-size: .1rem auto;}
+.UserMsg02>li:nth-child(4) span{background: url(${templateUrl}/shophelper/resource/icon/arr-right.png) no-repeat center right; background-size: .1rem auto;}
+.UserMsg02>li:nth-child(5) span{background: url(${templateUrl}/shophelper/resource/icon/arr-right.png) no-repeat center right; background-size: .1rem auto;}
+
+.tc_UserMsg{display: none; width: 100%; padding-bottom: .1rem; background: #fff; color: #666; overflow: hidden; z-index: 11; }
+.tc_UserMsg>div{width: 100%; padding: .2rem 5%;}
+.tc_UserMsg_h{width: 100%; font-size: .22rem; height: .66rem; line-height: .66rem; color: #000000; background: #eee;}
+.tc_UserMsg_h span{ padding: 0 .4rem; height: 100%; display: inline-block;}
+.tc_UserMsg_h span:last-child{ float: right;}
+.tc_UserMsg input{ width: 100%; border: 1px solid #ddd; margin-bottom: .1rem; line-height: .7rem; padding: 0 5%; -webkit-appearance:none;}
+.tc_UserMsg input[type=text]:focus,
+.tc_UserMsg input[type=tel]:focus,
+.tc_UserMsg input[type=email]:focus{ border: 1px solid #fb6769;}
+.mdyUser input{width: 45%;}
+.mdyUser input:nth-child(1){ margin-right: 3%;}
+.mdySex li{ line-height: .5rem;border-bottom: 1px solid #eee; padding: .06rem .2rem;}
+.mdySex li:last-child{ border-bottom: none;}
+.mdySex input{float: right; width: .34rem; height: .5rem; border: 0 none; padding: 0; margin: 0; background: #fff; -webkit-appearance: none; vertical-align: middle;}
+.mdySex input:checked{   background: url(${templateUrl}/shophelper/resource/icon/ico79.png) no-repeat center right; background-size: .34rem auto;}
+.mdyTel input.tel_code,
+.mdyEmail input.email_code{ width: 45%;}
+.tc_UserMsg label{ display: inline-block; width: 100%;}
+.tc_UserMsg .code{ float: right; width: 35%; display: block; line-height: .7rem; background: #f87777; color: #fff; border-radius: .06rem;}
+.tc_UserMsg>img{ display: none; width: 2rem; height: auto; margin: .4rem auto;}
+.mdyBirth select{ width: 25%; margin: .2rem 2%; padding: 0 1%; text-align: center; line-height: .44rem; background: none 0; border: 1px solid #ccc;}
+.btn-big{ width: 100%; height: .9rem; line-height: .8rem; color: #fff; font-size: .28rem; font-weight: 600; position: absolute; bottom: 0;}
+#ext-viewport .x-layout-card-item { background: #fff; }
+.hide{display: none;}
+.tel-area-code{ height: .7rem; line-height: .7rem; border-radius: 0; border: 1px solid #ddd; margin-right: .2rem; color: #000; background-color: #fff; background-size: .24rem auto; padding: 0 .43rem 0 .2rem; background-position: right .13rem top .24rem;}

@@ -1,0 +1,21 @@
+<#if grouponList?? && grouponList?size gt 0>
+	<div class="a-gruoplist bg-c4" id="group-list">
+		<#list grouponList as item>
+			<a href="#VGrouponDetail/${item.cpBatchNo}" id="group-list-start">
+				<dl class="a-group-bg g-dis-flex">
+					<dt>
+						<img class="a-group-img" src="${properties.fileServerUrl}file/get?fileid=${item.coverId}">
+					</dt>
+					<dd>
+						<p>${item.name}</p>
+						<p>${item.goodsName}</p>
+						<p>
+							<#if item.sellingPrice??><span class="txt-c2">&#165;${item.sellingPrice}</span></#if>
+							<#if item.originPrice??><span>&#165;${item.originPrice}<span></#if>
+						</p>
+					</dd>
+				</dl>
+			</a>
+		</#list>
+	</div>
+</#if>

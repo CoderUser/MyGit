@@ -1,0 +1,69 @@
+.a-bonuslist-number{
+	line-height: .8rem;
+	padding-left: .25rem;
+}
+.a-bouns-add a{
+	position:relative;
+	display:block;
+	width:50%;
+	padding-top:1.6rem;
+	padding-bottom:.3rem;
+	text-align:center;
+}
+.a-bouns-add a:before{
+	content:'';
+	position:absolute;
+	width:2.2rem;
+	height:1.2rem;
+	top:.25rem;
+	left:.76rem;
+	background-color:#fff;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 1.25rem auto;
+	border-radius:.1rem;
+}
+.a-bouns-add a:first-child:before{
+	background-image: url("${templateUrl}/huamao/minivip/resource/icons/icon-bar-code.png");
+}
+.a-bouns-add a:last-child:before{
+	background-image: url("${templateUrl}/huamao/minivip/resource/icons/icon-game.png");
+}
+.a-bouns-item-list{
+	display: flex;
+	display: -webkit-flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.a-bouns-item-list li{
+	width: 49.8%;
+	height: 4.9rem;
+	margin-top: .02rem;
+}
+.a-bouns-item-list li img{
+	width: 3.2rem;
+	height: 3.2rem;
+	margin: .2rem auto .15rem;
+}
+.a-bouns-item-list li strong,
+.a-bouns-item-list li p{
+	padding-left: .27rem;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.a-bouns-item-list li strong{
+	font-weight: bold;
+	font-size: .3rem;
+	line-height: .34rem;
+}
+.a-bouns-item-list li a{
+	display: block;
+	width: 2rem;
+	height: .44rem;
+	line-height:.44rem;
+	border-radius: .06rem;
+	margin: 0 auto;
+	margin-top: .12rem;
+	text-align:center;
+}

@@ -1,0 +1,28 @@
+<style>
+	<#include "../css/comment.css"/>
+</style>
+<#if commentlist??>
+<!--<_commentlist>-->
+	<section class="comment-con">
+		<#list commentlist as item>
+		<!--<repeat_commentlist>-->
+			<div>
+				<div>
+					<span class="com-h-img"><img src="${item.userSrc}"/></span>
+						<span class="com-user">
+							<span>${item.userName}</span>
+							<time>${item.date}</time>
+						</span>
+					<span class="com-star"><i class="check-star star-num3"></i></span>
+				</div>
+				<p>${item.commentContent}</p>
+				<span class="com-praise">${item.raiseNum}</span>
+			</div>
+		<!--</repeat_commentlist>-->
+		</#list>
+	</section>
+<!--</_commentlist>-->
+</#if>
+<script>
+    <#include"../js/comment.js" />
+</script>

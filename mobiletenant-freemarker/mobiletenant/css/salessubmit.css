@@ -1,0 +1,39 @@
+.sales-info{ padding: .2rem 3%; box-sizing: border-box;}
+.sales-info li{ width: 50%; float: left; font-size: .22rem; height: .8rem; line-height: .8rem; overflow: hidden;}
+.sales-info li:nth-child(3),
+.sales-info li:nth-child(7){float: right; }
+.sales-info li:nth-child(1),
+.sales-info li:nth-child(4),
+.sales-info li:nth-child(5){width: 100%;}
+.sales-info li span{width: 50%; display: block; float: left; padding-right: .1rem; text-align: right; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;box-sizing: border-box;}
+.sales-info li input,
+.sales-info li select{width: 50%;}
+.sales-info li:nth-child(2),
+.sales-info li:nth-child(6){width: 45%;}
+.sales-info li:nth-child(2) span,
+.sales-info li:nth-child(6) span{width: 55.55%;}
+.sales-info li:nth-child(2) select,
+.sales-info li:nth-child(6) input{width: 44%;}
+.sales-info li:nth-child(3),
+.sales-info li:nth-child(7){width:55%;}
+.sales-info li:nth-child(1) span,
+.sales-info li:nth-child(4) span,
+.sales-info li:nth-child(5) span{width: 25%;}
+.sales-info li:nth-child(1) select,
+.sales-info li:nth-child(4) input,
+.sales-info li:nth-child(5) select{width: 70%;}
+.sales-info li:nth-child(3) span,
+.sales-info li:nth-child(7) span{ width: 35%;}
+.sales-info li:nth-child(3) input,
+.sales-info li:nth-child(7) input{ width: 56.5%;}
+.sales-details{ padding: .2rem 0;}
+.sales-details p{ border-bottom: 1px solid #d0dbdd; line-height: .6rem; padding: 0 .3rem;}
+.sales-details p em{font-style: normal;}
+.sales-details p>em{font-size: .2rem; color: #888; padding-left: .1rem;}
+.sales-details p span{float: right; font-size: .24rem; display: block; width: 50%; text-align: right; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.sales-details p span>em{font-family: "Verdana";}
+.sales-details ul{width: 96%; margin: .2rem auto; font-size: .22rem; display: table;}
+.sales-details ul li{line-height: .7rem; height: .7rem; text-align: center; display: table-row; vertical-align: middle; overflow: hidden;}
+.sales-details ul input{vertical-align: middle; width: 1.2rem;margin-right: .1rem;}
+.sales-details ul span:first-child{ display:inline-block; width: 1.4rem; text-align: right; padding-right:.1rem; vertical-align: middle;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.sales-details ul span:last-child{ display: inline-block; width: 1.2rem; background: #eae2ec; padding: .1rem; text-align: right; border: 1px solid #eae2ec; border-radius: .06rem;vertical-align: middle; line-height: .32rem; color: #999;overflow: hidden;}

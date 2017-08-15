@@ -1,0 +1,45 @@
+<style>
+	.a-modify-mobile{
+		margin-top: .3rem;
+	}
+	.a-modify-mobile li {
+		height: .8rem;
+		line-height: .8rem;
+		font-size: .25rem;
+		position: relative;
+		margin-bottom: 1px;
+	}
+	.a-modify-mobile li span {
+		width: 1.5rem;
+		text-align: right;
+		display: inline-block;
+		margin-right: 0.3rem;
+	}
+	.a-modify-mobile li input{
+		-webkit-flex:1;
+		flex:1;
+	}
+	.g-btn-small{
+		margin:.15rem .3rem .15rem 0;
+		font-size: .24rem;
+	}
+</style>
+
+<div class='a-modify-mobile'>
+	<ul>
+		<li class="bg-c4 g-dis-flex">
+			<span>${languageMap.Mobile}</span>
+			<input id="ipt-mobile" type="tel" maxlength="11" value="${telephone}" />
+		</li>
+		<li class="bg-c4 g-dis-flex">
+			<span>${languageMap.AuthCode}</span>
+			<input id="ipt-authcode" type="text" placeholder="${languageMap.InputCode}" />
+			<button class="g-btn-small g-fr" id="btn-authcode">${languageMap.GetCode}</button>
+		</li>
+	</ul>
+
+	<button class="g-btn-big" id="btn-confirm">${languageMap.Confirm}</button>
+</div>
+
+<script><#include "/huamao/minivip/js/send_authcode.js"/></script>
+<script><#include "/huamao/minivip/js/modify_mobile.js"/></script>

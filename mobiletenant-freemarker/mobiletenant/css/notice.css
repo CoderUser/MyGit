@@ -1,0 +1,12 @@
+.notice{padding-top: .2rem;}
+.notice li{width: 96%; margin-left: 4%; font-size:.22rem;}
+.notice li>p{width: 100%; position: relative; line-height: .28rem; padding-left:.4rem; font-family: "Verdana";}
+.notice li>p:after{content:'';position: absolute; width: .28rem; height: .28rem; left:0; top:0; border-radius: 50%; background: rgba(6,6,6,0); border-width: 1px; border-style: solid;}
+.notice li>p:before{content:''; position: absolute;  width: .08rem; height: .08rem; left: .1rem; top: .1rem; border-radius: 50%;}
+.notice-down{ width: 95%; margin-left: .13rem; padding: .2rem 0; margin-top: 1px; margin-bottom: 1px; border-left-width: 1px; border-left-style: solid;}
+.notice-con{ width: 94%; margin: 0; margin-left: 5%; padding-bottom: .2rem; background:rgba(255,255,255,.7)}
+.notice-con h3,.notice-con img,.notice-con article,.notice-con p{width: 100%; padding: 0 5%;}
+.notice-con h3{line-height: .9rem; border-bottom: 1px solid #d0dbdd; font-weight: normal; color: #666; font-size: .3rem;}
+.notice-con h3 a{float: right; font-size: .26rem;}
+.notice-con article{padding: .2rem 5%; font-size: .22rem; color: #666; line-height: .4rem;}
+.notice-con>p{text-align: right; font-size: .2rem; color: #999; padding-top: .2rem; border-top:1px solid #d0dbdd;}

@@ -1,0 +1,45 @@
+<style><#include "../css/address.css" /></style>
+
+<form class="a-add-address" name="address" data-addrid="${addrId}">
+	<dl class="g-dis-flex">
+		<dt>${languageMap.UserName}</dt>
+		<dd><input type="text" name="name" placeholder="${YourName}" value="${receiverName}"/></dd>
+	</dl>
+	<dl class="g-dis-flex">
+		<dt>${languageMap.UserTel}</dt>
+		<dd class="g-dis-flex">
+				<select id="tel-area-code" class="tel-area-code g-arr-dn" name="telareacode" data-code="${receiverTelCode}">
+					<option value="">${languageMap.TelCode}</option>
+						<#list list as item>
+							<option value="${telareacode}">${item.telareacode}</option>
+						</#list>
+				</select>
+			<input type="tel" name="tel" placeholder="${YourTel}" maxlength="11" value="${receiverTel}"/>
+		</dd>
+	</dl>
+	<dl class="g-dis-flex">
+		<dt>${languageMap.Country}</dt>
+		<dd>
+			<input id="select_country" type="text" readonly name="input_country" data-country="${countryCode}" placeholder="${languageMap.SelectCountry}"/>
+		</dd>
+	</dl>
+
+	<dl class="g-dis-flex">
+		<dt>${languageMap.LocalArea}</dt>
+		<dd>
+			<input id="select_add" type="text" readonly="" name="input_area" data-province="${province}" data-city="${city}" data-county="${county}" placeholder="${languageMap.SelectLocalArea}"/>
+		</dd>
+	</dl>
+	<dl>
+		<dt>${languageMap.ReceiverAddress}</dt>
+		<dd><textarea name="address" placeholder="${languageMap.Address}" rows=3>${receiverAddress}</textarea></dd>
+	</dl>
+	<p class="g-checkbox">
+		<input id="defaultAddr" class="g-checkbox" type="checkbox" hidden="">
+		<label for="defaultAddr"><em class="radio icon-radio"></em><em class="radio icon-radiochecked"></em>${languageMap.SetDefault}</label>
+	</p>
+</form>
+<button class="g-btn-sq" id="addaddress">${languageMap.Submit}</button>
+<script>
+    <#include "../js/address.js" />
+</script>

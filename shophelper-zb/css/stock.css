@@ -1,0 +1,49 @@
+#ext-viewport .x-layout-card-item{ background: #efefef;}
+#stock-form div{ width: 100%; padding:5%; height: auto; overflow: hidden;}
+#stock-form div p{ width: 100%; height: auto; overflow: hidden;}
+#stock-form p.pass{ position: relative;}
+#stock-form p input{ width: 100%; box-sizing: border-box; line-height: .5rem; padding: .1rem 0 .1rem .6rem; display: block; margin-top: .3rem; background: #fff; font-size: .22rem; border: 1px solid #ccc; border-radius: .1rem; color: #555; }
+#stock-form p select{ box-sizing: border-box; width: 100%; height:.7rem; line-height: .7rem; padding-left: .2rem; background: #fff; font-size: .25rem; border: 1px solid #ccc; border-radius: .1rem; color: #555;}
+#stock-form p input:focus{ border: 1px solid #fb6769; outline: 0;}
+#stock-form p input.itemcode{ width: 87.5%; padding-left: .2rem;}
+#stock-form p input.pass{background: url(${templateUrl}/shophelper/resource/icon/ico62.png) no-repeat left .2rem center #fff; background-size: .3rem auto;}
+#stock-form .passtab{position: absolute; width: .4rem; height: .2rem; left: 88%; top: .56rem;background: url(${templateUrl}/shophelper/resource/icon/ico65.png) no-repeat;background-size: .36rem auto;}
+#stock-form .passtab.curr{background: url(${templateUrl}/shophelper/resource/icon/ico70.png) no-repeat;background-size: .36rem auto;}
+.stock p.txt{ padding: .2rem 0;}
+.stock p.txt a{ color: #bb0d19; font-size: .22rem;}
+.stock p.txt a:last-child{ color: #555; float: right;}
+.stock button{ display: inline-block; margin-top: .4rem; font-size: .24rem; width: 40%; float: left;  color: #fff; line-height: .6rem; border-radius: .08rem;}
+#stock-form .SystemSet{position: absolute; bottom: .2rem; left: 3%; padding-left: .46rem; line-height: .38rem; font-size: .24rem; color: #555;  background: url(${templateUrl}/shophelper/resource/icon/ico42.png) no-repeat left center; background-size: .42rem auto;}
+#go-btn{ width: 100%; box-sizing: border-box; margin-top: .6rem;}
+#scan-btn {line-height: .68rem; background: url(${templateUrl}/shophelper/resource/icon/barcode_64.png) no-repeat center center; background-size: .6rem .7rem; width: 10%; margin-top: .32rem; margin-right: .2rem; box-sizing: border-box;}
+#store-btn, #store-zone-btn {width: 100%; box-sizing: border-box; line-height: .5rem; padding: .1rem .9rem .1rem .2rem; display: block; margin-top: .3rem; background: #fff; font-size: .22rem; border: 1px solid #ccc; border-right: 0;border-radius: .1rem; color: #555; text-align: left; position: relative; overflow: hidden;}
+#store-btn i, #store-zone-btn i{display: inline-block; position: absolute; background: url(${templateUrl}/shophelper/resource/icon/caret-down.png) no-repeat center center; background-size: .24rem; width: .8rem; height: 102%; margin-top: -1px; right: 0; top: 0;}
+#store-btn span{border: 1px solid #ee3c47; background: #ee3c47; color: #fff; border-radius: .06rem; margin: 0 .16rem .08rem 0; padding: 0 .16rem; line-height: .36rem; display: inline-block;}
+
+.tc_UserMsg{display: none; width: 100%; background: #fff; color: #555; overflow: hidden; z-index: 11; }
+.tc_UserMsg>div{width: 100%; padding: .1rem 5%; height: 6.2rem; overflow: hidden;}
+.tc_UserMsg_h{width: 100%; padding: .1rem 5%; font-size: .22rem; line-height: .4rem; color: #000000; background: #eee;}
+.tc_UserMsg_h span{ padding-right: .4rem;height: 100%; display: inline-block;}
+.tc_UserMsg_h span:last-child{ float: right;  padding-left: .4rem; padding-right: 0;}
+.tc_UserMsg input{ width: 100%; border: 1px solid #ddd; margin-bottom: .1rem; line-height: .7rem; padding: 0 5%; -webkit-appearance:none;}
+.tc_UserMsg input[type=text]:focus,
+.tc_UserMsg input[type=tel]:focus,
+.tc_UserMsg input[type=email]:focus{ border: 1px solid #fb6769;}
+.tc_UserMsg #UserMsg_title { position: absolute; left: 30%; width: 40%; height: 80%; padding: 0; text-align: center; color: #666; font-weight: bold; font-size: .24rem;}
+
+.selStore li, .selStorePref li{ line-height: .6rem;border-bottom: 1px solid #eee; padding: .1rem .2rem;}
+.selStore li:last-child, .selStorePref li:last-child{ border-bottom: none; padding-bottom: .34rem;}
+.selStore input{float: left; background: url(${templateUrl}/shophelper/resource/icon/check_circle.png) no-repeat center right; background-size: .34rem auto; width: .34rem; height: .6rem; border: 0 none; padding: 0; margin: 0; -webkit-appearance: none; vertical-align: middle;}
+.selStore input:checked{   background: url(${templateUrl}/shophelper/resource/icon/checked_circle.png) no-repeat center right; background-size: .34rem auto;}
+.selStore label { display: inline-block; width: 90%; padding-left: .2rem;}
+
+.selStorePref input.curr{float: left; background: url(${templateUrl}/shophelper/resource/icon/check_circle.png) no-repeat center right; background-size: .34rem auto; width: .34rem; height: .6rem; border: 0 none; padding: 0; margin: 0; -webkit-appearance: none; vertical-align: middle;}
+.selStorePref input:checked{ background: url(${templateUrl}/shophelper/resource/icon/checked_circle.png) no-repeat center right; background-size: .34rem auto;}
+.selStorePref input.edt_name{ position: absolute; left: .6rem; line-height: .58rem; width: 75%; padding: 0 .1rem; background: #fff; margin: 0 0 0 .1rem; }
+.selStorePref label { display: inline-block; width: 80%; padding-left: .28rem;}
+.selStorePref span.btn_rename, .selStorePref span.btn_cancel { float: right; font-size: .22rem; padding: 0 .26rem; color: #000000; display: inline-block; text-align: center;}
+.selStorePref span.btn_cancel { color: #777;}
+.selStorePref span.btn_rename { width: .2rem; opacity: 0.8; background: url(${templateUrl}/shophelper/resource/icon/pencil.png) no-repeat center right; background-size: .34rem;}
+
+.selStorePref input.edt_name.warn { border: 1px solid red;}
+

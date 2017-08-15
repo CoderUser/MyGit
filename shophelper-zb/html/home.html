@@ -1,0 +1,233 @@
+<style>
+	<#include "../css/home.css"/>
+</style>
+<div id="home-banner"></div>
+
+<section class="con_retail">
+	<ul class="retail_nav">
+		<li><a href="#VItemCategory">
+		    <img src="${templateUrl}/resource/shophelper/icon/ico53.png">
+	  		<p>${languageMap.Sales}</p></a>
+		</li>
+		<li><a id="stock-btn" href="javascript:void(0);">
+		    <img src="${templateUrl}/resource/shophelper/icon/ico54.png">
+	  		<p>${languageMap.StockCheck}</p></a>
+		</li>
+		<li><a class="login-tab" href="javascript:void(0);">
+		    <img src="${templateUrl}/resource/shophelper/icon/ico55.png">
+	  		<p>${languageMap.Vip}</p></a>
+		</li>		
+		<li><a href="#VCustomer">
+		    <img src="${templateUrl}/resource/shophelper/icon/ico97.png">
+		    <span id="vip_count" style="display:none;">0</span>
+	  		<p>${languageMap.Radar}</p></a>
+		</li>
+		<!-- <li><a href="#VWallet">
+		    <img src="{&resource/shophelper/icon/ico53.png&}">
+	  		<p>${languageMap.Wallet}</p></a>
+		</li>
+		<li><a href="#VGiftcert">
+		    <img src="{&resource/shophelper/icon/ico54.png&}">
+	  		<p>${languageMap.GiftCert}</p></a>
+		</li>
+		<li><a href="#VCoupon">
+		    <img src="{&resource/shophelper/icon/ico55.png&}">
+	  		<p>${languageMap.Coupon}</p></a>
+		</li>
+		<li><a href="#VBonus">
+		    <img src="{&resource/shophelper/icon/ico56.png&}">
+	  		<p>${languageMap.Bonus}</p></a>
+		</li> -->
+	</ul>
+</section>
+<section class="customerlist-item-home" <#if vipLogin??>style="display:none;"</#if>>
+	<div id="vip-detail" class="customerlist-wrap">
+		<div class="customerlist-qrcode"></div>
+	    <div class="customerlist-dtcol">
+	        <h1 class="customerlist-name">${userName}</h1>
+	        <span class="customerlist-sex-${vipSex}">&nbsp;</span>
+	        <!--<div class="customerlist-grade grade${vipRank}"> -->
+	        	<!--<img src="{&resource/shophelper/icon/icon_grade${vipRank}_32.png&}">-->
+	        <!--</div>-->
+			<span>(${vipGradeCode})</span>
+	    </div>
+	    <div class="customerlist-detail">
+	        <div class="customerlist-star"> <span class="customerlist-star-bg customerlist-star-bg-rank-${starRated}">&nbsp;</span> <span class="customerlist-star-${starRated}">&nbsp;</span> </div>
+	    </div>
+	    <p class="customerlist-vipcode">${vipCode}</p>
+	    <!-- <p class="customerlist-distance">         <progress max="1" value="${distancePercentage}"></progress>  </p> -->
+	</div>
+	<button id="logout-btn">${languageMap.Logout}</button>
+</section>
+<#if likeditem??>
+<!--<_likeditem>-->
+	<section class="retail_new retail_collapse">
+		<h3><span>${languageMap.LikedItem}</span></h3>
+		<div class="wrap">
+			<ul class="clearfix">
+				<#list likeditem as item>
+				<!--<repeat_likeditem>-->
+					<li>
+						<a href="#VItemDetail/${itemOrgId}_${style}">
+							<div class="cp_img" style="background-image: url(${item.photoSrc})">
+								<div class="cp_desc">
+									<div class="cp_price">$ ${item.sellingPrice}
+										<!--<_originPrice>--><span>$ ${item.originPrice}</span><!--</_originPrice>-->
+									</div>
+									<div class="cp_name">${item.itemDesc}</div>
+								</div>
+							</div>
+						</a>
+					</li>
+				<!--</repeat_likeditem>-->
+				</#list>
+			</ul>
+		</div>
+	</section>
+<!--</_likeditem>-->
+</#if>
+<#if browsehistory??>
+<!--<_browsehistory>-->
+	<section class="retail_new retail_collapse">
+		<h3><span>${languageMap.History}</span></h3>
+		<div class="wrap">
+			<ul class="clearfix">
+				<#list browsehistory as item>
+				<!--<repeat_browsehistory>-->
+					<li>
+						<a href="#VItemDetail/${itemOrgId}_${style}">
+							<div class="cp_img" style="background-image: url(${item.photoSrc})">
+								<div class="cp_desc">
+									<div class="cp_price">$ ${item.sellingPrice}<!--<_originPrice>--><span>$ ${item.originPrice}</span><!--</_originPrice>--></div>
+									<div class="cp_name">${item.itemDesc}</div>
+								</div>
+							</div>
+						</a>
+					</li>
+				<!--</repeat_browsehistory>-->
+				</#list>
+			</ul>
+		</div>
+	</section>
+<!--</_browsehistory>-->
+</#if>
+<#if hotsale1??>
+<!--<_hotsale1>-->
+	<section class="retail_new retail_collapse">
+		<h3><span>${languageMap.Recommend}</span></h3>
+		<div class="wrap">
+			<ul class="clearfix">
+				<#list hotsale1 as item>
+				<!--<repeat_hotsale1>-->
+					<li>
+						<a href="#VItemDetail/${itemOrgId}_${style}">
+							<div class="cp_img" style="background-image: url(${item.photoSrc})">
+								<div class="cp_desc">
+									<div class="cp_price">$ ${item.sellingPrice}<!--<_originPrice>--><span>$ ${item.originPrice}</span><!--</_originPrice>--></div>
+									<div class="cp_name">${item.itemDesc}</div>
+								</div>
+							</div>
+						</a>
+					</li>
+				<!--</repeat_hotsale1>-->
+				</#list>
+			</ul>
+		</div>
+	</section>
+<!--</_hotsale1>-->
+</#if>
+<#if hotsale2??>
+<!--<_hotsale2>-->
+	<section class="retail_new retail_collapse">
+		<h3><span>${languageMap.Recommend}</span></h3>
+		<div class="wrap">
+			<ul class="clearfix">
+				<#list hotsale2 as item>
+				<!--<repeat_hotsale2>-->
+					<li>
+						<a href="#VItemDetail/${itemOrgId}_${style}">
+							<div class="cp_img" style="background-image: url(${item.photoSrc})">
+								<div class="cp_desc">
+									<div class="cp_price">$ ${item.sellingPrice}<!--<_originPrice>--><span>$ ${item.originPrice}</span><!--</_originPrice>--></div>
+									<div class="cp_name">${item.itemDesc}</div>
+								</div>
+							</div>
+						</a>
+					</li>
+				<!--</repeat_hotsale2>-->
+				</#list>
+			</ul>
+		</div>
+	</section>
+<!--</_hotsale2>-->
+</#if>
+<#if newarrival??>
+<!--<_newarrival>-->
+<section class="retail_new retail_collapse">
+	<h3><span>${languageMap.NewArrival}</span></h3>
+	<div class="wrap">
+		<ul class="clearfix">
+			<#list newarrival as item>
+			<!--<repeat_newarrival>-->
+				<li>
+					<a href="#VItemDetail/${itemOrgId}_${style}">
+						<div class="cp_img" style="background-image: url(${item.photoSrc})">
+							<div class="cp_desc">
+								<div class="cp_price">$ ${item.sellingPrice}<!--<_originPrice>--><span>$ ${item.originPrice}</span><!--</_originPrice>--></div>
+								<div class="cp_name">${item.itemDesc}</div>
+							</div>
+						</div>
+					</a>
+				</li>
+			<!--</repeat_newarrival>-->
+			</#list>
+		</ul>
+	</div>
+</section>
+<!--</_newarrival>-->
+</#if>
+
+
+
+
+<div id="stock_dialog" class="stock_dialog" style="display: none; ">
+	<div class="stock_hdr c-bg-primary">${languageMap.STORAGE}<button id="stock-close" class="stock_close c-bg-primary"></button></div>
+	<div class="stock_con">
+		<section id="stock-form">
+			<div class="stock">
+				<p>
+					<button id="store-zone-btn" class="c-primary">${languageMap.SelectStoreZone}<i></i></button>
+				</p>
+				<div class="selStore" id="selStore">
+					<ul style="overflow: hidden;">
+						<li><label class="select-all" style="text-align: center;">${languageMap.SelectAll}</label></li>
+						<#if storeList??>
+						<!--<_storeList>-->
+							<#list storeList as item>
+							<!--<repeat_storeList>-->
+								<li><input id="sc_${idx}" class="curr" name="rb-store" type="checkbox" value="${item.storecode}">
+									<label>${item.storename} (${item.storecode})</label></li>
+							<!--</repeat_storeList>-->
+							</#list>
+						<!--</_storeList>-->
+						</#if>
+					</ul>
+				</div>
+				<p>
+					<input id="style" class="itemcode" type="text" placeholder="${languageMap.ItemCode}" style="text-transform: uppercase" /><button id="scan-btn" class="c-btn-primary">${languageMap.Scan}</button>
+				</p>
+			</div>
+		</section>
+	</div>
+	<div class="stock_ftr c-bg-primary"><button id="go-btn" class="c-btn-primary">${languageMap.CHECK}</button></div>
+</div>
+<div class="tc_UserMsg" id="tc_UserMsg">
+	<p class="tc_UserMsg_h c-bg-primary"><span id="UserMsg_title"></span><button id="UserMsg_close" class="UserMsg_close c-bg-primary"></button></p>
+	<div class="selStorePref" id="selStorePref" style="display: none; height: 2.6rem;">
+		<ul></ul>
+	</div>
+	<p class="tc_UserMsg_f c-bg-primary"><button id="UserMsg_confirm" class="c-bg-primary">${languageMap.Confirm}</button></p>
+</div>
+<script>
+    <#include"../js/home.js" />
+</script>

@@ -1,0 +1,49 @@
+#ext-viewport .x-layout-card-item{background: #f5f5f5;}
+.con_person{ width: 100%; height: auto; background: #fff; overflow: hidden;}
+.con_person .head{ position: relative; width: 100%; height: auto; padding: .3rem 0; overflow: hidden; /*background:url({&shophelper/resource/icon/person_bg.jpg&}) no-repeat; background-size:100% 100%;*/ }
+.con_person .head dl{ width: 2rem; height: 2.8rem; overflow: hidden; margin: 0 auto; }
+.head-img{ float: left; width: 2rem; height: 2rem; margin-right: .16rem; text-align: center; background-color: #fff; overflow: hidden; border-radius: 50%; }
+.head-img img{ width:100%; height:100%;}
+.con_person .head dl dd{ padding-top: 2.2rem;}
+.con_person .head p{ color: #fff; font-size: .28rem; padding: .08rem 0 .04rem; text-align: center; }
+.con_person .head a{position: absolute;line-height: .4rem;height: .4rem; right: .16rem;  top: 0; bottom:0; margin: auto; padding: .2rem; color: #FFFFFF; background: url(${templateUrl}/shophelper/resource/icon/ico49.png) no-repeat right center; background-size: .12rem auto;}
+.con_person .nav{ width:100%; height:.76rem; padding: .2rem 0; border-bottom: 1px solid #d2d2d2;}
+.con_person .nav ul li{ position:relative; float:left; width:25%; height:auto; font-size:.2rem; line-height:.34rem; color: #707070; text-align:center;}
+.con_person .nav ul li img{ width: .4rem;}
+.con_person .nav ul li em{position: absolute; width: .12rem; height: .12rem; border-radius: .06rem;  top: -5%; right: 27%;}
+.con_person .nav ul li a{display:block;color: #707070;}
+.con_person_list{ width: 100%; height: auto; overflow: hidden;}
+.con_person_list li{ width: 100%; line-height: .32rem; padding: .04rem 0; font-size: .2rem; color: #747373; border-bottom: 1px solid #d2d2d2; background: url(${templateUrl}/shophelper/resource/icon/arr-right.png) no-repeat right .3rem center; background-size: .15rem auto;}
+.con_person_list img{width: .34rem; vertical-align: bottom; margin-right: .08rem;}
+.con_person_list li span{ float: right; padding-right: .2rem; font-size: .16rem; color: #a19e9e;}
+.con_person_list li a{display: block;padding: .2rem 5%; color: #747373;}
+.con_person01{ width: 100%; border-bottom: 1px solid #d2d2d2; height: auto; overflow: hidden;}
+.con_person01 li{ width: 49%; float: left;line-height:.6rem;padding: .12rem 0; color: #777; font-size: .22rem; border-left: 1px solid #d2d2d2; text-align: center;}
+.con_person01 li>a{display:block}
+.con_person01 li:first-child{ border-left: none;}
+/* .con_person_list li:nth-child(2) img{ width: 1.4rem; height: 1.4rem; vertical-align: top; margin-left: .2rem;} */
+.btn-big{ margin: .5rem auto .3rem;}
+.con_person_btn_list {overflow: hidden; text-align: center; background: #f5f5f5;}
+.con_person_btn {display: inline-block; margin-top: .4rem; font-size: .24rem; width: 90%; color: #fff; line-height: .6rem; border-radius: .08rem; box-sizing: border-box;}
+.staffLogout {background: url(${templateUrl}/shophelper/resource/icon/logout.png) no-repeat center center; background-size: .4rem auto;}
+.x-body.x-scroll-view {background: rgb(237, 237, 237);}
+
+.dialog-wrapper {width: 80%; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto;}
+.dialog-wrapper.m-popup-container {border-radius: 0;}
+.dialog-wrapper .hdr{height: .9rem; line-height: .9rem; width: 100%; background: #000; text-align: center; color: #fff; font-size: .3rem; font-weight: 500;}
+.dialog-wrapper .con {background: #fff;}
+.dialog-wrapper .ftr{background: #000; height: .9rem; line-height: .9rem; width: 100%; position: absolute; bottom: 0; text-align: center;}
+.dialog-wrapper .close-btn {position: absolute;right: 0;width: .9rem; height: .9rem; background: #000000 url(${templateUrl}/shophelper/resource/icon/close.png) no-repeat center center;}
+.dialog-wrapper .done-btn {line-height: .9rem; width: 100%; font-size: .3rem; font-weight: 500; box-sizing: border-box; border: 1px solid #000;}
+
+.dialog-wrapper div p{ display: flex; display: -webkit-flex; width: 100%; height: .7rem; line-height: .5rem; margin-bottom: .2rem; overflow: hidden;}
+.dialog-wrapper p input{    width: 100%; padding: 0 .3rem; display: block; background: #fff; font-size: .3rem; border: 1px solid #000; border-radius: 0; color: #000;}
+.dialog-wrapper p input.g-ipt{padding-left: .2rem;}
+.dialog-wrapper button{font-size: .3rem; color: #fff; background: #000000; }
+
+
+#void-input-dialog {height: 4rem;}
+#void-input-dialog .con{padding: .7rem .5rem;}
+/*#void-input-dialog .scan-btn {width: 2rem;}*/
+#void-input-dialog .scan-btn {display:none;}
+/*#void-input-dialog .close-btn{display:none;}*/

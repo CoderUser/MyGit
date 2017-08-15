@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html manifest="cache.appcache" lang="en-US" style="font-size: 12.9375px;">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>科传商场租户自助平台</title>
+		<link rel="stylesheet" href="../CSS/app.css" />
+		<link rel="stylesheet" href="../CSS/main.css" />
+		<link rel="stylesheet" href="../CSS/default.css" />
+		<link rel="stylesheet" href="../CSS/salessubmits.css" />
+	</head>
+
+	<body>
+		<ul class="clear sales-info gradient-bg">
+			<li><label><span>店铺号</span><select id="storelist"></select></label></li>
+			<li><label><span>收银机号</span>
+				<select id="tillids">
+					<option value="00">00</option>
+					<option value="01">01</option>
+					<option value="02">02</option>
+					<option value="03">03</option>
+					<option value="04">04</option>
+					<option value="05">05</option>
+					<option value="06">06</option>
+					<option value="07">07</option>
+					<option value="08">08</option>
+					<option value="09">09</option>
+					<option value="10">10</option>
+				</select></label></li>
+			<li><label><span>交易日期</span><input id="txdate" class="datepicker" type="text" readonly></label></li>
+			<li><label><span>参考单号</span><input id="refdocno" type="text"></label></li>
+			<li><label>
+		<span>商品号</span>
+		<select id="plulist">
+			<!--<_pluList>
+		 	<repeat_pluList>
+		 		<option value="{[itemCode]}">{[itemDesc]}({[itemCode]})</option>
+		 	</repeat_pluList>
+			</_pluList>-->
+			<option value="NHW00000401">惠山泥人工坊(NHW00000401)</option>         
+			<option value="011901">011901测试货品(011901)</option>
+		</select>
+		</label>
+			</li>
+			<!--<li><label><span>[$TxQty$]</span><input id="transqty" type="number" pattern="\d*" value="1"/></label></li>
+	<li><label><span>[$TxCount$]</span><input id="transcount" type="number" pattern="\d*" value="1"/></label></li>-->
+			<li><label><span>交易数量</span><input id="transqty" class="number_input" type="text" readonly value="1"/></label></li>
+			<li><label><span>交易笔数</span><input id="transcount" class="number_input" type="text" readonly value="1"/></label></li>
+		</ul>
+
+		<div class="sales-details gradient-bg">
+			<p>收款明细<em>(RMB)</em><span>总金额: <em id="totalamt" class="txt-color">0.00</em></span></p>
+			<!--<_tenderList>
+				<ul id="tenderlist">
+					<repeat_tenderList>
+						<li>-->
+							<!--<label><span>{[tenderDesc]}</span><input class="tender_input" type="number" pattern="\d*" placeholder="0.00" data-tendercode="{[tenderCode]}" data-tendertype="{[tenderType]}"/></label><span class="tender_total" data-tendercode="{[tenderCode]}">0.00</span>-->
+							<!--<label><span>{[tenderDesc]}</span><input class="tender_input number_input" type="text" readonly placeholder="0.00" data-tendercode="{[tenderCode]}" data-tendertype="{[tenderType]}"/></label><span class="tender_total" data-tendercode="{[tenderCode]}">0.00</span>
+						</li>
+					</repeat_tenderList>
+				</ul>
+			</_tenderList>-->
+			<ul id="tenderlist">
+				<li><label><span>现金</span><input class="tender_input number_input" type="text" readonly="" placeholder="0.00" data-tendercode="CH" data-tendertype="0"></label><span class="tender_total" data-tendercode="CH">0.00</span> </li>
+				<li><label><span>国内银行卡</span><input class="tender_input number_input" type="text" readonly="" placeholder="0.00" data-tendercode="T1" data-tendertype="19"></label><span class="tender_total" data-tendercode="T1">0.00</span> </li>
+				<li><label><span>微信</span><input class="tender_input number_input" type="text" readonly="" placeholder="0.00" data-tendercode="T2" data-tendertype="24"></label><span class="tender_total" data-tendercode="T2">0.00</span> </li>
+				<li><label><span>支付宝</span><input class="tender_input number_input" type="text" readonly="" placeholder="0.00" data-tendercode="T3" data-tendertype="24"></label><span class="tender_total" data-tendercode="T3">0.00</span> </li>
+				<li><label><span>离线银行卡</span><input class="tender_input number_input" type="text" readonly="" placeholder="0.00" data-tendercode="T4" data-tendertype="10"></label><span class="tender_total" data-tendercode="T4">0.00</span> </li>
+				<li><label><span>离线移动支付</span><input class="tender_input number_input" type="text" readonly="" placeholder="0.00" data-tendercode="T5" data-tendertype="0"></label><span class="tender_total" data-tendercode="T5">0.00</span> </li>
+				<li><label><span>一卡通</span><input class="tender_input number_input" type="text" readonly="" placeholder="0.00" data-tendercode="T6" data-tendertype="19"></label><span class="tender_total" data-tendercode="T6">0.00</span> </li>
+				<li><label><span>离线一卡通</span><input class="tender_input number_input" type="text" readonly="" placeholder="0.00" data-tendercode="T7" data-tendertype="0"></label><span class="tender_total" data-tendercode="T7">0.00</span> </li>
+			</ul>
+											
+		</div>
+		<button id="btn_confirm" class="round-btn">确定</button>
+	</body>
+
+</html>

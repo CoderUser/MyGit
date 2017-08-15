@@ -1,0 +1,44 @@
+<style>
+	<#include "../css/stockinfo.css"/>
+</style>
+<div id="list-left-bg">
+	<ul class="list-left" id="list-left">
+	</ul>
+</div>
+<div class="list-right" id="list-right">
+	<!-- <span id="search-icon"></span> -->
+
+	<div class="list-header">
+		<div class="photo-container"></div>
+		<div class="desc-container">
+			<div class="style-wrap">
+				<div id="style-desc"></div>
+				<div id="style-code"></div>
+				<div id="long-desc"></div>
+			</div>
+			<div class="list-control">
+				<div class="control-item">
+					<input type="checkbox" id="filter0" class="" checked/>
+					<label class="rb-label" for="filter0">
+						${languageMap.Filter0}
+					</label>
+				</div>
+				<div class="control-item">
+					<input type="checkbox" id="qohOnly" class="" checked/>
+					<label class="rb-label" for="qohOnly">
+						${languageMap.QohOnly}
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="list-con-bg">
+		<div id="list-con-wrapper">
+			<div id="list-con" class="list-right-con single-row clear"></div>
+			<div id="nomore">${languageMap.NoMoreRecords}...</div>
+		</div>
+	</div>
+</div>
+<script>
+    <#include"../js/stockinfo.js" />
+</script>

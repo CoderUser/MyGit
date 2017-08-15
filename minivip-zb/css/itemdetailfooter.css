@@ -1,0 +1,9 @@
+.a-footer{position: relative; width: 100%; padding-left: 2%; height: .9rem; text-align: center; background: #efefef; border-top: 1px solid #ddd;}
+.a-footer .mune{ width:16%; padding-top:.1rem;height:.8rem; text-align:center; position:relative;}
+.a-footer .mune p{position: relative; font-size:.18rem; color:#656565; padding-top: .4rem; background: no-repeat center top; background-size: .44rem auto;}
+.a-footer .mune img{ width:.45rem; height:.4rem; dispaly: inline;}
+.a-footer .mune-btn{ width: 32%; margin-right: 2%; text-align: center; margin-top: .1rem; height: .69rem; font-size:.25rem; line-height: .69rem; background: #ff8700; border-radius: .05rem; color: #fff;}
+.a-footer .badge { position: absolute; width: .1rem; height: .1rem; background: #f7292b; border-radius: 50%; right:20%; top: 15%;}
+.a-footer .mune .cart{background-image:url(${templateUrl}/resource/minivip/icon/empty.png); background-size: .4rem .36rem;}
+#item-like p:before{position: absolute; width: .44rem; height: .44rem; left: 50%; margin-left: -.26rem; top: 0; font-size: .36rem;}
+#item-like p span{font-family: 'Hiragino Sans GB', 'Microsoft YaHei', tahoma, arial, sans-serif;}

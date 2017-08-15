@@ -1,0 +1,23 @@
+.set-cashier p,
+.set-pwd p{width: 100%; padding: .26rem 5%; line-height: .38rem; border-bottom: 1px solid #d0dbdd; overflow: hidden;}
+.set-cashier p:last-child,
+.set-pwd p{border-bottom: none;}
+.set-cashier p span{float: right; color: #999;}
+.set-pwd p{background: url(../resource/icon/arr-right.png) no-repeat center right .3rem; background-size: .14rem auto;}
+.set-pwd p a{display: block;}
+.set-style{margin-bottom: .2rem;}
+.set-style p,
+.set-style li{line-height: .9rem; border-bottom: 1px solid #d0dbdd;}
+.set-style p{width: 100%; padding: 0 5%;}
+.set-style ul{width: 90%; margin: 0 auto;}
+.set-style li label{display: inline-block;  width: 100%; text-transform: capitalize;}
+.set-style li input{float: right;}
+.set-style li input[type=radio]{display: none;}
+.set-style li input[type=radio]:checked { margin-top: .2rem; display: block;}
+.set-style li span{display: inline-block; width: .4rem; height: .34rem; margin-right: .1rem; vertical-align: sub;}
+.set-style li:nth-child(1) span{background: #4cc1d3;}
+.set-style li:nth-child(2) span{background: #305872;}
+.set-style li:nth-child(3) span{background: #1aaa92;}
+.set-style li:nth-child(4) span{background: #3c3d3f;}
+.set-style li:last-child{border-bottom: none;}
+input.check {width: 11%;}

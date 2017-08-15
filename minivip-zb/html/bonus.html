@@ -1,0 +1,31 @@
+<html>
+<style><#include "../css/bonus.css" /></style>
+
+<div id="empty_item" hidden>
+	<img src="${templateUrl}/mobiletenant/resource/homemenu/empty.png"/>
+	<p>${languageMap.NoBonus}</p>
+</div>
+<!--
+<#list bonusList as item>
+-->
+	<div class="a-bonus-list">
+		<dl class="g-dis-flex">
+			<dt>${languageMap.UserCenter}：${UserCenter}<br/>${languageMap.BonusCenter}：{bonusCenter}</dt>
+			<dd><p>${languageMap.BonusBalance}：</p><p><em>${bonusBalance}</em><i>${languageMap.Unit}</i></p></dd>
+			<button class="show_btn">${languageMap.Detailed}</button>
+		</dl>
+
+		<ul class="a-balance-detail">
+
+			<li><span>${languageMap.ExpiredDate}</span><span>${languageMap.Bonus}</span></li>
+			<#list _balanceList as item>
+			<li><span>${item.expiredDate}</span><span class="bonus_num">${item.groupBonus}</span></li>
+			</#list>
+		</ul>
+	</div>
+<!--
+</#list>-->
+<script>
+    <#include "../js/bonus.js" />
+</script>
+</html>

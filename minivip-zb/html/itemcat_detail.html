@@ -1,0 +1,16 @@
+<#if itemList??>
+    <#list itemList as item>
+        <a href="#VItemDetail/${item.itemOrg}_${item.style}" class="a-item-container g-dis-flex">
+            <div class="a-photo-container"
+                 style="background-image:url(${templateUrl}/minivip/resource/icon/Photo.png)"></div>
+            <div class="a-desc-container">
+                <p>${item.Desc}</p>
+                <p>${item.currSign}<span class="g-new-price">${item.sellingPrice}</span>
+                    <#if originPrice?? && originPrice>
+                        <span class="g-old-price">${item.currSign}${item.originPrice}</span>
+                    </#if>
+                </p>
+            </div>
+        </a>
+    </#list>
+</#if>

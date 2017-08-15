@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <style>
+        td{
+            width: 50px;
+            height: 10px;
+        }
+    </style>
+    <script>
+        function Ajax(url,fnSucc,fnFaild) {
+            //1.创建ajax对象
+            if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                var oAjax = new XMLHttpRequest();
+                //创建 XMLHttpRequest 对象
+            }
+            else {// code for IE6, IE5
+                var oAjax = new ActiveXObject("Microsoft.XMLHTTP");
+                //老版本的 Internet Explorer （IE5 和 IE6）使用 ActiveX 对象：
+            }
+            //2.链接服务器（打开服务器的连接）
+            //open(方法，文件名，异步传输)
+            //open() 方法的 url 参数是服务器上文件的地址：该文件可以是任何类型的文件
+            oAjax.open('GET', url, true);
+            //编码格式，防止乱码
+            oAjax.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+            //xhr.setRequestHeader("Content-type", "application/json");
+
+            //3.发送
+            oAjax.send();
+            //4.接收返回
+            //当使用 async=true 时，请规定在响应处于 onreadystatechange 事件中的就绪状态时执行的函数：
+            oAjax.onreadystatechange = function () {
+                if (oAjax.readyState == 4) {
+                    if (oAjax.status == 200) {
+                        fnSucc(oAjax.responseText);//responseText 属性返回字符串形式的响应
+                    }
+                    else {
+                        fnFaild(oAjax.status);
+                    }
+                };
+            };
+        }
+    </script>
+</head>
+<body>
+<table id="peopleInfo">
+</table>
+<script src="../JS/ajax.js"></script>
+<script>
+    Ajax('test.txt?datetime=new Date.getTime',function(str){
+        console.log(str);
+        var people=JSON.parse(str);
+        console.log(people[0].name);
+        var html=""
+        html+='<tr><td>姓名</td> <td>年龄</td> <td>性别</td></tr>';
+        for(var i=0;i<3;i++){
+            html+='<tr><td>'+people[i].name+'</td> <td>'+people[i].age+'</td> <td>'+people[i].sex+'</td> </tr>';
+        }
+        var x=document.getElementById("peopleInfo");
+        x.innerHTML =html;
+        //方法二
+        //              var body = document.body;
+        //              var div = document.createElement("table");
+        // div.id = "mDiv";
+        //              body.appendChild(div);
+    },function(){
+        alert('失败了');
+    })
+</script>
+</body>
+</html>

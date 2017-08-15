@@ -1,0 +1,22 @@
+<tr>
+	<th>[$Store$]</th>
+	<th>[$Count$]</th>
+	<th>[$Qty$]</th>
+	<th>[$Amount$]</th>
+</tr>
+<_storeTotal>
+	<repeat_storeTotal>
+		<tr class="detail-btn" data-storecode="{[storecode]}">
+			<td>{[storecode]}</td>
+			<td>{[transCount]}</td>
+			<td>{[qty]}</td>
+			<td>{[amount]}</td>
+		</tr>
+	</repeat_storeTotal>
+</_storeTotal>
+<tr class="total">
+	<td>[$Total$]</td>
+	<td>{[totalTransCount]}</td>
+	<td>{[totalQty]}</td>
+	<td>{[totalAmount]}</td>
+</tr>

@@ -1,0 +1,88 @@
+<style><#include"../css/itemcat.css"/></style>
+
+<div id="left-scroller">
+	<div id="wrap">
+		<#if groupList??>
+			<#list groupList as item>
+				<dl>
+					<dt data-groupid=${item.groupId} data-groupvalue="${item.value}"><span>${item.desc}</span></dt>
+					<#if item.desc??>
+						<#list item.desc as desc>
+							<dd data-groupid=${desc.childGroupId} data-groupvalue="${desc.childValue}">${desc.childDesc}</dd>
+						</#list>
+					</#if>
+				</dl>
+			</#list>
+		</#if>
+	</div>
+</div>
+
+<div class="list-right" id="list-right">
+	<span id="search-icon"></span>
+	<ul class="list-right-filter" id="list-filter">
+		<li id="sort-new" style="display:none;" class="curr">${languageMap.New}</li>
+		<li id="sort-hot" style="display:none;">${languageMap.Hot}</li>
+		<li id="sort-price" style="display:none;">${languageMap.Price}</li>
+		<li id="role-tab">${languageMap.VipMode}</li> <!--客户模式-->
+		<li id="style-tab" class="row"></li>
+	</ul>
+	<div id="list-con-bg">
+		<div id="list-con-wrapper">
+			<div id="list-con" class="list-right-con columns role-staff clear"></div>
+			<div id="nomore">${languageMap.NoMoreRecords}...</div>
+		</div>
+	</div>
+</div>
+
+<div id="attr-select">
+	<div class="attr-itemimage"></div>
+	<div class="attr-itemwrap">
+		<div class="attr-itemcon">
+			<dl class="g-dis-flex">
+				<dd>
+					<div class="attr-itemdesc"></div>
+					<div><span class="attr-itemstyle"></span></div>
+					<div><b>$ <span class="attr-itempriceold"></span></b><b>$ <span class="attr-itemprice"></span></b><span class="attr-discount"></span></div>
+					<div><span class="attr-itemlongdesc"></span></div>
+				</dd>
+			</dl>
+			<div class="g-dis-flex attr-itemcolor-wrap"><span>${languageMap.Color}:</span><div class="attr-itemcolor" onclick="TApi.itemcat.doSelect(arguments[0], true)"></div></div>
+			<div class="g-dis-flex attr-itemsize-wrap"><span>${languageMap.Size}:</span><div class="attr-itemsize" onclick="TApi.itemcat.doSelect(arguments[0], false)"></div></div>
+			<div class="g-dis-flex">
+				<span>${languageMap.Count}:</span>
+				<div>
+					<span class="quantity-decrease" onclick="TApi.itemcat.qtyMinus(arguments[0])">-</span>
+					<input type="number" class="quantity" size="4" value=1>
+					<span class="quantity-increase" onclick="TApi.itemcat.qtyAdd(arguments[0])">+</span>
+				</div>
+			</div>
+		</div>
+		<button id="arrt-btn">${languageMap.AddToCart}</button>
+	</div>
+</div>
+
+
+<div id="search-dialog" class="dialog-wrapper" style="display:none;">
+	<div class="hdr">${languageMap.Search}<button class="close-btn"></button></div>
+	<div class="con">
+		<div>
+			<input id="search-ipt" class="g-search-ipt" type="text" placeholder="${languageMap.Keywords}" style="text-transform:uppercase" /><button id="scan-btn">${languageMap.Scan}</button>
+		</div>
+	</div>
+	<div class="ftr"><button class="done-btn">${languageMap.Apply}</button></div>
+</div>
+
+<div id="staff-login-dialog" class="dialog-wrapper" style="display:none;">
+	<div class="hdr">${languageMap.StaffLogin}<button class="close-btn"></button></div>
+	<div class="con">
+		<div>
+			<input class="staff-code-ipt" type="text" placeholder="${languageMap.StaffCode}" />
+		</div>
+		<div>
+			<input class="staff-pwd-ipt" type="password" placeholder="${languageMap.Password}" /><i class="passtab"></i>
+		</div>
+	</div>
+	<div class="ftr"><button class="done-btn">${languageMap.Unlock}</button></div>
+</div>
+
+<script><#include"../js/itemcat.js"/></script>

@@ -1,0 +1,38 @@
+<style><#include "/huamao/minivip/css/order.css"/></style>
+<div class="a-order">
+    <p class="bg-c4">${languageMap.RechargeMoney!'特惠工作日套餐一份'}<span class="g-fr">￥<em id="balance">50</em></span></p>
+    <p class="bg-c4">数量<span class="g-fr"><button type="button" class="a-btn-subtract bg-c2">-</button><em class="a-order-num bg-c2" id="">50</em><button type="button" class="a-btn-add bg-c2">+</button></span></p>
+    <p class="bg-c4">共计<span class="g-fr">￥<em>50</em></span></p>
+
+    <ul class="a-order-type">
+        <li class="bg-c4">
+            <label class="a-order-radio">
+                <p class="g-dis-flex">
+                    <span>${languageMap.CardPay!'会员卡支付'}</span>
+                    <span>${languageMap.Balance}余额：￥<em>999</em></span>
+                </p>
+                <input type="radio" name="pay-type" value="wechat" checked=""><i class="bg-c8 g-border bd-c5"></i>
+            </label>
+        </li>
+        <li class="bg-c4">
+            <label class="a-order-radio">
+                <p class="g-dis-flex">
+                    <span>${languageMap.WeChatPay}微信支付</span>
+                    <span>${languageMap.WeChatVersion}推荐安装微信5.0及以上版本的用户使用</span>
+                </p>
+                <input type="radio" name="pay-type" value="ali"><i class="bg-c8 bg-c8 g-border bd-c5"></i>
+            </label>
+        </li>
+        <li class="bg-c4">
+            <label class="a-order-radio">
+                <p class="g-dis-flex">
+                    <span>${languageMap.AliPay}支付宝</span>
+                    <span>${languageMap.AliVersion}推荐安装支付宝5.0及以上版本的用户使用</span>
+                </p>
+                <input type="radio" name="pay-type" value="ali"><i class="bg-c8 bg-c8 g-border bd-c5"></i>
+            </label>
+        </li>
+    </ul>
+    <button class="g-btn-full" id="btn-charge">${languageMap.ConfirmRecharge}确认支付 ¥<em id="btn-amount">50</em></button>
+</div>
+<script><#include "/huamao/minivip/js/order.js"/></script>

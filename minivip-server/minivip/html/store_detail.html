@@ -1,0 +1,103 @@
+<style><#include "/huamao/minivip/css/store_detail.css"/></style>
+
+<div class="a-store-detail-head bg-c4 mb-div">
+	<div class="brand-img"><img src="${properties.fileServerUrl}file/get?fileid=${tenantPhotoId}" /></div>
+	<div class="a-store-detail-content">
+		<div class="store-name g-dis-flex">
+			<span>${brandName}</span>
+			<div class="star-dark">
+				<span class="star-light" id="star-light" data-index="${rating}"></span>
+			</div>
+		</div>
+		<p class="store-phone">${telephone}</p>
+		<p class="store-addr">${location}${languageMap.Store}</p>
+		<p class="store-time">${openingHrs}</p>
+	</div>
+</div>
+
+<div class="a-store-desc mb-div">
+	<h3 class="bg-c4">${languageMap.BrandProfile}</h3>
+	<p class="bg-c4">${desci}</p>
+</div>
+
+<div class="a-store-detail-recommend mb-div" >
+	<h3 class="bg-c4">${languageMap.MerchantRecommend}</h3>
+	<div class="bg-c4" id="recommend-wrapper">
+		<ul id="recommend-scroller" class="g-dis-flex">
+			<li class="bd-c3">
+				<img src="http://172.31.1.177:1841/test/img/coupon.jpg">
+				<p>狮子头</p>
+			</li>
+			<li class="bd-c3">
+				<img src="http://172.31.1.177:1841/test/img/coupon.jpg">
+				<p>狮子头</p>
+			</li>
+			<li class="bd-c3">
+				<img src="http://172.31.1.177:1841/test/img/coupon.jpg">
+				<p>狮子头</p>
+			</li>
+			<li class="bd-c3">
+				<img src="http://172.31.1.177:1841/test/img/coupon.jpg">
+				<p>狮子头</p>
+			</li>
+			<li class="bd-c3">
+				<img src="http://172.31.1.177:1841/test/img/coupon.jpg">
+				<p>狮子头</p>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div class="a-store-detail-group bg-c4 mb-div">
+	<h3>${languageMap.AboutGroup}</h3>
+	<span class="bg-c8 a-store-detail-line"></span>
+	<a href="#VGroup-0HQ014">
+		<dl class="g-dis-flex">
+			<dt>
+				<img src="http://rndtest.tech-trans.com.cn/TT-WS/file/get?fileid=947AD6221897BED0F9A69A98B1680A06" >
+			</dt>
+			<dd>
+				<p>一哥豆捞</p>
+				<p>沙爹火锅团购</p>
+				<p><span class="txt-c2">¥150</span><span class="txt-c1">¥300</span></p>
+			</dd>
+		</dl>
+	</a>
+</div>
+
+<div class="a-store-comment mb-div">
+	<a class="bg-c4" href="#VCommentList">${languageMap.Comment}<span class="g-fr">${languageMap.AllComment}</span></a>
+	<ul class="a-comment-list">
+		<li class="bg-c4">
+			<h3>小黑</h3>
+			<p>在一楼电梯旁边，店面很大，一看就能看见，服务态度热情亲切。东西一如既往地好在一楼电梯旁边，店面很大，一看就能看见，服务态度热情亲切。东西一如既往地好在一楼电梯旁边，店面很大，一看就能看见，服务态度热情亲切。东西一如既往地好在一楼电梯旁边，店面很大，一看就能看见，服务态度热情亲切。东西一如既往地好在一楼电梯旁边，店面很大，一看就能看见，服务态度热情亲切。东西一如既往地好~</p>
+		</li>
+		<li class="bg-c4">
+			<h3>小黑</h3>
+			<p>在一楼电梯旁边，店面很大，一看就能看见，服务态度热情亲切。东西一如既往地好~</p>
+		</li>
+	</ul>
+</div>
+
+<ul class="a-store-detail-footer g-dis-flex bg-c4">
+	<li>
+		<a href="#VComment">${languageMap.Evaulate}</a>
+	</li>
+	<li>
+		<a href="javascript:;">${languageMap.Address}</a>
+	</li>
+	<li>
+		<a href="javascript:;">${languageMap.Collect}</a>
+	</li>
+	<li>
+		<a href="javascript:;">${languageMap.Share}</a>
+	</li>
+</ul>
+
+<div class="a-recommend-popup" id="recommend-popup">
+	<img src="" id="popup-pic" />
+	<p class="bg-c1 txt-c1" id="popup-desc"></p>
+	<span id="popup-close"></span>
+</div>
+
+<script><#include "/huamao/minivip/js/store_detail.js"/></script>

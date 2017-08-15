@@ -1,0 +1,55 @@
+<style>
+	<#include "../css/evaluate.css"/>
+</style>
+<section class="evaluate">
+	<dl>
+		<dt><a><img src="${photoSrc}"></a></dt>
+		<dd>
+			<p>${itemDesc}</p>
+			<p>
+				<!--<_itemColor>-->${languageMap.Color}：${itemColor}<!--</_itemColor> -->
+				<!--<_itemSize>-->${languageMap.Size}：${itemSize}<!--</_itemSize>-->
+			</p>
+			<p>${languageMap.Qty}：${qty}</p>
+			<p>${price}</p>
+		</dd>
+	</dl>
+	
+	<div class="H13"></div>
+	
+	<div class="evaluate_input">
+		<textarea id="input_comment" placeholder="${languageMap.InputComment}" rows="4" maxlength="200"></textarea>
+		<ul id="img_prew">
+			<li><span><input type="file" id="file-img"></span></li>
+		</ul>
+	</div>
+	
+	<div class="H13"></div>
+	
+	<div class="evaluate_star">
+		<div class="star_num">
+			<span>${languageMap.MatchDsc}</span>
+			<ul><li></li><li></li><li></li><li></li><li></li></ul>
+		</div>
+		<div class="star_num">
+			<span>${languageMap.SellerAttitude}</span>
+			<ul><li></li><li></li><li></li><li></li><li></li></ul>
+		</div>
+		<div class="star_num">
+			<span>${languageMap.DeliverySpeed}</span>
+			<ul><li></li><li></li><li></li><li></li><li></li></ul>
+		</div>
+		<div class="star_num">
+			<span>${languageMap.LtsService}</span>
+			<ul><li></li><li></li><li></li><li></li><li></li></ul>
+		</div>
+	</div>
+	
+	<div class="evaluate_submit">
+		<span><input class="check" type="checkbox" name="" id="Anonymous" value="" /><label for="Anonymous">${languageMap.Anonymous}</label></span>
+		<button>${languageMap.Publish}</button>
+	</div>
+</section>
+<script>
+    <#include"../js/evaluate.js" />
+</script>

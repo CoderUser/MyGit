@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;  minimum-scale=1.0; maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <title>华茂</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .blue-slide {
+            background: #4390EE;
+        }
+        .red-slide {
+            background: #CA4040;
+        }
+        .orange-slide {
+            background: #FF8604;
+        }
+        .swiper-slide {
+            line-height: 50px;
+            color: #fff;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+
+    <style type="text/css">
+
+        body, p, input, h1, h2,  h3, h4, h5, h6, ul, li, dl, dt, dd, form { margin: 0; padding: 0; list-style: none; vertical-align: middle; font-weight:normal; }
+        img { border:0; margin: 0; padding: 0;   }
+        body { color: #000; -webkit-user-select: none; -webkit-text-size-adjust: none; font:normal 16px/200% "微软雅黑", helvetica, arial; text-align:left;   }
+        header, section, footer { display: block; margin: 0; padding: 0 }
+        a{text-decoration:none;color:#000;}
+
+
+
+        #content{ padding:10px 0; background:#fff;  }
+        .path{ padding:0 0 5px 5px;   }
+
+        .picScroll{ margin:10px auto; text-align:center;background-color:#fff;  }
+        .picScroll .bd ul{ width:100%;  float:left; padding-top:10px; padding-bottom:10px  }
+        .picScroll .bd li{ width:25%; height:90px; float:left; font-size:14px; text-align:center;  }
+        .picScroll .bd li a{-webkit-tap-highlight-color:rgba(0, 0, 0, 0); }
+        .picScroll .bd li img{ width:50px; height:50px;  background:url(images/loading.gif) #fff center center no-repeat;  }
+
+
+        .picScroll .hd{ height:20px; line-height:20px; border-bottom:0px solid #067CDF; background:#f6f6f6;   overflow:hidden; text-align:left;  padding:0 10px;  }
+        .picScroll .hd ul{ float:right; padding-top:5px; padding-right:46%  }
+        .picScroll .hd li{ float:left; width:8px; height:8px; background:#D0D0D0; margin:0 5px; overflow:hidden;
+            -webkit-border-radius:8px; -moz-border-radius:8px; border-radius:8px; font-size:0px;
+        }
+        .picScroll .hd .on{ background:#DF7106;  }
+        .picScroll .prev,.picScroll .next{ display:block; float:right;  width:18px; height:18px; background:url(images/pisScrollIcons.gif) -6px -7px no-repeat; overflow:hidden; margin:11px 5px 0 5px;  }
+        .picScroll .next{ background-position:-34px -7px; }
+        .picScroll .prevStop{ background-position:-6px -40px; }
+        .picScroll .nextStop{ background-position:-34px -40px; }
+    </style>
+</head>
+<body>
+<div id="nav-toolbar" class="indexHead">
+    <a class="left" href="#"><img src="../image/saoyisao.png"></a>
+    <h1>华茂中心</h1>
+    <!--信息icon-->
+    <a class="nav" id="indexNav"><img src="../image/info.png" alt="">
+    </a>
+
+</div>
+
+
+<!--banner-->
+<div class="indexhd">
+    <div id="turnPic" class="turnPic" style="visibility: visible;">
+        <ul class="turnPicList">
+            <li data-index="0">
+                <a href="#">
+                    <img style="display: block;" class="tempHide" src="http://a.10086.cn/mmfs/image/29227/29227455.jpg">
+                </a>
+            </li>
+            <li data-index="1">
+                <a href="#">
+                    <img style="display: block;" class="tempHide" src="http://a.10086.cn/mmfs/image/29227/29227457.jpg">
+                </a>
+            </li>
+            <li data-index="2">
+                <a href="#">
+                    <img style="display: block;" class="tempHide" src="http://a.10086.cn/mmfs/image/29225/29225153.jpg">
+                </a>
+            </li>
+        </ul>
+        <div id="turnDot" class="turnDot">
+            <ul>
+                <li class="active" title="第1页"></li>
+                <li title="第2页" class=""></li>
+                <li title="第3页" class=""></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--swiper-->
+<div id="picScroll" class="picScroll">
+    <div class="tempWrap">
+        <div class="bd">
+            <ul>
+                <li><a href="#"><img src="http://pic.kuaizhan.com/g1/M01/10/48/CgpQU1T27HmAbXoIAAAhKIGJKqQ5027112"><br>菜单</a></li>
+                <li><a href="#"><img src="http://pic.kuaizhan.com/g1/M00/10/48/wKjmqVT27HmAEGuGAAAezWVttcE6919591"><br>菜单</a></li>
+                <li><a href="#"><img src="http://pic.kuaizhan.com/g1/M01/10/48/wKjmqVT27HmAIVVCAAAgRbHCMz00202186"><br>菜单</a></li>
+                <li><a href="#"><img src="http://pic.kuaizhan.com/g1/M01/10/48/CgpQU1T27HmAXrcsAAAvgk9tD883780138"><br>菜单</a></li>
+
+            </ul>
+
+            <ul>
+                <li><a href="#"><img src="http://pic.kuaizhan.com/g1/M01/10/48/CgpQU1T27HmAbXoIAAAhKIGJKqQ5027112"><br>菜单</a></li>
+                <li><a href="#"><img src="http://pic.kuaizhan.com/g1/M00/10/48/wKjmqVT27HmAEGuGAAAezWVttcE6919591"><br>菜单</a></li>
+                <li><a href="#"><img src="http://pic.kuaizhan.com/g1/M01/10/48/wKjmqVT27HmAIVVCAAAgRbHCMz00202186"><br>菜单</a></li>
+                <li><a href="#"><img src="http://pic.kuaizhan.com/g1/M01/10/48/CgpQU1T27HmAXrcsAAAvgk9tD883780138"><br>菜单</a></li>
+
+            </ul>
+            <ul>
+                <li><a href="#"><img src="http://pic.kuaizhan.com/g1/M01/10/48/CgpQU1T27HmAbXoIAAAhKIGJKqQ5027112"><br>菜单</a></li>
+                <li><a href="#"><img src="http://pic.kuaizhan.com/g1/M00/10/48/wKjmqVT27HmAEGuGAAAezWVttcE6919591"><br>菜单</a></li>
+                <li><a href="#"><img src="http://pic.kuaizhan.com/g1/M01/10/48/wKjmqVT27HmAIVVCAAAgRbHCMz00202186"><br>菜单</a></li>
+                <li><a href="#"><img src="http://pic.kuaizhan.com/g1/M01/10/48/CgpQU1T27HmAXrcsAAAvgk9tD883780138"><br>菜单</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="hd">
+
+        <ul><li class="on">1</li><li class="">2</li></ul>
+
+        <h4></h4>
+    </div>
+</div>
+
+<!--group-->
+
+<div id="guessLike" class="guess-like">
+    <dl class="list" style="opacity: 1;">
+        <dd>
+            <dl class="list" style="opacity: 1;">
+                <dt>猜你喜欢</dt>
+                <dd>
+                    <a href="#" class="react ">
+                        <div class="dealcard">
+                            <div class="dealcard-img imgbox" style="background: none;">
+                                <img src="../image/800033_HSJ1080H.jpg" style="width: 100%;">
+                            </div>
+                            <div class="dealcard-block-right">
+                                <div class="dealcard-brand single-line">37 Lotus Gaeden</div>
+                                <div class="title text-block">特惠组合曲奇礼盒一份</div>
+                                <div class="price">
+                                    <span class="strong">￥50</span>
+                                    <span class="strong-color">元</span>
+                                    <del>￥68</del>
+                                    <!-- <span class="line-right">
+                                            已售15513917
+                                    </span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </dd>
+
+                <dd>
+                    <a href="#" class="react ">
+                        <div class="dealcard">
+                            <div class="dealcard-img imgbox" style="background: none;">
+                                <img src="../image/800033_HSJ1080H.jpg" style="width: 100%;">
+                            </div>
+                            <div class="dealcard-block-right">
+                                <div class="dealcard-brand single-line">37 Lotus Gaeden</div>
+                                <div class="title text-block">特惠组合曲奇礼盒一份</div>
+                                <div class="price">
+                                    <span class="strong">￥50</span>
+                                    <span class="strong-color">元</span>
+                                    <del>￥68</del>
+                                    <!-- <span class="line-right">
+                                            已售15513917
+                                    </span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </dd>
+
+            </dl>
+        </dd>
+
+    </dl>
+
+</div>
+<!--store-->
+<div class="store">
+    <p class="list-txt">商户推荐</p>
+    <div class="groupList">
+        <a>
+            <img class="leftImg" src="../image/800033_HSJ1080H.jpg">
+            <div class="group-txt">
+                <p>FENDI</p>
+                <p>020-00000000</p>
+                <p>020-00000000</p>
+                <p>10:00am-10:00pm</p>
+            </div>
+        </a>
+    </div>
+    <div class="groupList">
+        <a>
+            <img class="leftImg" src="../image/800033_HSJ1080H.jpg">
+            <div class="group-txt">
+                <p>FENDI</p>
+                <p>020-00000000</p>
+                <p>020-00000000</p>
+                <p>10:00am-10:00pm</p>
+            </div>
+        </a>
+    </div>
+</div>
+<!--底部-->
+<div class="footer">
+    <ul>
+        <li><a class="home" href="#">首页</a></li>
+        <li><a class="activity" href="#">商城活动</a></li>
+        <li><a class="guide" href="#">商城导购</a></li>
+        <li><a class="mine" href="#">我的</a></li>
+    </ul>
+</div>
+
+
+<script src="../js/swipe.js"></script>
+<script src="../js/util.js"></script>
+<script src="../js/index.js"></script>
+<script src="../js/Application.js"></script>
+<script src="../util/Mt.js"></script>
+
+<script type="text/javascript">
+    TouchSlide({
+        slideCell:"#picScroll",
+        titCell:".hd ul",
+        autoPage:true,
+        pnLoop:"false",
+        switchLoad:"_src"
+    });
+</script>
+</body>
+</html>

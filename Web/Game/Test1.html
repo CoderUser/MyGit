@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>W3Cschool教程(w3cschool.cn)</title>
+    <style>
+        .right
+        {
+            float:right;
+            width:300px;
+            background-color:#b0e0e6;
+        }
+        
+    </style>
+    <script>
+        function  myFunc() {
+            alert('11111111');
+        }
+
+    </script>
+
+    <script src="testjs.js"></script>
+
+</head>
+
+<body>
+<div class="right" onclick="myFunc()">
+    <p id="demo" class="left">In my younger and moreince.</p>
+    <p>'Whenever you feel like cr'</p>
+</div>
+<canvas id="stockGraph" width="150" height="150">
+    current stock price: $3.15 +0.15
+</canvas>
+
+<canvas id="clock" width="150" height="150">
+    <img src="images/clock.png" width="150" height="150" alt=""/>
+</canvas>
+<script>
+    var a = document.querySelector("#demo");
+    console.log(a);
+    document.getElementsByClassName("left")[0].innerHTML = "Hello!";
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<style>
+	<#include "../css/search.css"/>
+</style>
+<div class="search-wrap">
+	<div id="search-wrapper">
+		<div class="w-search">
+			<button id="scan-btn">&nbsp;</button>
+			<div class="g-search">
+				<input id="search-ipt" class="g-search-ipt" type="search" placeholder="${languageMap.PleaseInputKeyword}">
+				<button id="search-btn" class="g-search-btn"></button>
+			</div>
+		</div>
+	</div>
+	<div id="list-wrapper">
+		<div>
+			<div id="list-con" class="list-right-con g-clearfix single-row">
+			</div>
+			<div id="nomore">${languageMap.NoMoreRecord}</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div id="attr-select">
+	<div class="attr-itemimage"></div>
+	<div class="attr-itemwrap">
+		<div class="attr-itemcon">
+			<dl class="g-dis-flex">
+				<!--<dt class="attr-itemimage"></dt>-->
+				<dd>
+					<div class="attr-itemdesc"></div>
+					<div><span class="attr-itemstyle"></span></div>
+					<div><b>$ <span class="attr-itempriceold"></span></b><b>$ <span class="attr-itemprice"></span></b><span class="attr-discount"></span></div>
+					<div><span class="attr-itemlongdesc"></span></div>
+				</dd>
+			</dl>
+			<div class="g-dis-flex attr-itemcolor-wrap"><span>${languageMap.Color}:</span><div class="attr-itemcolor" onclick="TApi.search.doSelect(arguments[0], true)"></div></div>
+			<div class="g-dis-flex attr-itemsize-wrap"><span>${languageMap.Size}:</span><div class="attr-itemsize" onclick="TApi.search.doSelect(arguments[0], false)"></div></div>
+			<div class="g-dis-flex">
+				<span>${languageMap.Count}:</span>
+				<div>
+					<span class="quantity-decrease" onclick="TApi.search.qtyMinus(arguments[0])">-</span>
+					<input type="number" class="quantity" size="4" value=1>
+					<span class="quantity-increase" onclick="TApi.search.qtyAdd(arguments[0])">+</span>
+				</div>
+			</div>
+		</div>
+		<button id="arrt-btn">${languageMap.AddToCart}</button>
+	</div>
+</div>
+<script>
+    <#include"../js/search.js" />
+</script>

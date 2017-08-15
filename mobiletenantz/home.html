@@ -1,0 +1,53 @@
+<style>
+	.banner{ width:100%; max-height:2rem; min-height:2rem; overflow: hidden;}
+	.banner img{width:100%; max-height:2rem; min-height:2rem;}
+	/*navigation*/
+	.home-list{ float:left; padding:0 1%; padding-top: .3rem; height:auto; box-sizing: border-box;}
+	.home-list li{ width:33.33%; float:left; padding-bottom: .6rem; background: url({&mobiletenant/icon/shadow.png&}) no-repeat center bottom -.2rem; background-size: auto 100%;}
+	.home-list li a{ display:block; width:1.6rem; height:1.6rem; margin:0 auto; background-repeat:no-repeat; background-position:center .3rem; background-size:.6rem auto; border-radius:100%; border:3px solid #b2dde4; color:#fff; font-size:.2rem; text-align:center; padding-top:1rem; box-sizing:border-box; }
+	.home-list li:nth-child(1) a, .home-list:nth-child(2) li:nth-child(9) a{ background-color:#c9aa6f; }
+	.home-list li:nth-child(2) a, .home-list:nth-child(2) li:nth-child(6) a{ background-color:#22ceff; }
+	.home-list li:nth-child(3) a, .home-list:nth-child(2) li:nth-child(5) a{ background-color:#7877ff; }
+	.home-list li:nth-child(4) a, .home-list:nth-child(2) li:nth-child(7) a{ background-color:#4596d5; }
+	.home-list li:nth-child(5) a, .home-list:nth-child(2) li:nth-child(8) a{ background-color:#08aaac; }
+	.home-list li:nth-child(6) a, .home-list:nth-child(2) li:nth-child(3) a{ background-color:#de884d; }
+	.home-list li:nth-child(7) a, .home-list:nth-child(2) li:nth-child(1) a{ background-color:#0cc44c; }
+	.home-list li:nth-child(8) a, .home-list:nth-child(2) li:nth-child(4) a{ background-color:#cf5c9f; }
+	.home-list li:nth-child(9) a, .home-list:nth-child(2) li:nth-child(2) a{ background-color:#82624d; }
+	.home-list li a.gray-bg{position: relative; background-color: #999 !important; background-image: none; color: #ddd; border-color: rgba(255, 255, 255, .3); opacity: .8;}
+	.home-list li a.gray-bg img{position: absolute; width: .6rem; height: auto; top: .3rem; left: 50%; margin-left: -.3rem; opacity: .5;}
+
+	.dotlist {position: absolute; width: 100%; bottom: .4rem;}
+	.dotlist ul{ text-align: center;}
+	.dotlist li {display: inline-block; width: .12rem; height: .12rem; border-radius: 50%; background: transparent; border: 1px solid #fff; margin-right: 6px;}
+	.dotlist li.cur{ background: #fff;}
+	#footer{ position:fixed; bottom:.1rem; width:100%; line-height:.4rem; font-size:.24rem; text-align:center; }
+
+</style>
+<div class="banner">
+	<img src="{[bannerSrc]}"/>
+</div>
+
+<_pageList>
+	<div id="nav-wrapper">
+		<div id="listnav" class="clear">
+			<repeat_pageList>
+				<_funcList>
+					<ul class="home-list clear">
+						<repeat_funcList>
+							{=funcEnable?
+							<li><a href="#{[funcView]}" style="background-image:url({[funcIcon]})">{[funcName]}</a></li>
+							::
+							<li><a class="gray-bg"><img src="{[funcIcon]}"/>{[funcName]}</a></li>
+							=}
+						</repeat_funcList>
+					</ul>
+				</_funcList>
+			</repeat_pageList>
+		</div>
+	</div>
+</_pageList>
+<div class="dotlist" id="dotlist">
+	<ul id="dot"></ul>
+</div>
+<p id="footer" class="txt-color">[$CopyRight$]</p>

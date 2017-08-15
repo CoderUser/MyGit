@@ -1,0 +1,17 @@
+<#if storeDetail??>
+	<table>
+		<tbody>
+			<#list storeDetail as item>
+				<tr>
+					<td>${item.txDate}</td>
+					<td>${item.transCount}</td>
+					<td>${item.qty}</td>
+					<td>${item.amount}</td>
+				</tr>
+			</#list>
+		</tbody>
+	</table>
+</#if>
+
+
+

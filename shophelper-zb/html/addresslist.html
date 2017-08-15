@@ -1,0 +1,33 @@
+<style>
+	<#include "../css/addresslist.css"/>
+</style>
+<section class="address_con">
+	<!--<_vipAddress>-->
+		<#if addressList??>
+	<ul class="address">
+		<#list addressList as item >
+		<!--<repeat_vipAddress>-->
+			<li data-addrid="${item.addrId}">
+				<p>${languageMap.Name}: ${item.receiverName}
+					<#if isDefault??>
+						<em class="default">${languageMap.DefaultAdd}</em>
+					</#if>
+					<!--{=${isDefault}?<em class="default">${languageMap.DefaultAdd}</em>::=}-->
+				</p>
+				<p>${languageMap.Tel}: ${item.receiverTel}</p>
+				<p>${languageMap.Address}: ${item.receiverAddress}</p>
+				<p>
+					<span class="delete">${languageMap.Delete}</span>
+					<span class="modify">${languageMap.Modify}</span>
+				</p>
+			</li>
+		<!--</repeat_vipAddress>-->
+		</#list>
+	</ul>
+		</#if>
+	<!--</_vipAddress>-->
+	<button id="add-addr">${languageMap.AddAddress}</button>
+</section>
+<script>
+    <#include"../js/addresslist.js" />
+</script>

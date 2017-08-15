@@ -1,0 +1,37 @@
+<style><#include "../css/salessubmit.css" /></style>
+
+<ul class="clear sales-info gradient-bg">
+	<li><label><span>${languageMap.StoreCode}</span><select id="storelist"></select></label></li>
+	<li><label><span>${languageMap.TillId}</span><select id="tillids"></select></label></li>
+	<li><label><span>${languageMap.TxDate}</span><input id="txdate" class="datepicker" type="text" readonly></label></li>
+	<li><label><span>${languageMap.RefDocNo}</span><input id="refdocno" type="text"></label></li>
+	<li><label>
+		<span>${languageMap.ItemCode}</span>
+		<select id="plulist">
+			<#list pluList as item>
+				<option value="${item.itemCode}">${item.itemDesc}(${item.itemCode})</option>
+			</#list>
+		</select>
+	</label>
+	</li>
+	<li><label><span>${languageMap.TxQty}</span><input id="transqty" class="number_input" type="text" readonly value="1"/></label></li>
+	<li><label><span>${languageMap.TxCount}</span><input id="transcount" class="number_input" type="text" readonly value="1"/></label></li>
+</ul>
+
+<div class="sales-details gradient-bg">
+	<p>${languageMap.TenderDetais}<em>(${baseCurrCode})</em><span>${languageMap.TotalAmount}: <em id="totalamt" class="txt-color">0.00</em></span></p>
+	<#if tenderList??>
+		<ul id="tenderlist">
+			<#list tenderList as item>
+				<li>
+					<label><span>${item.tenderDesc}</span><input class="tender_input number_input" type="text" readonly placeholder="0.00" data-tendercode="${item.tenderCode}" data-tendertype="${item.tenderType}"/></label><span class="tender_total" data-tendercode="${item.tenderCode}">0.00</span>
+				</li>
+			</#list>
+		</ul>
+	</#if>
+</div>
+<button id="btn_confirm" class="round-btn">${languageMap.Confrim}</button>
+
+<script>
+	<#include "../js/salessubmit.js" />
+</script>

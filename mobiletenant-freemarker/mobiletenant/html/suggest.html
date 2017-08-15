@@ -1,0 +1,27 @@
+<style><#include "../Css/repairsuggest.css" /></style>
+
+<form class="repair-suggest" id="form-suggest">
+	<#if isNew?? && !isNew>
+		<div class="write-bg"><input type="text" id="text-suggestno" name="suggestNo" placeholder="${languageMap.SuggestNo}" readonly value="{[suggestNo]}"></div>
+	</#if>
+	<div class="write-bg"><textarea id="text-content" name="content" placeholder="${languageMap.Content}" rows="6">
+		<#if isNew?? && !isNew>${content}</#if></textarea></div>
+	<#if isDispose?? && !isDispose>
+		<div class="write-bg dispose">
+			<textarea rows="6" readonly>${disposeContent}</textarea>
+			<p>${languageMap.DisposeBy}: <em>${disposeBy}</em><span>${languageMap.DisposeDate}: ${disposeDate}</span></p>
+		</div>
+	</#if>
+	<ul class="repair-suggest-img write-bg clear" id="img_prew">
+		<li><span><input type="file" id="file-img" name="images" accept="image/*"></span></li>
+	</ul>
+	<p>
+		<#if isNew?? && !isNew><button id="btn_del" class="round-btn btn_del">${languageMap.Delete}</button></#if>
+		<button id="btn_confirm" class="round-btn">${languageMap.Confirm}</button>
+	</p>
+</form>
+
+
+<script>
+	<#include "../js/suggest.js" />
+</script>

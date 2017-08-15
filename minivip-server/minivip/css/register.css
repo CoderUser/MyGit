@@ -1,0 +1,62 @@
+.a-reg {
+    margin: auto;
+}
+
+.a-reg-mobi,
+.a-reg-vercode,
+.a-reg-pw,
+.a-reg-compw {
+    height: 0.8rem;
+    overflow: hidden;
+}
+
+.a-reg-mobi span,
+.a-reg-vercode span,
+.a-reg-pw span,
+.a-reg-compw span {
+    line-height: 0.8rem;
+    font-size: 0.3rem;
+    float: left;
+    display: inline-block;
+    width: 22%;
+    text-align: right;
+}
+
+.a-reg-mobi input,
+.a-reg-pw input,
+.a-reg-compw input {
+    background: none;
+    float: left;
+    font-size: 0.28rem;
+    line-height: 0.3rem;
+    margin: 0.25rem 4%;
+    display: inline-block;
+    width: 70%;
+    border: none;
+}
+
+.a-reg-vercode input {
+    background: none;
+    float: left;
+    font-size: 0.28rem;
+    line-height: 0.3rem;
+    margin: 0.25rem 4%;
+    display: inline-block;
+    width: 40%;
+    border: none;
+}
+
+.a-reg-vercode button {
+   margin-top:.13rem;
+}
+
+.a-reg-btn {
+    display: block;
+    width: 80%;
+    height: 0.6rem;
+    font-size: 0.3rem;
+    border: none;
+    border-radius: 0.1rem;
+    margin: 0 10%;
+}
+

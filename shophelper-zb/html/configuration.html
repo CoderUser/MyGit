@@ -1,0 +1,19 @@
+<style>
+	<#include "../css/configuration.css"/>
+</style>
+<section class="form">
+	<p><label><span id="lb-ser-url">Server Url</span><input id="txt-serverurl" class="serverurl" type="url" value="http://" /></label></p>
+	<p><label><span id="lb-store">Store:</span><button id="store-btn"></button></label></p>
+	<p><label><span id="lb-till">Till ID:</span><input id="txt-tillid" class="tillid" type="text" value="" placeholder="Till ID"/></label></p>
+	<p><label><span id="lb-cutoff">Cut Off Time:</span><input id="txt-cutoff-time" class="datepicker" type="text" readonly></label></p>
+	<p class="p-submit align-center "><button type="button" id="config-submit">&nbsp;</button></p>
+	<div class="tc_UserMsg" id="tc_UserMsg">
+		<div class="selStore" id="selStore" style="display: none;">
+			<ul> </ul>
+		</div>
+	</div>
+	<span id="reset" class="reset">Reset</span>
+</section>
+<script>
+    <#include"../js/configuration.js" />
+</script>

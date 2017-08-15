@@ -1,0 +1,15 @@
+.repair-suggest-list li{padding: 0; font-size: .24rem; padding-bottom: .2rem;}
+.repair-suggest-list li h3,
+.repair-suggest-list li dl,
+.repair-suggest-list li>a>p{padding: .1rem .3rem;}
+.repair-suggest-list li h3{ font-weight: normal; font-size: .26rem; color: #666; border-bottom: 1px solid #d0dbdd; line-height: .7rem; }
+.repair-suggest-list li dl{ display: -webkit-box; display: flex; line-height: .42rem;}
+.repair-suggest-list li dl dd{-webkit-box-flex: 1; flex: 1;}
+.repair-suggest-list li dl dd>div{margin-top: .1rem;}
+.repair-suggest-list li dl dd>div span{float: left; width: .8rem; height: .8rem; background: #eee; margin-right: .1rem; display: table; overflow: hidden;}
+.repair-suggest-list li dl dd>div em{ width: 100%; height: 100%; display: table-cell; vertical-align: middle; overflow: hidden;}
+.repair-suggest-list li dl dd>div img{ max-width: .8rem; max-height: .8rem; display: block; margin: 0 auto;}
+.repair-suggest-list li>a>p em{font-style: normal; color: #fe1406; padding-right: .1rem;}
+.repair-suggest-list li>a>p em.already{color: #0395af;}
+.repair-suggest-list li>a>p span{float: right; font-size: .2rem; color: #999;}
+.repair-suggest-list li .status{border-top: 1px solid #d0dbdd; padding-top: .24rem; margin-top: .16rem; }

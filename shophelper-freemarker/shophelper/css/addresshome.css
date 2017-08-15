@@ -1,0 +1,18 @@
+#ext-viewport .x-layout-card-item{ background: #efefef;}
+.a-add-address dl{ width: 100%; padding: 0 5%; background: #fff; line-height: .64rem; border-bottom: 1px solid #ddd;}
+.a-add-address dl:first-child{ margin-top: .16rem;border-top: 1px solid #ddd;}
+.a-add-address dl dt{font-size: .24rem; color: #5a5a5a; padding-right: .1rem; min-width: 2.2rem;}
+.a-add-address dl dd{-webkit-box-flex:4; flex:4; margin-left: 1%;}
+.a-add-address dl input[type=tel]{-webkit-box-flex:1; flex:1;}
+.a-add-address dl input[type=text]{width: 100%; line-height: .6rem;}
+.a-add-address dl textarea{border:none; width:100%; margin-bottom:.2rem; vertical-align:text-top;}
+.a-add-address dl:nth-child(6) input[type=text]{ width: 79%; padding-left: 21%;}
+.a-add-address>label{display:block;line-height:.26rem; color: #929394; padding: .2rem;}
+.a-add-address .check{ display: table-cell; width: 11%; height: .6rem; padding: .5rem 0; min-width: 1rem; margin-right: 0; background: url(${templateUrl}/shophelper/resource/icon/check_circle.png) no-repeat center center; background-size: .4rem auto;}
+.a-add-address .check:checked{ background: url(${templateUrl}/shophelper/resource/icon/checked_circle.png) no-repeat center center; background-size: .4rem auto;}
+.a-add-address label.defaultAddr{ display: table-cell; height: .6rem; line-height: .6rem; padding: .2rem 0; box-sizing: content-box; overflow: hidden; }
+.g-btn-sq{margin-top: .6rem;}
+.a-add-address #default-addr-p{display: table; width: 50%;}
+
+.a-add-address dd.g-dis-flex{align-items: stretch;}
+.g-arr-dn{ min-width: 1.5rem; height: 99%; border-radius: 0; margin-right: .2rem; color: #000; background-color: #fff; background-size: .24rem auto; padding: 0 .43rem 0 0; background-position: right .13rem top .24rem;}

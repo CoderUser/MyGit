@@ -1,0 +1,8 @@
+.a-cart-foot{ position: relative; width: 100%;height:.8rem; font-size:.28rem; line-height: .8rem; z-index: 3; overflow: hidden;}
+#check-all{width: .44rem; height: .44rem; margin: .16rem .1rem 0;}
+.cart-foot-lf{ width: 75%; height: 100%; float: left; overflow: hidden;}
+#priceTotal{ float: right; font-size: .36rem; }
+.cart-foot-p{ float: right; padding-right: .08rem; line-height: .3rem; padding-top: .16rem; font-size: .2rem;}
+.a-cart-foot button{position: absolute; width:25%; height: 100%; right: 0; top: 0; color: #fff; padding: 0; border:0; font-size: .24rem;text-align:center;}
+.cart-foot-lf .g-checkbox label{padding-left: .7rem;}
+.cart-foot-lf .g-checkbox .radio{left: 0; margin-left: .15rem;}

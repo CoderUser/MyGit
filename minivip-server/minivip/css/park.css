@@ -1,0 +1,75 @@
+.a-park-add {
+	position:relative;
+	height:1.4rem;
+}
+.a-park-add a{
+	width:90%;
+	line-height:1rem;
+	text-align:center;
+	top:.2rem;
+	left:5%;
+}
+
+.a-park-all {
+	padding: .2rem .25rem;
+}
+
+.a-park-title {
+	position:relative;
+	padding-left:.2rem;
+	height: .3rem;
+	font-size: .25rem;
+}
+
+.a-park-title:before{
+	position:absolute;
+	content:'';
+	height: .3rem;
+	width: .07rem;
+	left:0;
+	top:0;
+	background:#e9cd8a;
+}
+
+.a-park-title span:nth-of-type(1) {
+	display: inline-block;
+	height: .25rem;
+	width: .08rem;
+	float: left;
+	margin-right: .15rem;
+}
+
+.a-park-detail {
+	margin: .2rem auto .15rem;
+	padding: .3rem .2rem;
+	border-radius: .1rem;
+}
+
+.a-park-num {
+	height: .8rem;
+	line-height: .8rem;
+	font-size: .36rem;
+	text-align: center;
+	letter-spacing: .1rem;
+}
+
+.a-park-detail span {
+	display: inline-block;
+	height: .7rem;
+	line-height: .7rem;
+	font-size: .24rem;
+}
+
+.a-park-detail > a{
+	display: inline-block;
+	margin: .1rem 0;
+	height: .5rem;
+	float: right;
+}
+
+.a-park-all > a {
+	display:block;
+	line-height: .4rem;
+	font-size: .26rem;
+	padding-bottom:.2rem;
+}

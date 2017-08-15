@@ -1,0 +1,70 @@
+.a-groupon-detail{
+	padding-bottom:1rem;
+}
+.groupon-info{
+	display:block;
+	width:100%;
+	position:relative;
+	padding:.1rem 4% .2rem;
+	line-height:.5rem;
+	font-size:.26rem;
+}
+.groupon-info:before{
+	content:'';
+	position:absolute;
+	width:.15rem;
+	height:100%;
+	right:.3rem;
+	background:url("${templateUrl}/huamao/minivip/resource/icons/icon-right.png") no-repeat center center;
+	background-size:100% auto;
+}
+.groupon-info h3{
+	font-size:.3rem;
+}
+.groupon-info p:last-child{
+	padding-left:.4rem;
+	background: url(${templateUrl}/huamao/minivip/resource/icons/icon-address.png) no-repeat center left;
+	background-size:.35rem auto;
+}
+.a-detail-con{
+	margin-top:.22rem;
+}
+.a-detail-con h3{
+	padding-left:4%;
+	font-size:.28rem;
+	line-height:.8rem;
+}
+.detail-txt{
+	width:92%;
+	padding:.2rem 4%;
+	line-height:.5rem;
+}
+.detail-txt img{
+	width:96%;
+	margin:.3rem auto;
+}
+.a-groupon-footer{
+	position: fixed;
+	width: 100%;
+	height:1rem;
+	line-height:1rem;
+	bottom: 0;
+}
+.a-groupon-footer p{
+	padding-left:4%;
+	font-size:.26rem;
+}
+.a-groupon-footer p .origin-price{
+	padding-left:.2rem;
+	text-decoration:line-through;
+}
+.a-groupon-footer p em{
+	font-size:.48rem;
+	font-family:'SimSun', arial;
+}
+.a-groupon-footer a{
+	position:absolute;
+	right:.3rem;
+	top:.2rem;
+	line-height:.6rem;
+}

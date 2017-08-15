@@ -1,0 +1,56 @@
+
+<div class="banner">
+	<#if photolist??>
+	<!--<_photolist>-->
+		<div class="slide_01" id="slide_01">
+			<!--<repeat_photolist>--><#list photolist as item><div class="mod_01"><img class='itemphoto' src="${photoSrc}" alt=""></div></#list><!--</repeat_photolist>-->
+		</div>
+		<div class="dotModule_new">
+			<div id="slide_01_dot"></div>
+		</div>
+	<!--</_photolist>-->
+	</#if>
+</div>
+<#if hotsale1??>
+<!--<_hotsale1>-->
+	<section class="con3">
+		<ul>
+			<#list hotsale1 as hotitem1>
+			<!--<repeat_hotsale1>-->
+				<li>
+					<a href="#VItemDetail/${hotitem1.itemOrgId}_${hotitem1.style}"><img src="${hotitem1.photoSrc}"/></a>
+					<p class="like-tit"><!--<_discount>--><span>${hotitem1.discount}[hotitem1.Discount$]</span> / <!--</_discount>-->${hotitem1.itemDesc}</p>
+					<p class="like-price">$<span class="price">${hotitem1.sellingPrice}</span>
+						<!--<_originPrice>--><span class="price-old">${hotitem1.originPrice}</span><!--</_originPrice>-->
+					</p>
+				</li>
+			<!--</repeat_hotsale1>-->
+			</#list>
+		</ul>
+	</section>
+<!--</_hotsale1>-->
+</#if>
+<#if hotsale2??>
+<!--<_hotsale2>-->
+
+	<section class="con4">
+		<div class="con4-tit">${languageMap.HotSale}</div>
+		<ul>
+			<#list hotsale2 as hotitem2>
+			<!--<repeat_hotsale2>-->
+				<li>
+					<a href="#VItemDetail/${hotitem2.itemOrgId}_${hotitem2.style}"><img src="${hotitem2.photoSrc}"/></a>
+					<p class="like-tit">${hotitem2.itemDesc}</p>
+					<p class="like-price">$<span class="price">${hotitem2.sellingPrice}</span>
+						<!--<_originPrice>--><span class="price-old">${hotitem2.originPrice}</span><!--</_originPrice>-->
+					</p>
+				</li>
+			<!--</repeat_hotsale2>-->
+			</#list>
+		</ul>
+	</section>
+<!--</_hotsale2>-->
+</#if>
+<script>
+    <#include"../js/home-old.js" />
+</script>

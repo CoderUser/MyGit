@@ -1,0 +1,19 @@
+<style>
+	<#include "../css/pickupstore.css"/>
+</style>
+<section class="PickUpAdd">
+	<#if pickupstore??>
+	<!--<_pickupstore>-->
+		<ul>
+			<#list pickupstore as item>
+			<!--<repeat_pickupstore>-->
+				<li>
+					<p>${item.storename}</p>
+					<p>${item.storeaddress}</p>
+				</li>
+			<!--</repeat_pickupstore>-->
+			</#list>
+		</ul>
+	<!--</_pickupstore>-->
+	</#if>
+</section>

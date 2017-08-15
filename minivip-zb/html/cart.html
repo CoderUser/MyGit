@@ -1,0 +1,32 @@
+<style><#include "../css/cart.css" /></style>
+<section class="cart-con" id="cartTable">
+		<#list cartlist as item>
+			<div class="a-cart-list g-dis-flex" id="${item.OrgId}_${item.plu}">
+				<div class="g-checkbox">
+					<input class="check-item" title="" type="checkbox" data-orgid="${item.OrgId]}" data-plu="${item.plu}" id="${item.plu}_1" hidden/>
+					<label for="${item.plu}_1"><em class="radio icon-radio"></em><em class="radio icon-radiochecked"></em></label>
+				</div>
+				<div class="a-cart-list-main">
+					<p class="prom-desci-wrapper"></p>
+					<dl class="a-cart-info g-dis-flex">
+						<dt style="background-image: url(${templateUrl}/mobiletenant/resource/homemenu/bgimage.png);"></dt>
+						<dd>
+							<p class="g-txt-els">${item.itemDesc}</p>
+							<p class="g-clearfix">
+								<span class="g-qty-des">-</span>
+								<input type="number" title="" class="g-qty" min=1 value=1 max=${item.qoh} data-subtotal="${item.sellingPrice}">
+								<span class="g-qty-ins">+</span>
+								<span class="attr">${languageMap.Color}：${item.itemColor} ${languageMap.Size}：${item.itemSize}</span>
+							</p>
+							<p>${languageMap.Price}: <em class="selling-price">{item.sellingPrice}</em></p>
+							<i class="delete"></i>
+						</dd>
+					</dl>
+					<p>${languageMap.Discount}: <span class="prom-less">0.00</span><em class="g-fr">${languageMap.NetAmt}: <span class="item-netamt"></span></em></p>
+				</div>
+			</div>
+		</#list>
+	</section>
+<script>
+    <#include "../js/cat.js" />
+</script>

@@ -1,0 +1,30 @@
+.a-cart-list{width: 100%; height: auto; padding: .2rem 0; background: #fff; border-bottom: 1px solid #e1e0e0; overflow: hidden;}
+.a-cart-list .a-cart-list-main{margin-right: 3%; -webkit-box-flex:1; flex:1;}
+.a-cart-list dl {width: 100%; font-size: .2rem;}
+.a-cart-list dl dt{ width: 1.6rem; height: 1.6rem;  margin-right: .2rem; align-items: stretch; }
+.a-cart-list dl dd{position: relative; -webkit-box-flex:1; flex:1; padding-top: .1rem; }
+.a-cart-list dl dd p{ clear:both; }
+.a-cart-info p{ line-height: .5rem;}
+.a-cart-info p:first-child{height: .56rem; line-height: .28rem; overflow: hidden; text-overflow: ellipsis;}
+.a-cart-info dt{ border:1px #ddd solid; border-radius: 5px; background: no-repeat center center; background-size: cover;}
+.a-cart-list dd .attr{ color:#bfbfbf;}
+.a-cart-info .g-txt-els + p{padding: .1rem 0 .05rem;}
+.a-cart-info dd p:last-child{margin-bottom: 0;}
+.a-cart-list .delete{position: absolute; width: .36rem; height: .4rem; right: 0; bottom:.1rem; background: url(${templateUrl}/resource/minivip/icon/delete.png) no-repeat; background-size: 90% auto;}
+.a-cart-list-main>p{position: relative; padding-top: .16rem; font-size: .25rem;}
+.item-netamt{font-size: .3rem; }
+.a-cart-list-main>p.prom-desci-wrapper{padding-top: 0;}
+.prom-desci{ font-size:.22rem; padding-bottom: .1rem; color: #000;}
+.prom-desci > .con{ float:right; }
+
+.a-cart-list .g-checkbox label{display:block; width: 11%; min-width: .72rem; min-height: 1.6rem; margin-right: 0;}
+.cart-null .g-checkbox label span{background: #ddd; font-size: .15rem; position: absolute; width: 90%; line-height: .2rem; right: 5%; top: 40%; padding: .1rem 0; color: #999; text-align: center; border-radius: .05rem;}
+.cart-null p,
+.cart-null dt,
+.cart-null dd :not(i){opacity: .4;}
+.cart-null dd .selling-price,
+.cart-null dd .desci{opacity: 1;}
+
+.g-qty-des, .g-qty-ins, .g-qty{width: .4rem; height: .4rem; line-height: .4rem;}
+.g-qty{width: .6rem; font-size: .2rem;}
+.g-qty-ins{margin-right: .16rem;}

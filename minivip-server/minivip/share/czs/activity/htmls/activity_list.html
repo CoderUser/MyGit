@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=750,user-scalable=no" />
+		<link rel="stylesheet" href="../css/activity_list.css" />
+	</head>
+	<!--<style><#include "../css/activity_list.css"/></style>-->
+	<body>
+		<div class="web">
+			<!--头部-->
+			<header>
+				<div class="top">
+					<p>茂华中心</p>
+					<div class="img-one"><img src="../img/activitys/top-right.png"/></div>
+				</div>
+			</header>
+			<!--内容-->
+			<section>
+				<!--菜单-->
+				<div class="activity-list-nva">
+					<ul class="activity-list-menu">
+						<li class="menu-click">最新活动</li>
+						<li>会员专享</li>
+					</ul>
+				</div>
+				<div class="activity-list-content">
+					<a href="#">
+						<img src="../img/activitys/one-bg.png"/>
+					</a>
+					<a href="#">
+						<img src="../img/activitys/new-summer.png"/>
+					</a>
+					<a href="#">
+						<img src="../img/activitys/two-bg.png"/>
+					</a>
+					<a href="#">
+						<img src="../img/activitys/three-bg.png"/>
+					</a>
+					<a href="#"><img src="../img/activitys/four-bg.png"/></a>
+				</div>
+				<div class="activity-list-content"></div>
+			 	<!--<#if **?? && **?size gt 0>
+			 		<div class="activity-list-content">
+				 		<#list ** as item>
+				 			<a href="${item.XF_DESCI}">
+					 			<img src="${item.XF_DESCI}"/>
+					 		</a>
+				 		</#list>
+					</div>
+			 	</#if>-->
+				 	
+				
+			</section>
+			<footer>
+				<div class="buttom">
+					<dl>
+						<dt><img src="../img/activitys/buttom-one.png"/></dt>
+						<dd><a href="#">首页</a></dd>
+					</dl>
+					<dl>
+						<dt><img src="../img/activitys/buttom-two.png"/></dt>
+						<dd><a href="#">商城活动</a></dd>
+					</dl>
+					<dl>
+						<dt><img src="../img/activitys/buttom-three.png"/></dt>
+						<dd><a href="#">商城导购</a></dd>
+					</dl>
+					<dl>
+						<dt><img src="../img/activitys/buttom-four.png"/></dt>
+						<dd><a href="#">我的</a></dd>
+					</dl>
+					<div class="clear"></div>
+				</div>
+			</footer>
+		</div>
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth / 750 > 1) {
+							docEl.style.fontSize = '100px';
+						} else if(clientWidth / 750 < 0.4) {
+							docEl.style.fontSize = '40px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+						}
+					};
+
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+		<script src="../js/activity_list.js" charset="utf-8"></script>
+		<!--<script><#include "../js/main.js"></script>
+		<script><#include "../js/activity_list.js" charset="utf-8"/></script>-->
+	</body>
+
+</html>

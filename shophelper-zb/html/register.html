@@ -1,0 +1,17 @@
+<style>
+	<#include "../css/register.css"/>
+</style>
+<section class="LoginRegForm">
+	<ul class="regTab"><li class="on">${languageMap.MobileReg}</li><li>${languageMap.EmailReg}</li></ul>
+	<div class="reg">
+		<p id="Change"><input class="tel" type="tel" placeholder="${languageMap.Mobile}" /></p>
+		<p id="Change_code"><input class="tel_code" type="number" placeholder="${languageMap.VerCode}" maxlength=6 /><button class="code">${languageMap.GetCode}</button></p>
+		<p class="pass"><input id="reg-pass" class="pass" type="password" placeholder="${languageMap.SetPass}" /><i class="passtab"></i></p>
+		<p class="pass"><input id="reg-confirmpass" class="ConfirmPass" type="password" placeholder="${languageMap.ReSetPass}" /><i class="passtab"></i></p>
+		<p class="Agreement"><input class="select" type="checkbox" checked/>${languageMap.Agree}<a id="reg-terms">${languageMap.Clause}</a></p>
+		<p><button id="reg-submit">${languageMap.RegNow}</button></p>
+	</div>
+</section>
+<script>
+    <#include"../js/register.js" />
+</script>

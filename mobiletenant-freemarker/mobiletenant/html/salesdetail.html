@@ -1,0 +1,86 @@
+<style><#include "../css/salesdetail.css" /></style>
+
+<ul class="sales-tab clear">
+	<li class="curr">${languageMap.SalesDetail}</li>
+	<li>${languageMap.TenderDetail}</li>
+</ul>
+
+<div class="sales-tab-con">
+	<div class="sales-filter write-bg">
+		<p><span>${languageMap.TxDate}：</span><input class="datepicker" id="FromDateDetail" type="text" readonly="" placeholder=""/><em>${languageMap.To}</em><input class="datepicker" id="ToDateDetail" type="text" readonly="" placeholder=""/></p>
+		<p><span>${languageMap.SortOrder}：</span>
+			<select name="sorter" id="sort-sales" title="">
+				<option value="dateasc">${languageMap.DateAsc}</option>
+				<option value="datedesc">${languageMap.DateDesc}</option>
+				<option value="countasc">${languageMap.CountAsc}</option>
+				<option value="countdesc">${languageMap.CountDesc}</option>
+			</select>
+			<button class="square-btn search" id="sales-total-query">${languageMap.Search}</button>
+		</p>
+	</div>
+	
+	<div class="write-bg">
+		<table class="sales-total">
+			<tbody id="sales-total-body"></tbody>
+		</table>
+	</div>
+	
+	<div id="Details" class="gradient-bg" style="display: none;">
+		<div class="tab_shop_nav" id="shop-code-wrapper">
+			<ul id="ShopCode" class="clear" style="left: 0;"></ul>
+		</div>
+		<table>
+			<tbody>
+			<tr>
+				<th>${languageMap.TxDate}</th>
+				<th>${languageMap.Count}</th>
+				<th>${languageMap.Qty}</th>
+				<th>${languageMap.Amount}</th>
+			</tr>
+			</tbody>
+		</table>
+		<div id="table-wrapper">
+			<div id="table-scroll"></div>
+		</div>
+	</div>
+</div>
+
+<div class="sales-tab-con" style="display: none;">
+	<div class="sales-filter write-bg">
+		<p><span>${languageMap.TxDate}：</span><input class="datepicker" id="FromDatePayment" type="text" readonly="" placeholder=""/><em>${languageMap.To}</em><input class="datepicker" id="ToDatePayment" type="text" readonly="" placeholder=""/></p>
+		<p><span>${languageMap.SortOrder}：</span>
+			<select name="sorter" id="sort-tender" title="">
+				<option value="dateasc">${languageMap.DateAsc}</option>
+				<option value="datedesc">${languageMap.DateDesc}</option>
+			 </select>
+			 <button class="square-btn search" id="payment-total-query">${languageMap.Search}</button>
+		</p>
+	</div>
+	
+	<div class="write-bg">
+		<table class="payment-total" id="payment-total-body">
+		</table>
+	</div>
+	
+	<div id="TenderDetails" class="gradient-bg" style="display: none;">
+		<div class="tab_shop_nav" id="tender-code-wrapper">
+			<ul id="TenderShopCode" class="clear" style="left: 0;"></ul>
+		</div>
+		<table>
+			<tbody>
+			<tr>
+				<th>${languageMap.TxDate}</th>
+				<th>${languageMap.Tender}</th>
+				<th>${languageMap.Amount}</th>
+			</tr>
+			</tbody>
+		</table>
+		<div id="tender-wrapper">
+			<div id="tender-scroll"></div>
+		</div>
+	</div>
+</div>
+
+<script>
+	<#include "../js/salesdetail.js" />
+</script>

@@ -1,0 +1,44 @@
+<thead>
+	<tr>
+	    <th>[$Store$]</th>
+	    <th>[$Tender$]</th>
+	    <th>[$Amount$]</th>
+	</tr>
+</thead>
+<_tenderTotal>
+	<tbody>
+		<repeat_tenderTotal>
+			{!rowType:
+			!!firstRow:
+			<tr>
+				<td rowspan="{[rowSpan]}" class="payment-btn" data-storecode="{[storecode]}">{[storecode]}<!--<br/><span>[$Show$]</span>--></td>
+				<td>{[desc]}</td>
+				<td>{[amount]}</td>
+			</tr>
+			!!common:
+			<tr>
+				<td>{[desc]}</td>
+				<td>{[amount]}</td>
+			</tr>
+			!!subTotal:
+			<tr class="total">
+				<td>{[desc]}</td>
+				<td>{[amount]}</td>
+			</tr>
+			!!noCommon:
+			<tr class="total">
+				<td>{[storecode]}</td>
+				<td>{[desc]}</td>
+				<td>{[amount]}</td>
+			</tr>
+			!}
+		</repeat_tenderTotal>
+	</tbody>
+</_tenderTotal>
+<tfoot>
+	<tr class="total">
+	    <td>[$Total$]</td>
+	    <td></td>
+	    <td>{[totalAmount]}</td>
+	</tr>
+</tfoot>

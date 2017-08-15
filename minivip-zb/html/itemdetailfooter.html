@@ -1,0 +1,23 @@
+<style><#include "../css/itemdetailfooter.css" /></style>
+<div class="a-footer g-dis-flex">
+
+	<!--<div class="mune" id="item-like">
+		<p class="${likeClass}">
+			<span>${collect}</span>
+		</p>
+	</div>-->
+
+	<div class="mune" id="item-like">
+		<p class="<#if like?? && like>icon-unlike<#else>icon-like</#if>"><span><#if like?? && like>${languageMap.AlreadyLike}<#else>${languageMap.Like}</#if></span></p>
+	</div>
+
+	<div class="mune">
+		<p class="cart" id="cart-icon">${languageMap.Cart}</p>
+		<span id="footer-cartcount" class="badge"></span>
+	</div>
+	<div class="mune-btn" id="add-cart">${languageMap.AddToCart}</div>
+	<div class="mune-btn bg_default" id="buy-now">${languageMap.BuyNow}</div>
+</div>
+<script>
+    <#include "../js/itemdetailfooter.js" />
+</script>

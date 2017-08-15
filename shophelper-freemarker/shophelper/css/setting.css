@@ -1,0 +1,26 @@
+#ext-viewport .x-layout-card-item{background: #f5f5f5;}
+.a-setting{width: 100%; margin-top: .2rem; font-size: .28rem; line-height: .8rem; background: #fff; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;}
+.a-setting p,.a-setting a{display: block; width: 100%; padding: 0 5%; color: #666;}
+.a-setting a:first-child{ border-bottom: 1px solid #ddd;}
+.a-setting a span{float: right; padding-right: .4rem; font-size: .26rem; color: #999;}
+.a-setting a span.arrow{background: url(${templateUrl}/shophelper/resource/icon/arr-right.png) no-repeat center right; background-size: .14rem auto;}
+.a-select-lang{position: relative; height: 1.6rem; width: 100%; line-height: .5rem;}
+.a-select-lang:before{content: ""; height: 2px; width: 75%; background: #ddd; left: 12.5%; top: .64rem; position: absolute;}
+.a-select-lang li{width: 25%; position: relative; color: #999; font-size: .24rem; text-align: center;}
+.a-select-lang li:before{content: ""; position: absolute; width: .12rem; height: .12rem; left: 50%; top: .58rem; background: #ddd; border-radius: 50%;}
+.a-select-lang li.curr{color:#000;}
+.a-select-lang li.curr:before{background: #000;}
+.a-select-lang li:nth-child(2),.a-select-lang li:nth-child(4){padding-top: .8rem;}
+.a-select-lang em{position: absolute; width: .2rem; height: .2rem; top: .54rem; border-radius: 50%; left: 37%; transition: left .5s;}
+.a-select-theme{width: 90%; margin: 0 auto;}
+.a-select-theme li{position: relative; line-height: .8rem; border-bottom: 1px solid #d0dbdd; font-size: .24rem; overflow: hidden;}
+.a-select-theme li label{display: block; position: absolute; top: 0; width: 100%; height: 100%; text-transform: capitalize; padding: 0 .2rem;}
+.a-select-theme li label span{display: none; left: 83%; }
+.g-check-ipt input:checked + label span{display: block; -webkit-filter: drop-shadow(.6rem 0 0 #ff5254); filter: drop-shadow(.6rem 0 0 #ff5254);}
+.g-check-ipt input:checked + label i{left: 83%;}
+.a-select-theme li>span{display: inline-block; width: .34rem; height: .34rem; margin-right: .16rem; vertical-align: middle;}
+.a-select-theme li:nth-child(1)>span{background: #000;}
+.a-select-theme li:nth-child(2)>span{background: #29a7e1;}
+.a-select-theme li:nth-child(3)>span{background: #1aaa92;}
+.a-select-theme li:nth-child(4)>span{background: #fd7c14;}
+.a-select-theme li:last-child{border-bottom: none;}

@@ -1,0 +1,83 @@
+<style>
+	<#include "../css/giftcert.css"/>
+</style>
+<section class="con_discount">
+	<ul class="dis_giftcert_tab">
+		<li class="curr">${languageMap.NotUsed}</li>
+		<li>${languageMap.HasExpired}</li>
+		<li>${languageMap.AlreadyUsed}</li>
+	</ul>
+	<div class="dis_giftcert_con">
+		<div class="dis_giftcert">
+			<#if giftcertList??>
+			<!--<_giftcertList>-->
+				<#list giftcertList as item>
+			<!--<repeat_giftcertList>-->
+				<div class="dis_giftcert_s dis_giftcert_s1">
+					<dl class="<# if hasDetail??>nodetail</#if>" data-src="${item.giftcertSrc}">
+						<dt><p>${languageMap.Giftcert}</p><p>${item.giftcertDesc}</p></dt>
+						<dd><img src="${item.giftcertQRCode}" data-ticket="${item.TicketNumber}"></dd>
+					</dl>
+					<ul>
+						<li>${languageMap.TicketNumber}：${TicketNumber}</li>
+						<!--<_effectDate>--><li>${languageMap.EffectDate}：${item.effectDate}</li><!--</_effectDate>-->
+						<!--<_expiryDate>--><li>${languageMap.ExpiryDate}：${item.expiryDate}</li><!--</_expiryDate>-->
+						<!--<_terms>--><li><span>${languageMap.Terms}：</span><p>${item.terms}</p></li><!--</_terms>-->
+					</ul>
+				</div>
+			<!--</repeat_giftcertList>-->
+				</#list>
+			<!--</_giftcertList>-->
+			</#if>
+			<!--<button class="givebtn">${languageMap.GiftFriend}</button>-->
+		</div>
+		<div class="dis_giftcert cannot_use" style="display: none;">
+			<#if giftcertExpire??>
+			<!--<_giftcertExpire>-->
+				<#list giftcertExpire as Expireitem>
+			<!--<repeat_giftcertExpire>-->
+				<div class="dis_giftcert_s dis_giftcert_s1">
+					<dl class="<# if hasDetail??>nodetail</#if>">
+						<dt><p>${languageMap.Giftcert}</p><p>${Expireitem.giftcertDesc}</p></dt>
+					</dl>
+					<ul>
+						<li>${languageMap.TicketNumber}：${TicketNumber}</li>
+						<!--<_effectDate>--><li>${languageMap.EffectDate}：${Expireitem.effectDate}</li><!--</_effectDate>-->
+						<!--<_expiryDate>--><li>${languageMap.ExpiryDate}：${Expireitem.expiryDate}</li><!--</_expiryDate>-->
+						<!--<_terms>--><li><span>${languageMap.Terms}：</span><p>${Expireitem.terms}</p></li><!--</_terms>-->
+					</ul>
+					<i><img src="${templateUrl}/resource/shophelper/icon/ico58.png"></i>
+				</div>
+			<!--</repeat_giftcertExpire>-->
+				</#list>
+			<!--</_giftcertExpire>-->
+			</#if>
+		</div>
+		<div class="dis_giftcert cannot_use" style="display: none;">
+			<#if giftcertUsed??>
+			<!--<_giftcertUsed>-->
+				<#list giftcertUsed as useditem>
+			<!--<repeat_giftcertUsed>-->
+				<div class="dis_giftcert_s dis_giftcert_s1">
+					<dl class="<# if hasDetail??>nodetail</#if>">
+						<dt><p>${languageMap.Giftcert}</p><p>${useditem.giftcertDesc}</p></dt>
+					</dl>
+					<ul>
+						<li>${languageMap.TicketNumber}：${useditem.ticketNumber}</li>
+						<!--<_effectDate>--><li>${languageMap.EffectDate}：${useditem.effectDate}</li><!--</_effectDate>-->
+						<!--<_useDate>--><li>${languageMap.UseDate}：${useditem.useDate}</li><!--</_useDate>-->
+						<!--<_terms>--><li><span>${languageMap.Terms}：</span><p>${useditem.terms}</p></li><!--</_terms>-->
+					</ul>
+					<i><img src="${templateUrl}/resource/shophelper/icon/ico59.png"></i>
+				</div>
+			<!--</repeat_giftcertUsed>-->
+				</#list>
+			<!--</_giftcertUsed>-->
+			</#if>
+		</div>
+	</div>
+	<div id="nomore" class="absolute-center">${languageMap.NoMore}</div>
+</section>
+<script>
+    <#include"../js/giftcert.js" />
+</script>

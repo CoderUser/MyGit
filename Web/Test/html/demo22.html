@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;  minimum-scale=1.0; maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <style type="text/css">
+        #tab {
+            overflow: hidden;
+            width: 400px;
+            height: 250px;
+            position: relative;
+            float: left;
+        }
+
+        #tab>img:not(:first-child) {
+            display: none;
+        }
+    </style>
+    <script>
+        var interval;
+        var pos = 0;
+        window.onload = function() {
+            var images = document.getElementsByTagName('img');
+            var tab = document.getElementById("tab");
+            tab.onmouseover = function() {
+                clearInterval(interval);
+            }
+            tab.onmouseout = function() {
+                run(images);
+            }
+            run(images);
+        }
+        var run = function(images) {
+            interval = setInterval(function() {
+                images[pos].style.display = 'none';
+                pos = ++pos == images.length ? 0 : pos;
+                images[pos].style.display = 'inline';
+            }, 1000);
+        }
+    </script>
+</head>
+
+<body>
+<div id="tab">
+    <img src="../image/t29227460.jpg" width="400" height="250" />
+    <img src="../image/n29227458.jpg" width="400" height="250" />
+    <img src="../image/x29227455.jpg" width="400" height="250" />
+</div>
+</body>
+
+</html>

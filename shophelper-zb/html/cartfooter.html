@@ -1,0 +1,16 @@
+<style>
+	<#include "../css/cartfooter.css"/>
+</style>
+<footer class="cart-foot" id="foot">
+	<div class="cart-foot-lf">
+		<span>
+			<input class="check check_all" type="checkbox" name="" id="check-all"/>${languageMap.All}
+			<input class="delete delete_all" type="button" id="delete-all"/>${languageMap.All}
+		</span>
+		<span class="cart-foot-p">
+			<b>${languageMap.Total}: $<em id="priceTotal">0.00</em></b>
+			<b>${languageMap.Discount}: $<em id="prom-less-total">0.00</em></b>
+		</span>
+	</div>
+	<button id="cartfooter-settle">${languageMap.PayNow} (<span id="selectedTotal">0</span>)</button>
+</footer>

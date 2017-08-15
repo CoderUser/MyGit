@@ -1,0 +1,57 @@
+<style>
+	.a-park-coupon{
+		margin-top:.1rem;
+	}
+	.coupon-list{
+		position: relative;
+		width: 6.4rem;
+		margin: 0 auto;
+		margin-top: .2rem;
+		padding:.2rem .3rem;
+		line-height:.5rem;
+		border-radius: .1rem;
+	}
+	.coupon-list:before{
+		position: absolute;
+		top: 50%;
+		margin-top:-.13rem;
+		left: -.13rem;
+		content: "";
+		width: .26rem;
+		height: .26rem;
+		border-radius: 50%;
+	}
+	.coupon-list:after{
+		content: "";
+		position: absolute;
+		top: 50%;
+		margin-top:-.13rem;
+		right: -.13rem;
+		width: .26rem;
+		height: .26rem;
+		border-radius: 50%;
+	}
+	.coupon-list h3{
+		font-size:.32rem;
+		padding-bottom:.1rem;
+	}
+	.a-park-coupon button{
+		position:fixed;
+	}
+</style>
+
+<div class="a-park-coupon">
+	<div class="coupon-list bg-c4">
+		<h3>满减红包<span class="g-fr txt-c6">￥5</span></h3>
+		<p>${languageMap.ExpiryDate}2017-07-24<span class="g-fr">满30可用</span></p>
+	</div>
+	<button class="g-btn-full">${languageMap.NotUseCoupon}</button>
+</div>
+
+<script>
+	(function(_TApi)
+	{
+		VNavigatorBar.updateTitle("${languageMap.ParkingCoupon}");
+		if(!_TApi.hasClass(VNavigatorBar.navToolbar, 'bar-bd-btm')) _TApi.addClass(VNavigatorBar.navToolbar, 'bar-bd-btm');
+	})(window.TApi ||{});
+</script>

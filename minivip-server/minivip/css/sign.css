@@ -1,0 +1,120 @@
+.a-sign{
+	width:85%;
+	margin:.2rem auto;
+	padding:.7rem;
+	border-radius:.1rem;
+}
+.a-sign-bonus{
+	width:50%;
+	margin:0 auto .6rem;
+	line-height:.5rem;
+	text-align:center;
+	border-radius:.25rem;
+	overflow:hidden;
+}
+.a-sign-bonus span{
+	display:inline-block;
+	width:50%;
+}
+.a-sign-bonus span:last-child{
+	font-size:.3rem;
+}
+.a-calendar{
+	position:relative;
+	width:100%;
+	padding-bottom:1rem;
+	background:#fff;
+	text-align:center;
+	border-radius:.15rem;
+	overflow:hidden;
+}
+.a-calendar:before,
+.a-calendar:after{
+	position:absolute;
+	content:"";
+	width:.12rem;
+	height:.4rem;
+	top: .8rem;
+	background: #f1f5fe;
+	border-radius: 35%;
+	box-shadow:2px 0 4px rgba(7,37,68,.3);
+}
+.a-calendar:before{
+	left: .4rem;
+}
+.a-calendar:after{
+	right: .4rem;
+}
+.a-calendar h3{
+	line-height:1rem;
+	font-size:.26rem;
+}
+.a-calendar p{
+	padding-top:.1rem;
+	line-height:.5rem;
+}
+.a-calendar ul{
+	display:table;
+	padding:0 4%;
+	width:100%;
+}
+.a-calendar ul li{
+	display:table-row;
+	line-height:.6rem;
+}
+.a-calendar ul li span{
+	display:table-cell;
+	width:.6rem;
+	height:.6rem;
+	font-size:.26rem;
+}
+.a-calendar ul li span.curr{
+	position:relative;
+}
+.a-calendar ul li span.curr:before{
+	content:'';
+	position:absolute;
+	width:.46rem;
+	height:.46rem;
+	left:50%;
+	margin-left:-.23rem;
+	top:50%;
+	margin-top:-.23rem;
+	border-radius:50%;
+}
+.a-calendar ul li span.on{
+	background:url("${templateUrl}/huamao/minivip/resource/icons/icon-sign.png") no-repeat center center;
+	background-size:.42rem auto;
+}
+.a-rule{
+	position:absolute;
+	width:100%;
+	height:auto;
+	left:0;
+	bottom:0;
+	height:3rem;
+	background:#edcc90;
+}
+.a-rule:before{
+	content:"";
+	position:absolute;
+	width:100%;
+	height:1.16rem;
+	top:-1.16rem;
+	left:0;
+	background:url("${templateUrl}/huamao/minivip/resource/icons/bg-sign.png") no-repeat center top;
+	background-size:100% auto;
+}
+.a-rule p{
+	width:80%;
+	margin:.3rem auto;
+}
+.a-rule button{
+	position:absolute;
+	width:70%;
+	height:.8rem;
+	line-height:.8rem;
+	left:15%;
+	bottom:.7rem;
+	margin-bottom:0;
+}

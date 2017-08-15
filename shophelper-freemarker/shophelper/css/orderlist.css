@@ -1,0 +1,26 @@
+#ext-viewport .x-layout-card-item{background: #efefef;}
+.a-order-nav{width: 100%; line-height: .72rem; background: #fff; padding: 2px 0; color: #000000; height: .74rem; margin-top: .1rem; border-top: 1px solid #dadada; border-bottom: 1px solid #dadada;}
+.a-order-nav li{position: relative; font-size: .28rem; text-align: center; flex: 1; width: 50%;}
+.a-order-nav li.order-status-curr{height: .7rem; color: #000000; border-bottom: 0.05rem solid #000;}
+.a-order-list{margin-top: .1rem; background: #fff; border-top: 1px solid #dadada; border-bottom: 1px solid #dadada; overflow: hidden;}
+.OrderStatusList{padding-bottom: .4rem;}
+.a-order-list h3{color: #000000; width: 100%; padding: .1rem 5%; font-size: .22rem; font-weight: 500; border-bottom: 1px solid #dadada; line-height: .3rem; background: url(${templateUrl}/shophelper/resource/icon/arr-right.png) no-repeat right .36rem center;background-size: .16rem auto;}
+.a-order-list h3 span{display: block; font-size: .2rem; font-weight: normal; color: #000000;}
+.a-order-list dl{width: 100%; margin: 0 auto; padding: .2rem 0; border-bottom: 1px solid #dadada; color: #000000; height: auto; overflow: hidden;}
+.a-order-list dl dt{width:2rem; min-width:2rem; height:2rem; margin-left: 5%; overflow:hidden; background:transparent center top no-repeat; background-size:contain;}
+.a-order-list dl dd{flex: 1; width: 70%; padding: 0 2%;}
+.a-order-list dl dd p{line-height: .4rem; white-space: nowrap; text-overflow:ellipsis; overflow: hidden;}
+.a-order-list dl dd p:nth-child(1){font-size: .28rem; font-weight: 400;}
+.a-order-list dl dd em{font-size: .24rem; color:#000000 ;}
+.a-order-list>p{width: 100%; padding: .16rem 5%; line-height: .5rem; font-size: .22rem; color: #000000;}
+.a-order-list>p em{color: #000000; font-size: .24rem; padding: 0 .04rem;}
+.a-order-list>p button, .a-order-list>p a{color: #000000; font-size:.28rem; border-radius: 0; float: right; margin-left: .1rem; line-height: .3rem; padding: .08rem .2rem;}
+#order-status span{display: block; color: #000;padding: 0 .24rem;}
+#order-status span:nth-child(1){border-bottom: 1px solid #aaa;}
+
+/*tips*/
+.TipsLayer{position: absolute; background: #fff; top: .6rem; left: .6rem; opacity: 1;border-radius: 0;}
+.TipsLayer .triangle-down{display:none; position: absolute; left: 50%; margin-left: .2rem; top: -.14rem; width: 0; height: 0; border-left: .1rem solid transparent; border-right: .1rem solid transparent; border-bottom: .14rem solid #b0e5fb;}/*实心向上小三角*/
+.TipsLayer .dbl{display:none; border-bottom: .14rem solid #333; top: -.12rem; border-bottom-color: #fff;  z-index: 99;}/*向上小三角描边*/
+
+#nomore{text-align:center; font-size:.24rem; height: .6rem; line-height:.6rem; display:none;}

@@ -1,0 +1,30 @@
+<style>
+	<#include "../css/favourite.css"/>
+</style>
+<section class="favorite">
+	<#list favorite as item>
+	<!--<repeat>-->
+		<dl>
+			<a href="">
+				<dt>${item.photoSrc}</dt>
+				<dd>
+					<p>${item.itemDesc}</p>
+					<p class="fav-price"><span class="price">${item.sellingPrice}</span><span class="price-old">${item.originPrice}</span></p>
+					<p class="fav-time"><img src="${templateUrl}/resource/shophelper/icon/ico80.png"/>${item.DateTime}</p>
+				</dd>
+			</a>
+			<div class="fav-more">
+				<div class="fav-more-img"><img src="${templateUrl}/resource/shophelper/icon/ico81.png"/></div>
+				<ul class="fav-dropdown" >
+					<li>${languageMap.CancelFavourtie}</li>
+					<li>${languageMap.PriceNotice}</li>
+					<li>${languageMap.JoinCart}</li>
+				</ul>
+			</div>
+		</dl>
+	</#list>
+	<!--</repeat>-->
+</section>
+<script>
+    <#include"../js/favourite.js" />
+</script>

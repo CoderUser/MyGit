@@ -1,0 +1,63 @@
+<style>
+	.a-recharge > p{
+		padding: 0 .2rem;
+		line-height:.8rem;
+		font-size:.28rem;
+	}
+	.a-recharge-select{
+		width:85%;
+		margin:.4rem auto;
+		flex-wrap: wrap;
+	}
+	.a-recharge-select label{
+		width:30%;
+		margin:1.5%;
+		font-size:.3rem;
+		line-height:1rem;
+		text-align:center;
+	}
+	.a-recharge-select label span{
+		display:block;
+		width:100%;
+		height:100%;
+		border-radius:.15rem;
+	}
+	<#include "/huamao/minivip/css/pay.css"/>
+</style>
+
+<div class='a-recharge'>
+	<p class="bg-c4">${languageMap.RechargeMoney}<span class="g-fr">&#165;<em id="balance">50</em></span></p>
+
+	<div class="a-recharge-select g-dis-flex">
+
+		<label id="item" data-item="${item}"><input type="radio" name="amount" value="50" checked hidden><span class="bg-c2 txt-c5">${languageMap.Charge}50</span></label>
+		<label><input type="radio" name="amount" value="100" hidden><span class='bg-c2 txt-c5'>${languageMap.Charge}100</span></label>
+		<label><input type="radio" name="amount" value="150" hidden><span class='bg-c2 txt-c5'>${languageMap.Charge}150</span></label>
+		<label><input type="radio" name="amount" value="150" hidden><span class='bg-c2 txt-c5'>${languageMap.Charge}150</span></label>
+
+	</div>
+
+	<ul class="a-pay-type">
+		<li class="wechat bg-c4">
+			<label class="a-pay-radio">
+				<p class="g-dis-flex">
+					<span>${languageMap.WeChatPay}</span>
+					<span>${languageMap.WeChatVersion}</span>
+				</p>
+				<input type="radio" name="pay-type" value="wechat" checked><i class="bg-c8 g-border bd-c5"></i>
+			</label>
+		</li>
+		<li class="alipay bg-c4" id="alipay">
+			<label class="a-pay-radio">
+				<p class="g-dis-flex">
+					<span>${languageMap.AliPay}</span>
+					<span>${languageMap.AliVersion}</span>
+				</p>
+				<input type="radio" name="pay-type" value="ali"><i class="bg-c8 bg-c8 g-border bd-c5"></i>
+			</label>
+		</li>
+	</ul>
+	<button class='g-btn-full' id="btn-charge">${languageMap.ConfirmRecharge} &#165;<em id="btn-amount"></em></button>
+</div>
+
+<script><#include "/huamao/minivip/js/recharge.js"/></script>

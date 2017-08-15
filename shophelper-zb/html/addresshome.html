@@ -1,0 +1,39 @@
+<style>
+	<#include "../css/addresshome.css"/>
+</style>
+<form class="a-add-address" name="address">
+	<dl class="g-dis-flex">
+		<dt>${languageMap.AddressLanguage}</dt>
+		<dd>
+			<select id="addr-lang" class="addr-lang g-arr-dn" name="addrlang" data-code="${langAddress}">
+				<option value="en">${languageMap.English}</option>
+				<option value="zh_CN">${languageMap.zhCN}</option>
+				<option value="zh_HK">${languageMap.zhHK}</option>
+			</select>
+		</dd>
+	</dl>
+	<dl class="g-dis-flex">
+		<dt>${languageMap.Country}</dt>
+		<dd>
+			<input id="select_country" type="text" readonly name="input_country" data-country="${countryCode}" placeholder="${languageMap.SelectCountry}"/>
+		</dd>
+	</dl>
+	<!--<dl class="g-dis-flex">-->
+		<!--<dt>${languageMap.PostalCode}</dt>-->
+		<!--<dd><input type="text" name="postalCode" readonly id="postcode" value="" placeholder="${languageMap.PostalCode}" /></dd>-->
+	<!--</dl>-->
+	<dl class="g-dis-flex">
+		<dt>${languageMap.LocalArea}</dt>
+		<dd>
+			<input id="select_add" type="text" readonly="" name="input_area" data-province="${province}" data-city="${city}" data-county="${county}" placeholder="${languageMap.SelectLocalArea}"/>
+		</dd>
+	</dl>
+	<dl class="g-dis-flex">
+		<dt>${languageMap.ReceiverAddress}</dt>
+		<dd><textarea name="address" placeholder="${languageMap.Address}" rows=3>${receiverAddress}</textarea></dd>
+	</dl>
+</form>
+<button class="g-btn-sq" id="addaddress">${languageMap.Submit}</button>
+<script>
+    <#include"../js/addresshome.js" />
+</script>

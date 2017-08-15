@@ -1,0 +1,1 @@
+window.TApi=(function(a){a.ScrollToEnd=function(){var b=Ext.Viewport.getActiveItem().getScrollable().getScroller();b.refresh();b.scrollToEnd()};a.setScrollable=function(b){var c=Ext.Viewport.getActiveItem();if(c.setScrollable){c.setScrollable(b)}};a.activePage=function(){return Ext.Viewport.getActiveItem().element.dom};return a})(window.TApi||{});

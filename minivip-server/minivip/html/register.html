@@ -1,0 +1,36 @@
+<style><#include "/huamao/minivip/css/register.css"/></style>
+
+<div class="a-reg">
+
+<!-- mobile -->
+    <div class="a-reg-mobi bg-c4 g-border-btm bd-c3">
+        <span class="txt-c4">${languageMap.Mobile}</span>
+        <input type="tel" id="reg_mobi" maxlength="11" minlength="11" class="txt-c4" placeholder="${languageMap.InputMobile}">
+    </div>
+
+<!-- verification code -->
+    <div class="a-reg-vercode bg-c4 g-border-btm bd-c3">
+        <span class="txt-c4">${languageMap.VerCode}</span>
+        <input type="number" id="ipt_code" class="txt-c4">
+        <button class="g-btn-small" id="reg_validate">${languageMap.GetCode}</button>
+    </div>
+
+<!-- password -->
+    <div class="a-reg-pw bg-c4 g-border-btm bd-c3">
+        <span class="txt-c4">${languageMap.Password}</span>
+        <input type="password" id="reg_pw" class="txt-c4" placeholder="${languageMap.InputPassword}">
+    </div>
+
+<!-- confirm password -->
+    <div class="a-reg-compw bg-c4">
+        <span class="txt-c4">${languageMap.ConfirmPassword}</span>
+        <input type="password" id="reg_compw" class="txt-c4" placeholder="${languageMap.InputConfirmPassword}">
+    </div>
+
+</div>
+
+<!-- register button -->
+<button class="g-btn-big" id="reg_reg">${languageMap.RegisterBtn}</button>
+
+<script><#include "/huamao/minivip/js/send_authcode.js"/></script>
+<script><#include "/huamao/minivip/js/register.js"/></script>

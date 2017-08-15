@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+body {
+    margin: 0;
+    padding: 20px;
+}
+
+#container {
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+
+}
+
+#list {
+    width: 4200px;
+    height: 400px;
+    position: absolute;
+
+}
+
+#list img {
+    float: left;
+}
+
+.arrow {
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    text-align: center;
+    font-size: 45px;
+    line-height: 50px;
+    position: absolute;
+    top: 172.5px;
+    padding-top: 5px;
+    padding-right: 1px;
+    background: rgba(0, 0, 0, 0.5);
+    /*display: none;*/
+    opacity: 0.3;
+}
+
+#prev {
+    left: 10px;
+}
+
+#next {
+    right: 10px;
+}
+
+#container:hover .arrow {
+    /*display: inline-block;*/
+    opacity: 1;
+}
+
+#container:hover #buttons {
+    /*display: inline-block;*/
+    opacity: 1;
+}
+
+.arrow:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+#buttons {
+    position: absolute;
+    bottom: 10px;
+    left: 250px;
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    /*display: none;*/
+    opacity: 0.5;
+}
+
+#buttons span {
+    width: 10px;
+    height: 10px;
+    margin: 0 2px;
+    cursor: pointer;
+    display: inline-block;
+    border: 1px #fff solid;
+    /* background: #f00; */
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.on {
+    background: #ff456f;
+}

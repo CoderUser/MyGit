@@ -1,0 +1,30 @@
+<style>
+	<#include "../css/DetailedList.css"/>
+</style>
+<section class="list-art-con">
+	<ul class="list-art-nav">
+		<li class="list-art-curr">${languageMap.Default}</li>
+		<li>${languageMap.Price}</li>
+		<li>${languageMap.Sales}</li>
+	</ul>
+	<div class="DetailList">
+		<#list detailList as item>
+		<!--<repeat>-->
+			<dl>
+				<a href="">
+				<dt><img src="${item.photoSrc}"></dt>
+				<dd>
+					<p>${item.itemDesc}</p>
+					<p class="list-art-price">$<span class="price">${item.sellingPrice}</span><span class="price-old">${item.originPrice}</span></p>
+					<p>${languageMap.AlreadySold}&nbsp;&nbsp;${languageMap.Carriage}：${item.carriage}</p>
+					<i></i>
+				</dd>
+				</a>
+			</dl>
+		<!--</repeat>-->
+		</#list>
+	</div>
+</section>
+<script>
+    <#include"../js/DetailedList.js" />
+</script>

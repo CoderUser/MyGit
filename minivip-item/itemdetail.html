@@ -1,0 +1,83 @@
+<style>
+	/*description*/ 
+	.a-con{ position: relative; width: 100%; height: auto; padding: .3rem 3% 0; background:#fbfdeb;}
+	.a-con .con1_1{position: absolute; height: .48rem; line-height: .48rem; padding:0 .2rem; background: #f76c03; color: #fff; top: -.48rem; right: -1px; font-size: .22rem; border: 1px solid #d44900;}
+	.a-con.con1 h3{ font-size: .26rem; color: #292828; font-weight: normal;}
+	.a-con .desc{ font-size: .22rem; padding: .2rem 0; font-weight: normal; color: #999;}
+	.a-con .discount-info{ color: #f76c03; padding-top: .14rem; line-height: .32rem; align-items: flex-start; padding-bottom: .16rem;}
+	.a-con .discount-info dt{background: #f76c03; border-radius: 20%; color: #fff; margin-right: .12rem; padding: 0 .1rem; font-size: .18rem;}
+	.a-con .p-price{font-size: .18rem;}
+	.g-new-price{font-size: .4rem;}
+	.a-con .freight{ float: right;color: #818080; padding-top: .12rem;}
+	.a-con.con2{ background: #fff; overflow: hidden;}
+	/*attribute select*/ 
+	.a-pro-attr .part-note-msg{white-space: nowrap; line-height: .65rem; font-size: .22rem; color: #848689; width: 15%;}
+	.a-pro-attr{ margin-bottom: .1rem; overflow: hidden;}
+	.a-pro-attr p{ -webkit-box-flex:1; flex:1;}
+	.a-pro-attr p a{border: 1px solid #d7d7d7; font-size: .18rem;color: #686868;float: left;margin: 0 .1rem .1rem .15rem;padding: .15rem .2rem;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;max-width: 100%; text-decoration: none;}
+	.a-pro-attr p a.selected{border: 1px solid #f15353; color: #f15353;}
+	.a-pro-attr p a.disabled{display:none;}
+	.a-qty-wrapper {margin-left: .14rem; margin-top: .1rem;}
+	/*right fast nav*/
+	.fixed_right{position: absolute; right: 0; bottom: 20%; background:rgba(0,0,0,.8); width: .6rem; height: 1.2rem; color: #fff; border-radius: .08rem 0 0 .08rem;}
+	.fixed_right>li{ text-indent: -99rem; height: .6rem; background: no-repeat center center; background-size: .4rem auto; ;}
+	.fixed_right>li:first-child{background-image: url({&minivip/icon/rt-more.png&}); border-bottom: 1px solid #666; position: relative;}
+	.fixed_right>li:last-child{background-image: url({&minivip/icon/rt-service.png&});}
+	.fixed_right a{text-align: center; text-indent: 0; display: block; color: #333; border-top: 1px solid #ccc; line-height: .5rem; font-size:.22rem;}
+	.fixed_right a:first-child{border-top: none;}
+	.fixed_right .TipsLayer{position: absolute; min-width: 1rem; right: 3px; bottom: .72rem; padding: .1rem; background: #eee; border: 1px solid #ccc; border-radius: .14rem;}
+	.fixed_right .TipsLayer .triangle-down{position: absolute;left: 50%; margin-left: .1rem; bottom: -.14rem; width: 0; height: 0; border-left: .1rem solid transparent; border-right: .1rem solid transparent; border-top: .14rem solid #ccc;}
+	.fixed_right .TipsLayer .dbl{ bottom: -.12rem; border-top-color: #eee; z-index: 99;}
+	/*detail content*/
+	#detail_con{width: 100%; height: auto; background: #fff; font-size:.2rem;}
+	#detail_con .pull{text-align: center; height:50px;line-height:50px;}
+</style>
+<main id="itemdetail-container" data-org="{[itemorgid]}" data-style="{[style]}">
+	<div class="g-slide">
+		<_photolist>
+			<div class="slide_01" id="slide_01">
+				<repeat_photolist><div class="mod_01"><img class='itemphoto' src="{[photoSrc]}" alt=""></div></repeat_photolist>
+			</div>
+			<div class="dotModule_new">
+				<div class="slide_dot" id="slide_01_dot"></div>
+			</div>
+		</_photolist>
+	</div>
+	<section class="a-con con1">
+		<span class="con1_1">[$Qoh$]: <em id="a-qoh">{[qoh]}</em> [$Pieces$]</span>
+		<h3 id="itemname">{[desci]}</h3>
+		<p class="desc">{[longDesc]}</p>
+		<p class="p-price">{[currSign]}<span class="g-new-price" id="seluprice">{[sellingPrice]}</span><_originPrice><span class="g-old-price">{[originPrice]}</span></_originPrice><!--<span class="freight">[$Carriage$]:{[carriage]}</span>--></p>
+		<!--<dl class="discount-info g-dis-flex">
+			<dt>优惠</dt>
+			<dd>此商品可使用10元红包</dd>
+		</dl>-->
+	</section>
+	<section class="a-con con2" data-colorsize="{[colorsize]}">
+		<_colorlist>
+			<div class="a-pro-attr g-dis-flex">
+				<span class="part-note-msg">[$Color$]</span>
+				<p id="itemcolor" onclick="TApi.itemdetail.doSelect(arguments[0], true)">
+					<repeat_colorlist><a data-itemcolor="{[colorid]}" href="javascript:;">{[color]}</a></repeat_colorlist>
+				</p>
+			</div>
+		</_colorlist>
+		<_sizelist>
+			<div class="a-pro-attr g-dis-flex">
+				<span class="part-note-msg">[$Size$]</span>
+				<p id="itemsize" onclick="TApi.itemdetail.doSelect(arguments[0], false)">
+					<repeat_sizelist><a data-itemsize="{[sizeid]}" href="javascript:;">{[size]}</a></repeat_sizelist>
+				</p>
+			</div>
+		</_sizelist>
+		<div class="a-pro-attr g-dis-flex">
+			<span class="part-note-msg">[$Qty$]</span>
+			<div class="a-qty-wrapper">
+				<span class="g-qty-des" onclick="TApi.itemdetail.qtyMinus(arguments[0])">-</span>
+				<input type="text" class="g-qty" size="4" value=1>
+				<span class="g-qty-ins" onclick="TApi.itemdetail.qtyAdd(arguments[0])">+</span>
+			</div>
+		</div>
+	</section>
+	<section id="detail_con"></section>
+</main>

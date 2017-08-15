@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style type="text/css">
+
+</style>
+
+ <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .img_box{
+            position: relative;
+        }
+        .img_box ul.images{
+            width: 400px;
+            height: 500px;
+            margin: 50px auto;
+            position: relative;
+            /*overflow: hidden;*/
+        }
+        .img_box ul.images li{
+            /*把三张图片脱标,根据js设定的zindex重叠到一起*/
+            position: absolute;
+            /*css3内容,是图片1s内线性速度变化*/
+            transition: 1s linear;
+        }
+        .img_box ul.images li img{
+            /*position: absolute;*/
+            /*top: 0;*/
+            width: 400px;
+            height: 500px;
+        }
+        .img_box .arr{
+            width: 400px;
+            height: 40px;
+            /*background-color: red;*/
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -20px;
+            margin-left: -200px;
+            z-index: 100;
+        }
+        .img_box .arr>div{
+            width: 40px;
+            height: 60px;
+            background-color: rgba(0,0,0,0.7);
+            text-align: center;
+            line-height: 60px;
+            color: white;
+            cursor: pointer;
+            float: left;
+            font-size: 25px;
+        }
+        .img_box .arr .arr_left{
+            float: left;
+        }
+        .img_box .arr .arr_right{
+            float: right;
+        }
+        .img_box .circles{
+            position: absolute;
+            left: 50%;
+            margin-left: -38px;
+            bottom: 50px;
+            z-index: 100;
+        }
+        .img_box .circles>li{
+            width: 12px;
+            height: 12px;
+            background-color: red;
+            border-radius: 50%;
+            float: left;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .img_box .circles .active{
+            background-color: deepskyblue;
+        }
+    </style>
+<script type="text/javascript">
+
+</script>
+<script type="text/javascript">
+ window.onload = function () {
+            var liItems = document.getElementById("imgChange").children;
+            var circles = document.getElementsByClassName("circles")[0].children;
+
+//            console.log(liItems);
+            var count = 0;//计数器
+            var timer1 = null,timer2 = null;
+//            定义图片切换函数(即改变透明度)
+            function showImages(index){
+            //要显示第index张图片的函数封装
+                for(var i = 0;i < liItems.length;i++　){
+            //把所有的图片设置用index,重叠到一起,用zindex排序,
+                    liItems[i].style.opacity = 0;
+                    //把所有的图片都设置成透明度为0;都不显示
+                    circles[i].className = "";
+                    //所有的校园点变成默认的红色
+                    //     console.log(liItems[i].style.zIndex);
+                    //  console.log(liItems[i].style.opacity)
+                }
+//                console.log(liItems[index]);
+//                liItems[index].style.zIndex = 100;
+                liItems[index].style.opacity = 1;
+                //谁要显示,就给谁单独把透明度改为1,单独显示出来
+                circles[index].className = "active";
+            }
+            showImages(0);//打开网页要显示的图片
+
+            function autoplay(){
+            //用来封装自动播放的函数体,真正的自动播放在定时器调用
+                if(count % 3 == 0){//一个循环体来设置,总共有3张,即图片的count对应2就是第3张图,
+                    // count为3的时候,已经超出图片显示量,将其初始化为0,变为第一张
+                    count = 0;
+                }
+                showImages(count);//显示第count张图片
+                count++;//准备下一张
+            }
+            timer1 = setInterval(autoplay,2000);
+
+            //箭头动态变化
+            document.getElementsByClassName("arr_left")[0].onclick = function () {
+                clearInterval(timer1);
+                if(count == 0){
+                    count = 3;
+                }
+                count--;
+                showImages(count);
+                console.log(count);
+                timer1 = setInterval(autoplay,2000);
+            };
+            document.getElementsByClassName("arr_right")[0].onclick = function (){
+//                alert("s")
+                clearInterval(timer1);
+                autoplay();
+                timer1 = setInterval(autoplay,2000);
+            };
+            //点击小圆点事件
+            console.log(circles);
+//            circles[0].onclick = function () {
+//                alert("qwe")
+//            }
+
+            for(var i = 0;i < circles.length;i++){
+                circles[i].index = i;//中间变量保存下i的值
+                circles[i].onclick = function () {
+//                    alert(this.index);
+                    clearInterval(timer1);
+                    showImages(this.index);
+                    timer1 = setInterval(autoplay,2000);
+                }
+            }
+        }
+</script>
+</head>
+
+<body>
+<div class="img_box">
+    <!--轮播图片-->
+    <ul class="images" id="imgChange">
+        <li><img src="http://www.zxhuan.com/wp-content/uploads/2016/02/img4.jpg" alt=""/></li>
+        <li><img src="http://www.zxhuan.com/wp-content/uploads/2016/02/img3.jpg" alt=""/></li>
+        <li><img src="http://www.zxhuan.com/wp-content/uploads/2016/02/img2.jpg" alt=""/></li>
+    </ul>
+    <!-- 左右箭头-->
+    <div class="arr">
+        <div class="arr_left">＜</div>
+        <div class="arr_right">＞</div>
+    </div>
+    <!-- 图片上的小圆点-->
+    <ul class="circles" id="circles">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+</body>
+
+</html>
+
+
+
+
+

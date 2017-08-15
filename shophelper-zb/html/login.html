@@ -1,0 +1,18 @@
+<style>
+	<#include "../css/login.css"/>
+</style>
+<section id="login-form">
+	<div class="login">
+		<p>&nbsp;</p>
+		<p><input id="login-user" class="user" type="text" placeholder="${languageMap.TelOrEmailOrVipcode}"/><button id="searchvip-btn">&nbsp;</button></p>
+		<p><button id="scanqrcode-btn">${languageMap.ScanQrcode}</button></p>
+		<p><button id="keeplogin-btn">&nbsp;</button></p>
+		<p><button id="login-btn">&nbsp;</button></p>
+		<p><button id="register-btn">${languageMap.Register}</button></p>
+		<p><button id="logout-btn">${languageMap.Logout}</button></p>
+	</div>
+	<!-- <a href="#VSetting"><span class="SystemSet">${languageMap.Set}</span></a> -->
+</section>
+<script>
+    <#include"../js/login.js" />
+</script>

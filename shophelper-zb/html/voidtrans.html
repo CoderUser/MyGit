@@ -1,0 +1,89 @@
+<style>
+    <#include "../css/voidtrans.css"/>
+</style>
+<section class="VoidTransaction" style="padding-bottom: .2rem;">
+    <div  class="VoidTrans <#if GetError??>hide</#if>">
+        <h1 style="margin-top:.2rem;font-size: .28rem;padding: 0 5%;">${languageMap.VoidTransaction}</h1>
+        <div class="hdr">
+            <ul>
+                <li>${languageMap.StoreCode}: ${storeCode}</li>
+                <li>${languageMap.Tillid}: ${tillId}</li>
+                <li>${languageMap.TransactionDate}: ${date}</li>
+                <li>${languageMap.MemoNumber}: <input type="text" disabled="true" value="${memoNumber}"/></li>
+                <li>${languageMap.ReasonNumber}:
+                    <select>
+                        <!--<repeat_reasonlist>-->
+                            <#list reasonlist as reson>
+                            <option value="${reson.ReasonCode}">${reson.reasonDesc}</option>
+                            </#list>
+                        <!--</repeat_reasonlist>-->
+                    </select>
+                </li>
+            </ul>
+        </div>
+        <div class="info">
+            <ul>
+                <li>${languageMap.TransactionDate}: ${date}</li>
+                <li>${languageMap.MemoNumber}: ${memoNumber}</li>
+                <li>${languageMap.VIP}: ${vip}</li>
+                <li>${languageMap.Cashier}: ${cashier}</li>
+                <li>${languageMap.Salesman}: ${salesman}</li>
+                <li>${languageMap.NetAmount}: ${total}</li>
+            </ul>
+        </div>
+        <#if itemlist??>
+        <!--<_itemlist>-->
+            <div class="item">
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th>${languageMap.ItemCode}</th>
+                        <th>${languageMap.Quantity}</th>
+                        <th>${languageMap.NetAmount}</th>
+                    </tr>
+                    <#list itemlist as itemlists>
+                    <!--<repeat_itemlist>-->
+                        <tr>
+                            <td>${itemlists.itemCode}</td>
+                            <td>${itemlists.quantity}</td>
+                            <td>${itemlists.netAmount}</td>
+                        </tr>
+                    <!--</repeat_itemlist>-->
+                    </#list>
+                    <tr class="total">
+                        <td></td>
+                        <td></td>
+                        <td>${total}</td>
+                    </tr>
+                </table>
+            </div>
+        <!--</_itemlist>-->
+        </#if>
+
+        <#if tenderList??>
+        <!--<_tenderList>-->
+            <div class="tender">
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th>${languageMap.Tender}</th>
+                        <th>${languageMap.PayAmount}</th>
+                    </tr>
+                    <#list tenderList as item>
+                    <!--<repeat_tenderList>-->
+                        <tr>
+                            <td>${item.tender}</td>
+                            <td>${item.payAmount}</td>
+                        </tr>
+                    <!--</repeat_tenderList>-->
+                    </#list>
+                </table>
+            </div>
+        <!--</_tenderList>-->
+        </#if>
+    </div>
+    <div id="errorMsg" <#if GetError??>Class="hide"</#if>>
+        <span style="width:100%; position: absolute; top:50%; text-align: center; font-size: 0.4rem;">${errorMsg}</span>
+    </div>
+</section>
+<script>
+    <#include"../js/voidtrans.js" />
+</script>

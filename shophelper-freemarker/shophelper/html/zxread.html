@@ -1,0 +1,154 @@
+<style>
+    .report table{width:100%;margin-bottom: .5rem;}
+    #report_title{text-align: center;font-weight: bold;}
+    .hide{display:none;}
+</style>
+
+
+<section class="report">
+    <div id="report_title">
+        ${languageMap.TTRetail}<br>
+        <span <#if IsZRead?? && !IsZRead>class="hide"</#if>>${languageMap.ZReadTitle}</span>
+        <span <#if IsZRead?? && IsZRead>class="hide"</#if>>${languageMap.XReadTitle}</span>
+    </div>
+    <div class="report_hdr">
+        <ul>
+            <li>${languageMap.Store}: ${store}(${storeCode}-${tillId})</li>
+            <li>${languageMap.WorkingDate}: ${workingDate}</li>
+            <li>${languageMap.PostingDate}: </li>
+            <li>${languageMap.PageNo}: </li>
+        </ul>
+    </div>
+
+    <div class="cashierinfo <#if IsZRead?? && !IsZRead>hide</#if>">
+        <#if cashierlist??>
+            <#list cashierlist as item>
+                <table cellpadding="0" cellspacing="0">
+                    <tr style="font-weight: normal">
+                        ${languageMap.Cashier}:${item.staffName}(${item.staffCode})
+                    </tr>
+                    <#if item.cashierlistitem??>
+                        <tr>
+                            <th>${languageMap.Tender}</th>
+                            <th>${languageMap.Currency}</th>
+                            <th>${languageMap.Amount}</th>
+                            <th>${languageMap.BaseAmount}</th>
+                        </tr>
+                        <#list item.cashierlistitem as listitem>
+                            <tr>
+                                <td style="font-weight: normal;">${listitem.group}</td>
+                            </tr>
+                            <#if listitem.clistitemdetail??>
+                                <#list cashierlist.clistitemdetail as itemdetail>
+                                    <tr>
+                                        <td>${itemdetail.ItemName}</td>
+                                        <td>${itemdetail.Currency}</td>
+                                        <td>${itemdetail.ItemAmount}</td>
+                                        <td>${itemdetail.BaseAmount}</td>
+                                    </tr>
+                                </#list>
+                            </#if>
+                        </#list>
+                    </#if>
+                </table>
+            </#list>
+        </#if>
+    </div>
+
+    <div class="report_detail">
+        <#if itemlist??>
+            <table cellpadding="0" cellspacing="0">
+                <tr <#if IsZRead?? && !IsZRead>hide</#if>>${languageMap.ZReadTotal}</tr>
+                <tr>
+                    <th>${languageMap.Tender}</th>
+                    <th>${languageMap.Currency}</th>
+                    <th>${languageMap.Amount}</th>
+                    <th>${languageMap.BaseAmount}</th>
+                </tr>
+                <#list itemlist as item>
+                    <tr>
+                        <td style="font-weight: normal;">${item.group}</td>
+                    </tr>
+                    <#if item.itemlistdetail??>
+                        <#list item.itemlistdetail as listdetail>
+                            <tr>
+                                <td>${listdetail.ItemName}</td>
+                                <td>${listdetail.Currency}</td>
+                                <td>${listdetail.ItemAmount}</td>
+                                <td>${listdetail.BaseAmount}</td>
+                            </tr>
+                        </#list>
+                    </#if>
+                </#list>
+                <br>
+            </table>
+        </#if>
+
+        <#if msales??>
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <th>${languageMap.MerchandiseSales}</th>
+                    <th>${languageMap.Issue}</th>
+                    <th>${languageMap.Amount}</th>
+                </tr>
+                <#list msales as item>
+                    <tr>
+                        <td>${item.salesName}</td>
+                        <td>${item.issue}</td>
+                        <td>${item.salesAmount}</td>
+                    </tr>
+                </#list>
+                <tr>
+                    <td></td>
+                    <td>${languageMap.Total}</td>
+                    <td>${salesTotal}</td>
+                </tr>
+            </table>
+        </#if>
+        <br>
+
+        <#if voucher??>
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <th>${languageMap.GiftVoucherNo}</th>
+                    <th>${languageMap.NoOfSettled}</th>
+                    <th>${languageMap.TotalValue}</th>
+                </tr>
+                <#list voucher as item>
+                    <tr>
+                        <td>${item.voucherNo}</td>
+                        <td>${item.settled}</td>
+                        <td>${item.totalValue}</td>
+                    </tr>
+                </#list>
+                <tr>
+                    <td>${languageMap.Total}</td>
+                    <td>${VoucherQty}</td>
+                    <td>${VoucherTotal}</td>
+                </tr>
+            </table>
+        </#if>
+        <br>
+
+        <#if ttlvoucher??>
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <th>${languageMap.GiftVoucherSales}</th>
+                    <th>${languageMap.Amount}</th>
+                </tr>
+                <#list ttlvoucher as item>
+                    <tr>
+                        <td>${item.gvsales}</td>
+                        <td>${item.gvamount}</td>
+                    </tr>
+                </#list>
+            </table>
+        </#if>
+    </div>
+
+    <div id="errorMsg" <#if getError?? && !getError> class="hide" </#if>>
+    <span style="width:100%; position: absolute; top:50%; text-align: center; font-size: 0.4rem;">${errorMsg}</span>
+    </div>
+</section>
+
+<script><#include"../js/zxread.js" /></script>

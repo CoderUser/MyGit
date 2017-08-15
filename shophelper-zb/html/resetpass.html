@@ -1,0 +1,16 @@
+<style>
+	<#include "../css/resetpass.css"/>
+</style>
+<section class="LoginRegForm">
+	<div class="modifyPass">
+		<p><input id="reset-contact" class="telEmail" type="text" placeholder="${languageMap.UserMsg}" /></p>
+		<p><input id="reset-authcode" class="tel_code" type="text" placeholder="${languageMap.InputCode}" /><button class="code">${languageMap.GetCode}</button></p>
+		<p class="pass"><input id="reset-pass" class="pass" type="password" placeholder="${languageMap.SetNewPass}" /><i class="passtab"></i></p>
+		<p class="pass"><input id="reset-confirmpass" class="ConfirmPass" type="password" placeholder="${languageMap.ReSetNewPass}" /><i class="passtab"></i></p>
+
+		<p><button id="reset-submit">${languageMap.Submit}</button></p>
+	</div>
+</section>
+<script>
+    <#include"../js/resetpass.js" />
+</script>

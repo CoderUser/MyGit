@@ -1,0 +1,17 @@
+<style>
+	<#include "../css/wechatbind.css"/>
+</style>
+<section class="wechat_bind">
+	<img src="${templateUrl}/resource/shophelper/icon/wechat_bind.png" alt="" />
+	<p>${languageMap.BindTxt}</p>
+	<ul>
+		<li>${languageMap.WechatName}：<span>${wechatName}</span></li>
+		<li>${languageMap.Status}：<span id="bind-status"></span></li>
+	</ul>
+	<button id="btn-bind" hidden>${languageMap.Bind}</button>
+	<button id="btn-rebind" hidden>${languageMap.Rebind}</button>
+	<button id="btn-unbind" hidden>${languageMap.Unbind}</button>
+</section>
+<script>
+    <#include"../js/wechatbind.js" />
+</script>

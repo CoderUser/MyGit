@@ -1,0 +1,56 @@
+.a-userinfo {
+	margin-top: .1rem;
+}
+.a-userinfo ul li{
+	height: .8rem;
+	line-height: .8rem;
+	padding: 0 .25rem;
+	font-size: .28rem;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin-bottom: 1px;
+}
+.a-userinfo li span {
+	letter-spacing: .2rem;
+	padding-right:.2rem;
+}
+
+.a-userinfo ul li input{
+	font-size:.24rem;
+	-webkit-flex:1;
+	flex:1;
+}
+
+.a-choose label {
+	position: relative;
+	display: inline-block;
+	margin-right:.4rem;
+}
+
+.a-choose i {
+	font-style:normal;
+	font-size:.24rem;
+	padding-left:.4rem;
+}
+
+.a-choose i:before{
+	position:absolute;
+	content:'';
+	width:.3rem;
+	height:.3rem;
+	left:0;
+	top:.23rem;
+	border-radius:50%;
+}
+
+.a-choose input:checked + i:after{
+	position:absolute;
+	content:'';
+	width:.1rem;
+	height:.1rem;
+	left:.1rem;
+	top:.33rem;
+	border-radius:50%;
+}

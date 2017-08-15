@@ -1,0 +1,32 @@
+#roulette-container{height:100%; min-height: 50rem; background: url(${templateUrl}/shophelper/resource/icon/game_bg.png) no-repeat #fbdebb; background-size: 100% auto;}
+button a{display: inline-block; color: #fff;  text-decoration: none; font-family: "microsoft yahei"; }
+.turnplate{display: block;width: 72%;margin: 0 auto 0;position: relative;padding-top: 45%;}
+.turnplate canvas{width:100%;}
+#roulette-pointer{position: absolute;width: 34%;left: 33%;top: 51%;}
+.game_num{color: #da3628; padding: 7rem 0 1rem; text-align: center; font-size: 1.2rem;}
+.btn{ width: 85%;  margin: 1rem auto 2rem;}
+.btn button{background: #d0392c; border-radius: .5rem;padding: 0 0 .3rem 0;}
+.btn button a{display: inline-block; background: #f3584a; color: #fff; font-size: 1.3rem;border-radius: .5rem; text-decoration: none; font-family: "microsoft yahei"; padding: .8rem 2rem;}
+.btn button:last-child{float: right;}
+.tc_con{width:60%; height:25rem; background: url(${templateUrl}/shophelper/resource/icon/tc_bg.png) no-repeat bottom .5rem center #ee382b; background-size: 96% auto; border-radius: 1rem; box-shadow: none;overflow:visible;}
+.tc_con span.close{ position: absolute; width: 1.8rem; height: 1.8rem; right: -1.7rem; top: -1.7rem; background: url(${templateUrl}/shophelper/resource/icon/close_icon.png) no-repeat; background-size: 100% auto;}
+.tc_con h1{ position: absolute; width: 70%; top: -2rem; left: 15%;}
+.tc_con h1 img{ width: 100%;}
+.tc_con_img{ width: 10rem; height: 10rem; border-radius: 5rem; margin: 2.5rem auto 1.5rem; overflow: hidden;}
+.succ_img{background: url(${templateUrl}/shophelper/resource/icon/succ_ico.png) no-repeat center bottom #f06055; background-size: 80% auto; }
+.fail_img{background: url(${templateUrl}/shophelper/resource/icon/fail_icon.png) no-repeat center bottom #f06055; background-size: 80% auto; }
+.tc_con_txt{ font-size: 1rem; color: #fff; text-align: center;}
+.tc_con_txt p:nth-child(2){ font-size: 1.2rem; padding: .5rem 0;}
+.tc_con_btn{ width: 60%; margin: 1.5rem auto 1rem; overflow: hidden;}
+.tc_con_btn button{ width: 100%; background: #ffe66f; line-height: 2.5rem; color: #ee382b; border-radius: .4rem; margin-bottom: 1rem;}
+.tc_con_btn button a{ color: #ee382b; width: 100%;}
+
+/*.info {position:relative; top:10rem; background: rgba(77,77,77,.5); width: 90%; margin: auto; border-radius: 1rem;}
+*/
+.rule_bg{ width: 100%; height: auto; background: url(${templateUrl}/shophelper/resource/icon/index_circle.png) no-repeat center top -0.3rem #ff8d12; background-size: 100% auto; padding: 4rem 0 2rem; overflow: auto;}
+.rule{position: relative; width: 90%; margin: 0 auto;  padding: 3rem 1rem 1rem; background: #ff8d12; border: 1px solid #febe7a; color: #fff; font-size: 1.2rem; line-height: 2rem; border-radius: .5rem;}
+.rule h3,.name_list h3{position: absolute; font-size: 1.5rem; text-align: center; font-weight: normal; line-height: 3rem; width: 40%; left: 30%; top: -1.5rem; background: #ff8d12; border: 1px solid #febe7a; border-radius: 1.4rem;}
+.rule dl{ padding: .8rem 0; border-bottom: 1px dashed #febe7a; height: auto; overflow: hidden;}
+.rule dl:last-child{ border-bottom: none;}
+.rule dl dt{ float: left; width: 6rem; overflow: hidden;}
+.rule dl dd{ float: right; width: 19rem; overflow: hidden;}

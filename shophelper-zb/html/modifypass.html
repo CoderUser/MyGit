@@ -1,0 +1,15 @@
+<style>
+	<#include "../css/modifypass.css"/>
+</style>
+<section class="LoginRegForm">
+	<div class="modifyPass">
+		<p class="pass"><input id="old-pass" class="pass" type="password" placeholder="${languageMap.OldPass}" /><i class="passtab"></i></p>
+		<p class="pass"><input id="reset-pass" class="pass" type="password" placeholder="${languageMap.SetNewPass}" /><i class="passtab"></i></p>
+		<p class="pass"><input id="reset-confirmpass" class="ConfirmPass" type="password" placeholder="${languageMap.ReSetNewPass}" /><i class="passtab"></i></p>
+
+		<p><button id="reset-submit">${languageMap.Submit}</button></p>
+	</div>
+</section>
+<script>
+    <#include"../js/modifypass.js" />
+</script>

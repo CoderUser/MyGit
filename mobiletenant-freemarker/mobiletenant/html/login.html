@@ -1,0 +1,19 @@
+<style>
+	<#include "../css/loginpass.css" />
+	.login img{width: 50%; display: block; margin: .6rem auto .3rem; max-height: 1rem;}
+	.login p{font-family: "Georgia"; text-align: center;}
+</style>
+
+<section class="login">
+	<img src="../resource/logo/techtrans.png"/>
+	<p class="txt-color">${languageMap.LoginMsg}</p>
+	<form name="login" class="login-pass" id="login" method="post">
+		<input type="text" name="staff" id="staffcode" placeholder="${languageMap.LoginStaffCode}" />
+		<input type="password" name="pwd" id="password" placeholder="${languageMap.LoginPassword}" />
+		<button id="LoginBtn" class="round-btn" type="submit">${languageMap.LoginNow}</button>
+	</form>
+</section>
+
+<script>
+	<#include "../js/login.js" />
+</script>

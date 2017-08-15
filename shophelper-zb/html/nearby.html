@@ -1,0 +1,17 @@
+<style>
+	<#include "../css/nearby.css"/>
+</style>
+<section class="nearby">
+	<#if repeat??>
+	<!--<repeat>-->
+		<dl>
+			<dt><img src="${shopPic}"></dt>
+			<dd>
+				<p>${shopName}<span>${distance}</span></p>
+				<p>${languageMap.Address}：${address}</p>
+				<p>${languageMap.Tel}：${tel}</p>
+			</dd>
+		</dl>
+	<!--</repeat>-->
+	</#if>
+</section>

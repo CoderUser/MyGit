@@ -1,0 +1,37 @@
+<style>
+.feedback{padding-top: .2rem;}
+.feedback input,.feedback textarea{border: none; width: 100%; padding: 0; color: #888; background: none;}
+.feedback input:focus{box-shadow: none;}
+.feedback-img li{float: left;  margin: .08rem .16rem; position: relative; display: table; width: 1rem; height: 1rem;; background: #ccc; }
+.feedback-img li:last-child{ display: block; background:url({&mobiletenant/icon/upload-img-ico.png&}) no-repeat center center #ccc; background-size: .5rem auto;}
+.feedback-img li a{ width: 100%; height: 100%; display: table-cell; vertical-align: middle; overflow: hidden;}
+.feedback-img li img{ max-width: 1rem; max-height: 1rem; display: block; margin: 0 auto;}
+.feedback-img li i{position: absolute; font-style: normal; font-family:arial; width: .3rem; height: .3rem; right: -.14rem; top: -.14rem; line-height: .26rem; font-size: .26rem; text-align: center; border-radius: 50%; color: #fff; }
+.feedback-img li span{display: block;  width: 1rem; height: 1rem; overflow: hidden;}
+ #file-img{border: none;font-size:100px; opacity:0; filter:alpha(opacity=0);}
+.feedback > p{ width: 90%; margin: .2rem auto;}
+.feedback p button{ width: 45%; float: left;}
+.feedback p .btn_del{background: #d0767a;}
+.feedback p button:last-child{ float: right;}
+
+.dispose p{ font-size: .2rem; color: #999; border-top: 1px solid #d0dbdd; padding:.2rem 0 .06rem;}
+.dispose p em{ font-style: normal; color: #fe1406;}
+.dispose p span{float: right;}
+</style>
+<form class="feedback" id="form-suggest">
+	{=isNew?::<div class="write-bg"><input type="text" id="text-suggestno" name="suggestNo" placeholder="[$SuggestNo$]" readonly value="{[suggestNo]}"></div>=}
+	<div class="write-bg"><textarea id="text-content" name="content" placeholder="[$Content$]" rows="6">{=isNew?::{[content]}=}</textarea></div>
+		{=isDispose?
+	<div class="write-bg dispose">
+		<textarea rows="6" readonly>{[disposeContent]}</textarea>
+		<p>[$DisposeBy$]: <em>{[disposeBy]}</em><span>[$DisposeDate$]: {[disposeDate]}</span></p>
+	</div>
+	::=}
+	<ul class="feedback-img write-bg clear" id="img_prew">
+		<li><span><input type="file" id="file-img" name="images" accept="image/*"></span></li>
+	</ul>
+	<p>
+		{=isNew?::<button id="btn_del" class="round-btn btn_del">[$Delete$]</button>=}
+		<button id="btn_confirm" class="round-btn">[$Confirm$]</button>
+	</p>
+</form>

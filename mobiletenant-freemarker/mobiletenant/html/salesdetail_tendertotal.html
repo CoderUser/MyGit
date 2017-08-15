@@ -1,0 +1,44 @@
+<thead>
+	<tr>
+	    <th>${languageMap.Store}</th>
+	    <th>${languageMap.Tender}</th>
+	    <th>${languageMap.Amount}</th>
+	</tr>
+</thead>
+<#if tenderTotal??>
+	<#list tenderTotal as item>
+		<#switch item.rowType>
+			<#case "firstRow">
+				<tr>
+					<td rowspan="${item.rowSpan}" class="payment-btn" data-storecode="${item.storecode}">${item.storecode}</td>
+					<td>${item.desc}</td>
+					<td>${item.amount}</td>
+				</tr>
+			<#break>
+			<#case "common">
+				<tr>
+					<td>${item.desc}</td>
+					<td>${item.amount}</td>
+				</tr>
+			<#break>
+			<#case "subTotal">
+				<tr class="total">
+					<td>${item.desc}</td>
+					<td>${item.amount}</td>
+				</tr>
+			<#break>
+			<#case "noCommon">
+				<td>${item.storecode}</td>
+				<td>${item.desc}</td>
+				<td>${item.amount}</td>
+			<#break>
+		</#switch>
+	</#list>
+</#if>
+<tfoot>
+	<tr class="total">
+	    <td>${languageMap.Total}</td>
+	    <td></td>
+	    <td>${totalAmount}</td>
+	</tr>
+</tfoot>

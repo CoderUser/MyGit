@@ -1,0 +1,157 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
+
+
+[
+  {
+    "cdeptcode": "1",
+    "cdeptname": "d1",
+    "pym": "ZN"
+  },
+  {
+    "cdeptcode": "101",
+    "cdeptname": "d2",
+    "pym": "YLDX"
+  }
+]
+
+{
+  "employees": [
+    {
+      "firstName": "Bill",
+      "lastName": "Gates"
+    },
+    {
+      "firstName": "George",
+      "lastName": "Bush"
+    },
+    {
+      "firstName": "Thomas",
+      "lastName": "Carter"
+    }
+  ]
+}
+
+
+[
+  {
+    "name": "怪物先生历险记",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/289/789/TV_CONTENT.jpg",
+    "url": "http://a.10086.cn/pams2/l/s.do?vgid\u003dx7389\u0026amp;j\u003dl\u0026amp;c\u003d11739\u0026amp;vpid\u003d628121480\u0026amp;positionid\u003d\u0026amp;p\u003d82\u0026amp;displaytype\u003d电影",
+    "isShow": "1"
+  },
+  {
+    "name": "麻烦家族",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/202/018/TV_CONTENT.jpg",
+    "url": "http://a.10086.cn/pams2/l/s.do?vgid\u003dx7389\u0026amp;j\u003dl\u0026amp;c\u003d11739\u0026amp;vpid\u003d628137548\u0026amp;positionid\u003d\u0026amp;p\u003d82\u0026amp;displaytype\u003d电影",
+    "isShow": "1"
+  },
+  {
+    "name": "诡异酒楼",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/268/173/TV_CONTENT.jpg",
+    "url": "http://a.10086.cn/pams2/l/s.do?vgid\u003dx7389\u0026amp;j\u003dl\u0026amp;c\u003d11739\u0026amp;vpid\u003d628122151\u0026amp;positionid\u003d\u0026amp;p\u003d82\u0026amp;displaytype\u003d电影",
+    "isShow": "1"
+  },
+  {
+    "name": "惊门",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/270/719/TV_CONTENT.jpg",
+    "url": "http://a.10086.cn/pams2/l/s.do?vgid\u003dx7389\u0026amp;j\u003dl\u0026amp;c\u003d11739\u0026amp;vpid\u003d628080880\u0026amp;positionid\u003d\u0026amp;p\u003d82\u0026amp;displaytype\u003d电影",
+    "isShow": "1"
+  },
+  {
+    "name": "惊门",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/270/719/TV_CONTENT.jpg",
+    "url": "http://a.10086.cn/pams2/l/s.do?vgid\u003dx7389\u0026amp;j\u003dl\u0026amp;c\u003d11739\u0026amp;vpid\u003d628076041\u0026amp;positionid\u003d\u0026amp;p\u003d82\u0026amp;displaytype\u003d电影",
+    "isShow": "1"
+  },
+  {
+    "name": "超级大山炮之夺宝奇兵",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/284/881/TV_CONTENT.jpg",
+    "url": "http://a.10086.cn/pams2/l/s.do?vgid\u003dx7389\u0026amp;j\u003dl\u0026amp;c\u003d11739\u0026amp;vpid\u003d628097590\u0026amp;positionid\u003d\u0026amp;p\u003d82\u0026amp;displaytype\u003d电影",
+    "isShow": "1"
+  },
+  {
+    "name": "走出尘埃",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/203/930/TV_CONTENT.jpg",
+    "url": "http://a.10086.cn/pams2/l/s.do?vgid\u003dx7389\u0026amp;j\u003dl\u0026amp;c\u003d11739\u0026amp;vpid\u003d628076479\u0026amp;positionid\u003d\u0026amp;p\u003d82\u0026amp;displaytype\u003d电影",
+    "isShow": "1"
+  },
+  {
+    "name": "走出尘埃",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/203/930/TV_CONTENT.jpg",
+    "url": "http://a.10086.cn/pams2/l/s.do?vgid\u003dx7389\u0026amp;j\u003dl\u0026amp;c\u003d11739\u0026amp;vpid\u003d628076514\u0026amp;positionid\u003d\u0026amp;p\u003d82\u0026amp;displaytype\u003d电影",
+    "isShow": "1"
+  },
+  {
+    "name": "金刚：骷髅岛",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/202/908/TV_CONTENT.jpg",
+    "url": "http://a.10086.cn/pams2/l/s.do?vgid\u003dx7389\u0026amp;j\u003dl\u0026amp;c\u003d11739\u0026amp;vpid\u003d627509619\u0026amp;positionid\u003d\u0026amp;p\u003d82\u0026amp;displaytype\u003d电影",
+    "isShow": "1"
+  }
+]
+
+[
+  {
+    "name": "麻烦家族",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/202/018/TV_CONTENT.jpg",
+    "url": "http://a.10086.cn:7071/pams2/l/s.do?vgid\u003dx7389\u0026amp;j\u003dl\u0026amp;c\u003d11739\u0026amp;vpid\u003d628205939\u0026amp;positionid\u003d\u0026amp;p\u003d82\u0026amp;displaytype\u003d电影",
+    "isShow": "1"
+  },
+  {
+    "name": "克里斯的复仇",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/291/787/TV_CONTENT.jpg",
+    "url": "http://a.10086.cn:7071/pams2/l/s.do?vgid\u003dx7389\u0026amp;j\u003dl\u0026amp;c\u003d11739\u0026amp;vpid\u003d628199001\u0026amp;positionid\u003d\u0026amp;p\u003d82\u0026amp;displaytype\u003d电影",
+    "isShow": "1"
+  },
+  {
+    "name": "克里斯的复仇",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/291/787/TV_CONTENT.jpg",
+    "url": "http://a.10086.cn:7071/pams2/l/s.do?vgid\u003dx7389\u0026amp;j\u003dl\u0026amp;c\u003d11739\u0026amp;vpid\u003d628199008\u0026amp;positionid\u003d\u0026amp;p\u003d82\u0026amp;displaytype\u003d电影",
+    "isShow": "1"
+  },
+  {
+    "name": "美少女战队",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/291/701/TV_CONTENT.jpg",
+    "url": "http://a.10086.cn:7071/pams2/l/s.do?vgid\u003dx7389\u0026amp;j\u003dl\u0026amp;c\u003d11739\u0026amp;vpid\u003d628192777\u0026amp;positionid\u003d\u0026amp;p\u003d82\u0026amp;displaytype\u003d电影",
+    "isShow": "1"
+  },
+  {
+    "name": "旋风辣妹",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/291/323/TV_CONTENT.jpg",
+    "url": "http://a.10086.cn:7071/pams2/l/s.do?vgid\u003dx7389\u0026amp;j\u003dl\u0026amp;c\u003d11739\u0026amp;vpid\u003d628186819\u0026amp;positionid\u003d\u0026amp;p\u003d82\u0026amp;displaytype\u003d电影",
+    "isShow": "1"
+  },
+  {
+    "name": "摔跤吧！爸爸",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/232/638/TV_CONTENT.jpg",
+    "url": "http://a.10086.cn:7071/pams2/l/s.do?vgid\u003dx7389\u0026amp;j\u003dl\u0026amp;c\u003d11739\u0026amp;vpid\u003d627509776\u0026amp;positionid\u003d\u0026amp;p\u003d82\u0026amp;displaytype\u003d电影",
+    "isShow": "1"
+  },
+  {
+    "name": "大卫贝肯之倒霉特工熊",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/165/934/TV_CONTENT.jpg",
+    "url": "http://a.10086.cn:7071/pams2/l/s.do?vgid\u003dx7389\u0026amp;j\u003dl\u0026amp;c\u003d11739\u0026amp;vpid\u003d624048186\u0026amp;positionid\u003d\u0026amp;p\u003d82\u0026amp;displaytype\u003d电影",
+    "isShow": "1"
+  },
+  {
+    "name": "天空之眼",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/114/672/TV_CONTENT.jpg",
+    "url": "http://a.10086.cn:7071/pams2/l/s.do?vgid\u003dx7389\u0026amp;j\u003dl\u0026amp;c\u003d11739\u0026amp;vpid\u003d624806924\u0026amp;positionid\u003d\u0026amp;p\u003d82\u0026amp;displaytype\u003d电影",
+    "isShow": "1"
+  },
+  {
+    "name": "疯岳撬佳人",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/191/590/TV_CONTENT.jpg",
+    "url": "http://a.10086.cn:7071/pams2/l/s.do?vgid\u003dx7389\u0026amp;j\u003dl\u0026amp;c\u003d11739\u0026amp;vpid\u003d625968137\u0026amp;positionid\u003d\u0026amp;p\u003d82\u0026amp;displaytype\u003d电影",
+    "isShow": "1"
+  }
+]
+

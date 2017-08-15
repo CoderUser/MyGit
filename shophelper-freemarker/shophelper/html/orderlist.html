@@ -1,0 +1,38 @@
+<style><#include "../css/orderlist.css"/></style>
+
+<ul class="a-order-nav g-dis-flex">
+	<li data-tag="processing">${languageMap.WaitDelivery}</li>
+	<li data-tag="completeOrder">${languageMap.WaitReceive}</li>
+	<li id="order-status" hidden>${languageMap.Status}</li>
+</ul>
+
+<div class="OrderStatus">
+	<#if orderList??>
+		<div class="OrderStatusList">
+			<#list orderList as item>
+				<div class="a-order-list">
+					<a class="g-dis-block" href="#VOrderStatus/${item.orderNumber}"><h3>${languageMap.OrderNumber}：${item.OrderNumber}<span>${languageMap.OrderTime}：${item.orderTime}</span></h3></a>
+					<#if item.orderDetail??>
+						<#list item.orderDetail as detail>
+							<dl>
+								<a class="g-dis-flex" href="#VItemDetail/${detail.itemOrgId}_${detail.itemStyle}">
+									<dt style="background-image: url(${detail.photoSrc});"></dt>
+									<dd>
+										<p>${detail.itemDesc}</p>
+										<p>${languageMap.Color}：${detail.itemColor}&nbsp;&nbsp;&nbsp;${languageMap.Size}：${detail.itemSize}</p>
+										<p>${languageMap.Qty}：${detail.qty}</p>
+										<p>${languageMap.Price}：<em>$${detail.price}</em></p>
+									</dd>
+								</a>
+							</dl>
+						</#list>
+					</#if>
+					<p>${languageMap.Total}<em>${detail.totalNum}</em>${languageMap.Items},  ${languageMap.TotalAmt}：<em>$ ${detail.totalAmt}</em><button>${OrderStatus}</button><#if detail.express?? && detail.express><a href="#VExpress/${detail.orderNumber}">${languageMap.ViewLogistics}</a></#if></p>
+				</div>
+			</#list>
+		</div>
+	</#if>
+	<div id="nomore" class="g-absolute-center">${languageMap.NoMore}</div>
+</div>
+
+<script><#include"../js/orderlist.js" /></script>

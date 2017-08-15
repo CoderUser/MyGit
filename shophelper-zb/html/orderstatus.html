@@ -1,0 +1,125 @@
+<style>
+	<#include "../css/orderstatus.css"/>
+</style>
+<div id="orderstatus-orderno" class="a-order-no" data-orderno="${orderNo}">${languageMap.OrderNo}：${orderNo}</div>
+<#if orderDetail??>
+<!--<_orderDetail>-->
+	<div class="a-status-list">
+		<#list orderDetail as item>
+	<!--<repeat_orderDetail>-->
+		<dl class="g-dis-flex">
+			<dt style="background-image: url(${item.photoSrc});"></dt>
+			<dd>
+				<p>${itemDesc}</p>
+				<p><!--<_itemColor>-->${languageMap.Color}：${item.itemColor}<!--</_itemColor>--> <!--<_itemSize>-->${languageMap.Size}：${item.itemSize}<!--</_itemSize>--></p>
+				<p>${languageMap.Qty}：${qty}</p>
+				<p>${languageMap.Price}：<em>$${item.price}</em></p>
+			</dd>
+		</dl>
+	<!--</repeat_orderDetail>-->
+		</#list>
+	</div>
+<!--</_orderDetail>-->
+</#if>
+<section class="a-set-addr g-arr-rt" id="orderstatus-addr" data-addrid="${addrId}" <#if topupOrder?? && !topupOrder>hidden</#if>>
+	<a href="<#if hasAddress?? && !hasAddress>#VAddressList/tc<#else>#VAddress</#if>">
+		<#if hasAddress??>
+		<p>${languageMap.Receiver}：<span id="recv-name">${receiverName}</span><span id="recv-tel">${receiverTel}</span></p>
+		<p>${languageMap.ReceiverAddress}：<span id="recv-addr">${receiverAddress}</span></p>
+		<#else>
+		<p>${languageMap.SelectAddress}</p>
+		</#if>
+		<i class="ico1"><img src="${templateUrl}/resource/shophelper/icon/ico43.png"/></i>
+		<i class="ico2"></i>
+		<i class="ico3"></i>
+	</a>
+</section>
+<section class="a-set-addr g-arr-rt" hidden id="settle-pickstore">
+	<p>${languageMap.PickUpStore}：<span id="recv-storename">${pickUpStore}</span></p>
+	<p>${languageMap.PickUpAddress}：<span id="recv-storeaddr">${pickUpAddress}</span></p>
+	<i class="ico1"><img src="${templateUrl}/resource/shophelper/icon/ico43.png"/></i>
+	<i class="ico2"></i>
+	<i class="ico3"></i>
+</section>
+<section class="a-order-sub">
+	<div class="g-arr-dn">
+		<p class="radio-title">${languageMap.Payment}<span id="payment" data-paydefault="${payDefault}">${languageMap.Required}</span></p>
+		<#if payment??>
+		<!--<_payment>-->
+		<ul hidden>
+			<#list payment as item>
+			<!--<repeat_payment>-->
+				<li><label><input class="g-checkbox" name="rb-payment" type="radio" data-basecurrcode="${item.baseCurrCode}" data-tendercode="${item.tenderCode}" value="${item.payMethod}"><img src="${item.tenderImage}">${item.tenderDesc}</label></li>
+			<!--</repeat_payment>-->
+			</#list>
+		</ul>
+		<!--</_payment>-->
+		</#if>
+	</div>
+	<div hidden class="g-arr-dn" <#if topupOrder??>hidden</#if> ><p class="radio-title">${languageMap.DeliveryMethod}<span id="shipping" data-shipdefault="${shipDefault}">${languageMap.Required}</span></p>
+		<ul hidden>
+			<li><label><input class="g-checkbox" name="rb-shipping" type="radio" value="1">${languageMap.Express}</label></li>
+			<li><label><input class="g-checkbox" name="rb-shipping" type="radio" value="2">${languageMap.PickUpBySelf}</label></li>
+		</ul>
+	</div>
+	<div hidden class="a-select-time g-arr-dn">
+		<p class="radio-title">${languageMap.DeliveryTime}<span id="time"></span></p>
+		<main hidden>
+			<div class="a-tab-time">
+				<ul>
+					<li>${languageMap.period}</li>
+					<li>09:00<br />~<br />15:00</li>       
+					<li>15:00<br />~<br />19:00</li>       
+					<li>19:00<br />~<br />22:00</li>       
+				</ul>
+				<div id="select-data" class="select-tab"></div>
+			</div>
+			<div class="notes g-clearfix">
+				<span class="g-fl">注：可左右滑移动时间选择区域</span>
+				<span class="g-fr"><em>白</em>不可选<em>灰</em>可选<em>红</em>选中</span>
+			</div>
+		</main>
+	</div>
+</section>
+<section class="g-popup-container center" id="PickUpAdd">
+	<#if pickupstore??>
+	<!--<_pickupstore>-->
+		<ul id="pickupstore">
+			<#list pickupstore as item>
+			<!--<repeat_pickupstore>-->
+				<li>
+					<p>${item.storename}</p>
+					<p>${item.storeaddress}</p>
+				</li>
+			<!--</repeat_pickupstore>-->
+			</#list>
+		</ul>
+	<!--</_pickupstore>-->
+	</#if>
+</section>
+<!--todo bonus & coupon not support now-->
+<!--<section class="order_sub">
+	<p>${languageMap.Bonus}<span>${languageMap.BonusDesc}</span><em><input type="number" value="0" min="0" max="${availBonus}"></em></p>
+	<_coupon>
+	<p><label>${languageMap.Coupon}
+		<select>
+			<repeat><option value="${cpNo}">${cpDesc}</option></repeat>
+		</select>
+	</label></p>
+	</_coupon>
+</section>-->
+<section class="a-order-sub">
+	<p>${languageMap.AmountWithCarriage}<em>$${totalAmt}</em></p>
+</section>
+<section class="a-order-sub">
+	<p>${languageMap.MessageBoard}
+		<textarea class="g-texa" id="orderstatus-remark" placeholder="${languageMap.LeaveAMessageHere}" rows="5">${remark}</textarea>
+	</p>
+</section>
+<section class="g-dis-flex">
+	<button class="g-btn-sq" id="order-change">${languageMap.Confirm}</button>
+	<button class="g-btn-sq" id="order-confirm">${languageMap.PayImmediately}</button>
+</section>
+<script>
+    <#include"../js/orderstatus.js" />
+</script>

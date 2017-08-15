@@ -1,0 +1,29 @@
+<style><#include "../css/orderstate.css"/></style>
+
+<section class="order-status-con">
+	<div class="OrderStatus">
+		<#if orderList??>
+			<div class="OrderStatusList">
+				<#list orderList as item>
+					<div class="order-status-list">
+						<h3>${languageMap.OrderNumber}：${item.orderNumber}<span>${item.date}</span></h3>
+							<#if item.orderDetail??>
+								<#list orderDetail as detail>
+									<dl>
+										<dt><a href=""><img src="${detail.photoSrc}"/></a></dt>
+										<dd>
+											<p>${detail.itemDesc}</p>
+											<p>${languageMap.Color}：${detail.itemColor} ${languageMap.Size}：${detail.itemSize}</p>
+											<p>${languageMap.Qty}：${detail.qty}</p>
+											<p>${detail.sellingPrice}</p>
+										</dd>
+									</dl>
+								</#list>
+							</#if>
+						<p>${languageMap.Total}<em>${item.totalNum}</em>${languageMap.Items} ${languageMap.Paid}：<em>${item.paidNum}</em><button>${item.orderStatus}</button></p>
+					</div>
+				</#list>
+			</div>
+		</#if>
+	</div>
+</section>

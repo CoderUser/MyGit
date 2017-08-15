@@ -1,0 +1,28 @@
+<style>
+	.a-address li{ width: 100%; padding: .2rem 3% .08rem; border-bottom: 1px solid #ddd; color: #666; line-height: .3rem; font-size: .24rem;}
+	.a-address li p{ padding-bottom: .12rem; height: auto; overflow: hidden;}
+	.a-address li p:first-child span{ padding-left: .4rem; }
+	.a-address li p:first-child em{ float: right;}
+	.a-address li p:last-child span{ float: right;color: #929394; font-size: .18rem;line-height: .48rem;width: 1.32rem;margin-top: .12rem;text-align: right;padding: 0 .3rem; background: no-repeat right center; background-size: .22rem auto;}
+	.a-address li p:last-child .delete{background-image:url({&minivip/icon/delete.png&});}
+	.a-address li p:last-child .modify{background-image:url({&minivip/icon/modify.png&});}
+	.a-address li .full-address{padding-left: .1rem;}
+	.g-btn-sq{ margin-top: .8rem;}
+</style>
+<section class="g-c-f">
+	<_vipAddress>
+	<ul class="a-address">
+		<repeat_vipAddress>
+			<li data-addrid="{[addrId]}">
+				<p>[$Name$]: {[receiverName]}<span>[$Tel$]: {[receiverTel]}</span>{={[isDefault]}?<em class="default">[$DefaultAdd$]</em>::=}</p>
+				<p>[$Address$]:<span class="full-address">{[receiverLongAddr]}</span></p>
+				<p>
+					<span class="delete">[$Delete$]</span>
+					<span class="modify">[$Modify$]</span>
+				</p>
+			</li>
+		</repeat_vipAddress>
+	</ul>
+	</_vipAddress>
+	<button class="g-btn-sq" id="add-addr">[$AddAddress$]</button>
+</section>

@@ -1,0 +1,183 @@
+<style>
+	<#include "../css/settle.css"/>
+</style>
+<#if orderItems??>
+<!--<_orderItems>-->
+	<div class="order_item_list" hidden>
+		<#list orderItems as item>
+		<!--<repeat_orderItems>-->
+			<dl>
+				<dt><img src="${item.photoSrc}"/></dt>
+				<dd>
+					<p>${item.itemDesc}</p>
+					<p>${languageMap.Color}：${item.itemColor} <span>&nbsp;&nbsp;&nbsp;</span>${languageMap.Size}：${item.itemSize}</p>
+					<p>${languageMap.Qty}：${item.qty}</p>
+					<p>${languageMap.Price}：<em>${item.sellingPrice}</em></p>
+					<p>${languageMap.PLU}：${item.plu}</p>
+				</dd>
+			</dl>
+		<!--</repeat_orderItems>-->
+		</#list>
+	</div>
+	<p id="item-more" class="item-more" hidden>${languageMap.More}</p>
+<!--</_orderItems>-->
+</#if>
+<section id="prom_input_container" class="order_sub">
+</section>
+<section class="order_sub order_sub_l2">
+	<div>
+		<dl><dt>${languageMap.Price}:</dt><dd>$<em id="em-amount">${totalAmt}</em></dd></dl>
+		<dl><dt>${languageMap.Discount}:</dt><dd>- $<em id="em-discount">0.00</em></dd></dl>
+		<dl><dt>${languageMap.Total}:</dt><dd>$<em id="em-totalamount">${totalAmt}</em></dd></dl>
+		<dl><dt>${languageMap.Paid}:</dt><dd>$<em id="em-paid">0.00</em></dd></dl>
+		<dl><dt>${languageMap.Change}:</dt><dd>$<em id="em-change">0.00</em></dd></dl>
+	</div>
+</section>
+<section id="tender-option" class="order_sub order_sub_l5">
+	<div>
+		<#if payment??>
+		<!--<_payment>-->
+		<ul>
+			<#list payment as item>
+			<!--<repeat_payment>-->
+				<li data-basecurrcode="${item.baseCurrCode}" data-tendercode="${item.tenderCode}" data-tendertype="${item.tenderType}" data-paymethod="${item.payMethod}" data-currcode="${item.currCode}" data-buyexchrate="${item.buyExchRate}" data-allowrefund="${item.allowRefund}" ><i><img src="${item.tenderImage}"/></i><div>${item.tenderDesc}</div></li>
+			<!--</repeat_payment>-->
+			</#list>
+		</ul>
+		<!--</_payment>-->
+		</#if>
+	</div>
+	<input id="numpad-input" type="text" value="" hidden/>
+</section>
+<section class="order_sub order_sub_l4">
+	<div class="tender-head"><span>${languageMap.Currency}</span><span>${languageMap.PaidAmount}</span><span>${languageMap.BaseAmount}</span></div>
+	<div>
+		<ul id="tender-select"></ul>
+	</div>
+</section>
+<section class="order_sub order_sub_l1" hidden>
+	<!-- <div hidden><p class="radio-title">${languageMap.Payment}<span id="payment" data-paydefault="${payDefault}">${languageMap.Required}</span></p>
+		<_payment>
+		<ul hidden>
+			<repeat_payment>
+			<li><label><input class="check" name="rb-payment" type="radio" data-basecurrcode="${baseCurrCode}" data-tendercode="${tenderCode}" value="${payMethod}"><img src="${tenderImage}">${tenderDesc}</label></li>
+			</repeat_payment>
+		</ul>
+		</_payment>
+	</div> -->
+	<div><p class="radio-title">${languageMap.DeliveryMethod}<span id="shipping" data-shipdefault="${shipDefault}">${languageMap.Required}</span></p>
+		<ul hidden>
+			<li><label><input class="check" name="rb-shipping" type="radio" value="1">${languageMap.Express}</label></li>
+			<li><label><input class="check" name="rb-shipping" type="radio" value="2">${languageMap.PickUpBySelf}</label></li>
+		</ul>
+	</div>
+</section>
+<a href="<#if hasAddress??>#VAddressList/tc<#else>#VAddress</#if>" hidden>
+	<section class="set_addr" id="settle-addr" data-addrid="${addrId}">
+		<#if hasAddress??>
+			<p>${languageMap.Receiver}：<span id="recv-name">${receiverName}</span><span id="recv-tel">${receiverTel}</span></p>
+			<p>${languageMap.ReceiverAddress}：<span id="recv-addr">${receiverAddress}</span></p>
+			<#else>
+				<p>${languageMap.SelectAddress}</p>
+		</#if>
+		<!--{=hasAddress?
+		<p>${languageMap.Receiver}：<span id="recv-name">${receiverName}</span><span id="recv-tel">${receiverTel}</span></p>
+		<p>${languageMap.ReceiverAddress}：<span id="recv-addr">${receiverAddress}</span></p>
+		::
+		<p>${languageMap.SelectAddress}</p>
+		=}-->
+		<i class="ico1"><img src="${templateUrl}/resource/shophelper/icon/ico43.png"/></i>
+		<i class="ico2"></i>
+		<i class="ico3"></i>
+	</section>
+</a>
+<section class="set_addr" hidden id="settle-pickstore">
+	<p>${languageMap.PickUpStore}：<span id="recv-storename"></span></p>
+	<p>${languageMap.PickUpAddress}：<span id="recv-storeaddr"></span></p>
+	<i class="ico1"><img src="${templateUrl}/resource/shophelper/icon/ico43.png"/></i>
+	<!--<i class="ico2"></i>-->
+	<!--<i class="ico3"></i>-->
+</section>
+<section class="set_addr coupon" id="settle-coupon" hidden>
+	<p>Use GiftCert or Coupon</p>
+</section>
+<section class="PickUpAdd popup-container center" id="PickUpAdd">
+	<#if pickupstore??>
+	<!--<_pickupstore>-->
+		<ul id="pickupstore">
+			<#list pickupstore as item>
+			<!--<repeat_pickupstore>-->
+				<li data-storecode="${item.storecode}">
+					<p>${item.storename} (${item.storecode})</p>
+					<p>${item.storeaddress}</p>
+				</li>
+			<!--</repeat_pickupstore>-->
+			</#list>
+		</ul>
+	<!--</_pickupstore>-->
+	</#if>
+</section>
+<br /><br /><br />
+<!--todo bonus & coupon not support now-->
+<!--<section class="order_sub">
+	<p>${languageMap.Bonus}<span>${languageMap.BonusDesc}</span><em><input type="number" value="0" min="0" max="${availBonus}"></em></p>
+	<_coupon>
+	<p><label>${languageMap.Coupon}
+		<select>
+			<repeat><option value="${cpNo}">${cpDesc}</option></repeat>
+		</select>
+	</label></p>
+	</_coupon>
+</section>-->
+<section class="order_sub" hidden>
+	<p>${languageMap.MessageBoard}<br />
+		<textarea id="settle-remark" placeholder="${languageMap.LeaveAMessageHere}" rows="5">${remark}</textarea>
+	</p>
+</section>
+<div class="tc_UserMsg" id="tc_UserMsg">
+	<p class="tc_UserMsg_h"><span id="UserMsg_close" hidden>${languageMap.Cancel}</span><span id="UserMsg_title"></span><span id="UserMsg_confirm" hidden>&nbsp;</span></p>
+	<div class="div_gcc" id="div-gcc" style="display: none; height: 6rem;">
+		<ul></ul>
+		<span id="addCoupon">Add Coupon +</span>
+		<!-- <div><span id="confirmCoupon">Confirm</span></div> -->
+	</div>
+	<div class="div_mobilepayopt" id="div-mobilepayopt" style="display: none; height: 2.8rem;">
+		<ul>
+			<li data-type="1">${languageMap.ShowQrcode}</li>
+			<li data-type="2">${languageMap.ScanQrcode}</li>
+		</ul>
+	</div>
+</div>
+
+<div id="popup-input-wrap">
+	<div id="popup-input-title"></div>
+	<div id="popup-input-content">
+		<div id="popup-input-scroller">
+		</div>
+	</div>
+	<p class="a-btn-add">+</p>
+	<button class="a-btn-confirm">${languageMap.Confirm}</button>
+</div>
+
+
+<div id="lineup-qrcode-dialog" class="dialog-wrapper" style="display: none;">
+	<div class="hdr">${languageMap.LineUpQrcode}<button class="close-btn"></button></div>
+	<div class="con">
+		<p></p>
+		<p><b></b></p>
+	</div>
+	<div class="ftr"><button class="done-btn">${languageMap.Confirm}</button></div>
+</div>
+
+<div id="lineup-input-dialog" class="dialog-wrapper" style="display: none;">
+	<div class="hdr">${languageMap.LineUpInput}<button class="close-btn"></button></div>
+	<div class="con">
+		<p>
+			<input id="lineup-ipt" class="g-ipt" type="number" maxlength="5" size="5" placeholder="${languageMap.LineUpNum}" style="text-transform: uppercase" onkeypress='return TApi.settle.checkLineUpInput(event);'/><button class="scan-btn">${languageMap.Scan}</button>
+		</p>
+	</div>
+	<div class="ftr"><button class="done-btn">${languageMap.Confirm}</button></div>
+</div>
+<script>
+    <#include"../js/settle.js" />
+</script>

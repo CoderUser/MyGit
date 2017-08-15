@@ -1,0 +1,28 @@
+<style>
+	.write-bg{padding: 0; margin: 0;}
+	.a-sales-list{width: 94%; margin: 0 auto; padding-bottom: .2rem; flex-wrap: wrap; justify-content: space-between;}
+	.a-sales-list li{width: 100%; margin-top: .2rem;}
+	.a-sales-list li h3,
+	.a-sales-list li p{padding: 0 .16rem; line-height: .6rem; font-size: .24rem; color: #888; text-overflow:ellipsis; white-space: nowrap; overflow: hidden;}
+	.a-sales-list li h3{font-weight: normal; border-bottom: 1px solid #d0dbdd; font-size: .3rem; line-height: .8rem; color: #666;}
+	.a-sales-list li span{display: block; text-align: right; font-size: .24rem; padding-bottom: .2rem; padding-right: .2rem;}
+</style>
+
+<#if memoList??>
+	<ul class="a-sales-list">
+		<#list memoList as item>
+			<li class="write-bg">
+				<a class="g-dis-block" href="#VSettleMemo-${item.mallOrgId}-${item.settleDocNo}">
+					<h3>${languageMap.ContractNo}: ${item.contractNo}</h3>
+					<p>${languageMap.SettleDocNo}: ${item.settleDocNo}</p>
+					<p>${languageMap.AccountMonth}: ${item.settleGroup}</p>
+					<p>${languageMap.SettleGroup}: ${item.accountMonth}</p>
+					<p>${languageMap.SettleAmount}: ${item.settleAmt}</p>
+					<p>${languageMap.ReceiveAmount}: ${item.receivedAmt}</p>
+					<p>${languageMap.NotReceiveAmount}: ${item.notreceivedAmt}</p>
+					<span class="txt-color">${languageMap.Details} &gt;&gt;</span>
+				</a>
+			</li>
+		</#list>
+	</ul>
+</#if>

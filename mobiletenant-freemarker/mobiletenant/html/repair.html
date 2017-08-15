@@ -1,0 +1,43 @@
+<style><#include "../css/repairsuggest.css" /></style>
+<style>
+	.repair-info p{font-size: .24rem; line-height: .56rem; padding-bottom: .2rem; display: -webkit-box; display: flex;}
+	.repair-info p span,
+	.repair-info p label{ width: 25%; text-align: right; margin-right: .12rem;}
+	.repair-info input,
+	.repair-info select{height: .56rem; min-width: 60%;}
+</style>
+
+<section class="repair-suggest">
+	<div class="repair-info write-bg">
+		<#if isNew?? && !isNew>
+			<p><span>${languageMap.DocNo}:</span><em id="repair-docno">${docNo}</em></p>
+		</#if>
+		<p><span>${languageMap.Status}:</span><em class="already">${status}</em></p>
+		<p><label for="repair-loccode">${languageMap.LocCode}:</label><input type="text" id="repair-loccode" value="${locCode}"/></p>
+		<p>
+			<label for="repair-floor">${languageMap.Floor}:</label>
+			<select id="repair-floor">
+				<option value=""></option>
+				<#list floorList as item>
+					<option value="${item.floorOrg}">${item.floorDesc}</option>
+				</#list>
+			</select>
+		</p>
+		<p><label for="repair-tel">${languageMap.Telephone}: </label><input type="text" id="repair-tel" value="${telephone}"/></p>
+	</div>
+	<textarea class="write-bg" id="repair-reqremark" placeholder="${languageMap.ReqRemark}" rows="6">${reqRemark}</textarea>
+	<textarea class="write-bg" id="repair-casedesc" placeholder="${languageMap.CaseDescription}" rows="6">${caseDescription}</textarea>
+	<ul class="repair-suggest-img write-bg clear" id="img_prew">
+		<li><span><input type="file" id="file-img" accept="image/*"></span></li>
+	</ul>
+	<p class="btn-container">
+		<#if isNew?? && !isNew>
+			<button id="btn-del" class="round-btn">${languageMap.Delete}</button>
+		</#if>
+		<button id="btn-confirm" class="round-btn">${languageMap.Confirm}</button>
+	</p>
+</section>
+
+<script>
+	<#include "../js/repair.js" />
+</script>

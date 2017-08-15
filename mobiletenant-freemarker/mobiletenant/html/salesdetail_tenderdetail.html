@@ -1,0 +1,13 @@
+<#if tenderDetail??>
+	<table>
+		<tbody>
+			<#list tenderDetail as item>
+				<tr>
+					<td>${item.txDate}</td>
+					<td>${item.paymentDesc}</td>
+					<td>${item.amount}</td>
+				</tr>
+			</#list>
+		</tbody>
+	</table>
+</#if>

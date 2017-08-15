@@ -1,0 +1,9 @@
+<#if styleList??>
+<!--<_styleList>-->
+	<#list styleList as item>
+	<!--<repeat_styleList>-->
+		<li data-itemOrgId=${itemOrgId} data-style=${style} data-longdesc="${longDesc}" data-shortdesc="${shortDesc}" data-itemPhoto="${itemPhoto}">${item.shortDesc}<br />(${item.style})</li>
+	<!--</repeat_styleList>-->
+	</#list>
+<!--</_styleList>-->
+</#if>

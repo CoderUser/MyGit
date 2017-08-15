@@ -1,0 +1,43 @@
+<style><#include "/huamao/minivip/css/user.css"/></style>
+
+<div class="a-user g-dis-flex bg-c9">
+	<a href="#VUserCenter">
+		<p>${vipCode}</p>
+		<p><#if vipName1??>${vipName1}<#else>${vipName2}</#if></p>
+	</a>
+	<img src="${templateUrl}/huamao/minivip/resource/icons/icon-code.png" id="user-code-img">
+</div>
+<ul class="a-user-list g-arrow-rt">
+	<li class='bg-c4'>
+		<a href="#VSettle">${languageMap.Settle}</a>
+	</li>
+	<li class='bg-c4'>
+		<a href="#VRecharge">${languageMap.CardRecharge}<span>${languageMap.Balance}：&#165;${giftcertBalance}</span></a>
+	</li>
+	<li class='bg-c4'>
+		<a href="#VSign">${languageMap.Sign}</a>
+	</li>
+	<li class='bg-c4'>
+		<a href="#VCoupon">${languageMap.Coupon}</a>
+	</li>
+	<li class='bg-c4'>
+		<a href="#VBonus">${languageMap.Integral}<span>${bonus}</span></a>
+	</li>
+	<li class='bg-c4'>
+		<a href="#VCollect">${languageMap.Collection}</a>
+	</li>
+	<li class='bg-c4'>
+		<a href="#VAbout">${languageMap.AboutMall}</a>
+	</li>
+	<li class='bg-c4'>
+		<a href="#VFeedback">${languageMap.Suggestion}</a>
+	</li>
+</ul>
+
+<div class="a-code-img" id="tc-code">
+	<img src="${properties.contentServerUrl}image/barcode/${vipCode}?apiKey=IMAGE" class="bar-code">
+	<p class='txt-c5'>${vipCode}</p>
+	<img src="${properties.contentServerUrl}image/qrcode?content=${vipCode}&apiKey=IMAGE" class="QR-code">
+</div>
+
+<script><#include "/huamao/minivip/js/user.js"/></script>

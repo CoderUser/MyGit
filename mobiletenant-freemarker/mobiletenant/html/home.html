@@ -1,0 +1,45 @@
+<style><#include "../css/home.css" /></style>
+
+<div class="banner">
+	<img src="${bannerSrc}"/>
+</div>
+
+<#assign pageIcons = 9>
+<#if funcList??>
+	<div id="nav-wrapper">
+		<div id="listnav" class="g-clearfix">
+			<#list funcList as func>
+				<!--new page -->
+				<#if funcList_index % pageIcons = 0>
+					<ul class="home-list g-clearfix">
+				</#if>
+				<#if func.enable?? && func.enable>
+					<li><a href="#${func.view}" style="background-image:url(${func.icon})">${func.name}</a></li>
+				<#else>
+					<li><a class="gray-bg"><img src="${func.icon}"/>${func.name}</a></li>
+				</#if>
+				<!--new page -->
+				<#if funcList_index % pageIcons = 0>
+					</ul>
+				</#if>
+			</#list>
+		</div>
+	</div>
+</#if>
+
+<div class="dotlist" id="dotlist">
+	<ul id="dot"></ul>
+</div>
+
+<p class="footer txt-color">${languageMap.CopyRight}</p>
+
+<script>
+	<#include "../js/home.js" />
+</script>
+
+
+<!--languageMap.msgId自己将msgid填入就可以, 例如: languageMap.AppTitle
+ 翻译： languageMap.AppTitle(msgId)
+
+ 数据字段名：和之前的数据名一致
+ -->

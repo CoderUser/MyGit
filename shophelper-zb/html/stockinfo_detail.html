@@ -1,0 +1,38 @@
+<#if stockList??>
+<!--<_stockList>-->
+	<#list stockList as item>
+	<!--<repeat_stockList>-->
+		<div class="item-container<#if isHeader??>header</#if><#if isIntransit??>intransit</#if>">
+			<div class="desc-container">
+				<p>
+					<span>${storeCode}${color}</span>
+					<#if item.sizeArr??>
+					<!--<_sizeArr>-->
+						<#list item.sizeArr as arr>
+						<!--<repeat_sizeArr>-->
+							<span>${arr.size}</span>
+						<!--</repeat_sizeArr>-->
+						</#list>
+					<!--</_sizeArr>-->
+					</#if>
+					<!-- <span>${sumtrfintransit}</span>
+					<span>${sumtrfouttransit}</span> -->
+				</p>
+				<#if item.intransitArr??>
+				<!--<_intransitArr>-->
+					<p>
+						<span></span>
+						<#list item.intransitArr as intransitarr>
+						<!--<repeat_intransitArr>-->
+							<span>${intransitarr.size}</span>
+						<!--</repeat_intransitArr>-->
+						</#list>
+					</p>
+				<!--</_intransitArr>-->
+				</#if>
+			</div>
+		</div>
+	<!--</repeat_stockList>-->
+	</#list>
+<!--</_stockList>-->
+</#if>

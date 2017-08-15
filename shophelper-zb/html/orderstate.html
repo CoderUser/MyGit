@@ -1,0 +1,48 @@
+<style>
+	<#include "../css/orderstate.css"/>
+</style>
+<section class="order-status-con">
+	<!--<ul class="order-status-nav">
+		<li class="order-status-curr">${languageMap.All}</li>
+		<li>${languageMap.WaitDelivery}</li>
+		<li>${languageMap.WaitReceive}</li>
+		<li>${languageMap.WaitEvaluate}</li>
+	</ul>-->
+	<div class="OrderStatus">
+		<#if orderList??>
+		<!--<_orderList>-->
+
+		<div class="OrderStatusList">
+			<#list orderList as item>
+			<!--<repeat_orderList>-->
+				<div class="order-status-list">
+					<h3>${languageMap.OrderNumber}：${orderNumber}<span>${date}</span></h3>
+					<!--<_orderDetail>-->
+						<#if item.orderDetail??>
+							<#list orderDetail as detail>
+					<!--<repeat_orderDetail>-->
+						<dl>
+							<dt><a href=""><img src="${detail.photoSrc}"/></a></dt>
+							<dd>
+								<p>${detail.itemDesc}</p>
+								<p>${languageMap.Color}：${detail.itemColor} ${languageMap.Size}：${detail.itemSize}</p>
+								<p>${languageMap.Qty}：${detail.QTY}</p>
+								<p>${detail.sellingPrice}</p>
+							</dd>
+						</dl>
+					<!--</repeat_orderDetail>-->
+							</#list>
+						</#if>
+					<!--</_orderDetail>-->
+					<p>${languageMap.Total}<em>${totalNum}</em>${languageMap.Items} ${languageMap.Paid}：<em>${paidNum}</em><button>${orderStatus}</button></p>
+				</div>
+			<!--</repeat_orderList>-->
+			</#list>
+		</div>
+		<!--</_orderList>-->
+		</#if>
+	</div>
+</section>
+<script>
+    <#include"../js/orderstate.js" />
+</script>

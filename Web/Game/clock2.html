@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .clearfix:after {
+             content: "";
+             display: block;
+             clear: both;
+             visibility: hidden;
+             font-size: 0;
+             height: 0;
+         }
+
+        .clearfix {
+            *display: inline-block;
+            _height: 1%;
+        }
+
+    </style>
+    <script>
+        function systemTime() {
+            var dateTime = new Date();
+            var hh = dateTime.getHours();
+            var mm = dateTime.getMinutes();
+            var ss = dateTime.getSeconds();
+
+            var year = dateTime.getFullYear();
+            var month = dateTime.getMonth()+1;
+            var day = dateTime.getDate();
+            //分钟秒是一位数时，在数字前补0
+            mm =extra(mm);
+            ss =extra(ss);
+            hh = extra(hh);
+            day = extra(day);
+            month = extra(month);
+            document.getElementById('time').innerHTML = year+'年'+month+'月'+day+'日'+hh+'时'+mm+'分'+ss+'秒';
+            //一秒调用一次；
+            setTimeout('systemTime()',1000);
+        }
+        function extra(x) {
+            if (x < 10){
+                return '0' + x;
+            }else {
+                return x;
+            }
+        }
+    </script>
+</head>
+<body onload="systemTime()">
+    <div class="clearfix" id="time">
+
+    </div>
+</body>
+</html>

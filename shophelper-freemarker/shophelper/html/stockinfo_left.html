@@ -1,0 +1,5 @@
+<#if styleList??>
+	<#list styleList as item>
+		<li data-itemOrgId=${item.itemOrgId} data-style=${item.style} data-longdesc="${item.longDesc}" data-shortdesc="${item.shortDesc}" data-itemPhoto="${item.itemPhoto}">${item.shortDesc}<br />(${item.style})</li>
+	</#list>
+</#if>

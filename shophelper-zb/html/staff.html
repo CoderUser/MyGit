@@ -1,0 +1,40 @@
+<style>
+	<#include "../css/staff.css"/>
+</style>
+<section class="con_person">
+	<div class="head">
+		<dl>
+			<dt class="head-img"><img src="${templateUrl}/resource/shophelper/icon/id_card.png"></dt>
+		    <dd>
+		    	<p>{userName}</p>
+		    	<!-- <p id="staffLastLogin"></p> -->
+		    </dd>
+	    </dl>
+	</div>
+	<div class="bg_gray hg1"></div>
+	<div class="bg_gray hg1"></div>
+	<ul class="con_person_list">
+		<#if retail??><li><a href="#VSalesHistory"><img src="${templateUrl}/resource/shophelper/icon/ico33.png">${languageMap.MyOrders}</a></li></#if>
+		<!--{=retail?<li><a href="#VSalesHistory"><img src="${templateUrl}/resource/shophelper/icon/ico33.png">${languageMap.MyOrders}</a></li>::=}-->
+		<!--<li><a href="#VAddressList/staff"><img src="{&resource/shophelper/icon/footer-near.png&}">${languageMap.ReceiverAddress}</a></li>-->
+		<li><a id="void"><img src="${templateUrl}/resource/shophelper/icon/ico33.png">${languageMap.Void}</a></li>
+		<li><a id="zread"><img src="${templateUrl}/resource/shophelper/icon/ico33.png">${languageMap.ZRead}</a></li>
+		<li><a href="#VSetting"><img src="${templateUrl}/resource/shophelper/ico42/logout.png">${languageMap.Set}</a></li>
+	</ul>
+	<div class="con_person_btn_list">
+		<button id="staffLogout" class="con_person_btn">${languageMap.Logout}</button>
+	</div>
+
+	<div id="void-input-dialog" class="dialog-wrapper" style="display: none;">
+		<div class="hdr">${languageMap.VoidInput}<button class="close-btn"></button></div>
+		<div class="con">
+			<p>
+				<input id="void-ipt" class="g-ipt" placeholder="${languageMap.DocNum}" style="text-transform: uppercase" onkeypress='return TApi.cart.checkVoidInput(event);'/><button class="scan-btn">${languageMap.Scan}</button>
+			</p>
+		</div>
+		<div class="ftr"><button class="done-btn">${languageMap.Confirm}</button></div>
+	</div>
+</section>
+<script>
+    <#include"../js/staff.js" />
+</script>

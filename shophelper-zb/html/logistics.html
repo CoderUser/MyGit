@@ -1,0 +1,26 @@
+<style>
+	<#include "../css/logistics.css"/>
+</style>
+<section class="logistics">
+	<em class="circle_icon icon_top"></em>
+	<em class="circle_icon icon_btm"></em>
+	<dl>
+		<dt><a><img src="${photoSrc}"></a></dt>
+		<dd>
+			<p>${languageMap.LogisticsCompany}：${expressCompany}</p>
+			<p>${languageMap.LogisticsNo}：${expressNo}</p>
+			<p>${languageMap.LogisticsStatus}：<b>${expressState}</b></p>
+		</dd>
+	</dl>
+	<#if route??>
+	<!--<_route>-->
+	<ul>
+		<#list route as item>
+		<!--<repeat_route>-->
+			<li><i></i><span>${item.expressTime}</span><p>${item.expressContext}</p></li>
+		<!--</repeat_route>-->
+		</#list>
+	</ul>
+	<!--</_route>-->
+	</#if>
+</section>

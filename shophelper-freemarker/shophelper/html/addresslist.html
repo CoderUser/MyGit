@@ -1,0 +1,26 @@
+<style><#include"../css/addresslist.css"/></style>
+
+<section class="address_con">
+	<#if addressList??>
+		<ul class="address">
+			<#list addressList as item >
+				<li data-addrid="${item.addrId}">
+					<p>${languageMap.Name}: ${item.receiverName}
+						<#if item.isDefault?? && !item.isDefault>
+							<em class="default">${languageMap.DefaultAdd}</em>
+						</#if>
+					</p>
+					<p>${languageMap.Tel}: ${item.receiverTel}</p>
+					<p>${languageMap.Address}: ${item.receiverAddress}</p>
+					<p>
+						<span class="delete">${languageMap.Delete}</span>
+						<span class="modify">${languageMap.Modify}</span>
+					</p>
+				</li>
+			</#list>
+		</ul>
+	</#if>
+	<button id="add-addr">${languageMap.AddAddress}</button>
+</section>
+
+<script><#include"../js/addresslist.js"/></script>

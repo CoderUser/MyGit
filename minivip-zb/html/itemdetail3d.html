@@ -1,0 +1,52 @@
+<style><#include "../css/itemdetail.css" /></style>
+<main id="itemdetail-container" data-org="${itemorgid}" data-style="${style}">
+	<div id="photowrapper" class="g-slide a-itemphotos">
+
+			<button id="slide_left" class="slide_btn" type="button"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg></button>
+			<button id="slide_right" class="slide_btn" type="button"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg></button>
+			<div class="slide_01" id="slide_01">
+				<#list _photolist as item><div id="${item.photoId}" class="mod_01"><img class='itemphoto' src="${templateUrl}/mobiletenant/resource/homemenu/itemphoto.png" alt=""></div></#list>
+			</div>
+			<div class="dotModule_new">
+				<div class="slide_dot" id="slide_01_dot"></div>
+			</div>
+
+	</div>
+	<section class="a-con con1">
+		<h3 id="itemname">${desci}</h3>
+		<p id="itemdesc" class="desc">${longDesc}</p>
+		<p class="p-price">${currSign}<span class="g-new-price" id="seluprice">${sellingPrice}</span>
+			<span class="g-old-price">${originPrice}</span>
+			<span class="freight">${languageMap.Carriage}:${carriage}</span>
+		</p>
+
+	</section>
+	<section class="a-con con2" data-colorsize="${colorsize}">
+
+			<div class="a-pro-attr g-dis-flex">
+				<span class="part-note-msg">${languageMap.Color}</span>
+				<p id="itemcolor" onclick="TApi.itemdetail.doSelect(arguments[0], true)">
+					<#list colorlist as item><a data-itemcolor="${item.colorid}" href="javascript:;">${item.color}</a></#list>
+				</p>
+			</div>
+
+			<div class="a-pro-attr g-dis-flex">
+				<span class="part-note-msg">${languageMap.Size}</span>
+				<p id="itemsize" onclick="TApi.itemdetail.doSelect(arguments[0], false)">
+					<#list sizelist as item><a data-itemsize="${item.sizeid}" href="javascript:;">${item.size}</a></#list>
+				</p>
+			</div>
+		<div class="a-pro-attr g-dis-flex">
+			<span class="part-note-msg">${languageMap.Qty}</span>
+			<div class="a-qty-wrapper">
+				<span class="g-qty-des" onclick="TApi.itemdetail.qtyMinus(arguments[0])">-</span>
+				<input type="text" class="g-qty" size="4" value=1>
+				<span class="g-qty-ins" onclick="TApi.itemdetail.qtyAdd(arguments[0])">+</span>
+			</div>
+		</div>
+	</section>
+	<section id="detail_con"></section>
+</main>
+<script>
+    <#include "../js/itemdetail.js" />
+</script>

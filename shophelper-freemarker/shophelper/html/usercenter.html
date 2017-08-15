@@ -1,0 +1,34 @@
+<style><#include "../css/usercenter.css"/></style>
+
+<section class="con_person">
+	<div class="head">
+		<dl>
+			<dt class="head-img"><img src="${userImgSrc}"></dt>
+		    <dd>
+		    	<p>${userName}</p>
+		    	<p>${languageMap.Balance}($)：${balance}</p>
+		    	<p>${languageMap.Bonus}：${bonus}</p>
+		    </dd>
+	    </dl>
+	    <a href="#VVipInfo">${languageMap.AccountDetails}</a>
+	</div>
+	
+	<#if retail?? && retail>
+		<ul class="con_person01">
+			<li><a href="#VFavourite">${languageMap.Collection}</a></li>
+			<li><a href="#VBrowseHistory">${languageMap.Footprint}</a></li>
+		</ul>
+	</#if>
+	<div class="bg_gray hg1"></div>
+
+	<ul class="con_person_list"> 
+        <li><a href="#VBonus"><img src="${templateUrl}/shophelper/resource/icon/ico38.png">${languageMap.BonusQuery}</a></li>
+		<#if retail?? && retail><li><a href="#VSalesHistory"><img src="${templateUrl}/shophelper/resource/icon/ico33.png">${languageMap.MyOrders}</a></li></#if>
+        <li><a href="#VAddressList"><img src="${templateUrl}/shophelper/resource/icon/footer-near.png">${languageMap.ReceiverAddress}</a></li>
+		<#if isWechat?? && isWechat><li><a href="${wechatBindLink}"><img src="${templateUrl}/shophelper/resource/icon/ico-wechat.png">${languageMap.BindWechat}</a></li></#if>
+        <li><a href="#VSetting	"><img src="${templateUrl}/shophelper/resource/icon/ico42.png">${languageMap.Set}</a></li>
+	</ul>
+	<button class="btn-big" onclick="TApi.vip.doLogout();">${languageMap.Logout}</button>
+</section>
+
+<script><#include"../js/usercenter.js" /></script>

@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>图片滚动</title>
+<style type="text/css">
+a{ text-decoration:none;}
+#container{ position:relative; width:300px;overflow:hidden; height:200px;}
+#list{ position:absolute; width:2100px; height:200px; z-index:1; }
+#list img{ float:left; width:300px; height:200px;}
+#btn{ z-index:2; position:absolute; bottom:5px; text-align:center; color:#FFF; }
+.btns{ z-index:2; position:absolute; top:80px;  display:none; color:#FFF; font-size:30px;}
+#container:hover .btns{ display:block;}
+#prev{ left:0px;}
+#next{ right:0px;}
+.on{ font-size:18px; color:#F00;}
+</style>
+<script type="text/javascript">
+window.onload = function(){
+    var container = document.getElementById('container');//获取容器
+    var list = document.getElementById('list');//获取图片列表
+    var btn = document.getElementById('btn').getElementsByTagName('span');//获取数字按钮
+    var prev = document.getElementById('prev');//获取左侧箭头
+    var next = document.getElementById('next');//获取右侧箭头
+    var index = 1;//index初始值设为1
+    var timer;//用来存放自动切换
+
+    function num(){
+        for(i=0;i<=btn.length;i++){//遍历span
+            if(btn[i].className=='on'){//如果span等于on
+                btn[i].className='';//将span设为空
+                break;//跳出循环
+                }
+            }
+            btn[index-1].className = 'on';//span设为on
+        }
+    function fan(num){//图片移动
+        var newLeft = parseInt(list.style.left) + num;//获取图片距左侧的距离，并且赋值给newLeft
+        var times = 300;//位移总时间 
+        var interval = 10;//位移总次数
+        var speend = num/(times/interval);
+        function go(){
+            if( (speend < 0 && parseInt(list.style.left) > newLeft) || (speend > 0 && parseInt(list.style.left) < newLeft)){
+                list.style.left = parseInt(list.style.left)+speend +'px';
+                setTimeout(go,interval);
+                }else{
+                list.style.left = newLeft+'px';
+                if(newLeft > -300){//判断newLeft是否大于-300
+                    list.style.left = -1500+'px';
+                            }
+                if(newLeft < -1600){//判断newLeft是否小于-1600
+                    list.style.left = -300+'px';
+                        }
+                    }       
+            }
+        go();   
+        }
+
+    function play(){//3秒后，开始滚动
+        timer = setInterval(function(){
+            next.onclick();
+            },3000);
+        }
+    function stop(){//停止滚动
+        clearInterval(timer);
+        }
+
+    next.onclick = function(){//右侧按钮点击事件
+
+        if(index == 5){
+            index = 1;
+        }else{
+            index += 1;
+            }
+        fan(-300);//调用fan（）方法
+        num();    //调用num（）方法
+        }
+    prev.onclick = function(){//左侧按钮点击事件
+
+        if(index == 1){
+            index = 5;
+        }else{
+            index -= 1;
+            }
+        fan(300);//调用fan（）方法
+        num();   //调用num（）方法
+        }
+
+        //遍历所有的小按钮
+        for(var i = 0; i< btn.length; i++){
+            btn[i].onclick = function(){//给按钮追加事件
+                if(this.clssName == 'on'){//判断当前点击的是不是自己本身
+                    return;//是自己本身 跳出循环。不执行后面的语句
+                    }
+                var newBtn = parseInt(this.getAttribute('index')); //获取到当前点击按钮的index
+                var oldBtn = -300*(newBtn-index);//计算出位移的位置
+                index = newBtn;//将新位置赋值给index
+                num();
+                fan(oldBtn);
+
+            }
+        }
+
+    container.onmouseover = stop;//当鼠标停留在container上，停止滚动
+    container.onmouseout = play;//当鼠标离开在container上，开始滚动
+
+    play();//开始滚动
+
+    }
+</script>
+</head>
+
+<body>
+
+<div id="container">
+    <div id="list" style="left:-300px;">
+        <img alt="1" src="http://f.hiphotos.baidu.com/image/h%3D200/sign=55508730ac18972bbc3a07cad6cd7b9d/9f2f070828381f306c62368dae014c086e06f09f.jpg" />
+        <img alt="1" src="http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1408/07/c0/37179063_1407421362265_800x600.jpg" />
+        <img alt="1" src="http://www.qqya.com/qqyaimg/allimg/140227/1KI36229-3.jpg" />
+        <img alt="1" src="http://upload.univs.cn/2012/0104/1325645518461.jpg" />
+        <img alt="1" src="http://pic29.nipic.com/20130516/7051905_170823279194_2.jpg" />
+        <img alt="1" src="http://image37.360doc.com/DownloadImg/2011/09/2500/18000218_41.jpg" />
+        <img alt="1" src="http://www.hq.xinhuanet.com/fukan/2011-09/12/xinsrc_34309081216130461114512.jpg" />
+    </div>
+    <div id="btn">
+        <span index="1" class="on">1</span>
+        <span index="2">2</span>
+        <span index="3">3</span>
+        <span index="4">4</span>
+        <span index="5">5</span>
+    </div>
+    <div></div>
+    <a href="javascript:" class="btns" id="prev"><</a>
+    <a href="javascript:" class="btns" id="next">></a>
+</div>
+
+</body>
+</html>

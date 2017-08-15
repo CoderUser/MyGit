@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;  minimum-scale=1.0; maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>滚动</title>
+<style>
+{
+margin: 0;
+padding: 0;
+}
+ul,{
+list-style-type: none;
+}.banner_wrap {
+overflow: hidden;
+position: relative;
+margin: 10px auto;
+}
+ul {
+overflow: hidden;
+position: relative;
+top: 0px;
+left: 0px;
+height: auto;
+}
+ul li {
+width: 200px;
+float: left;
+}
+ul li>img{width: 100%;height: auto;}
+</style>
+</head>
+<body>
+
+<div id="banner_wrap" class="banner_wrap">
+    <ul id="ul1">
+        <li><img src="http://wap.monternet.com/nmpfs/media/p/image/20170625/132/83/970/721327.jpg?v=1498363316000" width="400" height="250"/></li>
+        <li><img src="http://wap.monternet.com/nmpfs/media/p/image/20170620/132/83/970/721337.jpg?v=1497936298000" width="400" height="250"/></li>
+        <li><img src="http://wap.monternet.com/nmpfs/media/p/image/20170625/132/85/909/9094963.jpg?v=1498357492000" width="400" height="250"/></li>
+    </ul>
+</div>
+<script>
+    window.onload = function (){
+
+        var myBox = document.getElementById("ul1");
+        var bannerWrap = document.getElementById("banner_wrap");
+        var t = "";
+        var i= 0;
+        var moveDis=myBox.getElementsByTagName("li")[0].offsetWidth;
+        myBox.style.width=(myBox.getElementsByTagName("li").length)*moveDis+"px";
+        bannerWrap.style.width=myBox.getElementsByTagName("li")[0].offsetWidth+"px";
+
+        bannerWrap.addEventListener("mouseover", function () {
+            clearInterval(t);
+        });
+        bannerWrap.addEventListener("mouseout", function (){
+            t=setInterval(function(){
+            move(myBox);
+    },5000);
+        });
+    t=setInterval(function(){
+        move(myBox);
+    },5000);
+    function move(obj){
+        i++;
+        if(i>2){
+            i=0;
+            obj.style.transition="transform 0.01s ease";
+        };
+            obj.style.transition="transform 0.5s ease";
+            obj.style.transform="translateX("+(-moveDis*i)+"px)";
+            console.log(obj.style.transform);
+    };
+    };
+</script>
+</body></html>

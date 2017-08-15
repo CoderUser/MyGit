@@ -1,0 +1,32 @@
+<style><#include"../css/itemdetailfooter.css"/></style>
+
+<#assign islike = ""/>
+<#assign likeDesc = ""/>
+<#if like?? && like>
+	<#assign islike = "hidden"/>
+	<#assign likeDesc = languageMap.AlreadyLike/>
+<#else>
+	<#assign likeDesc = languageMap.Like/>
+</#if>
+
+<footer class="all-foot">
+	<div class="mune" id="item-like">
+		<img class="like" src="${templateUrl}/shophelper/resource/icon/like.png" ${islike}/>
+		<img class="alreadylike" src="${templateUrl}/shophelper/resource/icon/alreadylike.png" ${islike}/>
+		<p>${likeDesc}</p>
+	</div>
+
+	<a class="mune" href="#VCart">
+		<img id="cart-icon" src="${templateUrl}/shophelper/resource/icon/detail_footer-cart.png">
+		<p>${languageMap.Cart}</p>
+		<span id="footer-cartcount" class="badge"></span>
+	</a>
+	<div class="mune-btn" id="add-cart">
+		<span>${languageMap.AddToCart}</span>
+	</div>
+	<div class="mune-btn c-btn-primary" id="buy-now">
+        <span>${languageMap.BuyNow}</span>
+    </div>
+</footer>
+
+<script><#include"../js/itemdetailfooter.js"/></script>

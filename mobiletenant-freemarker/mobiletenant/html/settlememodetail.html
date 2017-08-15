@@ -1,0 +1,53 @@
+<style><#include "../css/settlememodetail.css" /></style>
+
+<div class="settle-info gradient-bg">
+	<p>${languageMap.ContractNo}：<span>${contractNo}</span></p>
+	<p>${languageMap.SettleDocNo}：<span>${settleDocNo}</span></p>
+	<p>${languageMap.SettleGroup}：<span>${settleGroup}</span></p>
+</div>
+
+<div class="settle-detail-list write-bg">
+	<table class="settle-table">
+		<tr>
+			<th>${languageMap.ChargeDesc}</th>
+			<th>${languageMap.AmtTE}</th>
+			<th>${languageMap.Tax}</th>
+			<th>${languageMap.AmtTI}</th>
+		</tr>
+		<#if accountPeriod??>
+			<#list accountPeriod as item>
+				<tr class="settle-header">
+					<td class="txt-color" colspan="4">${languageMap.AccountMonth}: ${item.periodFrom} ${languageMap.To} ${item.periodTo}</td>
+				</tr>
+				<#list item.accountDetail as itemdetail>
+					<tr>
+						<td>${itemdetail.chargeDesc}</td>
+						<td>${itemdetail.amtTE}</td>
+						<td>${itemdetail.tax}</td>
+						<td>${itemdetail.amtTI}</td>
+					</tr>
+				</#list>
+				<tr class="settle-subtotal">
+					<td>${languageMap.SubTotal}</td>
+					<td>${item.subTotal_amtTE}</td>
+					<td>${item.subTotal_tax}</td>
+					<td>${item.subTotal_amtTI}</td>
+				</tr>
+			</#list>
+		</#if>
+		<tr class="settle-total">
+			<td>${languageMap.Total}</td>
+			<td>${totalAmtTE}</td>
+			<td>${totalTax}</td>
+			<td>${totalAmtTI}</td>
+		</tr>
+	</table>
+</div>
+<p class="g-dis-flex">
+	<button class="round-btn" id="reject">${languageMap.Confirm}</button>
+	<button class="round-btn" id="confirm">${languageMap.Reject}</button>
+</p>
+
+<script>
+	<#include "../js/settlememodetail.js" />
+</script>

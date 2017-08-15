@@ -1,0 +1,91 @@
+table tr td,table tr th{text-align: right;}
+table tr th{word-wrap: break-word; word-break:break-all;}
+.payment-total tr th,
+.payment-total tr td,
+.payment-table tr th,
+.payment-table tr td{ text-align: left;}
+
+.sales-tab{width: 70%; background: #fff; font-size: .24rem; height: .66rem; line-height: .66rem; text-align: center; border-radius: .56rem; margin: .2rem auto; overflow: hidden;}
+.sales-tab li{width: 50%; float: left; height: .66rem; line-height: .66rem;}
+.sales-tab li.curr{color: #fff;}
+
+.sales-tab-con{padding-bottom: .2rem;}
+.sales-tab-con>div:nth-child(2){padding: 0;}
+.sales-filter{ line-height: .8rem;}
+.sales-filter input{ width: 1.7rem; font-size: .2rem; margin-left: .06rem;}
+.sales-filter span{ width: 1.4rem; display: inline-block; text-align: right; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; vertical-align: middle;}
+.sales-filter em{ font-style:normal; font-size: .2rem; color: #999; padding-left: .06rem;}
+.sales-filter select{ width: 2.4rem; font-size: .2rem;}
+.sales-tab-con tr td:last-child,
+.sales-tab-con tr th:last-child{border-right: none; padding-right: .3rem;}
+.sales-tab-con tr th:first-child,
+.sales-total tr td:first-child,
+.payment-total tr td[rowspan]:first-child,
+.payment-total tr th:nth-child(1),
+.payment-total tfoot tr td:first-child{text-align: left; padding-left: .3rem;}
+
+.sales-total tr td:last-child,
+.sales-total tr th:last-child{ padding-right: .3rem;}
+.sales-total tr td:first-child{text-align: left; padding-left: .3rem;}
+.sales-total tr:last-child td{border-bottom: none; color: #333; font-weight: bold;}
+
+.sales-table p, .payment-table p{background: #fff; text-align: left; padding: .24rem .2rem; font-size: .28rem; border-bottom: 1px solid #d0dbdd; overflow: hidden;}
+.sales-table tr td:nth-child(1),
+.sales-table tr th:nth-child(1),
+.payment-table tr td:nth-child(1),
+.payment-table tr th:nth-child(1){width:1.2rem; text-align: left; padding-left: .3rem;}
+.sales-table tr td:nth-child(2),
+.sales-table tr th:nth-child(2),
+.sales-table tr td:nth-child(3),
+.sales-table tr th:nth-child(3){width:.6rem;}
+.sales-total tr:last-child td,
+.payment-total tfoot td{border-bottom: none;}
+.payment-total tr td[rowspan]:first-child span{ font-size: .2rem; color: #f43838;}
+
+/*.detail-table{max-height: 21rem; overflow: auto;}*/
+.detail-table tr td:last-child{padding-right: .22rem;}
+.payment-table tr td:nth-child(2),
+.payment-table tr th:nth-child(2){width: 1.6rem;}
+.detail-table::-webkit-scrollbar{width:4px; height:4px;}
+::-webkit-scrollbar:hover{ background-color:#eee; }
+::-webkit-scrollbar-thumb{ -webkit-border-radius:4px; background-color:#ccc; height:10px; }
+::-webkit-scrollbar-thumb:hover{ background-color: #aaa;}
+::-webkit-scrollbar-thumb:active{ background-color:#888;}
+
+.sales-table>table tr th{ text-align: right;}
+
+.payment-total tr td[rowspan]:nth-child(1){border-right: 1px solid #ddd;}
+.total td{ color: #333; font-weight: bold;}
+.payment-total tr th:first-child,
+.payment-total tr td[rowspan]:first-child{width: 1rem;}
+.payment-total tr th:last-child,
+.payment-total tr td:last-child{width: 1.4rem;}
+
+.payment-table tr th:last-child,
+.payment-table tr td:last-child,
+.payment-total tr th:last-child,
+.payment-total tr td:last-child{ text-align: right;}
+
+.tab_shop_nav{background: #fff; width: 100%; height: .84rem; position: relative; overflow: hidden;}
+.tab_shop_nav ul{position: absolute; top: 0;}
+.tab_shop_nav li{ padding: 0 .2rem; float: left; line-height: .8rem; text-align: center;}
+.tab_shop_nav li.curr{ border-bottom-width:.04rem ; border-bottom-style: solid;}
+
+.tab_shop_table,.tab_tender_table{display: none;}
+.detail-table tr td:first-child{ text-align: left; padding-left: .3rem;}
+.sales-total tr td:nth-child(1){width: 1rem;}
+#Details tr th:nth-child(1),
+#Details tr td:nth-child(1){width: 1.2rem;}
+#Details tr td:nth-child(1){margin-left: 4px;}
+.sales-total tr td:nth-child(2),
+#Details tr th:nth-child(2),
+#Details tr td:nth-child(2){width: .8rem;}
+.sales-total tr td:nth-child(3),
+#Details tr th:nth-child(3),
+#Details tr td:nth-child(3){width: .8rem;}
+.sales-total tr td:nth-child(4),
+#Details tr th:nth-child(4),
+#Details tr td:nth-child(4){width: 1.8rem;}
+
+#table-wrapper,
+#tender-wrapper{ max-height: 4.2rem; position: relative; overflow: hidden;}

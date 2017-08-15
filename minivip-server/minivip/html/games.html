@@ -1,0 +1,36 @@
+<style>
+	.a-games{
+		font-size:.3rem;
+	}
+	.a-games li{
+		background-repeat:no-repeat;
+		background-position:left .37rem center;
+		background-size:.5rem auto;
+	}
+	.a-games li:nth-child(1){
+		background-image:url("${templateUrl}/huamao/minivip/resource/icons/icon-routtle.png");
+	}
+	.a-games li:nth-child(2){
+		background-image:url("${templateUrl}/huamao/minivip/resource/icons/icon-scatch.png");
+	}
+	.a-games li a{
+		padding-left:.8rem;
+	}
+</style>
+
+<ul class="a-games g-arrow-rt">
+	<li>
+		<a href="#VRoulettle">${languageMap.Roulettle}</a>
+	</li>
+	<li>
+		<a href="#VScratchCard">${languageMap.ScratchCard}</a>
+	</li>
+</ul>
+
+<script>
+	(function(_TApi) {
+
+		VNavigatorBar.updateTitle("${languageMap.BonusLottery}");
+		if(!_TApi.hasClass(VNavigatorBar.navToolbar, 'bar-bd-btm')) _TApi.addClass(VNavigatorBar.navToolbar, 'bar-bd-btm');
+	})(window.TApi || {});
+</script>

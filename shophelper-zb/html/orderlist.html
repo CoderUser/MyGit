@@ -1,0 +1,47 @@
+<style>
+	<#include "../css/orderlist.css"/>
+</style>
+<ul class="a-order-nav g-dis-flex">
+	<li data-tag="processing">${languageMap.WaitDelivery}</li>
+	<li data-tag="completeOrder">${languageMap.WaitReceive}</li>
+	<li id="order-status" hidden>${languageMap.Status}</li>
+</ul>
+<div class="OrderStatus">
+	<#if orderList??>
+	<!--<_orderList>-->
+		<div class="OrderStatusList">
+			<#list orderList as item>
+			<!--<repeat_orderList>-->
+				<div class="a-order-list">
+					<a class="g-dis-block" href="#VOrderStatus/${OrderNumber}"><h3>${languageMap.OrderNumber}：${item.OrderNumber}<span>${languageMap.OrderTime}：${item.orderTime}</span></h3></a>
+					<#if item.orderDetail??>
+					<!--<_orderDetail>-->
+						<#list item.orderDetail as detail>
+					<!--<repeat_orderDetail>-->
+						<dl>
+							<a class="g-dis-flex" href="#VItemDetail/${itemOrgId}_${itemStyle}">
+								<dt style="background-image: url(${photoSrc});"></dt>
+								<dd>
+									<p>${detail.itemDesc}</p>
+									<p><!--<_itemColor>-->${languageMap.Color}：${detail.itemColor}<!--</_itemColor>-->&nbsp;&nbsp;&nbsp;<!--<_itemSize>-->${languageMap.Size}：${detail.itemSize}<!--</_itemSize>--></p>
+									<p>${languageMap.Qty}：${detail.qty}</p>
+									<p>${languageMap.Price}：<em>$${detail.price}</em></p>
+								</dd>
+							</a>
+						</dl>
+					<!--</repeat_orderDetail>-->
+						</#list>
+					<!--</_orderDetail>-->
+					</#if>
+					<p>${languageMap.Total}<em>${TotalNum}</em>${languageMap.Items},  ${languageMap.TotalAmt}：<em>$${totalAmt}</em><button>${OrderStatus}</button><#if express??><a href="#VExpress/${OrderNumber}">${languageMap.ViewLogistics}</a></#if></p>
+				</div>
+			<!--</repeat_orderList>-->
+			</#list>
+		</div>
+	<!--</_orderList>-->
+	</#if>
+	<div id="nomore" class="g-absolute-center">${languageMap.NoMore}</div>
+</div>
+<script>
+    <#include"../js/orderlist.js" />
+</script>

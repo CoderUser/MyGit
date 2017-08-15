@@ -1,0 +1,71 @@
+<style>
+	<#include "../css/userinfo.css"/>
+</style>
+
+<section class="UserMsg">
+	<div {=isNewVip?class="hide"::=}>${languageMap.ID}<span id="userinfo-vipcode">${id}</span></div>
+	<ul class="UserMsg01">
+		<li>${languageMap.UserName}<span id="username" data-name1="${userName1}" data-name2="${userName2}">${userName}</span></li>
+		<li>${languageMap.Sex}<span id="sex" data-sex="${Sex}"></span></li>
+		<li>${languageMap.Birthday}<span id="Birth"></span></li>
+	</ul>
+	<ul class="UserMsg02">
+		<li style="display: none;"><a href="#VChangePassword">${languageMap.Password}<span>${languageMap.MdyPass}</span></a></li>
+		<li>${languageMap.Mobile}<span id="usertel" data-tel="${Mobile}" data-tel-area-code="${TelAreaCode}">${telAreaCode} ${mobile}</span></li>
+		<li>${languageMap.Email}<span id="useremail" data-email="${Email}">${email}</span></li>
+		<li><a href="#VAddressHome">${languageMap.HomeAddress}<span>${languageMap.Edit}</span></a></li>
+		<#if isNewVip??><li><a href="#VAddressList">${languageMap.Address}<span>${languageMap.AllAddress}</span></a></li></#if>
+		<!--{=isNewVip?::<li><a href="#VAddressList">${languageMap.Address}<span>${languageMap.AllAddress}</span></a></li>=}-->
+	</ul>
+	<#if isNewVip??><button class="btn-big" id="reg-btn">${languageMap.Register}</button></#if>
+	<!--{=isNewVip?<button class="btn-big" id="reg-btn">${languageMap.Register}</button>::=}-->
+</section>
+
+<div class="tc_UserMsg" id="tc_UserMsg">
+	<p class="tc_UserMsg_h"><span id="UserMsg_close">${languageMap.Cancel}</span><span id="UserMsg_confirm">${languageMap.Confirm}</span></p>
+	<div class="mdyUser" id="mdyUser" style="display: none;">
+		<input type="text" value="" placeholder="${languageMap.GivenName}" />
+		<input type="text" value="" placeholder="${languageMap.Surname}" />
+	</div>
+	<div class="mdySex" id="mdySex" style="display: none;">
+		<ul>
+			<li><label>${languageMap.male}<input class="curr" name="rb-sex" type="radio" value="M"></label></li>
+			<li><label>${languageMap.female}<input name="rb-sex" type="radio" value="F"></label></li>
+			<li><label>${languageMap.secrecy}<input name="rb-sex" type="radio" value=""></label></li>
+		</ul>
+	</div>
+	<div class="mdyBirth" id="mdyBirth" style="display: none;">
+		<form name="reg_testdate">
+			<select name="YYYY">
+				<option value="">${languageMap.Year}</option>
+			</select>
+			<select name="MM">
+				<option value="">${languageMap.Month}</option>
+			</select>
+			<select name="DD">
+				<option value="">${languageMap.Day}</option>
+			</select>
+		</form>
+	</div>
+	<div class="mdyTel" id="mdyTelEmail" style="display: none;">
+		<p style="display: flex;display: -webkit-flex;">
+			<#if telAreaCodeList??>
+			<!--<_telAreaCodeList>-->
+				<select id="tel-area-code" class="tel-area-code g-arr-dn" name="telareacode" data-code="${receiverTelCode}">
+					<option value="">${languageMap.TelCode}</option>
+					<#list telAreaCodeList as item>
+					<!--<repeat_telAreaCodeList>-->
+						<option value="${item.telareacode}">${item.telareacode}</option>
+					<!--</repeat_telAreaCodeList>-->
+					</#list>
+				</select>
+			<!--</_telAreaCodeList>-->
+			</#if>
+			<input type="tel" placeholder="${languageMap.NewMobile}" value="" />
+		</p>
+		<p style="display:none;"><input id="ChangeCodeInput" class="tel_code" type="text" placeholder="${languageMap.WriteCode}" value="" /><button class="code">${languageMap.GetCode}</button></p>
+	</div>
+</div>
+<script>
+    <#include"../js/userinfo.js" />
+</script>

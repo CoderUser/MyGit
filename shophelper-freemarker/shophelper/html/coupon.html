@@ -1,0 +1,91 @@
+<style><#include"../css/coupon.css"/></style>
+
+<section class="con_discount">
+	<ul class="dis_coupon_tab">
+		<li class="curr">${languageMap.NotUsed}</li>
+		<li>${languageMap.HasExpired}</li>
+		<li>${languageMap.AlreadyUsed}</li>
+	</ul>
+	<div class="dis_coupon_con">
+		<div class="dis_coupon">
+			<#if couponList??>
+				<#list couponList as item>
+					<div class="dis_coupon_s dis_coupon_s2">
+						<div class="dis_img">
+							<img src="${item.couponSrc}"/>
+							<i></i>
+						</div>
+						<div class="dis_ewm">
+							<ul>
+								<li>${languageMap.TicketNumber}：${item.TicketNumber}</li>
+								<#if item.effectDate??>
+									<li>${languageMap.EffectDate}：${item.effectDate}</li>
+								</#if>
+								<#if item.expiryDate??>
+									<li>${languageMap.ExpiryDate}：${item.expiryDate}</li>
+								</#if>
+								<#if item.terms??>
+									<li>${languageMap.Terms}：${item.terms}</li>
+								</#if>
+							</ul>
+							<img src="${item.qrCode}">
+						</div>
+					</div>
+				</#list>
+			</#if>
+		</div>
+		<div class="dis_coupon cannot_use" style="display: none;">
+			<#if couponExpire??>
+				<#list couponExpire as item>
+					<div class="dis_coupon_s dis_coupon_s2">
+						<div class="dis_img">
+							<img class="gary" src="${item.couponSrc}"/>
+							<i></i>
+						</div>
+						<ul class="dis_ewm">
+							<li>${languageMap.TicketNumber}：${item.TicketNumber}</li>
+							<#if item.effectDate??>
+								<li>${languageMap.EffectDate}：${item.effectDate}</li>
+							</#if>
+							<#if item.expiryDate??>
+								<li>${languageMap.ExpiryDate}：${item.expiryDate}</li>
+							</#if>
+							<#if item.terms??>
+								<li>${languageMap.Terms}：${item.terms}</li>
+							</#if>
+						</ul>
+						<i><img src="${templateUrl}/shophelper/resource/icon/ico58.png"></i>
+					</div>
+				</#list>
+			</#if>
+		</div>
+		<div class="dis_coupon cannot_use" style="display: none;">
+			<#if couponUsed>
+				<#list couponUsed as item>
+					<div class="dis_coupon_s dis_coupon_s2">
+						<div class="dis_img">
+							<img class="gary" src="${item.couponSrc}"/>
+							<i></i>
+						</div>
+						<ul class="dis_ewm">
+							<li>${languageMap.TicketNumber}：${item.TicketNumber}</li>
+							<#if item.effectDate??>
+								<li>${languageMap.EffectDate}：${item.effectDate}</li>
+							</#if>
+							<#if item.expiryDate??>
+								<li>${languageMap.ExpiryDate}：${item.expiryDate}</li>
+							</#if>
+							<#if item.terms??>
+								<li>${languageMap.Terms}：${item.terms}</li>
+							</#if>
+						</ul>
+						<i><img src="${templateUrl}/shophelper/resource/icon/ico59.png"></i>
+					</div>
+				</#list>
+			</#if>
+		</div>
+	</div>
+	<div id="nomore" class="absolute-center">${languageMap.NoMore}</div>
+</section>
+
+<script><#include"../js/coupon.js"/></script>

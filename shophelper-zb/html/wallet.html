@@ -1,0 +1,65 @@
+<style>
+	<#include "../css/wallet.css"/>
+</style>
+
+<header class="balance">
+	<!--<div class="b_head_img"><a href=""><img src="${UserImgSrc}"></a></div>-->
+	<!--<span><a href="#">${languageMap.Bill}</a></span>-->
+	<p>${languageMap.AccountBalance}<br/><span class="balance_num">${accountBalance}</span></p>
+	<ul class="b_head_ul">
+    	<li><a href="#VGiftcert">${languageMap.GiftcertCount}<br />${giftcertCount}</a></li>
+    	<li><a href="#VBonus">${languageMap.Bonus}<br />${bonus}</a></li>
+    </ul>
+</header>
+<section class="con_balance">
+	<#if rechargeevent??>
+	<!--<_rechargeevent>-->
+	<ul class="Recharge clearfix" data-progress="${progressReward}">
+		<#list rechargeevent as item>
+		<!--<repeat_rechargeevent>-->
+			<li><em>${RechargeNum}</em>${languageMap.Give}<em>${item.GiveNum}</em></li>
+		<!--</repeat_rechargeevent>-->
+		</#list>
+	</ul>
+	<!--</_rechargeevent>-->
+	</#if>
+	<div class="method">
+		<h4>${languageMap.RechargeMethod}：</h4>
+		<#if payment??>
+		<!--<_payment>-->
+			<ul>
+				<#list payment as item>
+				<!--<repeat_payment>-->
+					<li>
+						<label>
+							<input class="check" name="rb-payment" type="radio" data-basecurrcode="${baseCurrCode}" data-tendercode="${tenderCode}" value="${payMethod}">
+						<img src="${tenderImage}">${item.tenderDesc}
+						</label>
+					</li>
+				<!--</repeat_payment>-->
+				</#list>
+			</ul>
+		<!--</_payment>-->
+		</#if>
+		<!--<ul>
+			<li><label><input class="check" name="rb-payment" type="radio" value="2" checked><img src="{&resource/shophelper/icon/ico46.jpg&}">${languageMap.WechatPay}</label></li>
+			{=alipay?<li><label><input class="check" name="rb-payment" type="radio" value="3"><img src="{&resource/shophelper/icon/ico47.jpg&}">${languageMap.AliPay}</label></li>::=}
+		</ul>-->
+	</div>
+	<div class="Amount">
+		<h4>${languageMap.RechargeNumber}（$）：</h4>
+		<dl>
+			<dt><input type="number" placeholder="${languageMap.EnterAmount}" min=0 value=""></dt>
+			<dd><button id="dotopup">${languageMap.Recharge}</button></dd>
+		</dl>
+		<p>${languageMap.ActualArrivalAmount}：<em class="Amount_num">0.00</em>${languageMap.Yuan}</p>
+		<p>${languageMap.AccountAvailableBalance}：<em class="Amount_total">${accountBalance}</em>${languageMap.Yuan} </p>
+	</div>
+	<!--<div class="notice">
+		<h4>${languageMap.Notices}：</h4>
+		<p>${ActiveContent}</p>
+	</div>-->
+</section>
+<script>
+    <#include"../js/wallet.js" />
+</script>

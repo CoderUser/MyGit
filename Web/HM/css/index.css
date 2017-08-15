@@ -1,0 +1,394 @@
+/* CSS Document */
+/*base*/
+body {
+    font-family: "微软雅黑";
+    font-size: .24rem;
+    margin: 0 auto;
+    -webkit-text-size-adjust: none;
+    word-break: break-all;
+    color: #333;
+    background: #f4f4f4;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-weight: normal;
+    font-style: normal;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-size: 100%;
+}
+
+div {
+    word-wrap: break-word;
+}
+
+center {
+    height: 15px;
+    margin: 5px 0;
+}
+
+input {
+    vertical-align: middle;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: #444;
+}
+
+img {
+    vertical-align: top;
+}
+
+label {
+    font-family: Tahoma, Geneva, sans-serif;
+    vertical-align: middle;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+a, input {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+body, p, input, h1, h2,  h3, h4, h5, h6, ul, li, dl, dt, dd, form { margin: 0; padding: 0; list-style: none; vertical-align: middle; font-weight:normal; }
+img { border:0; margin: 0; padding: 0;}
+header, section, footer { display: block; margin: 0; padding: 0; }
+
+
+#content{ padding:10px 0; background:#fff;  }
+.path{ padding:0 0 5px 5px;   }
+
+.picScroll{ margin:10px auto; text-align:center;background-color:#fff;  }
+.picScroll .bd ul{ width:100%;  float:left; padding-top:10px; padding-bottom:10px  }
+.picScroll .bd li{ width:25%; float:left; font-size:.24rem; text-align:center;  }
+.picScroll .bd li a{-webkit-tap-highlight-color:rgba(0, 0, 0, 0); }
+.picScroll .bd li img{ width:50px; height:50px;  background:url(images/loading.gif) #fff center center no-repeat;  }
+
+
+.picScroll .hd{ height:20px; line-height:20px; border-bottom:0px solid #067CDF; background:#f6f6f6;   overflow:hidden; text-align:left;  padding:0 10px;  }
+.picScroll .hd ul{ float:right; padding-top:5px; padding-right:46%  }
+.picScroll .hd li{ float:left; width:8px; height:8px; background:#D0D0D0; margin:0 5px; overflow:hidden;
+    -webkit-border-radius:8px; -moz-border-radius:8px; border-radius:8px; font-size:0px;
+}
+.picScroll .hd .on{ background:#DF7106;  }
+.picScroll .prev,.picScroll .next{ display:block; float:right;  width:18px; height:18px; background:url(images/pisScrollIcons.gif) -6px -7px no-repeat; overflow:hidden; margin:11px 5px 0 5px;  }
+.picScroll .next{ background-position:-34px -7px; }
+.picScroll .prevStop{ background-position:-6px -40px; }
+.picScroll .nextStop{ background-position:-34px -40px; }
+
+
+.indexHead {
+    background: -webkit-linear-gradient(left, #63B8FF, #4876FF); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #63B8FF, #4876FF); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #63B8FF, #4876FF); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #63B8FF, #4876FF); /* 标准的语法 */
+    height: .75rem;
+    width: 100%;
+    /*position: fixed;
+    top: 0;
+    left: 0;*/
+    z-index: 999;
+    overflow: hidden;
+    position: relative;
+}
+
+.indexHead .left {
+    position: absolute;
+    display: block;
+    width: .3rem;
+    height: .3rem;
+    top: .2rem;
+    left: .2rem;
+}
+
+.indexHead a img {
+    width: 100%;
+    height: 100%;
+}
+
+.indexHead h1 {
+    text-align: center;
+}
+
+.indexHead .nav {
+    position: absolute;
+    display: block;
+    width: .3rem;
+    height: .3rem;
+    margin: 0 auto;
+    top: .2rem;
+    right: .2rem;
+}
+
+.indexHead .nav img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.indexhd .turnPic {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0px auto;
+    overflow: hidden;
+}
+
+.indexhd .turnPicList {
+    position: relative;
+}
+
+.indexhd .turnPicList li {
+    float: left;
+    position: relative;
+}
+
+.indexhd .turnPicList li img {
+    vertical-align: top;
+    width: 100%;
+    height: auto;
+}
+
+.indexhd .turnDot {
+    margin: 0 auto;
+    text-align: right;
+    position: absolute;
+    bottom: 4px;
+    right: 10px;
+    display: inline;
+}
+
+.indexhd .turnDot ol {
+    padding: 0 10px 5px 0
+}
+
+.indexhd .turnDot li {
+    display: inline-block;
+    font-size: 0;
+    border: solid 4px #D6D6D6;
+    width: 0px;
+    height: 0px;
+}
+
+.indexhd .turnDot li.active {
+    border: solid 4px #DF6C4F;
+}
+
+.indexhd .turnPicList li {
+    position: relative
+}
+
+.indexhd .turnDot ol {
+    margin: 0
+}
+
+.indexhd .turnPicList li img {
+    min-height: 150px;
+}
+
+.indexhd .turnDot {
+    bottom: 2px;
+    right: 10px;
+}
+
+.indexhd .turnDot li {
+    border: 4px solid #fff;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;;
+    -o-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    margin-right: 3px;
+    opacity: 0.5;
+}
+
+.indexhd .turnDot li.active {
+    border: 4px solid #5ca1da;
+    opacity: 1;
+}
+
+.turnPicList li a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.turnPicList li p {
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.8) 98%, #000 100%);
+    width: 100%;
+    padding-left: 10px;
+}
+
+.groupList {
+    margin-bottom: .2rem;
+    overflow: hidden;
+    background-color: #B0E2FF;
+}
+.storeList {
+    margin-bottom: .1rem;
+    overflow: hidden;
+    /* background-color: #fff; */
+    height: 2rem;
+}
+.storeList a {
+    display: block;
+    margin: .2rem;
+    overflow: hidden;
+    padding: .2rem;
+    background-color: #fff;
+}
+.groupList a {
+    display: block;
+    margin: .2rem;
+    overflow: hidden;
+}
+.pic{
+    float: left;
+    width: 40%;
+}
+.leftImg {
+    /*float: left;*/
+    width: 90%;
+    border-radius: .2rem;
+}
+
+.group-txt {
+    float: left;
+    margin: 0 .2rem;
+}
+.store-txt {
+    float: left;
+    margin: 0 .2rem;
+}
+.store-txt span {
+    display: block;
+    font-size: .2rem;
+    margin-top: .07rem;
+}
+.store-txt p {
+    line-height: .3rem;
+}
+.store-txt span img{
+    margin-right: .2rem;
+    width: .3rem;
+}
+
+.group-txt p {
+    line-height: .5rem;
+}
+.group-txt p:nth-child(2) {
+    font-size: .2rem;
+}
+.txt-color {
+    color: #f50057;
+}
+
+.txt-color del {
+    color: #9999aa;
+    padding-left: .2rem;
+    font-size: .2rem;
+}
+
+
+.list-txt {
+    background: #fff;
+    padding: .2rem;
+    font-weight: bold;
+}
+
+.footer {
+    background-color: #fff;
+}
+
+.footer a {
+    display: block;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: center .1rem;
+    background-size: .3rem auto;
+    border-radius: 100%;
+    color: #444;
+    font-size: .2rem;
+    padding-top: .4rem;
+    box-sizing: border-box;
+}
+
+.footer ul {
+    margin: 0;
+    padding: .18rem 0;
+    font-size: .24rem;
+    white-space: nowrap;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -moz-box;
+}
+
+.footer li {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    -moz-box-flex: 1;
+    /*border-right: .02rem solid #666;*/
+    text-align: center;
+}
+
+.home {
+    background-image: url(../image/index.png);
+}
+
+.activity {
+    background-image: url(../image/activity.png);
+}
+
+.guide {
+    background-image: url(../image/guide.png);
+}
+
+.mine {
+    background-image: url(../image/mine.png);
+}
+

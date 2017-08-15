@@ -1,0 +1,96 @@
+.a-group-search{
+	position: relative;
+	text-align: center;
+	height: .8rem;
+}
+.a-ipt-search{
+	height: .5rem;
+	padding-left: .15rem;
+	font-size: .28rem;
+	width: 60%;
+	border: 1px solid #e0cfa7;
+	border-radius: .5rem;
+	margin: 0.15rem auto;
+}
+.a-group-icon{
+	display: block;
+	position: absolute;
+	background-image: url(${templateUrl}/huamao/minivip/resource/icons/icon-search.png);
+	background-repeat: no-repeat;
+    background-position: .1rem;
+    background-size: .35rem auto;
+    height: .46rem;
+    width: .55rem;
+    right: 22%;
+    top: 20%;
+}
+.a-group-clear{
+	display: block;
+    position: absolute;
+    height: .46rem;
+    width: 1.2rem;
+    right: 2%;
+    top: 20%;
+    background-color: #e0cfa7;
+    border-radius: 0.1rem;
+    color: #fff;
+    line-height: .46rem;
+}
+.a-group-list dl dt{
+	width: 2.6rem;
+	height: 1.7rem;
+	overflow: hidden;
+}
+.a-group-list dl dd p{
+	padding: 0 .2rem;
+	font-size: .28rem;
+	-webkit-flex: 1;
+	flex: 1;
+}
+.a-group-bg dd{
+	padding: 0 .2rem;
+	font-size: .28rem;
+	overflow: hidden;
+	-webkit-flex: 1;
+	flex: 1;
+}
+.a-group-list dl dd p {
+	line-height: .4rem;
+	padding-bottom: .2rem;
+}
+.a-group-list dl dd p:nth-child(2) {
+	font-size: .24rem;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.a-group-list dl dd p:nth-child(3) {
+	padding-bottom: 0;
+}
+
+.a-group-list dl dd p:nth-child(3) span:last-child {
+	font-size: .24rem;
+	padding-left: .1rem;
+	color: #fefefe;
+	text-decoration: line-through;
+}
+.a-group-bg{
+	width: 100%;
+	padding: .18rem;
+	background: #1f2126;
+	border-top: solid 1px;
+}
+
+.a-group-list{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
+.a-group-img{
+	width: 2.6rem;
+	height: 1.7rem;
+}
+#nomore{
+	text-align:center;
+	line-height:.6rem;
+}

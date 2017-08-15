@@ -1,0 +1,99 @@
+<style><#include "../css/vipsummary.css"/></style>
+
+<div class="banner">
+	<#if photolist??>
+		<div class="slide_01" id="slide_01">
+			<#list photolist as item>
+				<div class="mod_01"><img class='itemphoto' src="${item.photoSrc}" alt=""></div>
+			</#list>
+		</div>
+		<div class="dotModule_new">
+			<div id="slide_01_dot"></div>
+		</div>
+	</#if>
+</div>
+
+<section class="con_retail">
+	<ul class="retail_nav">
+		<li><a href="#VItemCategory">
+		    <img src="${templateUrl}/shophelper/resource/icon/ico53.png">
+	  		<p>${languageMap.Shopping}</p></a>
+		</li>
+		<li><a href="#VGiftcert">
+		    <img src="${templateUrl}/shophelper/resource/icon/ico54.png">
+	  		<p>${languageMap.Stock}</p></a>
+		</li>
+		<li><a href="#VLogin">
+		    <img src="${templateUrl}/shophelper/resource/icon/ico55.png">
+	  		<p>${languageMap.Vip}</p></a>
+		</li>
+
+	</ul>
+</section>
+
+<section class="customerlist-item">
+	<div id="vip-detail" class="customerlist-wrap">
+		<img class="customerlist-qrcode" src="${userImgSrc}">
+	    <div class="customerlist-dtcol">
+	        <h1 class="customerlist-name">${userName} <span class="customerlist-sex-${vipSex}">&nbsp;</span></h1>
+	        <div class="customerlist-detail">
+	            <div class="customerlist-grade"> 
+	            	<img src="${templateUrl}/shophelper/resource/icon/icon_grade${vipRank}_32.png"/>
+	            </div>
+	            <div class="customerlist-star">
+				    <span class="customerlist-star-bg customerlist-star-bg-rank-${starRated}">&nbsp;</span>
+				    <span class="customerlist-star-${starRated}">&nbsp;</span>
+				</div>
+	        </div>
+	    </div>
+	    <p class="customerlist-vipcode">${vipCode}</p>
+	    <p></p>
+	</div>
+	<button id="logout-btn">${languageMap.Logout}</button>
+</section>
+
+<section class="retail_hot">
+	<fieldset><legend class="hot_tab"><span class="curr">${languageMap.Recommend}</span>/<span>${languageMap.Hot}</span></legend> </fieldset>
+	<div class="hot_con">
+		<#if hotsale1??>
+			<ul class="clearfix">
+				<#list hotsale1 as item>
+					<li><a href="#VItemDetail/${item.itemOrgId}_${item.style}">
+						<div class="cp_img"><img src="${item.photoSrc}"/></div>
+						<p>${item.itemDesc}</p>
+						<p>${item.sellingPrice}</p></a>
+					</li>
+				</#list>
+			</ul>
+		</#if>
+
+		<#if hotsale2??>
+			<ul class="clearfix" style="display: none;">
+				<#list hotsale2 as item>
+					<li><a href="#VItemDetail/${item.itemOrgId}_${item.style}">
+						<div class="cp_img"><img src="${item.photoSrc}"/></div>
+						<p>${item.itemDesc}</p>
+						<p>${item.sellingPrice}</p></a>
+					</li>
+				</#list>
+			</ul>
+		</#if>
+	</div>
+</section>
+
+<section class="retail_new">
+	<#if newarrival??>
+		<h3><i></i>${languageMap.NewArrival}<i></i></h3>
+		<ul class="clearfix">
+			<#list newarrival as item>
+				<li>
+					<div class="cp_img"><a href="#VItemDetail/${item.itemOrgId}_${item.style}"><img src="${item.photoSrc}"/></a></div>
+					<p><a href="#VItemDetail/${item.itemOrgId}_${item.style}">${item.itemDesc}</a></p>
+					<p>${item.sellingPrice}<#if originPrice??><span>${item.originPrice}</span></#if></p>
+				</li>
+			</#list>
+		</ul>
+	</#if>
+</section>
+
+<script><#include"../js/vipsummary.js" /></script>

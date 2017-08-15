@@ -1,0 +1,74 @@
+<style>
+	<#include "../css/roulette.css"/>
+</style>
+<div id="roulette-container">
+	<img src="${templateUrl}/resource/shophelper/icon/icon01.png" id="integral-img" style="display:none;"/>
+	<img src="${templateUrl}/resource/shophelper/icon/icon02.png" id="coupon-img" style="display:none;"/>
+	<img src="${templateUrl}/resource/shophelper/icon/icon03.png" id="sorry-img" style="display:none;"/>
+	<img src="${templateUrl}/resource/shophelper/icon/icon04.png" id="giftcert-img" style="display:none;"/>
+	<img src="${templateUrl}/resource/shophelper/icon/icon05.png" id="red-img" style="display:none;"/>
+	<div class="turnplate">
+		<canvas id="wheelcanvas"></canvas>
+		<img id="roulette-pointer" src="${templateUrl}/resource/shophelper/icon/roulette-pointer.png"/>
+	</div>
+
+	<p class="game_num"><span id="game_num"></span>${languageMap.chance}</p>
+	<div class="btn">
+		<button><a href="">${languageMap.rule_title}</a></button>
+		<button><a href="">${languageMap.prize_name}</a></button>
+	</div>
+	
+	<div class="rule_bg">
+		<div class="rule">
+			<h3>${languageMap.Rule}</h3>
+			<dl>
+				<dt>${languageMap.ActivityTime}：</dt>
+				<dd>${activityTime}</dd>
+			</dl>
+			<dl>
+				<dt>${languageMap.ActivityMode}：</dt>
+				<dd>${activityMode}</dd>
+			</dl>
+			<dl>
+				<dt>${languageMap.AwardingTime}：</dt>
+				<dd>${awardingTime}</dd>
+			</dl>
+			<dl>
+				<dt>${languageMap.AwardSetting}：</dt>
+				<dd>${awardSetting}</dd>
+			</dl>
+			<dl>
+				<dt>${languageMap.ActivityDesc}：</dt>
+				<dd>${activityDesc}</dd>
+			</dl>
+		</div>
+	</div>
+
+	<div class="tc_con" id="success" style="display: none;">
+		<h1><img src="${templateUrl}/resource/shophelper/icon/succ_txt.png"></h1>
+		<div class="succ_img tc_con_img"></div>
+		<div class="succ_txt tc_con_txt">
+			<p>${languageMap.congratulation}</p>
+			<p id="succ_txt"></p>
+			<p>${languageMap.ending}</p>
+		</div>
+		<div class="tc_con_btn">
+			<button><a href="#VUser">${languageMap.look_account}</a></button>
+		</div>
+		<span class="close"></span>
+	</div>
+	<div class="tc_con" id="fail" style="display: none;">
+		<h1><img src="${templateUrl}/resource/shophelper/icon/fail_txt.png"></h1>
+		<div class="fail_img tc_con_img"></div>
+		<div class="tc_con_txt">
+			<p id="fail-txt"></p>
+		</div>
+		<div class="tc_con_btn">
+			<button class="go_on">${languageMap.go_on}</button>
+		</div>
+		<span class="close"></span>
+	</div>
+</div>
+<script>
+    <#include"../js/roulette.js" />
+</script>

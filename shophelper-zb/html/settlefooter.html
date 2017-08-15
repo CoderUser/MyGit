@@ -1,0 +1,25 @@
+<style xmlns:>
+	footer{ width: 100%; height: .9rem; display: table;}
+	.bg_default{ background: #000000;}
+	#order-confirm { width: 50%; line-height: .8rem; font-size: .3rem; font-weight: 400; text-align: center; background: #000000; color: #fff !important; box-sizing: border-box; display: table-cell;}
+    #order-temp { width: 50%; line-height: .8rem; font-size: .3rem; font-weight: 400; text-align: center; background: #444444; color: #fff !important; box-sizing: border-box; display: table-cell;}
+</style>
+<footer>
+	<!--{=showShare?
+	<div class="mune" id="item-share">
+		<img src="{&resource/shophelper/icon/share01.png&}">
+		<p>${languageMap.Share}</p>
+	</div>
+	::=}-->
+    <div class="bg_default" id="order-temp" style="display:none;">
+        <span>${languageMap.TempSales}</span>
+    </div>
+
+	<div class="bg_default" id="order-confirm">
+        <span>${languageMap.Complete}</span>
+    </div>
+
+</footer>
+<script>
+    <#include"../js/settlefooter.js" />
+</script>

@@ -1,0 +1,27 @@
+<style>
+	/* list left */
+	#itemcat-left{ position:absolute; width:25%; height:100%; z-index:1; top:0; left:0; overflow:hidden; }
+	#itemcat-left #itemcat-left-wrapper{ font-size:.25rem;}
+	#itemcat-left .a-item-nav{ position:relative; height:.96rem; max-height:.96rem; width:100%; display:-webkit-box; display:flex; -webkit-box-align:center; -webkit-box-pack:center; align-items:center; justify-content:center; }
+	#itemcat-left .a-item-nav .a-bg-img{ width:.5rem; height:.4rem; margin-left:-.5rem; background:transparent no-repeat center; background-size:contain; -webkit-filter: drop-shadow(.7rem 0 0 gray); filter: drop-shadow(.7rem 0 0 gray); }
+	#itemcat-left .a-list-desc{ overflow:hidden; word-break:break-all;/*margin-left:4rem; -webkit-box-flex:1; flex:1;*/ }
+	/* list right */
+	#itemcat-right{ height:100%; width:75%; position:absolute; top:0; right:0; background: #f8f8f8; overflow:hidden; }
+	#itemcat-right #itemcat-right-wrapper{ width:96%; padding:0 2%; background:#f8f8f8; }
+	#itemcat-right #nomore{ text-align:center; font-size:.2rem; line-height:.6rem; color:#999; display:none; }
+	#itemcat-right .a-item-container{ width:100%; padding:.2rem 0; border-bottom:1px dashed #ddd; box-sizing: border-box; overflow: hidden;}
+	#itemcat-right .a-photo-container{width:1.4rem; height:1.4rem; background: no-repeat center center; background-size: contain; margin-left: 2px; margin-right:.2rem; outline: 1px solid #e5e5e5; outline-offset: 1px;}
+	#itemcat-right .a-desc-container {-webkit-box-flex:1; flex:1;}
+	#itemcat-right .a-desc-container p:nth-child(1){ color:#666; font-size:.24rem; padding-top:.06rem; line-height:.6rem; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; }
+	#itemcat-right .a-desc-container p:nth-child(2){ font-size:.2rem; line-height:.6rem; overflow:hidden; }
+</style>
+<div id="itemcat-left">
+	<div id="itemcat-left-wrapper"></div>
+</div>
+<div id="itemcat-right">
+	<div id="itemcat-right-wrapper">
+		<div id="itemcat-detail" class="g-pos-rel sec-nav g-clearfix"></div>
+		<div id="nomore">[$NoMore$]...</div>
+	</div>
+</div>
+<a class="g-searchicon g-searchicon-round" id="search-icon" href="#VSearchView"></a>

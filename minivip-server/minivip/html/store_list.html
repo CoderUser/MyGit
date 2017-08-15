@@ -1,0 +1,43 @@
+<style><#include "/huamao/minivip/css/store_list.css"/></style>
+
+<div class="z-store-search bg-c4" id="store-search">
+	<input class="z-ipt-store bg-c8" type="text" id="ipt-search" placeholder="${languageMap.KeyWord}">
+	<span class="z-store-icon" id="btn-search"></span>
+<!-- 	<span class="z-store-clear" id="btn-clear">重新加载</span> -->
+</div>
+<div class="a-store-list" id="store-filter">
+	<ul class="a-store-tab bg-c4 g-dis-flex">
+		<li>
+			<span class="a-store-dropbtn">${languageMap.Floor!'floor'}</span>
+			<ul class="a-store-content">
+				<#list floorList as item>
+					<li class="options" data="${item.floor}">${item.desc}</li>
+				</#list>
+			</ul>
+		</li>
+		<li>
+			<span class="a-store-dropbtn">${languageMap.Type!'业态'}</span>
+			<ul class="a-store-content">
+				<!--<#list operationTypeList as item>-->
+					<!--<li class="options" data="${item.typeCode}">${item.desc}</li>-->
+				<!--</#list>-->
+				<li class="options" data="1">工艺/家居1</li>
+				<li class="options" data="2">工艺/家居2</li>
+				<li class="options" data="3">工艺/家居3</li>
+				<li class="options" data="4">工艺/家居4</li>
+				<li class="options" data="5">工艺/家居5</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+<div class="z-store" id="list-wrapper">
+	<div id="list-scroller">
+		<div id="list-detail" class="list-detail"></div>
+		<div id="nomore">${languageMap.NoMore}...</div>
+	</div>
+</div>
+
+<div class="a-mask" id="bg-mask"></div>
+
+<script><#include "/huamao/minivip/js/store_list.js"/></script>

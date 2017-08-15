@@ -1,0 +1,14 @@
+<style>
+.modify-pwd{margin-top: .6rem;}
+.modify-pwd input{display: block; width: 80%; background: #fff; margin :.2rem auto; text-align: center; border: none; border-radius: 2rem; box-shadow: 0 2px 2px rgba(0,0,0,.15); box-sizing: border-box; line-height: .44rem;}
+/*.modify-pwd input::-webkit-input-placeholder { line-height: 2.2rem; text-align: center;}*/
+.modify-pwd button{margin-top: .7rem;}
+.modify-pwd p{position: relative;}
+.modify-pwd p em{position: absolute; width: .7rem; height: .62rem; right: 10%; top: 0; background: url({&mobiletenant/icon/cahsier-eye.png&}) no-repeat center left; background-size: .36rem auto;}
+</style>
+<form id="form_modifypwd" class="modify-pwd">
+	<p><input id="oldpwd" type="password" name="oldpwd" placeholder="[$OldPwd$]" /><em class="showpwd gray"></em></p>
+	<p><input id="newpwd" type="password" name="newpwd" placeholder="[$NewPwd$]" /><em class="showpwd gray"></em></p>
+	<p><input id="confirmnewpwd" type="password" placeholder="[$ConfirmNewPwd$]" /><em class="showpwd gray"></em></p>
+	<button id="btn_submit" class="round-btn">[$Confirm$]</button>
+</form>

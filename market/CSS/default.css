@@ -1,0 +1,12 @@
+body{background: #9bd2dc;}
+#nav-title{background:#4cc1d3; box-shadow: 0 0 3px rgba(6,6,6,.4);}
+#ext-viewport .x-layout-card-item{background: none;}
+.txt-color{color: #0395af;}
+
+.notice li>p em{border-color: #0395af;}
+.notice li>p em i{background: #0395af;}
+.notice-down{border-left-color: #0395af;}
+.square-btn,.sales-tab li.curr{background: #1fb2c8;}
+.tab_shop_nav li.curr{color: #1fb2c8; border-bottom-color: #1fb2c8;}
+.repair-order-done-img li i,
+.feedback-img li i{background: #1fb2c8;}

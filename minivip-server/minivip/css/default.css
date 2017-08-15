@@ -1,0 +1,54 @@
+*,
+a {
+	color: #dfcfad;
+}
+body {
+	background: #3f3f3f;
+}
+
+input{
+	width: 50%;
+}
+
+header,
+input,
+a,
+li,
+.coupon-detail{
+	background-color: #27282b;
+}
+
+button,
+.get-identify-code,
+.a-choose .sex input+i:after {
+	background: #af9d75;
+}
+
+.a-choose .sex i {
+	background: #000;
+	border: 0.02rem solid #dfcfad;
+}
+
+/************chenshaosheng——start***************/
+
+/*****background-color******/
+
+.bg-c11{background: #26282c;}
+.bg-c12{background: #fff;}
+.bg-c13{background: #ae9d76;}
+.bg-c14{background: rgba(0,0,0,.5);}
+.bg-c15{background: #e9cd8a;}
+.bg-c16{background: #000;}
+
+
+/*text color*/
+.txt-c6{color: #e0cfa7;}
+.txt-c7{color: #000;}
+.txt-c8{color: #fff;}
+.txt-c9{color: #e0cfa7;}
+
+/********border-style*******/
+.bd-style1{border: .01rem solid #808080;}
+.bd-style2{border-right: .01rem solid #404040;}
+
+/************chenshaosheng——end***************/

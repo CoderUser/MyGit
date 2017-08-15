@@ -1,0 +1,47 @@
+<style><#include "../css/bonusitemdetail.css" /></style>
+<main id="itemdetail-container" data-org="${itemorgid}" data-style="${style}">
+	<div class="g-slide">
+
+			<div class="slide_01" id="slide_01">
+				<div class="mod_01"><img class='itemphoto' src="${templateUrl}/minivip/resource/icon/itemphoto.png" alt=""></div>
+			</div>
+			<div class="dotModule_new">
+				<div id="slide_01_dot" class="slide_dot"></div>
+			</div>
+	</div>
+	<section class="a-con con1">
+		<h3 id="itemname">${desci}</h3>
+		<p class="p-price"><span>${bonusReq}<i class="unit">${languageMap.Points}</i></span>
+		</p>
+	</section>
+	<section class="a-con con2" data-colorsize="${colorsize}">
+
+			<div class="a-pro-attr">
+				<span class="part-note-msg">${languageMap.Color}</span>
+				<p id="itemcolor" onclick="TApi.itemdetail.doSelect(arguments[0], true)">
+					<a data-itemcolor="${itme.colorid}" href="javascript:;">${color}</a>
+				</p>
+			</div>
+
+
+			<div class="a-pro-attr">
+				<span class="part-note-msg">${languageMap.Size}</span>
+				<p id="itemsize" onclick="TApi.itemdetail.doSelect(arguments[0], false)">
+					<a data-itemsize="${sizeid}" href="javascript:;">${size}</a>
+				</p>
+			</div>
+
+		<div class="a-pro-attr">
+			<span class="part-note-msg">${languageMap.Qty}</span>
+			<div class="a-qty-wrapper">
+				<span class="g-qty-des" onclick="TApi.itemdetail.qtyMinus(arguments[0])">-</span>
+				<input type="text" class="g-qty" size="4" value=1>
+				<span class="g-qty-ins" onclick="TApi.itemdetail.qtyAdd(arguments[0])">+</span>
+			</div>
+		</div>
+	</section>
+	<section id="detail_con"></section>
+</main>
+<script>
+    <#include "../js/bonusitemdetail.js" />
+</script>

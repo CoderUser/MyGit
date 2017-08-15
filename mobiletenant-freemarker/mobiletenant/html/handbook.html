@@ -1,0 +1,15 @@
+<div id="Handbook" style="position: absolute; width: 100%; bottom: 0; -webkit-overflow-scrolling: touch; overflow: auto;">
+	<iframe width="100%" height="100%" frameborder="0" id="frame" style="border:none;margin-bottom:-5px;"></iframe>
+</div>
+
+<script>
+	(function(_TApi)
+	{
+		VNavigatorBar.updateTitle("${languageMap.HandBook}");
+		var Handbook = _TApi.$id('Handbook'),
+			frame = _TApi.$id('frame'),
+			XBody = _TApi.$cls('x-body')[0];
+		Handbook.style.height = XBody.offsetHeight + 'px';
+		frame.src = PosServicePath.getResourceUrl('html/mobiletenant/handbook.html');
+	})(window.TApi);
+</script>

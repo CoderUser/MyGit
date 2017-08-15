@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html manifest="cache.appcache" lang="en-US" style="font-size: 12.9375px;">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>科传商场租户自助平台</title>
+		<link rel="stylesheet" href="../CSS/app.css" />
+		<link rel="stylesheet" href="../CSS/main.css" />
+		<link rel="stylesheet" href="../CSS/default.css" />
+		<link rel="stylesheet" href="../CSS/salesdetails.css" />
+
+	</head>
+
+	<body>
+		<script>
+			if (window.TApi) TApi.LoadingMask.show();
+		</script>
+		<ul class="sales-tab clear">
+			<li class="curr" id="0">SalesDetail</li>
+			<li id="1">TenderDetail</li>
+		</ul>
+
+		<div class="sales-tab-con" style="display: block;">
+			<div class="sales-filter write-bg">
+				<p><span>TxDate：</span><input class="datepicker" id="FromDateDetail" type="text" readonly="" placeholder="" /><em>To</em><input class="datepicker" id="ToDateDetail" type="text" readonly="" placeholder="" /></p>
+				<p><span>SortOrder：</span>
+					<select name="sorter" id="sort-sales" title="">
+						<option value="dateasc">DateAsc</option>
+						<option value="datedesc">DateDesc</option>
+						<option value="countasc">CountAsc</option>
+						<option value="countdesc">CountDesc</option>
+					</select>
+					<button class="square-btn search" id="sales-total-query">Search</button>
+				</p>
+			</div>
+
+			<div class="write-bg">
+				<table class="sales-total">
+					<tbody id="sales-total-body">
+						<tr>
+							<th>Store</th>
+							<th>Count</th>
+							<th>Qty</th>
+							<th>Amount</th>
+						</tr>
+						<tr class="detail-btn">
+							<td>NHW000004</td>
+							<td>7</td>
+							<td>7</td>
+							<td>543.00</td>
+						</tr>
+						<tr class="total">
+							<td>总计</td>
+							<td>0</td>
+							<td>0</td>
+							<td>0.00</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div id="Details" class="gradient-bg" style="display: block;">
+				<div class="tab_shop_nav" id="shop-code-wrapper">
+					<ul id="ShopCode" class="clear" style="left: 0;">
+						<li class="curr" id="0">NHW000004</li>
+					</ul>
+				</div>
+				<table>
+					<tbody>
+						<tr>
+							<th>TxDate</th>
+							<th>Count</th>
+							<th>Qty</th>
+							<th>Amount</th>
+						</tr>
+					</tbody>
+				</table>
+				<div id="table-wrapper">
+					<div id="table-scroll">
+						<div class="tab_shop_table detail-table" id="detailTable0" style="display: block;">
+							<table>
+								<tbody>
+									<tr>
+										<td>2017-06-06</td>
+										<td>7</td>
+										<td>7</td>
+										<td>543.00</td>
+									</tr>
+									<tr>
+										<td>2017-06-06</td>
+										<td>7</td>
+										<td>7</td>
+										<td>543.00</td>
+									</tr>
+									<tr>
+										<td>2017-06-06</td>
+										<td>7</td>
+										<td>7</td>
+										<td>543.00</td>
+									</tr>
+									<tr>
+										<td>2017-06-06</td>
+										<td>7</td>
+										<td>7</td>
+										<td>543.00</td>
+									</tr>
+									<tr>
+										<td>2017-06-06</td>
+										<td>7</td>
+										<td>7</td>
+										<td>543.00</td>
+									</tr>
+									<tr>
+										<td>2017-06-06</td>
+										<td>7</td>
+										<td>7</td>
+										<td>543.00</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!--<div id="table-wrapper" style="touch-action: block;">
+					<div id="table-scroll" style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) scale(1) translateZ(0px);">
+						<div class="tab_shop_table detail-table" id="detailTable0" style="display: block;">
+							<table>
+								<tbody>
+									<tr>
+										<td>2017-06-06</td>
+										<td>7</td>
+										<td>7</td>
+										<td>543.00</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="iScrollVerticalScrollbar iScrollLoneScrollbar" style="position: absolute; z-index: 9999; width: 7px; bottom: 2px; top: 2px; right: 1px; overflow: hidden; pointer-events: none; transform: translateZ(0px); transition-duration: 0ms; opacity: 0;">
+						<div class="iScrollIndicator" style="box-sizing: border-box; position: absolute; background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.9); border-radius: 3px; width: 100%; transition-duration: 0ms; display: none; height: 55px; transform: translate(0px, 0px) translateZ(0px); transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);"></div>
+					</div>
+				</div>-->
+			</div>
+		</div>
+
+		<div class="sales-tab-con" style="display: none;">
+			<div class="sales-filter write-bg">
+				<p><span>TxDate：</span><input class="datepicker" id="FromDatePayment" type="text" readonly="" placeholder="" /><em>To</em><input class="datepicker" id="ToDatePayment" type="text" readonly="" placeholder="" /></p>
+				<p><span>SortOrder：</span>
+					<select name="sorter" id="sort-tender" title="">
+						<option value="dateasc">DateAsc</option>
+						<option value="datedesc">DateDesc</option>
+					</select>
+					<button class="square-btn search" id="payment-total-query">Search</button>
+				</p>
+			</div>
+
+			<div class="write-bg">
+				<table class="payment-total" id="payment-total-body">
+					<thead>
+						<tr>
+							<th>Store</th>
+							<th>Tender</th>
+							<th>Amount</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td rowspan="3" class="payment-btn" data-storecode="NHW000004">NHW000004
+								<!--<br/><span>Show</span>--></td>
+							<td>CH(现金)</td>
+							<td>544.10</td>
+						</tr>
+						<tr>
+							<td>MP(移动支付)</td>
+							<td>0.10</td>
+						</tr>
+						<tr class="total">
+							<td>SubTotal</td>
+							<td>544.20</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr class="total">
+							<td>Total</td>
+							<td></td>
+							<td>544.20</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+
+			<div id="TenderDetails" class="gradient-bg" style="display: block;">
+				<div class="tab_shop_nav" id="tender-code-wrapper">
+					<ul id="TenderShopCode" class="clear" style="left: 0;">
+						<li class="curr" id="0">NHW000004</li>
+					</ul>
+				</div>
+				<table>
+					<tbody>
+						<tr>
+							<th>TxDate</th>
+							<th>Tender</th>
+							<th>Amount</th>
+						</tr>
+					</tbody>
+				</table>
+				<div id="tender-wrapper">
+					<div id="tender-scroll">
+						<div class="tab_tender_table detail-table" id="tenderTable0" style="display: block;">
+							<table>
+								<tbody>
+									<tr>
+										<td>2017-06-06</td>
+										<td>CH(现金)</td>
+										<td>745.10</td>
+									</tr>
+									<tr>
+										<td>2017-06-06</td>
+										<td>MP(移动支付)</td>
+										<td>0.00</td>
+									</tr>
+									<tr>
+										<td>2017-06-06</td>
+										<td>CH(现金)</td>
+										<td>745.10</td>
+									</tr>
+									<tr>
+										<td>2017-06-06</td>
+										<td>MP(移动支付)</td>
+										<td>0.00</td>
+									</tr>
+									<tr>
+										<td>2017-06-06</td>
+										<td>CH(现金)</td>
+										<td>745.10</td>
+									</tr>
+									<tr>
+										<td>2017-06-06</td>
+										<td>MP(移动支付)</td>
+										<td>0.00</td>
+									</tr>
+									<tr>
+										<td>2017-06-06</td>
+										<td>CH(现金)</td>
+										<td>745.10</td>
+									</tr>
+									<tr>
+										<td>2017-06-06</td>
+										<td>MP(移动支付)</td>
+										<td>0.00</td>
+									</tr>
+									<tr>
+										<td>2017-06-06</td>
+										<td>MP(移动支付)</td>
+										<td>0.00</td>
+									</tr>
+									<tr>
+										<td>2017-06-06</td>
+										<td>MP(移动支付)</td>
+										<td>0.00</td>
+									</tr>
+									<tr>
+										<td>2017-06-06</td>
+										<td>MP(移动支付)</td>
+										<td>0.00</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../JS/util.js" ></script>
+		<script src="../JS/tscroll.js"></script>
+		<script src="../JS/util.function.js"></script>
+		<script src="../JS/app.js"></script>
+		<script type="text/javascript" src="../JS/salesdetail.js" ></script>
+	</body>
+
+</html>

@@ -1,0 +1,27 @@
+<style><#include"../css/bonus.css"/></style>
+
+<section class="con_bonus">
+	<#if bonusList??>
+		<#list bonusList as item>
+			<div class="bonus_list">
+				<dl>
+					<dt>${languageMap.UserCenter}：${item.userCenter}<br/>${languageMap.BonusCenter}：${item.bonusCenter}</dt>
+					<dd><p>${languageMap.BonusBalance}：</p><p><em>${item.bonusBalance}</em><i>${languageMap.Unit}</i></p></dd>
+					<button class="show_btn">${languageMap.Detailed}</button>
+					<span><img src="${templateUrl}/shophelper/resource/icon/circle-bg.png"/></span>
+				</dl>
+				<#if item.bonusDetail??>
+					<ul>
+						<li><span>${languageMap.Date}</span><span>${languageMap.ExpiredDate}</span><span>${languageMap.Bonus}</span></li>
+						<#list item.bonusDetail as detail>
+							<li><span>${detail.date}</span><span>${detail.expiredDate}</span><span class="bonus_num">${detail.bonus}</span></li>
+						</#list>
+					</ul>
+				</#if>
+			</div>
+		</#list>
+	</#if>
+	<div id="nomore" class="absolute-center">${languageMap.NoMore}</div>
+</section>
+
+<script><#include"../js/bonus.js"/></script>

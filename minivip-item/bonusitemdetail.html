@@ -1,0 +1,62 @@
+<style>
+	.a-con{ position: relative; width: 100%; height: auto; padding: .3rem 3%; background:#ffffee;}
+	.a-con.con1 h3{ font-size: .3rem; color: #292828; font-weight: normal;}
+	.a-con .p-price{ color:#ff6000; font-size:.3rem; margin-top:.2rem; }
+	.a-con .p-price .unit{ font-size:.2rem; font-style:normal; padding-left:.06rem; }
+	.a-con .p-price .freight{ float: right; color: #818080; padding-top: .12rem; font-size: .18rem;}
+	.a-con.con2{ background: #fff; overflow: hidden;}
+	.a-pro-attr{ margin-bottom: .1rem; overflow: hidden;}
+	.a-pro-attr .part-note-msg{float: left; white-space: nowrap;display: inline-block;line-height: .65rem;font-size: .22rem;color: #848689;}
+	.a-pro-attr p{ margin-left: .6rem; overflow: hidden;}
+	.a-pro-attr p a{border: 1px solid #d7d7d7; font-size: .18rem;color: #686868;float: left;margin: 0 .1rem .1rem .15rem;padding: .15rem .2rem;overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%; text-decoration: none;}
+	.a-pro-attr p a.selected{border: 1px solid #f15353; color: #f15353;}
+	.a-pro-attr p a.disabled{display:none;}
+	.a-qty-wrapper {float: left; display: inline-block; margin-left: .4rem; margin-top: .1rem;}
+
+	/*detail content*/
+	#detail_con{width: 100%; height: auto; background: #fff; font-size:.2rem;}
+	#detail_con .pull{text-align: center; line-height:.6rem;}
+</style>
+<main id="itemdetail-container" data-org="{[itemorgid]}" data-style="{[style]}">
+	<div class="g-slide">
+		<_photolist>
+			<div class="slide_01" id="slide_01">
+				<repeat_photolist><div class="mod_01"><img class='itemphoto' src="{[photoSrc]}" alt=""></div></repeat_photolist>
+			</div>
+			<div class="dotModule_new">
+				<div id="slide_01_dot" class="slide_dot"></div>
+			</div>
+		</_photolist>
+	</div>
+	<section class="a-con con1">
+		<h3 id="itemname">{[desci]}</h3>
+		<p class="p-price"><span>{[bonusReq]}<i class="unit">[$Points$]</i></span><_amtReq> + <span><i class="unit">{[currSign]}</i>{[amtReq]}</span></_amtReq></p>
+	</section>
+	<section class="a-con con2" data-colorsize="{[colorsize]}">
+		<_colorlist>
+			<div class="a-pro-attr">
+				<span class="part-note-msg">[$Color$]</span>
+				<p id="itemcolor" onclick="TApi.itemdetail.doSelect(arguments[0], true)">
+					<repeat_colorlist><a data-itemcolor="{[colorid]}" href="javascript:;">{[color]}</a></repeat_colorlist>
+				</p>
+			</div>
+		</_colorlist>
+		<_sizelist>
+			<div class="a-pro-attr">
+				<span class="part-note-msg">[$Size$]</span>
+				<p id="itemsize" onclick="TApi.itemdetail.doSelect(arguments[0], false)">
+					<repeat_sizelist><a data-itemsize="{[sizeid]}" href="javascript:;">{[size]}</a></repeat_sizelist>
+				</p>
+			</div>
+		</_sizelist>
+		<div class="a-pro-attr">
+			<span class="part-note-msg">[$Qty$]</span>
+			<div class="a-qty-wrapper">
+				<span class="g-qty-des" onclick="TApi.itemdetail.qtyMinus(arguments[0])">-</span>
+				<input type="text" class="g-qty" size="4" value=1>
+				<span class="g-qty-ins" onclick="TApi.itemdetail.qtyAdd(arguments[0])">+</span>
+			</div>
+		</div>
+	</section>
+	<section id="detail_con"></section>
+</main>

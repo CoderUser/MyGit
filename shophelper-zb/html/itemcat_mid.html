@@ -1,0 +1,9 @@
+<#if groupList??>
+<!--<_groupList>-->
+	<#list groupList as item>
+	<!--<repeat_groupList>-->
+		<li style="/*background-image: url({[imgSrc]});*/" data-groupid=${item.groupId} data-groupvalue="${item.value}">${item.desc}</li>
+	<!--</repeat_groupList>-->
+	</#list>
+<!--</_groupList>-->
+</#if>

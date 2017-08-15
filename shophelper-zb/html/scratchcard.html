@@ -1,0 +1,43 @@
+<style>
+	<#include "../css/scratchcard.css"/>
+</style>
+<div id="container">
+	<img id="top_img" src="${templateUrl}/resource/shophelper/icon/top_bg.png"/>
+	<div class="prize">
+		<div id="prize_con" class="hide">
+			<p id="prize_txt"></p>
+			<p id='prize_ts'></p>
+		</div>
+		<canvas class="canvas" id="canvas"></canvas>
+	</div>
+	<div class="chance">
+		<p id="day-chance">${languageMap.TodayRemain}<em></em>${languageMap.Chance}</p>
+		<p id="total-chance">${languageMap.TotalRemain}<em></em>${languageMap.Chance}</p>
+	</div>
+	<button id="retry" class="hide">${languageMap.TryAgain}</button>
+	<div class="rule">
+		<div class="rule_bg"></div>
+		<fieldset>
+			<legend>${languageMap.Rule}</legend>
+		</fieldset>
+		<dl>
+			<dt>${languageMap.EffectDate}</dt>
+			<dd>${effectDate}</dd>
+		</dl>
+		<!--<_expiryDate>-->
+		<dl>
+			<dt>${languageMap.ExpiryDate}</dt>
+			<dd>${expiryDate}</dd>
+		</dl>
+		<!--</_expiryDate>-->
+		<!--<_terms>-->
+		<dl>
+			<dt>${languageMap.Terms}</dt>
+			<dd>${terms}</dd>
+		</dl>
+		<!--</_terms>-->
+	</div>
+</div>
+<script>
+    <#include"../js/scratchcard.js" />
+</script>

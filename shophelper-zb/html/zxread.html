@@ -1,0 +1,177 @@
+<style>
+.report table{width:100%;margin-bottom: .5rem;}
+#report_title{text-align: center;font-weight: bold;}
+.hide{display:none;}
+</style>
+<section class="report">
+    <div id="report_title">
+        ${languageMap.TTRetail}<br>
+        <span <#if IsZRead??>class="hide"</#if>>${languageMap.ZReadTitle}</span>
+        <span <#if IsZRead??>class="hide"</#if>>${languageMap.XReadTitle}</span>
+    </div>
+    <div class="report_hdr">
+        <ul>
+            <li>${languageMap.Store}: ${store}(${storeCode}-${tillId})</li>
+            <li>${languageMap.WorkingDate}: ${workingDate}</li>
+            <li>${languageMap.PostingDate}: </li><!-- ${PostingDate} -->
+            <li>${languageMap.PageNo}: </li><!-- ${PageNo} -->
+        </ul>
+    </div>
+    <div class="cashierinfo <#if IsZRead??>hide</#if>">
+        <#if cashierlist??>
+        <!--<_cashierlist>-->
+            <#list cashierlist as item>
+            <!--<repeat_cashierlist>-->
+                <table cellpadding="0" cellspacing="0">
+                     <tr style="font-weight: normal">
+                         ${languageMap.Cashier}:${item.staffName}(${item.staffCode})
+                     </tr>
+
+                    <#list item.Cashier as Cashier>
+                    <!--<_cashierlistitem>-->
+                        <tr>
+                            <th>${languageMap.Tender}</th>
+                            <th>${languageMap.Currency}</th>
+                            <th>${languageMap.Amount}</th>
+                            <th>${languageMap.BaseAmount}</th>
+                        </tr>
+                        <#list Cashier.listitem as cashierlist>
+                        <!--<repeat_cashierlistitem>-->
+                            <tr>
+                                <td style="font-weight: normal;">${cashierlist.group}</td>
+                            </tr>
+                            <#if Cashier.listitem??>
+                            <!--<_clistitemdetail>-->
+                                <#list listitem.clistitemdetail as itemdetail>
+                                <!--<repeat_clistitemdetail>-->
+                                    <tr>
+                                        <td>${itemdetail.ItemName}</td>
+                                        <td>${itemdetail.Currency}</td>
+                                        <td>${itemdetail.ItemAmount}</td>
+                                        <td>${itemdetail.BaseAmount}</td>
+                                    </tr>
+                                <!--</repeat_clistitemdetail>-->
+                                </#list>
+                            <!--</_clistitemdetail>-->
+                            </#if>
+                        <!--</repeat_cashierlistitem>-->
+                        </#list>
+                    <!--</_cashierlistitem>-->
+                    </#list>
+
+                </table>
+            <!--</repeat_cashierlist>-->
+            </#list>
+        <!--</_cashierlist>-->
+        </#if>
+    </div>
+    <div class="report_detail">
+        <#list itemlist as item>
+        <!--<_itemlist>-->
+            <table cellpadding="0" cellspacing="0">
+                <tr <#if IsZRead??>class="hide"</#if>>${languageMap.ZReadTotal}</tr>
+                <tr>
+                    <th>${languageMap.Tender}</th>
+                    <th>${languageMap.Currency}</th>
+                    <th>${languageMap.Amount}</th>
+                    <th>${languageMap.BaseAmount}</th>
+                </tr>
+                <#list item.grouplist as itemGroup>
+                <!--<repeat_itemlist>-->
+                    <tr>
+                        <td style="font-weight: normal;">${itemGroup.group}</td>
+                    </tr>
+                    <#if item.grouplist??>
+                    <!--<_itemlistdetail>-->
+                        <#list itemGroup.itemlistdetail as listdetail>
+                        <!--<repeat_itemlistdetail>-->
+                            <tr>
+                                <td>${listdetail.ItemName}</td>
+                                <td>${listdetail.Currency}</td>
+                                <td>${listdetail.ItemAmount}</td>
+                                <td>${listdetail.BaseAmount}</td>
+                            </tr>
+                        <!--</repeat_itemlistdetail>-->
+                        </#list>
+                    <!--</_itemlistdetail>-->
+                    </#if>
+                <!--</repeat_itemlist>-->
+                </#list>
+                <br>
+            </table>
+        <!--</_itemlist>-->
+        </#list>
+            <#if msales??>
+        <!--<_msales>-->
+            <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th>${languageMap.MerchandiseSales}</th>
+                <th>${languageMap.Issue}</th>
+                <th>${languageMap.Amount}</th>
+            </tr>
+                <#list msales as item>
+            <!--<repeat_msales>-->
+                <tr>
+                    <td>${item.salesName}</td>
+                    <td>${item.issue}</td>
+                    <td>${item.salesAmount}</td>
+                </tr>
+            <!--</repeat_msales>-->
+                </#list>
+            <tr>
+                <td></td>
+                <td>${languageMap.Total}</td>
+                <td>${salesTotal}</td>
+            </tr>
+            </table>
+        <!--</_msales>-->
+            </#if>
+        <br>
+        <#if voucher??>
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <th>${languageMap.GiftVoucherNo}</th>
+                    <th>${languageMap.NoOfSettled}</th>
+                    <th>${languageMap.TotalValue}</th>
+                </tr>
+                <#list voucher as item>
+                     <tr>
+                        <td>${item.voucherNo}</td>
+                        <td>${item.settled}</td>
+                        <td>${item.totalValue}</td>
+                     </tr>
+                </#list>
+                <tr>
+                    <td>${languageMap.Total}</td>
+                    <td>${VoucherQty}</td>
+                    <td>${VoucherTotal}</td>
+                </tr>
+            </table>
+        </#if>
+        <br>
+        <#if ttlvoucher??>
+        <!--<_ttlvoucher>-->
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <th>${languageMap.GiftVoucherSales}</th>
+                    <th>${languageMap.Amount}</th>
+                </tr>
+                <#list ttlvoucher as item>
+                <!--<repeat_ttlvoucher>-->
+                    <tr>
+                        <td>${item.gvsales}</td>
+                        <td>${item.gvamount}</td>
+                    </tr>
+                <!--</repeat_ttlvoucher>-->
+                </#list>
+            </table>
+        <!--</_ttlvoucher>-->
+        </#if>
+    </div>
+    <div id="errorMsg" <#if GetError??> class="hide" </#if>>
+        <span style="width:100%; position: absolute; top:50%; text-align: center; font-size: 0.4rem;">${errorMsg}</span>
+    </div>
+</section>
+<script>
+    <#include"../js/zxread.js" />
+</script>

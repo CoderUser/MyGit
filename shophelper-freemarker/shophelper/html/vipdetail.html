@@ -1,0 +1,59 @@
+<style><#include "../css/vipdetail.css"/></style>
+
+<section class="con_person">
+	<div class="head">
+		<dl>
+			<dt class="qrcode-img"><img src="${userImgSrc}"></dt>
+		    <dd>
+		    	<div class="customerlist-dtcol">
+		    		${userName}
+		    		<span class="customerlist-sex-${vipSex}">&nbsp;</span>
+					<span class="grade-desc">(${vipGradeCode})</span>
+		    	</div>
+	    		<div class="customerlist-detail">
+		            <div class="customerlist-star">
+					    <span class="customerlist-star-bg customerlist-star-bg-rank-${starRated}">&nbsp;</span>
+					    <span class="customerlist-star-${starRated}">&nbsp;</span>
+					</div>
+		        </div>
+    			<p class="customerlist-vipcode">${vipCode}</p>
+		    </dd>
+	    </dl>
+	    <a href="#VVipInfo">${languageMap.AccountDetails}</a>
+	</div>
+
+	<div class="detail">
+		<p><span>${languageMap.LastSalesDate}：</span><span>${lastSalesDate}</span></p>
+    	<p><span>${languageMap.LastShop}：</span><span>${lastShop}</span></p>
+	</div>
+
+	<#if retail?? && retail>
+		<ul class="con_person01" style="display:none;">
+			<li><a href="#VFavourite">${languageMap.Collection}</a></li>
+			<li><a href="#VBrowseHistory">${languageMap.Footprint}</a></li>
+		</ul>
+	</#if>
+
+	<ul class="con_person_list">
+        <li><a href="#VCoupon"><img src="${templateUrl}/shophelper/resource/icon/ico38.png">${languageMap.Coupon}</a></li>
+        <li><a href="#VBonus"><img src="${templateUrl}/shophelper/resource/icon/ico38.png">${languageMap.BonusQuery}</a></li>
+        <li><a href="#VGiftcert"><img src="${templateUrl}/shophelper/resource/icon/gift-card.png">${languageMap.Giftcert}</a></li>
+        <li><a href="#VCart"><img src="${templateUrl}/shophelper/resource/icon/shopping-cart.png">${languageMap.Cart}</a></li>
+
+	</ul>
+
+	<div id="vipPrefEmpty" class="noRecord">${languageMap.VipPrefEmpty}</div>
+
+	<div id="vipPref" class="vipPref">
+		<div class="slide_01" id="slide_01">
+			<div id="customerChartOne" class="mod_01"></div>
+			<div id="customerChartTwo" class="mod_01"></div>
+			<div id="customerChartThree" class="mod_01"></div>
+		</div>
+		<div class="dotModule_new">
+			<div id="slide_01_dot"></div>
+		</div>
+	</div>
+</section>
+
+<script><#include"../js/vipdetail.js" /></script>

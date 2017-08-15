@@ -1,0 +1,57 @@
+<style>
+	.a-footer{
+		width:100%;
+		height:.98rem;
+		text-align: center;
+	}
+	.a-footer li{
+		-webkit-flex:1;
+		flex:1;
+		background-repeat: no-repeat;
+		background-position: center .1rem;
+		background-size: .42rem auto;
+		line-height:1.4rem;
+		font-size: .2rem;
+	}
+	.a-footer li a{
+		display:block;
+		width:100%;
+		height:100%;
+	}
+	.a-footer li:nth-child(1) {
+		background-image:url("${templateUrl}/huamao/minivip/resource/icons/icon-home.png");
+	}
+	.a-footer li.curr:nth-child(1) {
+		background-image:url("${templateUrl}/huamao/minivip/resource/icons/icon-home-selected.png");
+	}
+
+	.a-footer li:nth-child(2) {
+		background-image:url("${templateUrl}/huamao/minivip/resource/icons/icon-activity.png");
+	}
+	.a-footer li.curr:nth-child(2) {
+		background-image:url("${templateUrl}/huamao/minivip/resource/icons/icon-activity-selected.png");
+	}
+
+	.a-footer li:nth-child(3) {
+		background-image:url("${templateUrl}/huamao/minivip/resource/icons/icon-guide.png");
+	}
+	.a-footer li.curr:nth-child(3) {
+		background-image:url("${templateUrl}/huamao/minivip/resource/icons/icon-guide-selected.png");
+	}
+
+	.a-footer li:nth-child(4) {
+		background-image:url("${templateUrl}/huamao/minivip/resource/icons/icon-user.png");
+	}
+	.a-footer li.curr:nth-child(4) {
+		background-image:url("${templateUrl}/huamao/minivip/resource/icons/icon-user-selected.png");
+	}
+</style>
+
+<ul class="a-footer g-border-top bg-c4 bd-cl g-dis-flex" id="commonfooter">
+	<li class="curr"><a class="txt-c3" href="#VHome">${languageMap.HomePage}</a></li>
+	<li><a class="txt-c3" href="#VActivityList">${languageMap.Activity}</a></li>
+	<li><a class="txt-c3" href="#VStoreList">${languageMap.StoreList}</a></li>
+	<li><a class="txt-c3" href="#VUser">${languageMap.User}</a></li>
+</ul>
+
+<script><#include "/huamao/minivip/js/common_footer.js"/></script>

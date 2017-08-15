@@ -1,0 +1,13 @@
+.cart-foot{ position: relative; width: 100%;height:.9rem; font-size:.3rem; line-height: .9rem; background: #000; color: #fff; opacity: 0.85;  z-index: 3; overflow: hidden;}
+.check.check_all{width: .44rem; height: .4rem; margin: .16rem .1rem 0; vertical-align: sub; -webkit-appearance:none; background: url(${templateUrl}/shophelper/resource/icon/check_circle_wt.png) no-repeat center bottom; background-size: .4rem auto;}
+.check.check_all:checked{ background: url(${templateUrl}/shophelper/resource/icon/checked_circle_wt.png) no-repeat center bottom; background-size: .4rem auto;}
+
+.delete.delete_all{width: .44rem; height: .4rem; padding: .2rem .3rem 0 .3rem; margin-left: .2rem; vertical-align: sub; -webkit-appearance:none; background: url(${templateUrl}/shophelper/resource/icon/delete_white.png) no-repeat center bottom; background-size: .4rem auto;}
+
+.cart-foot-lf{ width: 100%; height: 100%; float: left; overflow: hidden;}
+.cart-foot-p b {display: block;font-size: .3rem;}
+.cart-foot-p b:nth-child(1), .cart-foot-p b:nth-child(1) em {font-weight: 600;}
+.cart-foot-p b:nth-child(2), .cart-foot-p b:nth-child(2) em {font-weight: 400; font-size: .28rem;}
+.cart-foot-p em{color: #fff;}
+.cart-foot-p{ float: right; text-align: right; padding-right: .1rem; line-height: .3rem; padding-top: .1rem; font-size: .26rem; color: #fff;}
+.cart-foot button{position: absolute; width:25%; height: 100%; right: 40%; top: 0; color: #fff; padding: 0; border:0; font-weight: 600; font-size: .32rem; text-align:center;}

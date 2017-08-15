@@ -1,0 +1,18 @@
+<div class="a-item-container g-dis-flex">
+	<div class="photo-container">
+		<img src="{[itemPhoto]}">
+	</div>
+	<div class="desc-container">
+		<p>{[itemDesc]}</p>
+		<p><span class="score">{[bonusRequire]}<i class="unit">[$Bonus$]</i></span>
+			{=amtReq?<em>+</em>
+			<span class="price">{[amountRequire]}<i class="unit">[$Yuan$]</i></span>::=}</p>
+
+		<p>[$Qoh$]：<i>{[qoh]}</i></p>
+	</div>
+	{=exchangeOn?
+	<a href="#VBonusItemDetail/{[itemOrg]}_{[style]}" class="change-on-btn">[$ChangeNow$]</a>
+	::
+	<div class="change-off-btn">[$ChaneOver$]</div>
+	=}
+</div>

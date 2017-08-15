@@ -1,0 +1,61 @@
+<style>
+	#ext-viewport .x-layout-card-item{ background: #efefef;}
+	.a-add-address dl{ width: 100%; padding: 0 5%; background: #fff; line-height: .64rem; border-bottom: 1px solid #ddd;}
+	.a-add-address dl:first-child{ margin-top: .16rem;border-top: 1px solid #ddd;}
+	.a-add-address dl dt{font-size: .24rem; color: #5a5a5a; padding-right: .1rem;}
+	.a-add-address dl dd{-webkit-box-flex:4; flex:4; margin-left: 1%; font-size:.23rem;}
+	.a-add-address dl input[type=tel]{-webkit-box-flex:1; flex:1;}
+	.a-add-address dl input[type=text]{width: 100%; line-height: .6rem;}
+	.a-add-address dl textarea{border:none; width:100%; margin-bottom:.2rem; vertical-align:text-top;}
+	.a-add-address dl:nth-child(5) input[type=text]{ width: 79%; padding-left: 21%;}
+	.a-add-address .g-checkbox{display:block;line-height:.26rem; color: #929394; padding: .1rem; padding-left: .6rem; font-size: .25rem;}
+	.a-add-address .g-checkbox .radio{left: 0; margin-left: -.4rem; margin-top: -.13rem;}
+	.a-add-address .g-checkbox .radio:before{ font-size: .28rem;}
+	.g-btn-sq{margin-top: .6rem;}
+	
+	.a-add-address dd.g-dis-flex{align-items: stretch;}
+	.tel-area-code{ height: .6rem; margin-right: .1rem; color: #666; background-color: #ddd; background-size: .24rem auto; padding-right: .4rem; background-position: right .1rem top .24rem;}
+</style>
+<form class="a-add-address" name="address" data-addrid="{[addrId]}">
+	<dl class="g-dis-flex">
+		<dt>[$UserName$]</dt>
+		<dd><input type="text" name="name" placeholder="[$YourName$]" value="{[receiverName]}"/></dd>
+	</dl>
+	<dl class="g-dis-flex">
+		<dt>[$UserTel$]</dt>
+		<dd class="g-dis-flex">
+			<_telAreaCodeList>
+				<select id="tel-area-code" class="tel-area-code g-arr-dn" name="telareacode" data-code="{[receiverTelCode]}">
+					<option value="">[$TelCode$]</option>
+					<repeat_telAreaCodeList>
+						<option value="{[telareacode]}">{[telareacode]}</option>
+					</repeat_telAreaCodeList>
+				</select>
+			</_telAreaCodeList>
+			<input type="tel" name="tel" placeholder="[$YourTel$]" maxlength="11" value="{[receiverTel]}"/>
+		</dd>
+	</dl>
+	<dl class="g-dis-flex">
+		<dt>[$Country$]</dt>
+		<dd>
+			<input id="select_country" type="text" readonly name="input_country" data-country="{[countryCode]}" placeholder="[$SelectCountry$]"/>
+		</dd>
+	</dl>
+	<!-- <dl class="g-dis-flex" style="display: none;">
+		<dt>[$PostalCode$]</dt>
+		<dd><input type="text" name="postalCode" readonly id="postcode" value="" placeholder="[$PostalCode$]" /></dd>
+	</dl> -->
+	<dl class="g-dis-flex">
+		<dt>[$LocalArea$]</dt>
+		<dd>
+			<input id="select_add" type="text" readonly="" name="input_area" data-province="{[province]}" data-city="{[city]}" data-county="{[county]}" placeholder="[$SelectLocalArea$]"/>
+		</dd>
+	</dl>
+	<dl>
+		<dt>[$ReceiverAddress$]</dt>
+		<dd><textarea name="address" placeholder="[$Address$]" rows=3>{[receiverAddress]}</textarea></dd>
+	</dl>
+	<p class="g-checkbox"><input id="defaultAddr" class="g-checkbox" type="checkbox" hidden {=isDefault?checked::=}>
+		<label for="defaultAddr"><em class="radio icon-radio"></em><em class="radio icon-radiochecked"></em>[$SetDefault$]</label></p>
+</form>
+<button class="g-btn-sq" id="addaddress">[$Submit$]</button>

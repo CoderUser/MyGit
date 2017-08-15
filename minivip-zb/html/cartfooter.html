@@ -1,0 +1,12 @@
+<style><#include "../css/cartfooter.css" /></style>
+<footer class="a-cart-foot" id="foot">
+
+	<div class="a-cart-settle">
+		<div class="cart-foot-lf">
+			<span class="g-checkbox"><input type="checkbox" name="" id="check-all" hidden/>
+				<label for="check-all"><em class="radio icon-radio"></em><em class="radio icon-radiochecked"></em>${languageMap.SelectAll}</label></span>
+			<span class="cart-foot-p">${languageMap.Count}: <em id="priceTotal">0.00</em><br/>${languageMap.PromotionLess}: <em id="prom-less-total">0.00</em></span>
+		</div>
+		<button id="cartfooter-settle">${languageMap.Settle}(<span id="selectedTotal">0</span>)</button>
+	</div>
+</footer>

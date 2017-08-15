@@ -1,0 +1,107 @@
+.a-store-search{
+    position: relative;
+    text-align: center;
+    height: .8rem;
+}
+.a-store-icon{
+    display: block;
+    position: absolute;
+    background-image: url(http://172.31.1.204:1841/icons/icon-sear.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: .3rem auto;
+    background-position-x: 95%;
+    height: .46rem;
+    width: .4rem;
+    right: 20%;
+    top: 20%;
+}
+
+.a-group-list dl dt{
+    width: 2.6rem;
+    height: 1.7rem;
+    overflow: hidden;
+}
+.a-group-list dl dd p{
+    padding: 0 .2rem;
+    font-size: .28rem;
+    -webkit-flex: 1;
+    flex: 1;
+}
+.a-group-bg dd{
+    padding: 0 .2rem;
+    font-size: .28rem;
+    overflow: hidden;
+    -webkit-flex: 1;
+    flex: 1;
+}
+.a-group-list dl dd p {
+    line-height: .4rem;
+    padding-bottom: .2rem;
+}
+.a-group-list dl dd p:nth-child(2) {
+    font-size: .24rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.a-group-list dl dd p:nth-child(3) {
+    padding-bottom: 0;
+}
+
+.a-group-list dl dd p:nth-child(3) span:last-child {
+    font-size: .24rem;
+    padding-left: .1rem;
+    color: #fefefe;
+    text-decoration: line-through;
+}
+.a-group-bg{
+    width: 100%;
+    /* margin: .1rem auto 0; */
+    padding: .18rem;
+    background: #1f2126;
+    /* border-radius: .1rem; */
+    border-top: solid 1px;
+}
+.a-ipt-search{
+    height: .5rem;
+    padding-left: .15rem;
+    font-size: .28rem;
+    width: 70%;
+    border: 0.01rem solid #e0cfa7;
+    border-radius: .5rem;
+    margin: 0.15rem auto;
+}
+
+.a-group-list{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.a-group-img{
+    width: 2.6rem;
+    height: 1.7rem;
+}
+.star-score{
+    display: flex;
+    display: -webkit-flex;
+    position: absolute;
+    right: .24rem;
+}
+.star-score-left{
+    background: url("http://172.31.1.204:1841/icons/star-left.png") left center;
+    background-size: .24rem .22rem;
+    background-repeat-y: no-repeat;
+    width: .6rem;
+    height: .22rem;
+}
+.star-score-right{
+    background: url("http://172.31.1.204:1841/icons/star-right.png") right center;
+    background-size: .24rem .22rem;
+    width: .6rem;
+    height: .22rem;
+}
+#itemlist{
+    height: 100%
+    width: 100%;
+}

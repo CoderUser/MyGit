@@ -1,0 +1,42 @@
+<style><#include "/huamao/minivip/css/collect.css"/></style>
+
+<#if storeInfoList?? && storeInfoList?size gt 0>
+	<div class="a-collect">
+		<#list storeInfoList as item>
+			<a class="bg-c11" href="#VStoreDetail/${item.storeCode}">
+				<dl class="g-dis-flex">
+					<dt>
+						<img src="<#if item.brandLogoId??>${properties.fileServerUrl}file/get?fileid=${item.brandLogoId}<#else>${properties.fileServerUrl}file/get?fileid=${item.tenantPhotoId}</#if>" alt="">
+					</dt>
+					<dd>
+						<p>${item.brandName}
+							<span class="star-dark">
+								<em class="star-light" data="${item.rating}"></em>
+							</span>
+						</p>
+						<p>${item.telephone}</p>
+						<p>${item.location}</p>
+						<p>${item.openingHrs}</p>
+					</dd>
+				</dl>
+			</a>
+		</#list>
+	</div>
+</#if>
+
+<script>
+	(function(_TApi)
+	{
+		VNavigatorBar.updateTitle("${languageMap.MyCollect}");
+		if(!_TApi.hasClass(VNavigatorBar.navToolbar, 'bar-bd-btm')) _TApi.addClass(VNavigatorBar.navToolbar, 'bar-bd-btm');
+
+		var _star = TApi.$cls("star-light"),
+			_width, _score;
+		for(var i = 0; i < _star.length; i++)
+		{
+			_score = _star[i].getAttribute('data');
+			_width = _star[i].parentNode.offsetWidth / 5;
+			_star[i].style.width = _score * _width + 'px';
+		}
+	})(window.TApi || {})
+</script>

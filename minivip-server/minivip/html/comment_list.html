@@ -1,0 +1,36 @@
+<style type="text/css">
+	.a-comment-list li{
+		padding:.3rem .3rem .3rem .8rem;
+		margin-bottom: 1px;
+		background-image: url("${templateUrl}/huamao/minivip/resource/icons/icon-user-selected.png");
+		background-repeat: no-repeat;
+		background-size: .4rem auto;
+		background-position: left .3rem top .27rem;
+	}
+	.a-comment-list li h3{
+		padding-bottom:.2rem;
+	}
+</style>
+
+<#if commentList?? && commentList?size gt 0>
+<ul class="a-comment-list">
+	<#list commentList as item>
+		<li class="bg-c4" id="item" data-item = "item">
+			<h3>小黑</h3>
+			<p>在一楼电梯旁边，店面很大，一看就能看见，服务态度热情亲切。东西一如既往地好~</p>
+		</li>
+	</#list>
+</ul>
+</#if>
+
+<script>
+	(function(_TApi)
+	{
+		VNavigatorBar.updateTitle("${languageMap.CommentList}");
+		if(!_TApi.hasClass(VNavigatorBar.navToolbar, 'bar-bd-btm')) _TApi.addClass(VNavigatorBar.navToolbar, 'bar-bd-btm');
+		
+		var item = document.getElementById("item");
+		console.log(item.dataset.item)
+		
+	})(window.TApi || {})
+</script>

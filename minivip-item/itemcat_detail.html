@@ -1,0 +1,13 @@
+<_itemList>
+	<repeat_itemList>
+		<a href="#VItemDetail/{[itemOrg]}_{[style]}" class="a-item-container g-dis-flex">
+			<div class="a-photo-container" style="background-image:url({[itemPhoto]})"></div>
+			<div class="a-desc-container">
+				<p>{[itemDesc]}</p>
+				<p>{[currSign]}<span class="g-new-price">{[sellingPrice]}</span>
+					{=equalSelling?::<span class="g-old-price">{[currSign]}{[originPrice]}</span>=}
+				</p>
+			</div>
+		</a>
+	</repeat_itemList>
+</_itemList>

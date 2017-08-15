@@ -1,0 +1,65 @@
+<style><#include"../css/itemdetail3d.css"/></style>
+
+<main id="itemdetail-container" data-org="${itemorgid}" data-style="${style}">
+	<div id="photowrapper" class="itemphotos">
+		<#if photolist??>
+			<button id="slide_left" class="slide_btn iconfont-back" type="button"></button>
+			<button id="slide_right" class="slide_btn iconfont-next" type="button"></button>
+			<div class="slide_01" id="slide_01">
+				<#list photolist as itemPhoto>
+					<div id="${itemPhoto.photoId}" class="mod_01"><img class='itemphoto' style="background-image: url(${itemPhoto.photoSrc})" src="" alt=""></div>
+				</#list>
+			</div>
+			<div class="dotModule_new">
+				<div id="slide_01_dot"></div>
+			</div>
+		</#if>
+	</div>
+
+	<section class="con1">
+		<span class="con1_1" style="display:none;">${languageMap.AlreadySold}</span>
+		<h3 id="itemname">${desci}</h3>
+		<div class="itemcode">(${itemorgid} - ${style})</div>
+		<div class="p-price">
+			<b>$ <span class="price-old" id="price-old" data-originalprice="${originPrice}">${originPrice}</span></b>
+			<b>$ <span class="price" id="seluprice" data-sellingprice="${sellingPrice}">${sellingPrice}</span></b>
+			<b><span class="discount" id="discount">${discount}</span>${languageMap.%OFF}</b>
+			<span class="delivery freight" id="delivery">${languageMap.Delivery}: $ ${carriage}</span>
+		</div>
+		<div id="itemdesc" class="desc">${longDesc}</div>
+	</section>
+
+	<section class="con2">
+		<#if colorlist??>
+			<div class="pro-attr">
+				<span class="part-note-msg">${languageMap.Color}:</span>
+				<div id="itemcolor" onclick="TApi.itemdetail.doSelect(arguments[0], true)">
+					<#list colorlist as itemColor>
+						<a data-itemcolor="${itemColor.colorid}" href="javascript:;">${itemColor.color}</a>
+					</#list>
+				</div>
+			</div>
+		</#if>
+		<#if sizelist??>
+			<div class="pro-attr">
+				<span class="part-note-msg">${languageMap.Size}:</span>
+				<div id="itemsize" onclick="TApi.itemdetail.doSelect(arguments[0], false)">
+					<#list sizelist as itemSize>
+						<a data-itemsize="${itemSize.sizeid}" href="javascript:;">${itemSize.size}</a>
+					</#list>
+				</div>
+			</div>
+		</#if>
+		<div class="pro-attr">
+			<span class="part-note-msg">${languageMap.Count}:</span>
+			<div class="quantity-wrapper">
+				<span class="quantity-decrease" onclick="TApi.itemdetail.qtyMinus(arguments[0])">-</span>
+				<input type="text" class="itemqty" size="4" value=1>
+				<span class="quantity-increase" onclick="TApi.itemdetail.qtyAdd(arguments[0])">+</span>
+			</div>
+		</div>
+	</section>
+	<section id="detail_con"></section>
+</main>
+
+<script><#include"../js/itemdetail3d.js"/></script>

@@ -1,0 +1,29 @@
+.a-con{ position: relative; width: 100%; height: auto; padding: .3rem 3%; background:#ffffee;}
+.a-con.con1 h3{ font-size: .3rem; color: #292828; font-weight: normal;}
+.a-con .p-price{ color:#ff6000; font-size:.3rem; margin-top:.2rem; }
+.a-con .p-price .unit{ font-size:.2rem; font-style:normal; padding-left:.06rem; }
+.a-con .p-price .freight{ float: right; color: #818080; padding-top: .12rem; font-size: .18rem;}
+.a-con.con2{ background: #fff; overflow: hidden;}
+.a-pro-attr{ margin-bottom: .1rem; overflow: hidden;}
+.a-pro-attr .part-note-msg{float: left; white-space: nowrap;display: inline-block;line-height: .65rem;font-size: .22rem;color: #848689;}
+.a-pro-attr p{ margin-left: .6rem; overflow: hidden;}
+.a-pro-attr p a{border: 1px solid #d7d7d7; font-size: .18rem;color: #686868;float: left;margin: 0 .1rem .1rem .15rem;padding: .15rem .2rem;overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%; text-decoration: none;}
+.a-pro-attr p a.selected{border: 1px solid #f15353; color: #f15353;}
+.a-pro-attr p a.disabled{display:none;}
+.a-qty-wrapper {float: left; display: inline-block; margin-left: .4rem; margin-top: .1rem;}
+
+/*detail content*/
+#detail_con{width: 100%; height: auto; background: #fff; font-size:.2rem;}
+#detail_con .pull{text-align: center; line-height:.6rem;}
+
+/*slide photo list*/
+.g-slide #slide_left{position: absolute; top: 42%; color: #fff; background: #fff; width: .5rem; height: 1rem; opacity: .25; border-top-right-radius: .2rem; border-bottom-right-radius: .2rem;}
+.g-slide .slide_btn svg{position: absolute; left: 20%; top: 20%; width: 60%; height: 60%;}
+.g-slide #slide_right{position: absolute; top: 42%; right: 0; color: #fff; background: #fff; width: .5rem; height: 1rem; opacity: .25; border-top-left-radius: .2rem; border-bottom-left-radius: .2rem;}
+.g-slide .mod_01.mod_3d{width: 100%; height: 100%; background-size: auto 100%; background-position-x: center; background-repeat: no-repeat;}
+.g-slide .mod_01.mod_3d img{display:none;}
+/*product info*/
+.a-con .part-note-msg{float: left;white-space: nowrap;display: inline-block;line-height: .65rem;font-size: .22rem;color: #848689;}
+/*detail content*/
+#detail_con{width: 100%; height: auto; background: #fff; font-size:.2rem;}
+#detail_con .pull{text-align: center; line-height:.6rem;}

@@ -1,0 +1,43 @@
+<style>
+.set-cashier p,.set-pwd p{width: 100%; padding: .26rem 5%; line-height: .38rem; border-bottom: 1px solid #d0dbdd; overflow: hidden;}
+.set-cashier p:last-child, .set-pwd p{border-bottom: none;}
+.set-cashier p span{float: right; color: #999;}
+.set-pwd p{background: url({&mobiletenant/icon/arr-right.png&}) no-repeat center right .3rem; background-size: .14rem auto;}
+.set-pwd p a{display: block;}
+.set-style{margin-bottom: .2rem;}
+.set-style p, .set-style li{line-height: .9rem; border-bottom: 1px solid #d0dbdd;}
+.set-style p{width: 100%; padding: 0 5%;}
+.set-style ul{width: 90%; margin: 0 auto;}
+.set-style li label{display: inline-block;  width: 100%; text-transform: capitalize;}
+.set-style li input{float: right;}
+.set-style li input[type=radio]{display: none;}
+.set-style li input[type=radio]:checked { margin-top: .2rem; display: block;}
+.set-style li span{display: inline-block; width: .4rem; height: .34rem; margin-right: .1rem; vertical-align: sub;}
+.set-style li:nth-child(1) span{background: #4cc1d3;}
+.set-style li:nth-child(2) span{background: #305872;}
+.set-style li:nth-child(3) span{background: #1aaa92;}
+.set-style li:nth-child(4) span{background: #3c3d3f;}
+.set-style li:last-child{border-bottom: none;}
+input.check {width: 11%;}
+</style>
+<div class="set-pwd gradient-bg">
+	<p><a href="#VModifypwd">[$ModifyPwd$]</a></p>
+</div>
+<div class="set-style gradient-bg">
+	<p>[$Language$]:</p>
+	<ul id="Language">
+		<li><label>简体中文<input type="radio" name="language" id="zh_CN" class="langcheck check" /></label></li>
+		<li><label>繁體中文<input type="radio" name="language" id="zh_HK" class="langcheck check" /></label></li>
+		<li><label>English<input type="radio" name="language" id="en" class="langcheck check" /></label></li>
+	</ul>
+</div>
+<div class="set-style gradient-bg">
+	<p>[$Style$]:</p>
+	<ul id="StyleChange">
+		<li><label><span></span>[$Default$]<input id="default" type="radio" name="style" class="stylecheck check" /></label></li>
+		<li><label><span></span>[$NavyBlue$]<input id="navyblue" type="radio" name="style" class="stylecheck check" /></label></li>
+		<li><label><span></span>[$Green$]<input id="green" type="radio" name="style" class="stylecheck check" /></label></li>
+		<li><label><span></span>[$Black$]<input id="black" type="radio" name="style" class="stylecheck check" /></label></li>
+	</ul>
+</div>
+<button id="btn_logout" class="round-btn">[$Logout$]</button>

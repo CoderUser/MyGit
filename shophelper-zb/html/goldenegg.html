@@ -1,0 +1,64 @@
+<style>
+	<#include "../css/goldenegg.css"/>
+</style>
+
+<section class="stage">
+	<img src="${templateUrl}/resource/shophelper/icon/egg_top_bg.png" />
+	 <div id="shape" class="cube on">
+        <div class="plane one"><span class=""><figure>&nbsp;</figure></span></div>
+        <div class="plane two"><span class=""><figure>&nbsp;</figure></span></div>
+        <div class="plane three"><span class=""><figure>&nbsp;</figure></span></div>
+ 	</div>
+ 	<div id="hit" class="hit"><img src="${templateUrl}/resource/shophelper/icon/hammer.png" /></div>
+</section>
+<p class="chance">${languageMap.Remain}<em id="game_num">3</em>${languageMap.Chance}</p>
+<div class="btn">
+	<button id="rule_btn"><a href="javascript:void(0)">${languageMap.Rule}</a></button>
+	<button id="name_list_btn"><a href="javascript:void(0)">${languageMap.NameList}</a></button>
+</div>
+
+
+<div class="tc_bg" id="tc_bg" style="display: none;"></div>
+<div class="share" id="share" style="display: none;"><img src="${templateUrl}/resource/shophelper/icon/share.png"/></div>
+<div class="tc_con succ_con" id="success" style="display: none;">
+	<h1><img src="${templateUrl}/resource/shophelper/icon/egg_succ_bg.png"></h1>
+   <div class="tc_con_txt">
+   	  <p>${languageMap.Congratulate}<em id="succ_txt">20元现金折扣券</em> </p>   
+   	  <p>${languageMap.SuccTxt}</p>   
+   </div>
+   <div class="btn">
+   	<button><a href="">${languageMap.MyAccount}</a></button>
+   	<button class="share_btn"><a href="javascript:void(0)">${languageMap.Share}</a></button>
+   </div>
+   <span class="close"></span>
+</div>
+<div class="tc_con fail_con" id="fail" style="display: none;">
+	<h1><img src="${templateUrl}/resource/shophelper/icon/egg_fail_bg.png"></h1>
+   <div class="tc_con_txt">
+   	  <p>${languageMap.faildesc}</p>   
+   	  <p>${languageMap.failtxt}</p>   
+   </div>
+   <div class="btn">
+   	<button id="again"><a href="javascript:void(0)">再砸一次</a></button>
+   	<button class="share_btn"><a href="javascript:void(0)">去分享</a></button>
+   </div>
+   <span class="close"></span>
+</div>
+<div class="tc_con rule" id="rule" style="display: none;">
+	<h3>${languageMap.Rule}<span class="close"></span></h3>
+	<div class="rule_txt">
+		${Rule}
+	</div>
+</div>
+<div class="tc_con name_list" id="name_list" style="display: none;">
+	<h3>${languageMap.NameList}<span class="close"></span></h3>
+	<p class="my_prize">${languageMap.MyPrize}：${languageMap.Get}“${myPrize}”<br/><time>${time}</time></p>
+	<ul>
+		<repeat>
+			<li><span class="username">${userName}</span><span class="username">${languageMap.Get}“${prize}”</span></li>
+		</repeat>
+	</ul>
+</div>
+<script>
+    <#include"../js/goldenegg.js" />
+</script>

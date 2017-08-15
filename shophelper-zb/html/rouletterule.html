@@ -1,0 +1,42 @@
+<style>
+	<#include "../css/rouletterule.css"/>
+</style>
+<div class="rule_bg">
+	<div class="rule">
+		<h3>${languageMap.Rule}</h3>
+		<dl>
+			<dt>${languageMap.ActivityTime}：</dt>
+			<dd>${ActivityTime}</dd>
+		</dl>
+		<dl>
+			<dt>${languageMap.ActivityMode}：</dt>
+			<dd>${ActivityMode}</dd>
+		</dl>
+		<dl>
+			<dt>${languageMap.AwardingTime}：</dt>
+			<dd>${AwardingTime}</dd>
+		</dl>
+		<dl>
+			<dt>${languageMap.AwardSetting}：</dt>
+			<dd>${AwardSetting}</dd>
+		</dl>
+		<dl>
+			<dt>${languageMap.ActivityDesc}：</dt>
+			<dd>${ActivityDesc}</dd>
+		</dl>
+	</div>
+	<div class="name_list">
+		<h3>${languageMap.NameList}</h3>
+		<ul>
+			<!--<repeat>-->
+				<#list UserName as item>
+				<li><span class="username">${item.userName}</span><span class="username">${languageMap.Get}${item.Prize}</span></li>
+				</#list>
+			<!--</repeat>-->
+		</ul>
+		<div class="btn">
+			<button><a href="">${languageMap.GoPrize}</a></button>
+	   		<button><a href="">${languageMap.MyAccount}</a></button>
+		</div>
+	</div>
+</div>

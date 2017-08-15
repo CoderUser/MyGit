@@ -1,0 +1,19 @@
+<style>
+.login img{width: 50%; display: block; margin: .6rem auto .3rem; max-height: 1rem;}
+.login p{font-family: "Georgia"; text-align: center;}
+.login form{margin-top: .4rem;}
+.login input:not([type=checkbox]){display: block; width: 80%; background: #fff; line-height: .66rem; margin :.2rem auto; text-align: center; border: none; border-radius: .4rem; box-shadow: 0 2px 2px rgba(0,0,0,.15); box-sizing: border-box; line-height: .44rem;}
+.login input.check{margin-left: 10%; min-height: .3rem; background-size: .3rem auto; }
+.login input.check+label{font-size: .24rem;}
+.login button{margin-top: .7rem;}
+</style>
+<section class="login">
+	<img src="{&mobiletenant/logo/techtrans.png&}"/>
+	<p class="txt-color">[$LoginMsg$]</p>
+	<form name="login" id="login" method="post">
+		<input type="text" name="staff" id="staffcode" placeholder="User Id" />
+		<input type="password" name="pwd" id="password" placeholder="Password" />
+		<!--<input class="check" type="checkbox" id="remember" /><label class="txt-color" for="remember">[$RememberPwd$]?</label>-->
+		<button id="LoginBtn" class="round-btn" type="submit" >[$LoginNow$]</button>
+	</form>
+</section>

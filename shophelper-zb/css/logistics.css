@@ -1,0 +1,25 @@
+#ext-viewport .x-layout-card-item{ background: #efefef;}
+
+.logistics{ position: relative; width: 90%; padding: .2rem 2% 0; height: auto; margin: .2rem auto; background: #fff; box-shadow: 0 0px 5px 1px #ccc;}
+.logistics dl{  height: auto; margin-bottom: .26rem; padding: .14rem 0 .3rem; border-bottom: 1px dashed #ddd; overflow: hidden;}
+.logistics dl dt{ float: left; width: 1.6rem; height: 1.6rem; display: table; border: 1px solid #eee;border-radius: .1rem; margin-left: .14rem; margin-right: .2rem; overflow: hidden;}
+.logistics dl dt a{ width: 100%; height: 100%; display: table-cell; vertical-align: middle;}
+.logistics dl dt img{ max-width: 1.6rem; max-height: 1.6rem; display: block; margin: 0 auto;}
+.logistics dl dd{ line-height: .4rem; color: #555; font-size: .22rem;}
+.logistics dl dd b{font-weight: normal; color: #000000;}
+.logistics dl dd p{white-space:nowrap; overflow:hidden;text-overflow:ellipsis;}
+.logistics dl dd a{color: #555;}
+
+.logistics ul {margin-left:.3rem;border-left:2px solid #ddd;}
+.logistics ul li {width:100%;margin-left:-.2rem;line-height:.36rem; padding-bottom: .4rem; color: #777;}
+.logistics ul li i {width:.16rem;height:.16rem;background:#ddd;margin:.08rem .11rem;border-radius:50%;overflow:hidden;display:inline-block;float:left;}
+.logistics ul li span {padding-left:.02rem;font-size:.2rem;line-height:.36rem;}
+.logistics ul li p {padding-left:.4rem;font-size:.22rem;line-height:.36rem;}
+.logistics ul li:first-child{color: #000000;}
+.logistics ul li:first-child i{width:.36rem;height:.36rem; margin: 0; margin-left: .054rem; border-radius: 0; background:url(${templateUrl}/shophelper/resource/icon/ico88.png) no-repeat left top; background-size: .26rem auto;}
+.logistics ul li:first-child span{ padding-left:0;}
+.logistics ul li a{ color: #000000;}
+
+.circle_icon{ position: absolute; width: 100%; height: .2rem; left: 0; background:url(${templateUrl}/shophelper/resource/icon/circle-bg.png) no-repeat center center; background-size: 100% auto;}
+.icon_top{ top: -.1rem;}
+.icon_btm{bottom: -.1rem;}

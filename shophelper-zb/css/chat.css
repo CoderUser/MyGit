@@ -1,0 +1,61 @@
+#chat_content{text-align: left; padding: .6rem 2.5% 1.1rem 2.5%; box-sizing: border-box; overflow-x: hidden; overflow-y: auto; }
+#chat_input{background: #fff;width:95%;padding: .2rem 2.5%;position:fixed;left: 0;bottom: 0;border-top: 1px solid #ddd;}
+.chat_msg{margin-right:2%;float: right; padding: .12rem 2%; border-radius:.3rem;width:64%; background: #e5e5e5;}
+#chat_msg{margin-right:2%; font-size: .26rem; border:none;line-height: .36rem;width:100%; height: .36rem; background: #e5e5e5; resize: none;}
+#send_btn{border:none;display: block;float: right;border-radius:.3rem;width:19%;height:.6rem;background:url(${templateUrl}/shophelper/resource/icon/ico89.png) no-repeat center center #000000; background-size: .44rem auto;}
+#more_type{position: relative;margin-top: .05rem;width:.5rem;height:.5rem; display: inline-block;background:url(${templateUrl}/shophelper/resource/icon/ico91.png) no-repeat center center; background-size: 100% auto;}
+
+.chat>span{position: relative; font-size: .26rem;color:#fff; padding: .12rem .2rem;word-break:break-all; display:inline-block; line-height:.36rem; margin-top: .16rem; max-width: 58%;}
+.chat>span img{max-width: 2.2rem; max-height: 2.2rem; margin: 0 .2rem;}
+.chat>span img.send_img{width: 100%; max-width:100%; max-height: 100%; margin: 0; border-radius:.36rem 0 .36rem .36rem; display: block;}
+.chat span.chat_lf_con{margin-left:.9rem;background:#efefef;color: #333;border-radius:0 .3rem .3rem .3rem;  box-shadow: 2px 2px 2px #ccc;}
+.chat span.chat_rt_con{margin-right:.9rem; color:#fff; background:#000000; float:right; border-radius:.3rem 0 .3rem .3rem;  box-shadow: -2px 2px 2px #ccc;}
+.chat{position: relative; width:100%; min-height: .8rem; padding-bottom:.17rem;}
+.chat i{position: absolute; width: .7rem; height: .7rem; border-radius: 50%; }
+.chat em{position: absolute; top: 50%; margin-top: -.1rem; color: #999; font-size: .2rem; font-family: arial; }
+.chat_lf{ float:left;}
+.chat_lf i{background:url(${templateUrl}/shophelper/resource/icon/6017050_1.png) no-repeat left top; background-size: 100% auto;}
+.chat_rt{float:right;}
+.chat_rt i{background:url(${templateUrl}/shophelper/resource/icon/6717053_2.png) no-repeat right top; background-size: 100% auto; right: 0;}
+.chat b{font-weight: normal;}
+.chat_rt .TipsLayer{left: -.8rem;}
+.chat_lf .TipsLayer{left: -.6rem;}
+.chat_rt .send_loader,.chat_rt .send_fail{left: -.6rem;}
+.chat_lf .send_loader,.chat_lf .send_fail{right: -.6rem;}
+.chat_rt em{left: -1rem;}
+.chat_lf em{right: -1rem;}
+.chat span.chat_rt_con a{color: #fff;}
+
+.chat_date{/* width: 80%;*/ margin: .2rem auto; line-height: .6rem; border-top: 1px solid #ddd;text-align: center;padding: 0px .6rem;}
+.chat_date legend {font-size: .24rem; color: #000000; padding: 0 .2rem; font-family: arial;}
+.chat_date legend span{ border: 1px solid #ddd; padding: .1rem .2rem; border-radius: .34rem;}
+
+.send_fail{ position: absolute; width: .36rem; height: .36rem; top: 50%; margin-top: -.18rem; background:url(${templateUrl}/shophelper/resource/icon/ico90.png) no-repeat center center; background-size: .34rem auto;}
+.send_fail .TipsLayer{min-width: 1.6rem; left: -.8rem; top: -.6rem; line-height: .5rem; padding: 0 .1rem;}
+.send_fail .TipsLayer span{padding:0 .1rem;}
+#more_type .TipsLayer{left: -.08rem; bottom: .64rem; padding: .1rem;}
+#more_type .TipsLayer span{display:block; width: .48rem; height: .48rem; margin-bottom: .1rem; overflow: hidden;}
+#more_type .TipsLayer span:nth-child(1){ background:url(${templateUrl}/shophelper/resource/icon/ico92.png) no-repeat center center; background-size: .44rem auto;}
+#more_type .TipsLayer span:nth-child(2){ background:url(${templateUrl}/shophelper/resource/icon/face-ico.png) no-repeat center center; background-size: .44rem auto;}
+#img_file{border: none;font-size:100px; opacity:0; filter:alpha(opacity=0);}
+
+#pulldown{width: 100%; position: fixed; top: 0; left: 0; line-height: .6rem; text-align: center; color: #777;}
+.TipsLayer .triangle-down {bottom: -0.12rem;}
+
+#BigImgUl{ width: 99999px; height: 100%; position: fixed; left: 0; top: 0;}
+#BigImgUl li{ float:left; height: 100%; position: relative; overflow: hidden;}
+#BigImgUl li img{position: absolute; top: 50%; left: 50%; }
+#BigImgUl span{ width:.6rem; height:.6rem; background:#333; border-radius: 50%; position: fixed; text-align: center; line-height: .6rem; opacity: .8; color: #fff; bottom: .2rem; right: .2rem;}
+#BigImgUl span i{ font-style: normal; font-size: .26rem; padding: .04rem; }
+#BigImgUl span i:first-child{font-size: .3rem;}
+
+#faces{position: fixed; width: 100%; height: 0rem; left: 0; bottom: 0; background: #fff; padding:0 .2rem; transition:height .5s; box-sizing: border-box; overflow-y: auto;}
+#faces li{width: .44rem;height: .44rem;margin:.14rem;float: left; text-align: center; line-height: .44rem;}
+.chat emt{display: inline-block;}
+
+#sendurl{ width: 100%; background: #f1f1f1; border-radius: .08rem; margin-bottom: .3rem; border: 1px solid #ddd; padding: .2rem; box-sizing: border-box; overflow: hidden;}
+#sendurl dt{ float: left; width: 30%;height: 1.6rem; margin-right: .2rem; background: #fff; line-height: 1.6rem;  text-align: center; overflow: hidden;}
+#sendurl dt img{ max-width: 100%; max-height: 1.6rem; vertical-align: middle;}
+#sendurl dd p:first-child{line-height: .4rem; text-overflow:ellipsis; color: #666; white-space: nowrap; overflow: hidden;}
+#sendurl dd p:nth-child(2){color: #000000; font-size: .26rem; padding: .16rem 0;}
+#sendurl dd button{background: #000000; border-radius: .06rem; line-height: .3rem; padding: .1rem .2rem; color: #fff; font-size: .2rem;}

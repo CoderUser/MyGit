@@ -1,0 +1,70 @@
+<style><#include "/huamao/minivip/css/home.css"/></style>
+
+<div class="a-home">
+	<!--cms banner-->
+	<div class="a-home-banner" id="home-banner"></div>
+
+	<!--cms menu-->
+	<div class="a-home-menu bg-c4 g-border-btm bd-c2">
+		<div class="a-menu-wrapper" id="menu-wrapper">
+			<ul class="g-clearfix" id="menu-scroller">
+				<li><a class="bg-gradient1" href="#VPark"><img src= "${templateUrl}/huamao/minivip/resource/icons/icon-park.png">停车</a></li>
+				<li><a class="bg-gradient1" href="#VGrouponList"><img src= "${templateUrl}/huamao/minivip/resource/icons/icon-park.png">团购</a></li>
+				<li><a class="bg-gradient1" href="#VBonusItemList"><img src= "${templateUrl}/huamao/minivip/resource/icons/icon-park.png">积分商城</a></li>
+				<li><a class="bg-gradient1" href="#VRoulettle"><img src= "${templateUrl}/huamao/minivip/resource/icons/icon-park.png">购物</a></li>
+				<li><a class="bg-gradient1" href=""><img src= "${templateUrl}/huamao/minivip/resource/icons/icon-park.png">团购</a></li>
+				<li><a class="bg-gradient1" href=""><img src= "${templateUrl}/huamao/minivip/resource/icons/icon-park.png">停车</a></li>
+			</ul>
+		</div>
+		<div class="a-menu-dotlist" id="menu-dotlist">
+			<ul id="menu-dot"></ul>
+		</div>
+	</div>
+
+	<!--group-->
+	<#if grouponList?? && grouponList?size gt 0>
+		<div class="a-home-group">
+			<h3 class="bg-c4 bg-before-c1">${languageMap.Group}</h3>
+			<!--list cms group-->
+			<#list grouponList as item>
+				<a href="#VGrouponDetail/${item.cpBatchNo}">
+					<dl class="g-bg-radius g-dis-flex">
+						<dt>
+							<img src="${properties.fileServerUrl}file/get?fileid=${item.coverId}" alt="">
+						</dt>
+						<dd>
+							<p>${item.name}</p>
+							<p>${item.desci}</p>
+							<p><#if item.sellingPrice??><span class="txt-c2">&#165;${item.sellingPrice}</span></#if><#if item.originPrice??><span>&#165;${item.originPrice}</span></#if></p>
+						</dd>
+					</dl>
+				</a>
+			</#list>
+		</div>
+	</#if>
+
+	<!--store-->
+	<#if storeList?? && storeList?size gt 0>
+		<div class="a-home-store">
+			<h3 class="bg-c4 bg-before-c1">${languageMap.StoreList}</h3>
+			<!--list cms tenant-->
+			<#list storeList as item>
+				<a href="#VStoreDetail/${item.storeCode}">
+					<dl class="g-bg-radius g-dis-flex">
+						<dt>
+							<img src="<#if item.brandLogoId??>${properties.fileServerUrl}file/get?fileid=${item.brandLogoId}<#else>${properties.fileServerUrl}file/get?fileid=${item.tenantPhotoId}</#if>" alt="">
+						</dt>
+						<dd>
+							<p>${item.brandName}</p>
+							<p>${item.telephone}</p>
+							<p>${item.location}</p>
+							<p>${item.openingHrs}</p>
+						</dd>
+					</dl>
+				</a>
+			</#list>
+		</div>
+	</#if>
+</div>
+
+<script><#include "/huamao/minivip/js/home.js"/></script>

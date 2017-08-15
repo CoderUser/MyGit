@@ -1,0 +1,17 @@
+<div class="a-item-container g-dis-flex">
+	<div class="photo-container">
+		<img src="${templateUrl}/minivip/resource/icon/container.png">
+	</div>
+	<div class="desc-container">
+		<p>${itemDesc}</p>
+		<p><span class="score">${bonusRequire}<i class="unit">${languageMap.Bonus}</i></span>
+			<#if amtReq??><em>+</em><span class="price">${amountRequire}<i class="unit">${languageMap.Yuan}</i></span></#if>
+		</p>
+		<p>${languageMap.Qoh}：<i>${qoh}</i></p>
+	</div>
+	<#if exchangeOn?? && exchangeOn>
+	<a href="#VBonusItemDetail/${itemOrg}_${style}" class="change-on-btn">${languageMap.ChangeNow}</a>
+	<#else>
+	<div class="change-off-btn">${languageMap.ChaneOver}</div>
+	<#/if>
+</div>

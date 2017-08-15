@@ -1,0 +1,19 @@
+.settle-info{padding: .2rem;}
+.settle-info p{line-height: .6rem;}
+.settle-info span{font-size: .22rem; color: #888;}
+.settle-detail-list{margin-bottom: .2rem; padding: 0;}
+.settle-detail-list th,
+.settle-detail-list td{text-align: right;}
+.settle-detail-list th:first-child,
+.settle-detail-list td:first-child{text-align: left;}
+.settle-detail-list th{background: rgba(239,232,203,.7); padding: .24rem .1rem; border-right: none;}
+.settle-detail-list td{font-size: .2rem; padding: .24rem .1rem;border-right: 1px solid #d0dbdd;}
+.settle-detail-list td:last-child{border-right: none;}
+.settle-header td{text-align: center !important;}
+.settle-subtotal td{border-bottom: 4px double #BEC1C3; border-right:none;}
+.settle-total td{border-bottom: none; font-weight: bold; border-right: none;}
+.settle-subtotal td:first-child,
+.settle-total td:first-child{ text-align:right; }
+.g-dis-flex{justify-content: space-between; width: 90%; margin: 0 auto;}
+.g-dis-flex button{width: 45%;}
+.g-dis-flex button:first-child{background: #d0767a;}

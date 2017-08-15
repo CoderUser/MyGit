@@ -1,0 +1,22 @@
+<tr>
+	<th>${languageMap.Store}</th>
+	<th>${languageMap.Count}</th>
+	<th>${languageMap.Qty}</th>
+	<th>${languageMap.Amount}</th>
+</tr>
+<#if storeTotal??>
+	<#list storeTotal as item>
+		<tr class="detail-btn" data-storecode="${item.storecode}">
+			<td>${item.storecode}</td>
+			<td>${item.transCount}</td>
+			<td>${item.qty}</td>
+			<td>${item.amount}</td>
+		</tr>
+	</#list>
+</#if>
+<tr class="total">
+	<td>${languageMap.Total}</td>
+	<td>${totalTransCount}</td>
+	<td>${totalQty}</td>
+	<td>${totalAmount}</td>
+</tr>

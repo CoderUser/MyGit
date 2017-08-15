@@ -1,0 +1,22 @@
+<#if itemList??>
+<!--<_itemList>-->
+	<#list itemList as item>
+	<!--<repeat_itemList>-->
+		<div class="item-container" data-href="#VItemDetail/${itemOrg}_${style}">
+			<a href="javascript:void(0);" class="photo-container" style="background-image:url(${item.itemPhoto})">
+				<i class="basket-icon" data-org="${item.itemOrg}" data-style="${item.style}" data-longdesc="${item.longDesc}" data-colorsize='${item.colorSize}' data-colors="${item.colors}" data-sizes="${item.sizes}" data-discount="${item.discount}"></i>
+			</a>
+			<div class="desc-container">
+				<div class="a-item-desc">${item.itemDesc}</div>
+				<div>
+					<b class="price-old" style="display:<#if equalSelling??>none<#else>inline</#if>">$ <span>${item.originPrice}</span></b>
+					<#if equalSelling??><br /></#if><b class="price-sale">$ <span>${item.sellingPrice}</span></b></div>
+				<div class="a-item-desc">${item.itemDesc}</div>
+				<div>${item.longDesc}</div>
+				<div style="display:none;"><em>货号:</em>${item.style}</div>
+			</div>
+		</div>
+	<!--</repeat_itemList>-->
+	</#list>
+<!--</_itemList>-->
+</#if>

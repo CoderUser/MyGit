@@ -1,0 +1,24 @@
+<#if stockList??>
+	<#list stockList as item>
+		<div class="item-container<#if isHeader?? && isHeader>header</#if><#if isIntransit?? && isIntransit>intransit</#if>">
+			<div class="desc-container">
+				<p>
+					<span>${item.storeCode}${item.color}</span>
+					<#if item.sizeArr??>
+						<#list item.sizeArr as arr>
+							<span>${arr.size}</span>
+						</#list>
+					</#if>
+				</p>
+				<#if item.intransitArr??>
+					<p>
+						<span></span>
+						<#list item.intransitArr as intransitarr>
+							<span>${intransitarr.size}</span>
+						</#list>
+					</p>
+				</#if>
+			</div>
+		</div>
+	</#list>
+</#if>

@@ -1,0 +1,224 @@
+<style>
+	#ext-viewport .x-layout-card-item{ background: #efefef;}
+	.x-innerhtml{padding-bottom: .2rem;}
+	/*select address*/
+	.a-set-addr{position: relative; width: 100%; height: auto; margin-top: .16rem; padding: .2rem 10%; overflow: hidden;}
+	.a-set-addr p{ color: #666; font-size: .22rem; line-height: .32rem; padding-top: .06rem; padding-bottom:.08rem;}
+	.a-set-addr p:first-child{ font-size: .26rem;}
+	.a-set-addr p:first-child #recv-tel{ float: right;}
+	.a-set-addr i{position: absolute;}
+	.a-set-addr i.ico1{ left: .2rem; width: .3rem; top: 50%; margin-top: -.2rem;}
+	.a-set-addr i.ico1 img{width: 100%;}
+	.a-set-addr i.ico2,
+	.a-set-addr i.ico3{ width: 100%; height: .06rem; left: 0;  background: url({&minivip/icon/ico45.png&}) no-repeat top left; background-size: 100% auto; overflow: hidden;}
+	.a-set-addr i.ico2{top: 0; left: .1rem;}
+	.a-set-addr i.ico3{bottom: 0;}
+	/*select method*/
+	.a-order-sub{ width: 100%; border-top: 1px solid #e1e1e1; margin-top: .16rem; height: auto; background: #fff; overflow: hidden;}
+	.a-order-sub p,
+	.g-arr-dn{color: #666; width: 100%; padding-left: 5%; line-height: .72rem; font-size: .26rem; border-bottom: 1px solid #e1e1e1;}
+	.a-order-sub:first-child p{border-bottom: none;}
+	.a-order-sub p span,
+	.g-arr-dn span{ color: #b9b8b8; font-size: .2rem; padding-left: .1rem; white-space: nowrap;}
+	.a-order-sub p em{ float: right; font-size: .24rem; padding-right: .2rem;}
+	.g-arr-dn ul{padding: 0 0 .2rem; overflow: hidden;}
+	.g-arr-dn ul li{ width: 50%; float: left;}
+	.g-arr-dn ul li label{ display: inline-block; width: 100%; height: .4rem; line-height: .4rem;}
+	.g-arr-dn ul li img{ width: .6rem; margin-right: .1rem; vertical-align: middle;}
+	.a-order-sub .radio-title{ border-bottom: none; width: 100%; padding: 0;}
+	.a-order-sub .radio-title em{ font-size: .26rem;  padding-right:5%;}
+	.a-order-sub .select-coupon{background-size: .2rem auto;}
+	.a-order-sub .select-coupon select{float: right; line-height: .7rem; margin-right: .2rem; padding-right: .2rem; font-size: .2rem;}
+	/*select shipping time*/
+	.a-select-time{width: 100%; padding: 0;}
+	.a-select-time .radio-title{width: 100%; padding: 0 5%;}
+	.a-select-time .notes{ padding: .2rem .1rem; line-height: .3rem;}
+	.a-select-time .notes span{display: inline-block; color: #999; font-size: .18rem;}
+	.a-select-time .notes span em{border: 1px solid #ddd; color: transparent; display: inline-block; width: .4rem; height: .3rem; padding: 0 .04rem; margin-left: .18rem; margin-right: .1rem;}
+	.a-select-time .notes span em:nth-child(1){background: #fff; margin-left: 0;}
+	.a-select-time .notes span em:nth-child(2){background: #e5e5e5;}
+	.a-tab-time{position: relative; border-top: 1px solid #eee; width: 100%; height: 4rem;}
+	.a-time-wrapper{ position: absolute; left: 1.2rem;}
+	.a-tab-time .select-tab{width: 8.4rem;}
+	.a-tab-time ul{width: 1.2rem; font-size: .2rem; text-align: center;}
+	.a-tab-time>ul{position: absolute; background: #fff; left: 0; top: 0; z-index: 99;}
+	.a-tab-time ul li{width: 100%; float: none; height: 1rem; line-height: .2rem; padding: .16rem 0; color: transparent; border-right: 1px solid #eee; border-bottom: 1px solid #eee; overflow: hidden;}
+	.a-tab-time ul li:nth-child(1){line-height: .32rem; color: #666;}
+	.a-tab-time>ul:first-child li:nth-child(1){padding: .32rem 0;}
+	.a-tab-time>ul:first-child li{color: #666;}
+	.a-tab-time .select-tab .yes{ background: #e5e5e5;}
+	/*select store*/
+	.g-popup-container{ -webkit-transition: 0.4s ease-in-out; -webkit-transform:scale(0); transform:scale(0); overflow: auto;}
+	.g-popup-container ul{ width: 96%; margin: 0 auto;}
+	.g-popup-container ul li{ width: 100%; padding: .3rem 0 .16rem; border-bottom: 1px solid #ddd;}
+	.g-popup-container ul li p{ line-height: .3rem; padding: .06rem .6rem .06rem .4rem; color: #666; font-size: .2rem;background:url({&minivip/icon/add_icon.png&}) no-repeat left top .06rem; background-size: .34rem auto;}
+	.g-popup-container ul li p:first-child{ font-size: .24rem; color: #333;background:url({&minivip/icon/shop_icon.png&}) no-repeat left top .06rem;background-size: .34rem auto;}
+	.g-popup-container .checked-add{position: relative;}
+	.g-popup-container .checked-add .icon-checkmark:before{position: absolute; width: .5rem; height: 2rem; right: 0; top: 50%; margin-top: -.2rem; font-size: .4rem; }
+	.g-fullmask{ -webkit-transform:scale(0); transform:scale(0);}
+	
+	.a-order-sub .g-checkbox label{padding-left: .42rem;}
+	.a-order-sub .g-checkbox .radio{ left: 0; margin-left: 0; margin-top: -.14rem;}
+	.a-order-sub .payment .radio{ margin-top: -.08rem;}
+	.a-order-sub .g-checkbox .radio:before{font-size: .28rem;}
+	
+	.g-btn-sq{height: .6rem;}
+	.g-texa{width: 96%;}
+	
+	
+	/* promotion manual input */
+	#prom_input_container{ font-size:.22rem; padding:0 .12rem;}
+	.manual-input{float:right; height:100%; width:1rem; text-align:center; font-size:.6rem !important; }
+	.manual-input-header{font-weight:bold; font-size:.28rem !important; }
+	.manual-input-promdesc{line-height:.48rem; font-size:.24rem; }
+	.manual-input-cpgc{align-items:center; line-height:.36rem; padding:.1rem; border-top:1px dashed #aaa; }
+	.manual-result{display:block;}
+	.manual-bonusdesc{-webkit-box-flex:1; flex:1;}
+	.manual-bonusinput, .manual-quotainput{margin-right:.2rem; line-height:.36rem; padding:.04rem; border:1px solid #888; border-radius:.06rem; color:#888; width:.8rem; }
+	.manual-quota{display:block; border-top:1px dashed #aaa; line-height:.6rem;}
+	#popup-input-wrap{background: #fff; display: none; width: 80%; border-radius: .2rem;}
+	#popup-input-title{color: #fff; background:#444; text-align: center; line-height:.8rem; font-size: .3rem;}
+	#popup-input-content{position: relative; font-size:.22rem; width: 95%; max-height: 3rem; margin: .3rem auto .1rem; overflow: hidden;}
+	.a-inputvalue, .a-inputqty.a-numpad{line-height: .36rem; padding: .1rem; border: 1px solid #ddd; border-radius: .06rem; color: #888;}
+	.a-inputvalue:focus, .a-inputqty.a-numpad:focus, .manual-bonusinput:focus, .manual-quotainput:focus{border: 1px solid #F9A8A8;}
+	.a-inputvalue{-webkit-box-flex:1; flex:1; display: block; margin-right:.1rem; }
+	.a-inputqty{width:.8rem; margin-left:.1rem;}
+	#popup-input-scroller {padding-right: .18rem;}
+	#popup-input-scroller > div{padding-bottom:.2rem; align-items:center; -webkit-box-align:center; }
+	#popup-input-scroller > div .a-text-err{padding:.1rem; color:#000; }
+	#popup-input-wrap .a-btn-del{width: .4rem; font-size:.4rem; text-align:center;}
+	#popup-input-wrap .a-btn-add{width:90%; line-height:.4rem; margin:0 auto; font-size:.22rem; color:#000; }
+	#popup-input-wrap .a-btn-confirm{display: block; width: 50%; font-size: .26rem; margin:.4rem auto; line-height: .56rem; color: #000; background:#ccc; border-radius: .6rem;}
+</style>
+<section class="a-set-addr g-arr-rt" id="settle-addr" data-addrid="${addrId}">
+	<a href="<#if hasAddress??>#VAddressList<#else>#VAddress</#if>">
+		<#if hasAddress?? && hasAddress>
+		<p>${Receiver}：<span id="recv-name">${receiverName}</span><span id="recv-tel">${receiverTel}</span></p>
+		<p>${ReceiverAddress}：<span id="recv-addr">${receiverAddress}</span></p>
+		<#else>
+		<p>${SelectAddress}</p>
+		</#if>
+		<i class="ico1"><img src="${templateUrl}/minivip-zb/resource/icon/icon1.png"/></i>
+		<i class="ico2"></i>
+		<i class="ico3"></i>
+	</a>
+</section>
+<section class="a-set-addr g-arr-rt" hidden id="settle-pickstore">
+	<p>${PickUpStore}：<span id="recv-storename">${PickUpStore}</span></p>
+	<p>${PickUpAddress}：<span id="recv-storeaddr">${PickUpAddress}</span></p>
+	<i class="ico1"><img src="${templateUrl}/minivip-zb/resource/icon/iconadd.png"/></i>
+	<i class="ico2"></i>
+	<i class="ico3"></i>
+</section>
+<section class="a-order-sub">
+	<div class="g-arr-dn payment" {=hasAmount?::hidden=}>
+		<p class="radio-title">${Payment}<span id="payment" data-paydefault="${payDefault}">${Required}</span></p>
+		<_payment>
+		<ul hidden>
+			<repeat_payment>
+				<li class="g-checkbox"><input id="rb-payment${payMethod}" name="rb-payment" type="radio" data-basecurrcode="${baseCurrCode}" data-tendercode="{[tenderCode]}" value="{[payMethod]}" hidden><label for="rb-payment{[payMethod]}"><em class="radio icon-radio"></em><em class="radio icon-radiochecked"></em><img src="{[tenderImage]}">{[tenderDesc]}</label></li>
+			</repeat_payment>
+		</ul>
+		</_payment>
+	</div>
+	<div class="g-arr-dn">
+		<p class="radio-title">[$ShippingMethod$]<span id="shipping" data-shipdefault="{[shipDefault]}">[$Required$]</span></p>
+		<ul hidden>
+			<li class="g-checkbox"><input id="rb-shipping1" name="rb-shipping" type="radio" value="1" hidden><label for="rb-shipping1"><em class="radio icon-radio"></em><em class="radio icon-radiochecked"></em>[$Express$]</label></li>
+			<li class="g-checkbox"><input id="rb-shipping2" name="rb-shipping" type="radio" value="2" hidden><label for="rb-shipping2"><em class="radio icon-radio"></em><em class="radio icon-radiochecked"></em>[$PickUpBySelf$]</label></li>
+		</ul>
+	</div>
+
+	<div class="a-select-time g-arr-dn">
+		<p class="radio-title">[$TimePeriodSelect$]<span id="time"></span></p>
+		<main hidden>
+			<div class="a-tab-time">
+				<ul>
+					<li>[$TimePeriod$]</li>       
+					<li>09:00<br />~<br />15:00</li>       
+					<li>15:00<br />~<br />19:00</li>       
+					<li>19:00<br />~<br />22:00</li>       
+				</ul>
+				<div id="time-wrapper" class="a-time-wrapper">
+					<div id="select-data" class="select-tab g-dis-flex"></div>
+				</div>
+			</div>
+			<div class="notes g-clearfix">
+				<span class="g-fl">[$Annotation$]</span>
+				<span class="g-fr"><em>write</em>[$NotSelect$]<em>gray</em>[$Selectable$]<em>red</em>[$Selected$]</span>
+			</div>
+		</main>
+	</div>
+
+	<div class="g-arr-dn">
+		<p class="radio-title">[$GiftcertSettle$]</p>
+		<div id="settle-giftcert" hidden>
+		<_giftcertList>
+			<repeat_giftcertList>
+				<p class="g-checkbox">
+					<input id="cb-gc-{[giftcertNo]}" type="checkbox" value="{[giftcertNo]}" data-useonce="{=useOnce?1::0=}" data-amt="{[giftcertAmt]}">
+					<label for="cb-gc-{[giftcertNo]}">
+						<em class="radio icon-radio"></em>
+						<em class="radio icon-radiochecked"></em>
+						{[giftcertDesc]} <span>{[currSign]}{[giftcertAmt]}<i class="a-gcsettle"></i></span>{=useOnce?<em>([$SingleUse$])</em>::=}
+					</label>
+				</p>
+			</repeat_giftcertList>
+		</_giftcertList>
+		</div>
+	</div>
+</section>
+<section class="g-popup-container center" id="PickUpAdd">
+	<_pickupstore>
+		<ul>
+			<repeat_pickupstore>
+				<li data-storecode="{[storecode]}">
+					<p class="a-storename">{[storename]}</p>
+					<p class="a-storeaddr">{[storeaddress]}</p>
+				</li>
+			</repeat_pickupstore>
+		</ul>
+	</_pickupstore>
+</section>
+<!--todo bonus & coupon not support now-->
+<!--<section class="a-order-sub">
+	<_coupon>
+		<p class="select-coupon g-arr-dn" id="test">
+			[$Coupon$]
+			<select>
+				<repeat_coupon><option value="{[cpNo]}">{[cpDesc]}</option></repeat_coupon>
+			</select>
+		</p>
+	</_coupon>
+</section>-->
+<!--<p>[$Bonus$]<span>[$BonusDesc$]</span><em><input type="number" value="0" min="0" max="{[availBonus]}"></em></p>-->
+<_totalBonus>
+<section class="a-order-sub">
+	<p>[$BonusRequire$]<em>{[totalBonus]}</em></p>
+</section>
+</_totalBonus>
+<section id="prom_input_container" class="a-order-sub">
+</section>
+<section class="a-order-sub" {=hasAmount?::hidden=}>
+	<p>[$OrderAmt$]<em id="em-amount">{[totalAmt]}</em></p>
+	<p>[$Discount$]<em id="em-discount">0.00</em></p>
+	<p>[$TotalAmt$]<em id="em-totalamount">{[totalAmt]}</em></p>
+	<p>[$GiftcertPaid$]<em id="em-gcpaid">0.00</em></p>
+</section>
+<section class="a-order-sub">
+	<p>[$MessageBoard$]
+		<textarea class="g-texa" id="settle-remark" placeholder="[$LeaveAMessageHere$]" rows="5">{[remark]}</textarea>
+	</p>
+</section>
+<button class="g-btn-sq" id="order-confirm">[$Confirm$]</button>
+
+<!-- promotion manual input popup -->
+<div id="popup-input-wrap">
+	<div id="popup-input-title"></div>
+	<div id="popup-input-content">
+		<div id="popup-input-scroller">
+		</div>
+	</div>
+	<p class="a-btn-add">[$Add$]</p>
+	<button class="a-btn-confirm">[$Confirm$]</button>
+</div>

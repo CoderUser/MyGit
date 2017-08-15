@@ -1,0 +1,41 @@
+<style><#include "../css/repairsuggestlist.css" /></style>
+
+<#if suggestList??>
+	<ul class="repair-suggest-list">
+		<#list suggestList as item>
+			<li class="write-bg">
+				<a href="#VComplaint-${item.suggestNo}">
+					<h3>${lang_SuggestNo}: ${item.suggestNo}</h3>
+					<dl>
+						<dt>${languageMap.SuggestContent}: </dt>
+						<dd>
+							<p>${item.suggestContent}</p>
+							<#if item.suggestImg??>
+								<div class="g-clearfix">
+									<#list item.suggestImg as img>
+										<span><em><img class="prewimg" src="${img.photoSrc}"></em></span>
+									</#list>
+								</div>
+							</#if>
+						</dd>
+					</dl>
+					<p>${languageMap.SuggestBy}: <em>${item.suggestBy}</em><span>${languageMap.SuggestDate}: ${item.suggestDate}</span></p>
+					<p>${languageMap.Status}: <em class="already">${item.status}</em></p>
+					<#if item.suggest??>
+						<dl>
+							<dt>${languageMap.DisposeContent}: </dt>
+							<dd>
+								<p>${item.disposeContent}</p>
+							</dd>
+						</dl>
+						<p>${languageMap.DisposeBy}: <em>${item.disposeBy}</em><span>${languageMap.DisposeDate}: ${item.disposeDate}</span></p>
+					</#if>
+				</a>
+			</li>
+		</#list>
+	</ul>
+</#if>
+
+<script>
+	<#include "../js/suggestlist.js" />
+</script>

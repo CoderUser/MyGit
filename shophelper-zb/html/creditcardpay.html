@@ -1,0 +1,46 @@
+<style>
+	<#include "../css/creditcardpay.css"/>
+</style>
+<section class="payForm">
+	<div class="cardInfo">
+		<div>
+			<dl>
+			　<dt>扫描编号</dt>
+			　<dd><input id="scan-code" class="pass" type="password" placeholder="扫描编号" data-default="" /></dd>
+			</dl>			
+			<dl>
+			　<dt>货币编号</dt>
+			　<dd><input id="curr-code" class="pass" type="text" value="NC(CREDIT CARD)" data-default="" /></dd>
+			</dl>			
+			<dl>
+			　<dt>卡号</dt>
+			　<dd><input id="card-no" class="pass" type="number" placeholder="卡号码" data-default="" /></dd>
+			</dl>			
+			<dl>
+			　<dt>到期日</dt>
+			　<dd><input id="expire-date" class="pass" type="text" placeholder="到期日(yy/mm)" data-default="" /></dd>
+			</dl>
+			<dl>
+			　<dt>授权码</dt>
+			　<dd><input id="auth-code" class="pass" type="number" placeholder="授权码" data-default="" /></dd>
+			</dl>
+			<dl>
+			　<dt>金额</dt>
+			　<dd><input id="amount" class="pass" type="number" placeholder="0.00" data-default="" /></dd>
+			</dl>
+			<dl>
+			　<dt>持有人</dt>
+			　<dd><input id="card-holder" class="pass" type="text" placeholder="持有人" data-default="" /></dd>
+			</dl>
+			<dl>
+			　<dt>凭证号</dt>
+			　<dd><input id="cert-no" class="pass" type="number" placeholder="凭证号" data-default="" /></dd>
+			</dl>
+			
+		</div>
+		<p><button id="btn-submit">${languageMap.Submit}</button></p>
+	</div>
+</section>
+<script>
+    <#include"../js/creditcardpay.js" />
+</script>

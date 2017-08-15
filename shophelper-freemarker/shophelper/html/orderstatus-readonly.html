@@ -1,0 +1,53 @@
+<style><#include "../css/orderstatus-readonly.css"/></style>
+
+<div class="a-order-no" id="orderstatus-orderno">${languageMap.OrderNo}：${orderNo}</div>
+
+<#if orderDetail??>
+	<div class="a-status-list">
+		<#list orderDetail as item>
+			<dl class="g-dis-flex">
+				<dt style="background-image: url(${item.photoSrc});"></dt>
+				<dd>
+					<p>${item.itemDesc}</p>
+					<p>${languageMap.Color}：${item.itemColor}${languageMap.Size}：${item.itemSize}</p>
+					<p>${languageMap.Qty}：${item.qty}</p>
+					<p>${languageMap.Price}：<em>${item.price}</em></p>
+				</dd>
+			</dl>
+		</#list>
+	</div>
+</#if>
+
+<#if showAddress?? && showAddress>
+	<section class="a-set-addr" id="settle-addr" hidden>
+		<p>${languageMap.Receiver}：${receiverName}<span>${receiverTel}</span></p>
+		<p>${languageMap.ReceiverAddress}：${receiverAddress}</p>
+		<i class="ico1"><img src="${templateUrl}/shophelper/resource/icon/ico43.png"/></i>
+		<i class="ico2"></i>
+		<i class="ico3"></i>
+	</section>
+</#if>
+
+<section class="a-order-sub">
+	<div>
+		<p>${languageMap.Payment}<span>${payment}</span></p>
+	</div>
+	<div <#if topupOrder?? && topupOrder>hidden</#if>>
+		<p>${languageMap.ShippingMethod}<span>${shipping}</span></p>
+	</div>
+	<#if selfPick?? && selfPick>
+		<div hidden>
+			<p>${languageMap.PickUpStore}<span>${pickUpStore}</span></p>
+		</div>
+	</#if>
+</section>
+
+<section class="a-order-sub">
+	<p>${languageMap.AmountWithCarriage}<em>$ ${totalAmt}</em></p>
+</section>
+
+<section class="a-order-sub">
+	<p>${languageMap.MessageBoard}
+		<textarea class="g-texa" placeholder="${languageMap.None}" rows="5" disabled>${remark}</textarea>
+	</p>
+</section>

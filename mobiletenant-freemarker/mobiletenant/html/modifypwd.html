@@ -1,0 +1,16 @@
+<style>
+	<#include "../css/loginpass.css" />
+	.login-pass p{position: relative;}
+	.login-pass p em{position: absolute; width: .7rem; height: .62rem; right: 10%; top: 0; background: url(../resource/icon/cahsier-eye.png) no-repeat center left; background-size: .36rem auto;}
+</style>
+
+<form id="form_modifypwd" class="login-pass">
+	<p><input id="oldpwd" type="password" name="oldpwd" placeholder="${languageMap.OldPwd}" /><em class="showpwd gray"></em></p>
+	<p><input id="newpwd" type="password" name="newpwd" placeholder="${languageMap.NewPwd}" /><em class="showpwd gray"></em></p>
+	<p><input id="confirmnewpwd" type="password" placeholder="${languageMap.ConfirmNewPwd}" /><em class="showpwd gray"></em></p>
+	<button id="btn_submit" class="round-btn">${languageMap.Confirm}</button>
+</form>
+
+<script>
+	<#include "../js/modifypwd.js" />
+</script>

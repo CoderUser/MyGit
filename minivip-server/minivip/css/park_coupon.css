@@ -1,0 +1,66 @@
+.bg-c1{background: #1f2126;}
+.bg-c2{background: #fff;}
+.bg-c3{background: #ae9d76;}
+.bg-c4{background: #404040;}
+.bg-c5{background: #26282c;}
+.bg-txt1{color: #e0cfa7;}
+.bg-txt2{color: #eb4848;}
+.bg-txt3{color: #fff;}
+.bg-txt4{color: #ff4c4c;}
+.a-park-coupon{
+	width: 100%;
+	height: 100%;
+}
+.coupon{
+	position: relative;
+	width: 6.4rem;
+	height: 1.4rem;
+	margin: 0 auto;
+	margin-top: .25rem;
+	background-size: 100%;
+	border-radius: .1rem;
+}
+.coupon:before{
+	position: absolute;
+	top: .6rem;
+	left: -.1rem;
+	content: "";
+	width: .2rem;
+	height: .2rem;
+	background: #404040;
+	border-radius: 50%;
+}
+.coupon:after{
+	content: "";
+	position: absolute;
+	top: .6rem;
+	right: -.1rem;
+	width: .2rem;
+	height: .2rem;
+	background: #404040;
+	border-radius: 50%;
+}
+.effective{
+	margin-left: .28rem;
+	margin-top: .3rem;
+	font-size: .23rem;
+}
+.effective p:nth-child(1){
+	font-size: .3rem;
+	margin-bottom: .2rem;
+}
+.money{
+	margin-right: .22rem;
+	margin-top: .3rem;
+	font-size: .22rem;
+	text-align: right;
+}
+.money p:nth-child(1){
+	font-size: .24rem;
+	margin-bottom: .2rem;
+}
+.bottom{
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+}

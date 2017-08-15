@@ -1,0 +1,56 @@
+<style>
+	<#include "../css/orderstatus-readonly.css"/>
+</style>
+<div class="a-order-no" id="orderstatus-orderno">${languageMap.OrderNo}：${orderNo}</div>
+<#if orderDetail??>
+<!--<_orderDetail>-->
+	<div class="a-status-list">
+		<#list orderDetail as item>
+	<!--<repeat_orderDetail>-->
+		<dl class="g-dis-flex">
+			<dt style="background-image: url(${item.photoSrc});"></dt>
+			<dd>
+				<p>${item.itemDesc}</p>
+				<p><!--<_itemColor>-->${languageMap.Color}：${item.itemColor}<!--</_itemColor>--> <!--<_itemSize>-->${languageMap.Size}：${item.itemSize}<!--</_itemSize>--></p>
+				<p>${languageMap.Qty}：${qty}</p>
+				<p>${languageMap.Price}：<em>${price}</em></p>
+			</dd>
+		</dl>
+	<!--</repeat_orderDetail>-->
+		</#list>
+	</div>
+<!--</_orderDetail>-->
+</#if>
+<#if showAddress??>
+<section class="a-set-addr" id="settle-addr" hidden>
+	<p>${languageMap.Receiver}：${receiverName}<span>${receiverTel}</span></p>
+	<p>${languageMap.ReceiverAddress}：${receiverAddress}</p>
+	<i class="ico1"><img src="${templateUrl}/resource/shophelper/icon/ico43.png"/></i>
+	<i class="ico2"></i>
+	<i class="ico3"></i>
+</section>
+</#if>
+<section class="a-order-sub">
+	<div>
+		<p>${languageMap.Payment}<span>${payment}</span></p>
+	</div>
+	<div {=topupOrder?hidden::=} hidden>
+		<p>${languageMap.ShippingMethod}<span>${shipping}</span></p>
+	</div>
+	<#if selfPick??>
+	<div hidden>
+		<p>${languageMap.PickUpStore}<span>${pickUpStore}</span></p>
+	</div>
+	</#if>
+	<!-- <div>
+		<p>${languageMap.ShippingTime}<span>${ShippingTime}</span></p>
+	</div> -->
+</section>
+<section class="a-order-sub">
+	<p>${languageMap.AmountWithCarriage}<em>$${totalAmt}</em></p>
+</section>
+<section class="a-order-sub">
+	<p>${languageMap.MessageBoard}
+		<textarea class="g-texa" placeholder="${languageMap.None}" rows="5" disabled>${remark}</textarea>
+	</p>
+</section>

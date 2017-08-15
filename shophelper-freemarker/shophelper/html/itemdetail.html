@@ -1,0 +1,63 @@
+<style><#include"../css/itemdetail.css"/></style>
+
+<main id="itemdetail-container" data-org="${itemorgid}" data-style="${style}">
+	<div class="itemphotos">
+		<#if photolist??>
+			<div class="slide_01" id="slide_01">
+				<#list photolist as itemPhoto>
+					<div class="mod_01"><img class='itemphoto' src="${itemPhoto.photoSrc}" alt=""></div>
+				</#list>
+			</div>
+			<div class="dotModule_new">
+				<div id="slide_01_dot"></div>
+			</div>
+		</#if>
+	</div>
+
+	<section class="con1">
+		<span class="con1_1">${languageMap.AlreadySold}</span>
+		<h3 id="itemname">${desci}</h3>
+		<p id="itemdesc" class="desc">${longDesc}</p>
+		<p class="p-price">$<span class="price" id="seluprice">${sellingPrice}</span>
+			<span class="price-old">${originPrice}</span>
+			<span class="freight">${languageMap.Carriage}:${carriage}</span>
+		</p>
+	</section>
+
+	<section class="con2" data-colorsize="${colorsize}">
+		<#if colorlist??>
+			<div class="pro-attr">
+				<span class="part-note-msg">${languageMap.Color}</span>
+				<p id="itemcolor" onclick="TApi.itemdetail.doSelect(arguments[0], true)">
+					<#list colorlist as itemColor>
+						<a data-itemcolor="${itemColor.colorid}" href="javascript:;">${itemColor.color}</a>
+					</#list>
+				</p>
+			</div>
+		</#if>
+
+		<#if sizelist??>
+			<div class="pro-attr">
+				<span class="part-note-msg">${languageMap.Size}</span>
+				<p id="itemsize" onclick="TApi.itemdetail.doSelect(arguments[0], false)">
+					<#list sizelist as itemSize>
+						<a data-itemsize="${itemSize.sizeid}" href="javascript:;">${itemSize.size}</a>
+					</#list>
+				</p>
+			</div>
+		</#if>
+
+		<div class="pro-attr">
+			<span class="part-note-msg">${languageMap.Qty}</span>
+			<div class="quantity-wrapper">
+				<span class="quantity-decrease" onclick="TApi.itemdetail.qtyMinus(arguments[0])">-</span>
+				<input type="text" class="quantity" size="4" value=1>
+				<span class="quantity-increase" onclick="TApi.itemdetail.qtyAdd(arguments[0])">+</span>
+			</div>
+		</div>
+		<button id="Load_detail" style="display:none;">${languageMap.ShowDetail}</button>
+	</section>
+	<section id="detail_con"></section>
+</main>
+
+<script><#include"../js/itemdetail.js"/></script>

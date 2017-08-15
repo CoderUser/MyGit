@@ -1,0 +1,44 @@
+<style><#include"../css/creditcardpay.css"/></style>
+
+<section class="payForm">
+	<div class="cardInfo">
+		<div>
+			<dl>
+			　<dt>${languageMap.ScanNumber}</dt>
+			　<dd><input id="scan-code" class="pass" type="password" placeholder="${languageMap.ScanNumber}" data-default="" /></dd>
+			</dl>			
+			<dl>
+			　<dt>${languageMap.CurrencyNumber}</dt>
+			　<dd><input id="curr-code" class="pass" type="text" value="NC(CREDIT CARD)" data-default="" /></dd>
+			</dl>			
+			<dl>
+			　<dt>${languageMap.CardNumber}</dt>
+			　<dd><input id="card-no" class="pass" type="number" placeholder="${languageMap.CardNumber}" data-default="" /></dd>
+			</dl>			
+			<dl>
+			　<dt>${languageMap.BecomeDate}</dt>
+			　<dd><input id="expire-date" class="pass" type="text" placeholder="${languageMap.BecomeDate}(yy/mm)" data-default="" /></dd>
+			</dl>
+			<dl>
+			　<dt>${languageMap.AuthorizationCode}</dt>
+			　<dd><input id="auth-code" class="pass" type="number" placeholder="${languageMap.AuthorizationCode}" data-default="" /></dd>
+			</dl>
+			<dl>
+			　<dt>${languageMap.Money}</dt>
+			　<dd><input id="amount" class="pass" type="number" placeholder="0.00" data-default="" /></dd>
+			</dl>
+			<dl>
+			　<dt>${languageMap.Holder}</dt>
+			　<dd><input id="card-holder" class="pass" type="text" placeholder="${languageMap.Holder}" data-default="" /></dd>
+			</dl>
+			<dl>
+			　<dt>${languageMap.Voucher}</dt>
+			　<dd><input id="cert-no" class="pass" type="number" placeholder="${languageMap.Voucher}" data-default="" /></dd>
+			</dl>
+			
+		</div>
+		<p><button id="btn-submit">${languageMap.Submit}</button></p>
+	</div>
+</section>
+
+<script><#include"../js/creditcardpay.js"/></script>

@@ -1,0 +1,26 @@
+<style><#include "../css/repairsuggestlist.css" /></style>
+
+<#if repairList??>
+	<ul class="repair-suggest-list">
+		<#list repairList as item>
+			<li class="write-bg">
+				<a href="#VRepair-${item.docNo}">
+					<h3>${languageMap.DocNo}：${item.docNo}</h3>
+					<p>${languageMap.LocCode}：${item.locCode}</p>
+					<dl>
+						<dt>${languageMap.ReqRemark}：</dt>
+						<dd>
+							<p>${item.reqRemark}</p>
+						</dd>
+					</dl>
+					<p>${languageMap.RequestBy}：<em>{[requestBy]}</em><span>${languageMap.RequestDate}：${item.requestDate}</span></p>
+					<p>${languageMap.Status}: <em class="already">${item.status}</em></p>
+				</a>
+			</li>
+		</#list>
+	</ul>
+</#if>
+
+<script>
+	<#include "../js/repairlist.js" />
+</script>

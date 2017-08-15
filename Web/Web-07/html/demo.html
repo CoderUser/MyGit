@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;  minimum-scale=1.0; maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <title>Metric Report</title>
+    <!--<script type="text/javascript" src="../javascript/jquery.min.js"></script>-->
+    <script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="../javascript/jquery.SuperSlide.2.1.js"></script>-->
+    <script type="text/javascript" src="http://down.admin5.com/demo/code_pop/18/562/jquery.SuperSlide.2.1.1.js"></script>
+    <style type="text/css">
+        *{margin:0;padding:0;list-style:none;}
+        body{background:#f0f0f0;color:#999;font-size:12px;font-family:"Lucida Grande",Arial,sans-serif;line-height:1.5em;overflow-y:auto;overflow-x:auto;}
+        img{border:0;}
+        a{color:write;text-decoration:none;bblr:expression(this.onFocus=this.blur());outline:none;}
+        li{list-style:none;}
+        .logo_box{width:399px;height:100px;align:left;float:left;}
+        .logo_box a{font-size:1.2em;Line-height:1.8em}
+        .top_right{width:500px;float:right;}
+        .hydl_box{width:500px;text-align:right;height:12px;line-height:12px;color:#999999;}
+        .hydl_box a{color:#999999;}
+        .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+        .topNav{position:relative;z-index:1;height:40px;line-height:40px;background:url(../images/nav_bg.JPG) repeat-x top left;font-family:"Lucida Grande",Arial,sans-serif;font-size:12px;}
+        .topNav-width{width:1640PX;height:40px;margin:0 auto;}
+        .topNav h3{font-weight:normal;font-size:12px;}
+        .topNav .tnLeft{float:left;;}
+        .topNav li{float:left;position:relative;}
+        .topNav li h3{float:center;font-weight:normal;font-size:12px;}
+        .topNav li h3 a{display:inline-block;*display:inline;zoom:1;font-size:12px;height:14px;line-height:14px;padding:13px 20px;color:white}
+        .topNav li h3 a i{display:inline-block;width:8px;height:5px;margin:0 0 0 5px;overflow:hidden;vertical-align:middle;font-size:12px;line-height:13px;background:url(images/nav_bg.JPG) 0 -61px no-repeat;}
+        .topNav li h3 a:hover,.topNav li.on h3 a{background:#1C86EE;}
+        .topNav .welcome{padding-right:15px;color:white;}
+        .topNav .welcome a{color:white;}
+        .topNav li ul{display:none;position:relative;left:0;border:1px solid #CDC9C9;border-top:0;background:#1C86EE;-moz-box-shadow:3px 3px 3px rgba(0,0,0,.1);-webkit-box-shadow:3px 3px 3px rgba(0,0,0,.1);box-shadow:3px 3px 3px rgba(0,0,0,.1);}
+        .topNav li ul li{line-height:31px;float: none;}
+        .topNav li ul li a{display:block;color:white;padding:0 15px;}
+        .topNav li ul li a:hover{background:#CFCFCF;color:white;}
+        .topNav li ul li a span{color:white;margin-left:5px;}
+        /*.body{position:relative;}
+        */
+        .foot_box{width:100%;background:url(../images/foot_bg_03.jpg) repeat-x;height:36px;}
+        .foot_con{width:1000px;margin:0 auto;text-align:right;color:#FFF;height:32px;line-height:32px;}
+    </style>
+</head>
+<!--header -->
+<div class="content" style="height: 40px; margin: 10px">
+    <div class="logo_box">
+        <H1>MXAIS REPORT SYSTEM</H1>
+        <a>Show Metric Status|Run Reports|Add Data|Add User</a>
+    </div>
+    <div class="top_right">
+        <div class="hydl_box">
+            <a href="login.jsp">Log In</a> &nbsp;&nbsp; | &nbsp;&nbsp; <a
+                href="signin.jsp">Sign In</a> &nbsp;&nbsp; | &nbsp;&nbsp; <A href=""
+                                                                             target="_blank"> About US </A>
+        </div>
+    </div>
+</div>
+<div class="topNav">
+    <div class="topNav-width">
+        <div class="tnLeft">
+            <ul>
+                <li class="m"><h3><a href="main.jsp">Home Page</a></h3></li>
+                <li class="m"><h3><a>Report Management</a></h3>
+                    <ul class="sub">
+                        <li><a href="../jsp/getsmetricreport">Weekly</a></li>
+                        <li><a href="../jsp/getsmetricreportmonth">Monthly</a></li>
+                    </ul>
+                </li>
+                <li class="m">
+                    <h3><a target="">Data Management</a></h3>
+                    <ul class="sub">
+                        <li><a href="../jsp/getmetricbaselist">Weekly</a></li>
+                        <li><a href="../jsp/getmetricbaselist">Monthly</a></li>
+                        <li><a href="../jsp/getmetricrawdatalist">Raw Data</a></li>
+                    </ul>
+                </li>
+                <li class="m">
+                    <h3>
+                        <a href="../jsp/getmetricinfolist">Metric Management</a>
+                    </h3>
+                </li>
+                <li class="m">
+                    <h3>
+                        <a href="../jsp/getuserinfolist">User Management</a>
+                    </h3>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="content" style="height: 20px"></div>
+<script type="text/javascript">
+    //    jQuery(".topNav").slide({ type:"menu",  titCell:"dd", targetCell:"ul", delayTime:0,defaultPlay:false,returnDefault:true  });
+    jQuery(".topNav").slide({ type:"menu",  titCell:".m", targetCell:".sub", effect:"slideDown", delayTime:300, triggerTime:100,returnDefault:true  });
+</script>
+<div style="text-align: center;"></div>
+
+</html>

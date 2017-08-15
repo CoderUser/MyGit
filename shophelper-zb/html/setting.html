@@ -1,0 +1,27 @@
+<style>
+	<#include "../css/setting.css"/>
+</style>
+
+<div class="a-setting">
+	<p>${languageMap.SystemLanguage}</p>
+	<ul class="a-select-lang g-dis-flex" id="select-lang">
+		<li data-lang="auto">${languageMap.Auto}</li>
+		<li data-lang="zh_CN">${languageMap.zhCN}</li>
+		<li data-lang="zh_HK">${languageMap.zhHK}</li>
+		<li data-lang="en">${languageMap.English}</li>
+		<em id="now-item"></em>
+	</ul>
+</div>
+<div class="a-setting">
+	<p>${languageMap.Theme}</p>
+	<ul class="a-select-theme" id="select-theme">
+		<li class="g-check-ipt"><span></span>${languageMap.Default}<input id="default" type="radio" name="style" class="themecheck g-checkbox" hidden /><label for="default"><span></span><i></i></label></li>
+	</ul>
+</div>
+<div class="a-setting">
+	<a>${languageMap.CurrentVersion}<span>${version}</span></a>
+	<a onclick="localStorage.clear();location.reload(true);">${languageMap.ClearCache}</a>
+</div>
+<script>
+    <#include"../js/setting.js" />
+</script>

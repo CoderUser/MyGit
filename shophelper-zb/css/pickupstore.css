@@ -1,0 +1,5 @@
+.PickUpAdd ul{ width: 96%; height: 0 auto; margin: 0 auto;}
+.PickUpAdd ul li{ width: 100%; padding: .3rem 0 .16rem; border-bottom: 1px solid #ddd;}
+.PickUpAdd ul li p{ line-height: .3rem; padding: .06rem .6rem .06rem .4rem; color: #666; font-size: .2rem;background:url(${templateUrl}/shophelper/resource/icon/add_icon.png) no-repeat left top .06rem; background-size: .34rem auto;}
+.PickUpAdd ul li p:first-child{ font-size: .24rem; color: #333;background:url(${templateUrl}/shophelper/resource/icon/shop_icon.png) no-repeat left top .06rem;background-size: .34rem auto;}
+.checked-add{ background:url(${templateUrl}/shophelper/resource/icon/ico79.png) no-repeat center right; background-size: .46rem auto;}
