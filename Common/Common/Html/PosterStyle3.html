@@ -1,0 +1,77 @@
+<#include "../CSS/Global.css" />
+<div id="style-container"></div>
+<!-- poster image -->
+<div class="poster-img"><img src=${properties.fileServerUrl}file/get?fileid=${POSTER_STYLE3.XF_COVER.XF_IMAGE}></div>
+<!-- poster content -->
+<div class="poster3-content">
+	<div class="poster3-bg1"></div>
+	<div class="poster3-bg2"></div>
+	<div class="poster3-main">
+		<#if POSTER_STYLE3.XF_AREA1_TITLE?length gt 0 >
+			<!-- classify desc -->
+			<fieldset class="m-classify-03"><legend align="center"><span>${POSTER_STYLE3.XF_AREA1_TITLE}</span></legend><span>${POSTER_STYLE3.XF_AREA1_DESC}</span></fieldset>
+		</#if>
+		<#if POSTER_STYLE3.XF_AREA1_GOOD?? >
+			<!-- 2*n -->
+			<div class="poster3-item1 g-clearfix">
+				<#list POSTER_STYLE3.XF_AREA1_GOOD as SINGLE_STYLE4> 
+					<#include "SingleStyle4.html" />
+				</#list>
+			</div>	
+		</#if>
+		<#if POSTER_STYLE3.XF_AREA2_GOOD?? >
+			<!-- 3*n -->
+			<div class="poster3-item2 g-clearfix">
+				<#list POSTER_STYLE3.XF_AREA2_GOOD as SINGLE_STYLE5> 
+					<#include "SingleStyle5.html" />
+				</#list>
+			</div>
+		</#if>
+		<#if POSTER_STYLE3.XF_AREA2_TITLE?length gt 0 >
+			<!-- classify desc -->
+			<fieldset class="m-classify-03"><legend align="center"><span>${POSTER_STYLE3.XF_AREA2_TITLE}</span></legend><span>${POSTER_STYLE3.XF_AREA2_DESC}</span></fieldset>
+		</#if>
+			
+		<!-- 1+(1+3*n) -->
+		<div class="poster3-item3 g-clearfix">
+			<#if POSTER_STYLE3.XF_AREA3_GOOD?? >
+				<#assign SINGLE_STYLE2=POSTER_STYLE3.XF_AREA3_GOOD />
+				<#include "SingleStyle2.html" />
+			</#if>
+			<#if POSTER_STYLE3.XF_AREA4_GOOD?? >
+				<#list POSTER_STYLE3.XF_AREA4_GOOD as SINGLE_STYLE5> 
+					<#include "SingleStyle5.html" />
+				</#list>
+			</#if>
+		</div>
+		<#if POSTER_STYLE3.XF_AREA3_TITLE?length gt 0 >
+			<!-- classify desc -->
+			<fieldset class="m-classify-03"><legend align="center"><span>${POSTER_STYLE3.XF_AREA3_TITLE}</span></legend><span>${POSTER_STYLE3.XF_AREA3_DESC}</span></fieldset>
+		</#if>
+			
+		<!-- 1+(1+4*n) -->
+		<div class="poster3-item4 g-clearfix">
+			<#if POSTER_STYLE3.XF_AREA5_GOOD?? >
+				<#assign SINGLE_STYLE2=POSTER_STYLE3.XF_AREA5_GOOD />
+				<#include "SingleStyle2.html" />
+			</#if>
+			<#if POSTER_STYLE3.XF_AREA6_GOOD?? >
+				<#list POSTER_STYLE3.XF_AREA6_GOOD as SINGLE_STYLE5> 
+					<#include "SingleStyle5.html" />
+				</#list>
+			</#if>
+		</div>	
+	</div>
+</div>
+<style type="text/css">
+	
+</style>
+<script>
+	(function()
+	{
+		<#include "../JS/Global.js" />
+		var pcStyle = '<#include "../CSS/PosterStyle3_pc.css" />',
+			appStyle = '<#include "../CSS/PosterStyle3_app.css" />';
+		GetStyle(pcStyle, appStyle);
+	})();
+</script>

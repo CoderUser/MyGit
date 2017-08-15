@@ -1,0 +1,16 @@
+ <#if SINGLE_STYLE6_index?? >
+	<#if SINGLE_STYLE6_index < 1 >
+		<style>
+			.m-single-item6{ width: 400px; height: 400px; border-radius: 50%; border: 1px solid #eee; overflow: hidden;}
+			.m-single-item6 img{display: block; width: 100%;}
+		</style>
+	</#if >
+ <#else>
+	<style>
+		.m-single-item6{ width: 400px; height: 400px; border-radius: 50%; border: 1px solid #eee; overflow: hidden;}
+		.m-single-item6 img{display: block; width: 100%;}
+	</style>
+ </#if >
+<div class="m-single-item6">
+	<a href="${properties.miniVipServerUrl}#VItemDetail/${SINGLE_STYLE6.XF_ITEMORGID}_${SINGLE_STYLE6.XF_STYLE}"><img src="${properties.fileServerUrl}file/get?fileid=${SINGLE_STYLE6.XF_IMAGE.XF_IMAGE}"/></a>
+</div>

@@ -1,0 +1,21 @@
+ <#if SINGLE_STYLE9_index?? >
+	<#if SINGLE_STYLE9_index < 1 >
+		<style>
+			.m-single-item9{width: 400px;  position: relative; }
+			.m-single-item9 a{display: block; border-radius: 12px; overflow: hidden;}
+			.m-single-item9 span{position: absolute; padding: 10px; bottom: 0; font-family: "Century Gothic"; background: #eb5d85; color: #1c1826; opacity: .9;}
+			.m-single-item9 em{font-size: 24px; font-style: normal; }
+		</style>
+	</#if >
+ <#else>
+	<style>
+		.m-single-item9{width: 400px;  position: relative; }
+		.m-single-item9 a{display: block; border-radius: 12px; overflow: hidden;}
+		.m-single-item9 span{position: absolute; padding: 10px; bottom: 0; font-family: "Century Gothic"; background: #eb5d85; color: #1c1826; opacity: .9;}
+		.m-single-item9 em{font-size: 24px; font-style: normal; }
+	</style>
+ </#if >
+<div class="m-single-item9">
+	<a href="${properties.miniVipServerUrl}#VItemDetail/${SINGLE_STYLE9.XF_ITEMORGID}_${SINGLE_STYLE9.XF_STYLE}"><img src="${properties.fileServerUrl}file/get?fileid=${SINGLE_STYLE9.XF_IMAGE.XF_IMAGE}"/></a>
+	<span>RMB <em>${SINGLE_STYLE9.XF_PRICE}</em></span>
+</div>

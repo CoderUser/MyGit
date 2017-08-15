@@ -1,0 +1,126 @@
+body {
+    font-family:Microsoft YaHei;
+    font-size: .28rem;
+    margin: 0 auto;
+    -webkit-text-size-adjust: none;
+    word-break: break-all;
+    color: #e0cfa7;
+    background: #404040;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-weight: normal;
+    font-style: normal;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6, button, input{
+    font-family:Microsoft YaHei;
+    font-weight: normal;
+    font-size: 100%;
+}
+
+div {
+    word-wrap: break-word;
+}
+
+
+input {
+    vertical-align: middle;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: #444;
+}
+
+img {
+    vertical-align: top;
+}
+
+label {
+    font-family: Tahoma, Geneva, sans-serif;
+    vertical-align: middle;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+a, input {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+/********head*********/
+.indexHead{
+    color: #E0CFA7;
+    background-color: #1F2126;
+    overflow: hidden;
+    text-align: center;
+    border-bottom: .01rem solid;
+}
+.indexHead a{
+    position: absolute;
+    left: .2rem;
+    top: .1rem;
+}
+.left img{
+    width: .4rem;
+    float: left;
+}
+.a-message {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    padding: .24rem;
+    border-top: 0.01rem solid;
+}
+.a-message a{
+    color: #e0cfa7;
+}
+.a-message p{
+    margin-bottom: .2rem;
+}
+.a-message p:nth-child(2){
+    float: right;
+    position: absolute;
+    right: .24rem;
+    top: .24rem;
+}
+.a-message p:nth-child(3){
+    float: left;
+    font-size: .24rem;
+}

@@ -1,0 +1,150 @@
+[
+  {
+    "name": "怪物先生历险记",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/289/789/TV_CONTENT.jpg",
+    "type": "1",
+    "phone": "020-11111111",
+    "address": "L1 117商铺",
+    "hours": "10:00am-10:00pm"
+  },
+  {
+    "name": "麻烦家族",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/202/018/TV_CONTENT.jpg",
+    "type": "1",
+    "phone": "020-11111111",
+    "address": "L1 117商铺",
+    "hours": "10:00am-10:00pm"
+  },
+  {
+    "name": "诡异酒楼",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/268/173/TV_CONTENT.jpg",
+    "type": "2",
+    "phone": "020-11111111",
+    "address": "L1 117商铺",
+    "hours": "10:00am-10:00pm"
+
+  },
+  {
+    "name": "惊门",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/270/719/TV_CONTENT.jpg",
+    "type": "2",
+    "phone": "020-11111111",
+    "address": "L1 117商铺",
+    "hours": "10:00am-10:00pm"
+  },
+  {
+    "name": "疯狂的麦克斯",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/270/719/TV_CONTENT.jpg",
+    "type": "3",
+    "phone": "020-11111111",
+    "address": "L1 117商铺",
+    "hours": "10:00am-10:00pm"
+  },
+  {
+    "name": "超级大山炮之夺宝奇兵",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/284/881/TV_CONTENT.jpg",
+    "type": "3",
+    "phone": "020-11111111",
+    "address": "L1 117商铺",
+    "hours": "10:00am-10:00pm"
+  },
+  {
+    "name": "那些年",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/203/930/TV_CONTENT.jpg",
+    "type": "3",
+    "phone": "020-11111111",
+    "address": "L1 117商铺",
+    "hours": "10:00am-10:00pm"
+  },
+  {
+    "name": "走出尘埃",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/203/930/TV_CONTENT.jpg",
+    "type": "4",
+    "phone": "020-11111111",
+    "address": "L1 117商铺",
+    "hours": "10:00am-10:00pm"
+  },
+  {
+    "name": "金刚：骷髅岛",
+    "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/202/908/TV_CONTENT.jpg",
+    "type": "5",
+    "phone": "020-11111111",
+    "address": "L1 117商铺",
+    "hours": "10:00am-10:00pm"
+  },
+  {
+      "name": "麻烦家族",
+      "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/202/018/TV_CONTENT.jpg",
+      "type": "4",
+          "phone": "020-11111111",
+          "address": "L1 117商铺",
+          "hours": "10:00am-10:00pm"
+    },
+    {
+      "name": "克里斯的复仇",
+      "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/291/787/TV_CONTENT.jpg",
+      "type": "4",
+          "phone": "020-11111111",
+          "address": "L1 117商铺",
+          "hours": "10:00am-10:00pm"
+    },
+    {
+      "name": "克里斯的复仇",
+      "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/291/787/TV_CONTENT.jpg",
+      "type": "5",
+          "phone": "020-11111111",
+          "address": "L1 117商铺",
+          "hours": "10:00am-10:00pm"
+    },
+    {
+      "name": "美少女战队",
+      "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/291/701/TV_CONTENT.jpg",
+      "type": "1",
+          "phone": "020-11111111",
+          "address": "L1 117商铺",
+          "hours": "10:00am-10:00pm"
+    },
+    {
+      "name": "旋风辣妹",
+      "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/291/323/TV_CONTENT.jpg",
+      "type": "4",
+          "phone": "020-11111111",
+          "address": "L1 117商铺",
+          "hours": "10:00am-10:00pm"
+    },
+    {
+      "name": "摔跤吧！爸爸",
+      "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/232/638/TV_CONTENT.jpg",
+      "type": "4",
+          "phone": "020-11111111",
+          "address": "L1 117商铺",
+          "hours": "10:00am-10:00pm"
+    },
+    {
+      "name": "大卫贝肯之倒霉特工熊",
+      "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/165/934/TV_CONTENT.jpg",
+      "type": "4",
+          "phone": "020-11111111",
+          "address": "L1 117商铺",
+          "hours": "10:00am-10:00pm"
+    },
+    {
+      "name": "天空之眼",
+      "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/114/672/TV_CONTENT.jpg",
+      "type": "5",
+          "phone": "020-11111111",
+          "address": "L1 117商铺",
+          "hours": "10:00am-10:00pm"
+    },
+    {
+      "name": "疯岳撬佳人",
+      "imageUrl": "http://m.cmvideo.cn/publish/poms/image/5500/191/590/TV_CONTENT.jpg",
+      "type": "5",
+          "phone": "020-11111111",
+          "address": "L1 117商铺",
+          "hours": "10:00am-10:00pm"
+    }
+
+]
+
+

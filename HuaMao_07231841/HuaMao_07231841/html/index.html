@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;  minimum-scale=1.0; maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <title>华茂</title>
+    <link rel="stylesheet" href="../css/indexmain.css">
+</head>
+<body>
+<div id="nav-toolbar" class="indexHead">
+    <a class="left" href="#">
+        <img src="../image/saoyisao_03.png">
+    </a>
+    <h1>华茂中心</h1>
+    <!--信息icon-->
+    <a class="nav" id="indexNav">
+        <img src="../image/info_03.png" alt="">
+    </a>
+</div>
+
+<!--banner-->
+<div id="picPanel" class="pic-panel">
+    <div id="picBox" class="pic-box">
+        <ul id="picList" class="pic-list">
+            <li class="re">
+                <a href="#">
+                    <img src="../image/banner_02.png">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="../image/banner_02.png">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="../image/banner_02.png">
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--info-->
+
+<div id="picScroll" class="picScroll">
+    <!--<div class="tempWrap">-->
+        <div class="bd" id="listnav">
+            <ul>
+                <li>
+                    <a href="#"><img src="../image/indexicon.png"><br>团购</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../image/points.png"><br>积分抽奖</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../image/car_03.png"><br>停车</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../image/wifi_03.png"><br>WIFI</a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="#"><img src="../image/car_03.png"><br>停车</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../image/wifi_03.png"><br>WIFI</a>
+                </li>
+                <li>
+                    <a href="#"><img src="../image/wifi_03.png"><br>WIFI</a>
+                </li>
+            </ul>
+        </div>
+    <!--</div>-->
+    <div class="hd">
+        <ul id="dot">
+            <!--<li class="on">1</li>
+            <li class="">2</li>-->
+        </ul>
+    </div>
+</div>
+
+<!--group-->
+<div class="group">
+    <p class="list-txt">团购推荐</p>
+    <div class="groupList">
+        <a href="#">
+            <div class="pic">
+                <img class="leftImg" src="../image/typical_03.png">
+            </div>
+            <div class="group-txt">
+                <p>37 Lotus Gaeden</p>
+                <p>特惠组合曲奇礼盒一份</p>
+                <p class="txt-color">￥50
+                    <del>￥68</del>
+                </p>
+            </div>
+        </a>
+    </div>
+    <div class="groupList">
+        <a href="#">
+            <div class="pic">
+                <img class="leftImg" src="../image/typical_03.png">
+            </div>
+            <div class="group-txt">
+                <p>37 Lotus Gaeden</p>
+                <p>特惠组合曲奇礼盒一份</p>
+                <p class="txt-color">￥50
+                    <del>￥68</del>
+                </p>
+            </div>
+        </a>
+    </div>
+</div>
+<!--store-->
+<div class="store">
+    <p class="list-txt-store">商户推荐</p>
+    <div class="storeList">
+        <a>
+
+            <div class="pic">
+                <img class="leftImg" src="../image/01image.png">
+            </div>
+
+            <div class="store-txt">
+                <p>FENDI</p>
+                <span class="phone">020-00000000</span>
+                <span class="place">L1 117商铺</span>
+                <span class="time">10:00am-10:00pm</span>
+            </div>
+        </a>
+    </div>
+
+    <div class="storeList">
+        <a>
+            <div class="pic">
+                <img class="leftImg" src="../image/01image.png">
+            </div>
+
+            <div class="store-txt">
+                <p>FENDI</p>
+                <span class="phone">020-00000000</span>
+                <span class="place">L1 117商铺</span>
+                <span class="time">10:00am-10:00pm</span>
+            </div>
+        </a>
+    </div>
+</div>
+<!--底部-->
+<!--<div class="footer" id="footer">
+    <ul id="footer-ul">
+        <li><a class="home" href="#">首页</a></li>
+        <li><a class="activity" href="#">商城活动</a></li>
+        <li><a class="guide" href="#">商城导购</a></li>
+        <li><a class="mine" href="#">我的</a></li>
+    </ul>
+</div>-->
+<div class="footer" id="footer">
+        <a class="homeactive" href="#">首页</a>
+        <a class="activity" href="#">商城活动</a>
+        <a class="guide" href="#">商城导购</a>
+        <a class="mine" href="#">我的</a>
+</div>
+
+
+<script src="../util/util.js"></script>
+<script src="../js/photoSlider-zb.js"></script>
+<script src="../js/Application.js"></script>
+<script src="../js/tscroll.js"></script>
+<script src="../js/indexscroll.js"></script>
+<script src="../js/footericon.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        photoSlide({
+            wrap: document.getElementById('picBox'),
+            loop: true,
+            autoPlay: true,
+            autoTime: 4000,
+            pagination: true
+        });
+    }, false);
+</script>
+
+
+</body>
+</html>

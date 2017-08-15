@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;  minimum-scale=1.0; maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>团购</title>
+    <style>
+        body {
+            font-family: "微软雅黑";
+            font-size: .28rem;
+            margin: 0 auto;
+            -webkit-text-size-adjust: none;
+            word-break: break-all;
+            color: #e0cfa7;
+            background: #404040;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        fieldset, img {
+            border: 0;
+        }
+
+        address, caption, cite, code, dfn, em, strong, th, var {
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        caption, th {
+            text-align: left;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+            font-size: 100%;
+        }
+
+        div {
+            word-wrap: break-word;
+        }
+
+
+        input {
+            vertical-align: middle;
+            outline: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #e0cfa7;
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        label {
+            font-family: Tahoma, Geneva, sans-serif;
+            vertical-align: middle;
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        a:active {
+            text-decoration: none;
+        }
+
+        a, input {
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        h2, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+        /********head*********/
+        .indexHead{
+            color: #E0CFA7;
+            background-color: #1F2126;
+            overflow: hidden;
+            text-align: center;
+            border-bottom: .01rem solid;
+        }
+        .indexHead a{
+            position: absolute;
+            left: .2rem;
+            top: 2.5%;
+        }
+        .indexHead h1{
+            font-size: .36rem;
+        }
+        .left img{
+            width: .4rem;
+            float: left;
+        }
+        .search{
+            overflow: hidden;
+            text-align: center;
+            background-image: url(../image/sear.png);
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: .3rem auto;
+            background-position-x: 80%;
+        }
+        input{
+            height: .46rem;
+            color: #000;
+            background: 0 0;
+            padding-left: .15rem;
+            font-size: 16px;
+            -webkit-appearance: none;
+            width: 70%;
+            border: 0.01rem solid #e0cfa7;
+            border-radius: .5rem;
+            margin: 0.16rem auto;
+        }
+
+        .groupList {
+            overflow: hidden;
+            border-top: 0.01rem solid;
+            border-top-color: #e0cfa7;
+        }
+        .groupList a {
+            display: block;
+            margin: .2rem;
+            overflow: hidden;
+        }
+        .pic {
+            float: left;
+        }
+        .leftImg {
+            width: 2.6rem;
+            height: 1.6rem;
+        }
+        .group-txt {
+            float: left;
+            margin: 0 .2rem;
+            width: 50%;
+        }
+        .group-txt p {
+            line-height: .5rem;
+        }
+        .group-txt p:nth-child(2) {
+            font-size: .24rem;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+        }
+        .txt-color {
+            color: #E34D78;
+        }
+        .txt-color del {
+            color: #fff;
+            padding-left: .2rem;
+            font-size: .24rem;
+        }
+    </style>
+</head>
+<body>
+
+<div id="nav-toolbar" class="indexHead">
+    <a class="left" href="#">
+        <img src="../image/goback.png">
+    </a>
+    <h1>团购</h1>
+</div>
+<div class="search">
+    <input type="text" id="search" onclick="validatorNull()" required="required" placeholder="请输入团购关键字" name="">
+</div>
+<div class="group">
+    <div class="groupList">
+        <a href="#">
+            <div class="pic">
+                <img class="leftImg" src="../image/little.png">
+            </div>
+            <div class="group-txt">
+                <p>37 Lotus Gaeden</p>
+                <p>特惠组合曲奇礼盒一份特惠组合曲奇礼盒一份</p>
+                <p class="txt-color">￥50
+                    <del>￥68</del>
+                </p>
+            </div>
+        </a>
+    </div>
+    <div class="groupList">
+        <a href="#">
+            <div class="pic">
+                <img class="leftImg" src="../image/little.png">
+            </div>
+            <div class="group-txt">
+                <p>37 Lotus Gaeden</p>
+                <p>特惠组合曲奇礼盒一份</p>
+                <p class="txt-color">￥50
+                    <del>￥68</del>
+                </p>
+            </div>
+        </a>
+    </div>
+    <div class="groupList">
+        <a href="#">
+            <div class="pic">
+                <img class="leftImg" src="../image/little.png">
+            </div>
+            <div class="group-txt">
+                <p>37 Lotus Gaeden</p>
+                <p>特惠组合曲奇礼盒一份特惠组合曲奇礼盒一份</p>
+                <p class="txt-color">￥50
+                    <del>￥68</del>
+                </p>
+            </div>
+        </a>
+    </div>
+    <div class="groupList">
+        <a href="#">
+            <div class="pic">
+                <img class="leftImg" src="../image/little.png">
+            </div>
+            <div class="group-txt">
+                <p>37 Lotus Gaeden</p>
+                <p>特惠组合曲奇礼盒一份</p>
+                <p class="txt-color">￥50
+                    <del>￥68</del>
+                </p>
+            </div>
+        </a>
+    </div>
+    <div class="groupList">
+        <a href="#">
+            <div class="pic">
+                <img class="leftImg" src="../image/little.png">
+            </div>
+            <div class="group-txt">
+                <p>37 Lotus Gaeden</p>
+                <p>特惠组合曲奇礼盒一份</p>
+                <p class="txt-color">￥50
+                    <del>￥68</del>
+                </p>
+            </div>
+        </a>
+    </div>
+    <div class="groupList">
+        <a href="#">
+            <div class="pic">
+                <img class="leftImg" src="../image/little.png">
+            </div>
+            <div class="group-txt">
+                <p>37 Lotus Gaeden</p>
+                <p>特惠组合曲奇礼盒一份特惠组合曲奇礼盒一份</p>
+                <p class="txt-color">￥50
+                    <del>￥68</del>
+                </p>
+            </div>
+        </a>
+    </div>
+    <div class="groupList">
+        <a href="#">
+            <div class="pic">
+                <img class="leftImg" src="../image/little.png">
+            </div>
+            <div class="group-txt">
+                <p>37 Lotus Gaeden</p>
+                <p>特惠组合曲奇礼盒一份</p>
+                <p class="txt-color">￥50
+                    <del>￥68</del>
+                </p>
+            </div>
+        </a>
+    </div>
+    <div class="groupList">
+        <a href="#">
+            <div class="pic">
+                <img class="leftImg" src="../image/little.png">
+            </div>
+            <div class="group-txt">
+                <p>37 Lotus Gaeden</p>
+                <p>特惠组合曲奇礼盒一份特惠组合曲奇礼盒一份</p>
+                <p class="txt-color">￥50
+                    <del>￥68</del>
+                </p>
+            </div>
+        </a>
+    </div>
+</div>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if (clientWidth / 750 > 1)
+                    docEl.style.fontSize = '100px';
+                else if(clientWidth / 750 < 0.4)
+                    docEl.style.fontSize = '40px';
+                else
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+            };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+
+</script>
+<script>
+
+    function validatorNull(){
+        var txt=document.getElementById("search");
+        if(txt.value.trim()==""){
+            alert("关键字不能为空");
+            txt.focus();
+            return;
+        }
+    }
+
+</script>
+
+<script src="../js/Application.js"></script>
+<script src="../js/search.js"></script>
+</body>
+</html>

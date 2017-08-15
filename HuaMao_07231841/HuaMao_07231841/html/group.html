@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>团购</title>
+    <link rel="stylesheet" href="../css/group.css">
+    <link rel="stylesheet" href="../css/default.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/main-s.css">
+
+    <!--css:iScroll-->
+    <style type="text/css" media="all">
+        body,ul,li {
+            padding:0;
+            margin:0;
+            border:0;
+        }
+
+        body {
+            font-size:12px;
+            -webkit-user-select:none;
+            -webkit-text-size-adjust:none;
+            font-family:helvetica;
+        }
+
+        .wrapper {
+            position:absolute; z-index:1;
+            top:83px; bottom:0px; left:-9999px;
+            width:100%;
+            background:#aaa;
+            overflow:auto;
+        }
+
+        .scroller {
+            position:absolute; z-index:1;
+            /*	-webkit-touch-callout:none;*/
+            -webkit-tap-highlight-color:rgba(0,0,0,0);
+            width:100%;
+            padding:0;
+            z-index: 1;
+        }
+
+        .scroller ul {
+            list-style:none;
+            padding:0;
+            margin:0;
+            width:100%;
+            text-align:left;
+        }
+
+        /*.scroller li {
+            padding:0 10px;
+            height:40px;
+            line-height:40px;
+            border-bottom:1px solid #ccc;
+            border-top:1px solid #fff;
+            background-color:#fafafa;
+            font-size:14px;
+        }*/
+
+        /**
+         *
+         * Pull down styles
+         *
+         */
+        .pullDown, .pullUp {
+            background:#fff;
+            height:40px;
+            line-height:40px;
+            padding:5px 10px;
+            border-bottom:1px solid #ccc;
+            font-weight:bold;
+            font-size:14px;
+            color:#888;
+            z-index:-1;
+        }
+        .pullDown .pullDownIcon, .pullUp .pullUpIcon  {
+            display:block; float:left;
+            width:40px; height:40px;
+            background:url(pull-icon@2x.png) 0 0 no-repeat;
+            -webkit-background-size:40px 80px; background-size:40px 80px;
+            -webkit-transition-property:-webkit-transform;
+            -webkit-transition-duration:250ms;
+        }
+        .pullDown .pullDownIcon {
+            -webkit-transform:rotate(0deg) translateZ(0);
+        }
+        .pullUp .pullUpIcon  {
+            -webkit-transform:rotate(-180deg) translateZ(0);
+        }
+
+        .pullDown.flip .pullDownIcon {
+            -webkit-transform:rotate(-180deg) translateZ(0);
+        }
+
+        .pullUp.flip .pullUpIcon {
+            -webkit-transform:rotate(0deg) translateZ(0);
+        }
+
+        .pullDown.loading .pullDownIcon, .pullUp.loading .pullUpIcon {
+            background-position:0 100%;
+            -webkit-transform:rotate(0deg) translateZ(0);
+            -webkit-transition-duration:0ms;
+
+            -webkit-animation-name:loading;
+            -webkit-animation-duration:2s;
+            -webkit-animation-iteration-count:infinite;
+            -webkit-animation-timing-function:linear;
+        }
+
+        @-webkit-keyframes loading {
+            from { -webkit-transform:rotate(0deg) translateZ(0); }
+            to { -webkit-transform:rotate(360deg) translateZ(0); }
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+<div id="nav-toolbar" class="indexHead">
+    <a class="left" href="#">
+        <img src="../image/goback.png">
+    </a>
+    <h1>团购</h1>
+</div>
+
+<div class="search bg-c4">
+    <input class="a-ipt-search bg-c8" type="text" id="search" required="required" placeholder="请输入团购关键字" name="">
+    <span class="a-store-icon" onclick="validatorNull()"></span>
+</div>
+
+<div id="wrapper" class="wrapper">
+
+        <div class="group scroller" id="group-groupList">
+
+            <!--下拉刷新-->
+            <!--<div class="pullDown" id="pullDown">
+                <span class="pullDownIcon"></span><span class="pullDownLabel">Pull down to refresh...</span>
+            </div>-->
+
+            <!--列表-->
+            <ul class="thelist">
+                <!--<li>
+                    <div class="groupList bg-c4">
+                        <a href="#">
+                            <div class="pic">
+                                <img class="leftImg" src="../image/little.png">
+                            </div>
+                            &lt;!&ndash;<div class="star-score">
+                                <span class="star-score-left"></span>
+                                <span class="star-score-right"></span>
+                            </div>&ndash;&gt;
+                            <div class="group-txt">
+                                <p>1 Lotus Gaeden</p>
+                                <p>特惠组合曲奇礼盒一份特惠组合曲奇礼盒一份</p>
+                                <p class="txt-color">￥50<del>￥68</del></p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="groupList bg-c4">
+                        <a href="#">
+                            <div class="pic">
+                                <img class="leftImg" src="../image/little.png">
+                            </div>
+                            <div class="group-txt">
+                                <p>2 Lotus Gaeden</p>
+                                <p>特惠组合曲奇礼盒一份</p>
+                                <p class="txt-color">￥50
+                                    <del>￥68</del>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+
+                </li>
+
+                <li>
+                    <div class="groupList bg-c4">
+                        <a href="#">
+                            <div class="pic">
+                                <img class="leftImg" src="../image/little.png">
+                            </div>
+                            <div class="group-txt">
+                                <p>3 Lotus Gaeden</p>
+                                <p>特惠组合曲奇礼盒一份</p>
+                                <p class="txt-color">￥50
+                                    <del>￥68</del>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+
+                </li>
+
+                <li>
+                    <div class="groupList bg-c4">
+                        <a href="#">
+                            <div class="pic">
+                                <img class="leftImg" src="../image/little.png">
+                            </div>
+                            <div class="group-txt">
+                                <p>4 Lotus Gaeden</p>
+                                <p>特惠组合曲奇礼盒一份</p>
+                                <p class="txt-color">￥50
+                                    <del>￥68</del>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+
+                </li>
+
+                <li>
+                    <div class="groupList bg-c4">
+                        <a href="#">
+                            <div class="pic">
+                                <img class="leftImg" src="../image/little.png">
+                            </div>
+                            <div class="group-txt">
+                                <p>5 Lotus Gaeden</p>
+                                <p>特惠组合曲奇礼盒一份</p>
+                                <p class="txt-color">￥50
+                                    <del>￥68</del>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+
+                </li>
+
+                <li>
+                    <div class="groupList bg-c4">
+                        <a href="#">
+                            <div class="pic">
+                                <img class="leftImg" src="../image/little.png">
+                            </div>
+                            <div class="group-txt">
+                                <p>6 Lotus Gaeden</p>
+                                <p>特惠组合曲奇礼盒一份</p>
+                                <p class="txt-color">￥50
+                                    <del>￥68</del>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+
+                </li>
+
+                <li>
+                    <div class="groupList bg-c4">
+                        <a href="#">
+                            <div class="pic">
+                                <img class="leftImg" src="../image/little.png">
+                            </div>
+                            <div class="group-txt">
+                                <p>7 Lotus Gaeden</p>
+                                <p>特惠组合曲奇礼盒一份</p>
+                                <p class="txt-color">￥50
+                                    <del>￥68</del>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+
+                </li>
+
+                <li>
+                    <div class="groupList bg-c4">
+                        <a href="#">
+                            <div class="pic">
+                                <img class="leftImg" src="../image/little.png">
+                            </div>
+                            <div class="group-txt">
+                                <p>8 Lotus Gaeden</p>
+                                <p>特惠组合曲奇礼盒一份</p>
+                                <p class="txt-color">￥50
+                                    <del>￥68</del>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+
+                </li>-->
+
+            </ul>
+
+            <!--上拉刷新-->
+            <!--<div class="pullUp" id="pullUp">
+                <span class="pullUpIcon"></span><span class="pullUpLabel">Pull up to refresh...</span>
+            </div>-->
+
+        </div>
+
+</div>
+
+
+
+
+<!--
+<script src="../js/util.js"></script>
+<script src="../js/tscroll.js"></script>
+<script src="../js/Application.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/groupon_list.js"></script>
+-->
+
+<script src="../js/util.js"></script>
+<script src="../js/Application.js"></script>
+<script src="http://wap.monternet.com/nmpfs/media/p/132/148/5281/pubAttachment/20151102/2090810.js"></script>
+<!--<script src="../js/iscroll.js"></script>-->
+<script src="../js/tscroll.js"></script>
+<script src="../js/test01.js"></script>
+
+
+</body>
+</html>

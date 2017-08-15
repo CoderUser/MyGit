@@ -1,0 +1,24 @@
+<!-- item list two goods -->
+<style>
+	.m-group-item1 li{position: relative; width: 395px;}
+	.m-group-item1 li:first-child{float: left;}
+	.m-group-item1 li:last-child{float: right;}
+	.m-group-item1 li img{width: 395px; height: 395px;}
+	.m-group-item1 li p{position: absolute; width: 310px; padding: 10px; font-size: 16px; line-height: 28px;}
+	.m-group-item1 li:first-child p{left: 100%; top: 0; border-bottom: 1px dashed #bbb; padding-bottom: 30px;}
+	.m-group-item1 li:last-child p{right: 100%; bottom: 0; text-align: right;}
+	.m-group-item1 li a,
+	.m-group-item1 li span,
+	.m-group-item1 li button{display: block;}
+	.m-group-item1 li span{ font-size: 20px; color: #000; line-height: 40px; padding-bottom: 10px; text-transform: uppercase}
+	.m-group-item1 li button{ padding: 8px 18px; color: #246061; border: 1px solid #246061; border-radius: 5px;}
+	.m-group-item1 li:last-child button{float: right;}
+</style>
+<ul class="m-group-item1 g-clearfix">
+	<li><a href="${properties.miniVipServerUrl}#VItemDetail/${GROUP_STYLE1.XF_ITEMORGID1}_${GROUP_STYLE1.XF_STYLE1}"><img src="${properties.fileServerUrl}file/get?fileid=${GROUP_STYLE1.XF_IMAGE1.XF_IMAGE}" /></a>
+		<p><a href="${properties.miniVipServerUrl}#VItemDetail/${GROUP_STYLE1.XF_ITEMORGID1}_${GROUP_STYLE1.XF_STYLE1}">${GROUP_STYLE1.XF_DESCI1}</a> <span>RMB:${GROUP_STYLE1.XF_PRICE1}</span><button><a href="${properties.miniVipServerUrl}#VItemDetail/${GROUP_STYLE1.XF_ITEMORGID1}_${GROUP_STYLE1.XF_STYLE1}">立即抢购</a></button></p>
+	</li>
+	<li><a href="${properties.miniVipServerUrl}#VItemDetail/${GROUP_STYLE1.XF_ITEMORGID2}_${GROUP_STYLE1.XF_STYLE2}"><img src="${properties.fileServerUrl}file/get?fileid=${GROUP_STYLE1.XF_IMAGE2.XF_IMAGE}" /></a>
+		<p><a href="${properties.miniVipServerUrl}#VItemDetail/${GROUP_STYLE1.XF_ITEMORGID1}_${GROUP_STYLE1.XF_STYLE2}">${GROUP_STYLE1.XF_DESC2}</a> <span>RMB:${GROUP_STYLE1.XF_PRICE2}</span><button><a href="${properties.miniVipServerUrl}#VItemDetail/${GROUP_STYLE1.XF_ITEMORGID1}_${GROUP_STYLE1.XF_STYLE2}">立即抢购</a></button></p>
+	</li>
+</ul>

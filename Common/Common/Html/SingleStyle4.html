@@ -1,0 +1,26 @@
+ <#if SINGLE_STYLE4_index?? >
+	<#if SINGLE_STYLE4_index < 1 >
+		<style>
+			.m-single-item4{ width: 500px; position: relative;}
+			.m-single-item4 p{position: absolute; width: 96%; padding: 10px; background: #fff; left: 2%; bottom: 20px; color: #333; box-sizing: border-box; overflow: hidden;}
+			.m-single-item4 p span:first-child{width: 75%; float: left; padding-right: 10px; border-right: 1px solid #aaa; box-sizing: border-box;}
+			.m-single-item4 p span:last-child{width: 25%; float: right; font-size: 12px; text-align: right; box-sizing: border-box;}
+			.m-single-item4 p span:last-child em{font-size: 26px; font-style: normal;}
+		</style>
+	</#if >
+ <#else>
+	<style>
+		.m-single-item4{ width: 500px; position: relative;}
+		.m-single-item4 p{position: absolute; width: 96%; padding: 10px; background: #fff; left: 2%; bottom: 20px; color: #333; box-sizing: border-box; overflow: hidden;}
+		.m-single-item4 p span:first-child{width: 75%; float: left; padding-right: 10px; border-right: 1px solid #aaa; box-sizing: border-box;}
+		.m-single-item4 p span:last-child{width: 25%; float: right; font-size: 12px; text-align: right; box-sizing: border-box;}
+		.m-single-item4 p span:last-child em{font-size: 26px; font-style: normal;}
+	</style>
+ </#if >
+<div class="m-single-item4">
+	<a href="${properties.miniVipServerUrl}#VItemDetail/${SINGLE_STYLE4.XF_ITEMORGID}_${SINGLE_STYLE4.XF_STYLE}"><img src="${properties.fileServerUrl}file/get?fileid=${SINGLE_STYLE4.XF_IMAGE.XF_IMAGE}"/></a>
+	<p>
+		<span>${SINGLE_STYLE4.XF_DESCI}</span>
+		<span>￥<em>${SINGLE_STYLE4.XF_PRICE}</em></span>
+	</p>
+</div>

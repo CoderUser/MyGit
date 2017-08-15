@@ -1,0 +1,83 @@
+<#include "../CSS/Global.css" />
+<div id="style-container"></div>
+<!-- poster image -->
+<div class="poster-img"><img src=${properties.fileServerUrl}file/get?fileid=${POSTER_STYLE2.XF_COVER.XF_IMAGE}></div>
+<!-- poster content -->
+<div class="poster2-content">
+	<#if POSTER_STYLE2.XF_AREA1_GOOD?? >
+		<!-- 3*n -->
+		<div class="poster2-itemlist1 g-clearfix">
+			<#list POSTER_STYLE2.XF_AREA1_GOOD as SINGLE_STYLE6> 
+				<#include "SingleStyle6.html" />
+			</#list>
+		</div>
+	</#if>
+	<#if POSTER_STYLE2.XF_AREA1_TITLE?length gt 0 >
+		<!-- classify desc -->
+		<div class="m-classify-02">
+			<p><span>${POSTER_STYLE2.XF_AREA1_TITLE}</span>${POSTER_STYLE2.XF_AREA1_DESC}</p>
+		</div>
+	</#if>
+	<!-- poster product item list -->
+	<#if POSTER_STYLE2.XF_AREA2_GOOD?? >
+		<!-- 2*n -->
+		<div class="poster2-itemlist2 g-clearfix">
+			<#list POSTER_STYLE2.XF_AREA2_GOOD as SINGLE_STYLE8> 
+				<#include "SingleStyle8.html" />
+			</#list>
+		</div>
+	</#if>
+	<#if POSTER_STYLE2.XF_AREA3_GOOD?? >
+		<!-- 4*n -->
+		<div class="poster2-itemlist3 g-clearfix">
+			<#list POSTER_STYLE2.XF_AREA3_GOOD as SINGLE_STYLE5> 
+				<#include "SingleStyle5.html" />
+			</#list>
+		</div>
+	</#if>
+	<#if POSTER_STYLE2.XF_AREA2_TITLE?length gt 0 >
+		<!-- classify desc -->
+		<div class="m-classify-02">
+			<p><span>${POSTER_STYLE2.XF_AREA2_TITLE}</span>${POSTER_STYLE2.XF_AREA2_DESC}</p>
+		</div>
+	</#if>
+	<#if POSTER_STYLE2.XF_AREA4_GOOD?? >
+		<!-- 1+2*3 -->
+		<div class="poster2-itemlist4 g-clearfix">
+			<#list POSTER_STYLE2.XF_AREA4_GOOD as SINGLE_STYLE2> 
+				<#include "SingleStyle2.html" />
+			</#list>
+		</div>
+	</#if>
+	<#if POSTER_STYLE2.XF_AREA5_GOOD?? >
+		<!-- 4*n -->
+		<div class="poster2-itemlist3 g-clearfix">
+			<#list POSTER_STYLE2.XF_AREA5_GOOD as SINGLE_STYLE5> 
+				<#include "SingleStyle5.html" />
+			</#list>
+		</div>
+	</#if>
+	<#if POSTER_STYLE2.XF_AREA3_TITLE?length gt 0 >
+		<!-- classify desc -->
+		<div class="m-classify-02">
+			<p><span>${POSTER_STYLE2.XF_AREA3_TITLE}</span>${POSTER_STYLE2.XF_AREA3_DESC}</p>
+		</div>
+	</#if>
+	<#if POSTER_STYLE2.XF_AREA6_GOOD?? >
+		<!-- 3*n -->
+		<div class="poster2-itemlist3 g-clearfix">
+			<#list POSTER_STYLE2.XF_AREA6_GOOD as SINGLE_STYLE5> 
+				<#include "SingleStyle5.html" />
+			</#list>
+		</div>
+	</#if>
+</div>
+<script>
+	(function()
+	{
+		<#include "../JS/Global.js" />
+		var pcStyle = '<#include "../CSS/PosterStyle2_pc.css" />',
+			appStyle = '<#include "../CSS/PosterStyle2_app.css" />';
+		GetStyle(pcStyle, appStyle);
+	})();
+</script>

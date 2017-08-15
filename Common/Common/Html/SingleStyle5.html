@@ -1,0 +1,29 @@
+ <#if SINGLE_STYLE5_index?? >
+	<#if SINGLE_STYLE5_index < 1 >
+		<style>
+			.m-single-item5{width: 250px;}
+			.m-single-item5 a{display: block;}
+			.m-single-item5 p{position: relative; padding: 10px; letter-spacing:-1px;}
+			.m-single-item5 p>a{color: #444; font-weight: normal; font-family: 'SimHei'; width: 88%; height: 23px; overflow: hidden;}
+			.m-single-item5 span{color: #333; font-weight: bold; font-family: 'Verdana';}
+			.m-single-item5 p button a{position: absolute; padding: 2px 5px; bottom: 10px; right: 10px; font-family: 'Verdana'; background: #000; color: #fff;}
+		</style>
+	</#if >
+ <#else>
+	<style>
+		.m-single-item5{width: 250px;}
+		.m-single-item5 a{display: block;}
+		.m-single-item5 p{position: relative; padding: 10px; letter-spacing:-1px;}
+		.m-single-item5 p>a{color: #444; font-weight: normal; font-family: 'SimHei'; width: 88%; height: 23px; overflow: hidden;}
+		.m-single-item5 span{color: #333; font-weight: bold; font-family: 'Verdana';}
+		.m-single-item5 p button a{position: absolute; padding: 2px 5px; bottom: 10px; right: 10px; font-family: 'Verdana'; background: #000; color: #fff;}
+	</style>
+ </#if >
+<div class="m-single-item5">
+	<a href="${properties.miniVipServerUrl}#VItemDetail/${SINGLE_STYLE5.XF_ITEMORGID}_${SINGLE_STYLE5.XF_STYLE}"><img src="${properties.fileServerUrl}file/get?fileid=${SINGLE_STYLE5.XF_IMAGE.XF_IMAGE}"/></a>
+	<p>
+		<a href="${properties.miniVipServerUrl}#VItemDetail/${SINGLE_STYLE5.XF_ITEMORGID}_${SINGLE_STYLE5.XF_STYLE}">${SINGLE_STYLE5.XF_DESCI}</a>
+		<span>RMB ${SINGLE_STYLE5.XF_PRICE}</span>
+		<button><a href="${properties.miniVipServerUrl}#VItemDetail/${SINGLE_STYLE5.XF_ITEMORGID}_${SINGLE_STYLE5.XF_STYLE}">BUY</a></button>
+	</p>
+</div>

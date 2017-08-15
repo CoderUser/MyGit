@@ -1,0 +1,146 @@
+body {
+    font-family:Microsoft YaHei;
+    font-size: .28rem;
+    margin: 0 auto;
+    -webkit-text-size-adjust: none;
+    word-break: break-all;
+    color: #E9CD8A;
+    background: #404040;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-weight: normal;
+    font-style: normal;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6, button, input{
+    font-family:Microsoft YaHei;
+    font-weight: normal;
+    font-size: 100%;
+}
+
+div {
+    word-wrap: break-word;
+}
+
+
+input {
+    vertical-align: middle;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: #444;
+}
+
+img {
+    vertical-align: top;
+}
+
+label {
+    font-family: Tahoma, Geneva, sans-serif;
+    vertical-align: middle;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+a, input {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+/********head*********/
+.indexHead{
+    color: #E0CFA7;
+    background-color: #1F2126;
+    overflow: hidden;
+    text-align: center;
+    border-bottom: .01rem solid;
+}
+.indexHead a{
+    position: absolute;
+    left: .2rem;
+    top: .1rem;
+}
+.left img{
+    width: .4rem;
+    float: left;
+}
+
+.a-coupons-txt{
+    text-align: center;
+}
+.a-coupons-txt img{
+    display: block;
+    margin: 2rem auto;
+    margin-bottom: .1rem;
+    width: 10%;
+}
+.a-coupons-txt span{
+    display: block;
+    margin: .2rem auto;
+}
+.a-coupons-btn{
+    text-align: center;
+    margin-top: .6rem;
+    overflow: hidden;
+}
+.a-coupons-btn a:nth-child(1){
+    display: block;
+    width: 2rem;
+    height: .6rem;
+    line-height: .6rem;
+    color: #fff;
+    border-radius: .5rem;
+    background-color: #E9CD8A;
+    float: left;
+    margin-left: 20%;
+    /*padding: .15rem;*/
+}
+.a-coupons-btn a:nth-child(2){
+    display: block;
+    width: 2rem;
+    height: .6rem;
+    line-height: .6rem;
+    color: #E9CD8A;
+    border-radius: .5rem;
+    background-color: #fff;
+    float: right;
+    margin-right: 20%;
+    /*padding: .15rem;*/
+}

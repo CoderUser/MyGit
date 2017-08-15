@@ -1,0 +1,119 @@
+/* CSS Document */
+/*base*/
+body {
+    font-family:Microsoft YaHei;
+    font-size: .24rem;
+    margin: 0 auto;
+    -webkit-text-size-adjust: none;
+    word-break: break-all;
+    color: #E9CD8A;
+    background: #404040;
+}
+
+body {
+    padding-bottom: 1rem;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-weight: normal;
+    font-style: normal;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-size: 100%;
+}
+
+div {
+    word-wrap: break-word;
+}
+
+center {
+    height: 15px;
+    margin: 5px 0;
+}
+
+input {
+    vertical-align: middle;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: #444;
+}
+
+img {
+    vertical-align: top;
+}
+
+label {
+    font-family: Tahoma, Geneva, sans-serif;
+    vertical-align: middle;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+a, input {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body, p, input, h1, h2, h3, h4, h5, h6, ul, li, dl, dt, dd, form {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    vertical-align: middle;
+    font-weight: normal;
+}
+
+img {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+header, section, footer {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding-bottom: 1rem;
+}

@@ -1,0 +1,63 @@
+<!-- Home banner -->
+<#include "../CSS/Banner.css" />
+<div class="cms-banner">
+	<p id="slide_left">&lt;</p>
+	<p id="slide_right">&gt;</p>
+	<div class="slide_01 g-clearfix" id="tpl-home-banner">
+		<!-- 循环列表, 重复写入每一个海报封面数据 -->
+		<#if BANNER_STYLE5.XF_POSTERLIST1?? >
+			<#list BANNER_STYLE5.XF_POSTERLIST1 as POSTER>
+			<div class="mod_01">
+				<a style="background-image: url(${properties.fileServerUrl}file/get?fileid=${POSTER.XF_COVER.XF_IMAGE});" href=${properties.contentServerUrl}content/get?tmplCode=POSTER_STYLE1&media=${media}&lang=${lang}&xf_id=${POSTER.XF_ID}> <img class="banner-img" src='${properties.fileServerUrl}file/get?fileid=${POSTER.XF_COVER.XF_IMAGE}' alt="${POSTER.XF_NAME}" title="${POSTER.XF_NAME}" /> </a>
+			</div>
+			</#list>
+		</#if>
+		<#if BANNER_STYLE5.XF_POSTERLIST2?? >
+			<#list BANNER_STYLE5.XF_POSTERLIST2 as POSTER>
+			<div class="mod_01">
+				<a style="background-image: url(${properties.fileServerUrl}file/get?fileid=${POSTER.XF_COVER.XF_IMAGE});" href=${properties.contentServerUrl}content/get?tmplCode=POSTER_STYLE2&media=${media}&lang=${lang}&xf_id=${POSTER.XF_ID}> <img class="banner-img" src=${properties.fileServerUrl}file/get?fileid=${POSTER.XF_COVER.XF_IMAGE} alt="${POSTER.XF_NAME}" title="${POSTER.XF_NAME}" /> </a>
+			</div>
+			</#list>
+		</#if>
+		<#if BANNER_STYLE5.XF_POSTERLIST3?? >
+			<#list BANNER_STYLE5.XF_POSTERLIST3 as POSTER>
+			<div class="mod_01">
+				<a style="background-image: url(${properties.fileServerUrl}file/get?fileid=${POSTER.XF_COVER.XF_IMAGE});" href=${properties.contentServerUrl}content/get?tmplCode=POSTER_STYLE3&media=${media}&lang=${lang}&xf_id=${POSTER.XF_ID}> <img class="banner-img" src=${properties.fileServerUrl}file/get?fileid=${POSTER.XF_COVER.XF_IMAGE} alt="${POSTER.XF_NAME}" title="${POSTER.XF_NAME}" /> </a>
+			</div>
+			</#list>
+		</#if>
+		<#if BANNER_STYLE5.XF_POSTERLIST4?? >
+			<#list BANNER_STYLE5.XF_POSTERLIST4 as POSTER>
+			<div class="mod_01">
+				<a style="background-image: url(${properties.fileServerUrl}file/get?fileid=${POSTER.XF_COVER.XF_IMAGE});" href=${properties.contentServerUrl}content/get?tmplCode=POSTER_STYLE4&media=${media}&lang=${lang}&xf_id=${POSTER.XF_ID}> <img class="banner-img" src=${properties.fileServerUrl}file/get?fileid=${POSTER.XF_COVER.XF_IMAGE} alt="${POSTER.XF_NAME}" title="${POSTER.XF_NAME}" /> </a>
+			</div>
+			</#list>
+		</#if>
+	</div>
+</div>
+<script>
+	(function()
+	{
+		<#include "../JS/Marquee.js" />
+		<#include "../JS/HomeBanner.js" />
+		var _initMarquee = function()
+			{
+				setBanSize();
+				if (bannerDiv)
+				{
+					bannerMarquee = new Marquee();
+					bannerMarquee.scrollContId = "tpl-home-banner"; //内容容器ID
+					bannerMarquee.arrLeftId      = "slide_left";
+					bannerMarquee.arrRightId     = "slide_right";
+					bannerMarquee.autoPlay = true;
+					bannerMarquee.desci = true;
+					bannerMarquee.pageNum = document.getElementsByClassName('mod_01').length;//图片数量
+					bannerMarquee.frameWidth = bannerMarquee.upright ? getImgHeight() : getInnerWidth();
+					bannerMarquee.pageWidth = bannerMarquee.upright ? getImgHeight() : getInnerWidth();
+					bannerMarquee.autoPlayTime = 4;//自动播放时间 /秒
+					bannerMarquee.initialize(); //初始化
+				}
+			};
+		_initMarquee();
+	})();
+</script>

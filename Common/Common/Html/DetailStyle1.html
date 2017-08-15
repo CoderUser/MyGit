@@ -1,0 +1,70 @@
+<!-- meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0" /-->
+<style>
+	body{max-width: 768px; margin: 0 auto;}
+	ul, li{ list-style:none; }
+	.g-clearfix:after{ content:"."; visibility:hidden; height:0; display:block; clear:both;}
+	.g-clearfix{ zoom:1;} 
+	.good-detail-con img{display: block; width: auto; max-width: 100%; height: auto; margin: auto;}
+	.good-detail-nav{ width: 60%; margin: 10px auto; line-height: 38px; font-size: 14px; text-align: center; border: 1px solid #df301b; border-radius: 5px; overflow: hidden; padding: 0;}
+	.good-detail-nav li{width: 50%; float: left; color: #df301b;}
+	.good-detail-nav li.active{background: #df301b; color: #fff;}
+	.detail-desc p{padding: 5px 15px; font-family: 'SimSun', arial; color: #333; font-size: 12px; line-height: 22px;}
+	.detail-desc p strong{font-weight: bold;}
+	.detail-desc p i{font-style: italic;}
+	.detail-desc p u{font-style: oblique;}
+	.detail-attr{background: #fff;}
+	.detail-attr p{ width: 96%; margin: 0 auto; padding: 10px 5px; border-top: 1px solid #ddd; display: -webkit-flex; display: flex; align-items: center;}
+	.detail-attr p span{ white-space: normal; font-size: 13px;}
+	.detail-attr p span:first-child{display: block; width: 30%; margin-right: 10px; color: #666;}
+	.detail-attr p span:last-child{display: block; width: 70%; color: #888;}
+</style>
+
+<ul class="good-detail-nav g-clearfix" id="good-detail-nav">
+	<li class="active">Introduce</li>
+	<#if DETAIL_STYLE1.XF_ATTRS?? >
+		<li>Parameter</li>
+	</#if>
+</ul>
+<div class="good-detail-con" id="good-detail-con">
+	<div class="detail-con detail-desc" id="good-detail-desc">
+		${DETAIL_STYLE1.XF_CONTENTS}
+	</div>
+	<#if DETAIL_STYLE1.XF_ATTRS?? >
+		<div class="detail-con detail-attr" style="display: none;">
+			<#list DETAIL_STYLE1.XF_ATTRS as Attribute>
+				<p><span>${Attribute.XF_GROUPNAME}</span><span>${Attribute.XF_VALUEDESC}</span></p>
+			</#list>
+		</div>
+	</#if>
+</div>
+<script>
+	<#include "../JS/GlobalWap.js" />
+	<#include "../JS/DelayLoad.js" />   
+	delayload({id:['good-detail-desc'], src:'${properties.contentResourceUrl}Resource/loading.gif'});
+	
+	//tab
+	function SetTab(tabObj, conObj)
+	{
+		if(tabObj.length != conObj.length) return;
+		for (var i = 0; i < tabObj.length; i++)
+		{
+			tabObj[i].id = i;
+			tabObj[i].onclick = function()
+			{
+				for (var j = 0; j < conObj.length; j++)
+				{
+					tabObj[j].className = '';
+					conObj[j].style.display = 'none';
+				}
+				this.className = 'active';
+				conObj[this.id].style.display = 'block';
+			}
+		}
+	}
+	
+	var _goodDetaiNav = document.getElementById('good-detail-nav'),
+		_goodDetailNavChild =_goodDetaiNav.getElementsByTagName('li'),
+		_goodDetailCon = document.getElementById('good-detail-con'),
+		_goodDetailConChild = _goodDetailCon.getElementsByClassName('detail-con');
+	SetTab(_goodDetailNavChild, _goodDetailConChild);
+</script>

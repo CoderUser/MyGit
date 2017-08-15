@@ -1,0 +1,24 @@
+<style>
+	.detail-attr{width: 100%; padding: 20px 0; border-bottom: 1px dashed #ddd;}
+	.detail-attr h3{position: relative; width: 95%; padding-bottom: 15px; margin: auto; line-height: 13px; padding-left: 10px; color: #954f47; font-weight: normal;}
+	.detail-attr h3:before{content: ''; position: absolute; width: 4px; height: 15px; left: 0; top: 0; background: #954f47;}
+	.detail-attr ul{ width: 90%; margin: 0 auto; overflow: hidden;}
+	.detail-attr ul li{float: left; width: 33.33%; line-height: 30px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+</style>
+<#if DETAILS_CLOTH.XF_ATTRS?? >
+	<div class="detail-attr">
+		<h3>Parameter:</h3>
+		<ul>
+			<#list DETAILS_CLOTH.XF_ATTRS as Attribute>
+				<li>${Attribute.XF_GROUPNAME}:${Attribute.XF_VALUEDESC}</li>
+			</#list>		
+		</ul>
+	</div>
+</#if>
+<div class="detail-content" id="tpl-detail-content">
+	${DETAILS_CLOTH.XF_CONTENTS}
+</div>
+ <script>
+	<#include "../JS/DelayLoad.js" />   
+	delayload({id:['tpl-detail-content'], src:'${properties.contentResourceUrl}Resource/loading.gif'});
+</script>

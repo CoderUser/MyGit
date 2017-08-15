@@ -1,0 +1,24 @@
+<style>
+@charset "utf-8";
+*{padding: 0; margin: 0;}
+.cms-banner{width:100%;height:auto; position:relative; overflow:hidden;}
+.cms-banner .slide_01{margin: 0 auto; overflow:hidden;}
+.cms-banner .mod_01{float:left; position:relative; min-height: 200px; max-height: 700px;}
+.cms-banner .mod_01 a{display: block; width: 100%; height: 100%; background: no-repeat center center; background-size: auto 100%;}
+.cms-banner .mod_01 img{display:block; width:100%; height:auto; margin: 0 auto; visibility: hidden;}
+.cms-banner p{z-index:2; position:absolute; top: 50%; margin-top: -60px; font-size: 80px; line-height: 150%; padding: 0 15px; font-family: "NSimSun"; color: #954f47; background: rgba(255,255,255,.3); opacity: 0; transition: .5s; cursor:pointer}
+.cms-banner #slide_left{left:10%}
+.cms-banner #slide_right{right:10%}
+/*default dot*/
+.cms-banner .dotModule_new{position:absolute; bottom:10px; text-align: center; width: 100%; height:15px; z-index:99;}
+.cms-banner .dotModule_new span{margin:0 5px; display:inline-block; width:10px;height:10px; border-radius: 50%; line-height:9999px; background:#f26566; overflow:hidden; cursor:pointer;}
+.cms-banner .dotModule_new span.selected{background: #954f47;}
+
+.cms-banner .img-desc{position: absolute; width: 100%; height: 40px; left: 0; bottom: 0; padding:0 10px; font-size: 16px; color: #fff; line-height:40px; background: rgba(0,0,0,.3); box-sizing: border-box;}
+.cms-banner .img-desc span{float: right; padding-right: 5px; font-family: inherit; font-family: 'Georgia'; font-size: 18px; line-height: 32px;}
+.cms-banner .img-desc span em{color: #f26566; font-style: normal; font-size: 30px;}
+.cms-banner:hover p{opacity: 1; }
+@media (max-width: 640px) {
+    .cms-banner:hover p{opacity: 0;}
+}
+</style>

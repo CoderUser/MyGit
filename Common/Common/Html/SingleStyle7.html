@@ -1,0 +1,26 @@
+ <#if SINGLE_STYLE7_index?? >
+	<#if SINGLE_STYLE7_index < 1 >
+		<style>
+			.m-single-item7{ width: 400px; border-radius: 50%; overflow:hidden;}
+			.m-single-item7 img{display: block; width:100%;}
+			.m-single-item7 span{display: block; width: 80%; margin: 10px auto; font-family: 'KaiTi'; font-size: 16px; line-height: 23px; text-align: center;}
+			.m-single-item7 span:last-child{ font-size: 20px; color: #000;}
+			.m-single-item7 span:last-child em{ font-size: 32px; font-style: normal;}
+		</style>
+	</#if >
+ <#else>
+	<style>
+		.m-single-item7{ width: 400px; border-radius: 50%; overflow:hidden;}
+		.m-single-item7 img{display: block; width:100%;}
+		.m-single-item7 span{display: block; width: 80%; margin: 10px auto; font-family: 'KaiTi'; font-size: 16px; line-height: 23px; text-align: center;}
+		.m-single-item7 span:last-child{ font-size: 20px; color: #000;}
+		.m-single-item7 span:last-child em{ font-size: 32px; font-style: normal;}
+	</style>
+ </#if >
+<div class="m-single-item7">
+	<a href="${properties.miniVipServerUrl}#VItemDetail/${SINGLE_STYLE7.XF_ITEMORGID}_${SINGLE_STYLE7.XF_STYLE}"><img src="${properties.fileServerUrl}file/get?fileid=${SINGLE_STYLE7.XF_IMAGE.XF_IMAGE}"/></a>
+	<p>
+		<span><a href="${properties.miniVipServerUrl}#VItemDetail/${SINGLE_STYLE7.XF_ITEMORGID}_${SINGLE_STYLE7.XF_STYLE}">${SINGLE_STYLE7.XF_DESCI}</a></span>
+		<span>￥<em>${SINGLE_STYLE7.XF_PRICE}</em></span>
+	</p>
+</div>

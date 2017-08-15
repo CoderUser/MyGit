@@ -1,0 +1,45 @@
+﻿<style><#include "../css/store_detail.css"/></style>
+
+<!-- <div id="nav-toolbar" class="indexHead">
+    <a class="left" href="#">
+        <img src="../image/goback.png">
+    </a>
+    <h1>${languageMap.Group!'团购详情'}</h1>
+</div>
+ -->
+
+ <#if itemList??>
+	<#list itemList as item>
+<div class="top-pic">
+    <img src="http://172.31.1.204:1841/icons/storedetail01.png">
+</div>
+
+<div class="info">
+    <a>
+        <dl>
+            <dt>加州卷${item.mealName}</dt>
+            <dd class="content">特惠工作日午餐一人份${item.detail}</dd>
+            <dd class="map">3F B405商铺${item.address}</dd>
+        </dl>
+    </a>
+</div>
+<div class="meal-detail">
+    <p>套餐内容${item.mealContent}</p>
+    <ul>
+        <li>火炙三色虾刺身饭（1份）${item.content1}<span>${item.price1}￥58</span></li>
+        <li>沙律（1份）${item.content2}<span>${item.price2}￥5</span></li>
+        <li>柠檬茶/可乐二选一（1份）${item.content3}<span>${item.price3}￥5</span></li>
+        <li>汁煮牛舌粒（1份）${item.content4}<span>${item.price4}￥15</span></li>
+    </ul>
+</div>
+<div class="bottom-pic">
+    <img src="../image/top-pic_09.png">
+</div>
+<div class="buy">
+    <a>
+        <p>${item.currentPrice}￥50<del>${item.original}￥68</del></p>
+        <p>${item.buyNow}立即购买</p>
+    </a>
+</div>
+	</#list>
+</#if>

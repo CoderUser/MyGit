@@ -1,0 +1,30 @@
+﻿<style><#include "../css/groupon_list.css"/></style>
+
+<!-- <div id="nav-toolbar" class="indexHead">
+    <a class="left" href="#">
+        <img src="../image/goback.png">
+    </a>
+    <h1>团购</h1>
+</div> -->
+<#if groupList??>
+<div class="search">
+    <input type="text" id="search" onclick="validatorNull()" required="required" placeholder="${languageMap.StoreName!'请输入团购关键字'}" name="">
+</div>
+<#list groupList as item>
+<div class="group">
+    <div class="groupList">
+        <a href="#">
+            <div class="pic">
+                <img class="leftImg" src="../image/little.png">
+            </div>
+            <div class="group-txt">
+                <p>37 Lotus Gaeden${item.storeName}</p>
+                <p>特惠组合曲奇礼盒一份特惠组合曲奇礼盒一份${item.tradeName}</p>
+                <p class="txt-color">${item.currentPrice}￥50<del>${item.original}￥68</del></p>
+            </div>
+        </a>
+    </div>
+</div>
+</#list>
+</#if>
+<script><#include "../js/search.js"/></script>

@@ -1,0 +1,35 @@
+ <#if SINGLE_STYLE3_index?? >
+	<#if SINGLE_STYLE3_index < 1 >
+		<style>
+		.m-single-item3{ width: 300px; text-align: center; line-height: 28px;}
+		.m-single-item3 a{display: block;}
+		.m-single-item3>a{padding: 5px; border: 1px solid #e5e5e5;}
+		.m-single-item3 img{width: 100%; display: block;}
+		.m-single-item3 p{padding: 8px 5px 15px;}
+		.m-single-item3 span:first-child{color: #42535d; font-family: "Century Gothic"; font-size: 14px;}
+		.m-single-item3 span em{font-size: 24px; font-style: normal;}
+		.m-single-item3 span a{color: #42535d; padding-bottom: 10px; height: 25px; overflow: hidden;}
+		.m-single-item3 button a{background: #cac47a; color: #fff; padding: 5px 12px;}
+	</style>
+	</#if >
+ <#else>
+	<style>
+		.m-single-item3{ width: 300px; text-align: center; line-height: 28px;}
+		.m-single-item3 a{display: block;}
+		.m-single-item3>a{padding: 5px; border: 1px solid #e5e5e5;}
+		.m-single-item3 img{width: 100%; display: block;}
+		.m-single-item3 p{padding: 8px 5px 15px;}
+		.m-single-item3 span:first-child{color: #42535d; font-family: "Century Gothic"; font-size: 14px;}
+		.m-single-item3 span em{font-size: 24px; font-style: normal;}
+		.m-single-item3 span a{color: #42535d; padding-bottom: 10px; height: 25px; overflow: hidden;}
+		.m-single-item3 button a{background: #cac47a; color: #fff; padding: 5px 12px;}
+	</style>
+ </#if >
+<div class="m-single-item3">
+	<a href="${properties.miniVipServerUrl}#VItemDetail/${SINGLE_STYLE3.XF_ITEMORGID}_${SINGLE_STYLE3.XF_STYLE}"><img src="${properties.fileServerUrl}file/get?fileid=${SINGLE_STYLE3.XF_IMAGE.XF_IMAGE}"/></a>
+	<p>
+		<span>RMB / <em>${SINGLE_STYLE3.XF_PRICE}</em></span>
+		<span><a href="${properties.miniVipServerUrl}#VItemDetail/${SINGLE_STYLE3.XF_ITEMORGID}_${SINGLE_STYLE3.XF_STYLE}">${SINGLE_STYLE3.XF_DESCI}</a></span>
+		<button><a href="${properties.miniVipServerUrl}#VItemDetail/${SINGLE_STYLE3.XF_ITEMORGID}_${SINGLE_STYLE3.XF_STYLE}">Buy</a></button>
+	</p>
+</div>

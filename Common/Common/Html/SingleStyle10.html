@@ -1,0 +1,27 @@
+ <#if SINGLE_STYLE10_index?? >
+	<#if SINGLE_STYLE10_index < 1 >
+		<style>
+			.m-single-item10 {position: relative; width: 400px;}
+			.m-single-item10 p{ width: 80%; padding: 8px 5px 15px; font-family: SimHei; color: #1c1826;}
+			.m-single-item10 span em{font-size: 24px; font-style: normal;}
+			.m-single-item10 span a{display: block; color: #1c1826; line-height: 30px; height: 30px; margin-bottom: 10px; border-bottom: 1px dashed #1c1826; overflow: hidden;}
+			.m-single-item10 button a{position: absolute; width: 66px; height: 66px; right: 0; bottom: 10px; padding-top: 10px; background: #1c1826; font-family: SimHei; font-size: 18px; color: #fff; border-radius: 50%; box-sizing: border-box;}
+		</style>
+	</#if >
+ <#else>
+	<style>
+		.m-single-item10 {position: relative; width: 400px;}
+		.m-single-item10 p{ width: 80%; padding: 8px 5px 15px; font-family: SimHei; color: #1c1826;}
+		.m-single-item10 span em{font-size: 24px; font-style: normal;}
+		.m-single-item10 span a{display: block; color: #1c1826; line-height: 30px; height: 30px; margin-bottom: 10px; border-bottom: 1px dashed #1c1826; overflow: hidden;}
+		.m-single-item10 button a{position: absolute; width: 66px; height: 66px; right: 0; bottom: 10px; padding-top: 10px; background: #1c1826; font-family: SimHei; font-size: 18px; color: #fff; border-radius: 50%; box-sizing: border-box;}
+	</style>
+ </#if >
+<div class="m-single-item10">
+	<a href="${properties.miniVipServerUrl}#VItemDetail/${SINGLE_STYLE10.XF_ITEMORGID}_${SINGLE_STYLE10.XF_STYLE}"><img src="${properties.fileServerUrl}file/get?fileid=${SINGLE_STYLE10.XF_IMAGE.XF_IMAGE}"/></a>
+	<p>
+		<span><a href="${properties.miniVipServerUrl}#VItemDetail/${SINGLE_STYLE10.XF_ITEMORGID}_${SINGLE_STYLE10.XF_STYLE}">${SINGLE_STYLE10.XF_DESCI}</a></span>
+		<span>RMB:${SINGLE_STYLE10.XF_PRICE}</span>
+		<button><a href="${properties.miniVipServerUrl}#VItemDetail/${SINGLE_STYLE10.XF_ITEMORGID}_${SINGLE_STYLE10.XF_STYLE}">Buy<br />Now</a></button>
+	</p>
+</div>

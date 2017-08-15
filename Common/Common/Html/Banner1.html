@@ -1,0 +1,46 @@
+<!-- Home banner -->
+<#include "../CSS/Banner.css" />
+<div class="cms-banner">
+	<p id="slide_left">&lt;</p>
+	<p id="slide_right">&gt;</p>
+	<div class="slide_01 g-clearfix" id="tpl-home-banner">
+		<!-- 检查海报列表数据是否null -->
+		<#if BANNER_STYLE1.XF_POST_LIST?? >
+			<!-- 循环列表, 重复写入每一个海报封面数据 -->
+			<#list BANNER_STYLE1.XF_POST_LIST as POSTER>
+			<div class="mod_01">
+				<a href=${properties.contentServerUrl}content/get?tmplCode=POSTER_STYLE1&media=${media}&lang=${lang}&xf_id=${POSTER.XF_ID}> <img src=${properties.fileServerUrl}file/get?fileid=${POSTER.XF_COVER.XF_IMAGE} alt="${POSTER.XF_NAME}" /> </a>
+			</div>
+			</#list>
+		</#if>
+	</div>
+	<div class="dotModule_new">
+		<div id="slide_01_dot"></div>
+	</div>
+</div>
+<script> 
+	(function()
+	{
+		<#include "../JS/Marquee.js" /> 
+		<#include "../JS/HomeBanner.js" />
+		_initMarquee = function()
+		{
+			setBanSize();
+			if(bannerDiv){
+				bannerMarquee = new Marquee();
+				bannerMarquee.scrollContId   = "tpl-home-banner"; //内容容器ID
+				bannerMarquee.dotListId      = "slide_01_dot";//点列表ID
+				bannerMarquee.dotOnClassName = "selected";
+				bannerMarquee.arrLeftId      = "slide_left";
+				bannerMarquee.arrRightId     = "slide_right";
+				bannerMarquee.autoPlay       = true;
+				bannerMarquee.pageNum		= document.getElementsByClassName('mod_01').length;//图片数量
+				bannerMarquee.frameWidth     = bannerMarquee.upright ? getImgHeight() : getInnerWidth();
+				bannerMarquee.pageWidth      = bannerMarquee.upright ? getImgHeight() : getInnerWidth();
+				bannerMarquee.autoPlayTime   = 4;//自动播放时间 /秒
+				bannerMarquee.initialize(); //初始化
+			}
+		};
+		_initMarquee();
+	})();
+</script>

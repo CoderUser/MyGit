@@ -1,0 +1,13 @@
+<style>
+	*{margin: 0; padding: 0;}
+	body{font-size: 16px; font-family:'Hiragino Sans GB','Microsoft YaHei',Georgia,tahoma,arial,sans-serif; -webkit-font-smoothing: antialiased; color: #333; line-height: 22px;}
+	ul, li{ list-style:none; }
+	img{width: 100%; height: auto;}
+	a{ color: #333; text-decoration: none; }
+	a:hover{ text-decoration: none; color: #de575d;}
+	input,button{font-family:"Microsoft YaHei",tahoma,arial,simsun; border: 0 none; background: none; outline: none;}
+	.g-clearfix:after{ content:"."; visibility:hidden; height:0; display:block; clear:both;}
+	.g-clearfix{ zoom:1;} 
+	.g-fl{float: left;}
+	.g-fr{float: right;}
+</style>
