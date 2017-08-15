@@ -1,0 +1,42 @@
+<style>
+	#ext-viewport .x-layout-card-item{ background: #efefef;}
+	input.select{width: .22rem;height: .22rem;border: .026rem solid #000000;border-radius: .04rem; -webkit-appearance: none; vertical-align: top;}
+	input.select:checked{ background: url({&resource/shophelper/icon/ico17.png&}) no-repeat center center; background-size: 70% auto;}
+	.LoginRegForm div{ width: 100%; padding:0 5%; height: auto; overflow: hidden;}
+	.LoginRegForm div p{ width: 100%; height: auto; overflow: hidden;}
+	.LoginRegForm p.pass{ position: relative;}
+	.LoginRegForm p input:not(.select){box-sizing: border-box; width: 100%; line-height: .5rem; padding: .1rem 0 .1rem .6rem; display: block; margin-top: .2rem; background: #fff; font-size: .22rem; border: 1px solid #ccc; border-radius: .1rem; color: #666;}
+	.LoginRegForm p input:focus{ border: 1px solid #fb6769;}
+	.LoginRegForm p input.user{ background: url({&resource/shophelper/icon/ico61.png&}) no-repeat left .2rem center #fff; background-size: .3rem auto;}
+	.LoginRegForm p input.pass,.LoginRegForm p input.ConfirmPass{background: url({&resource/shophelper/icon/ico62.png&}) no-repeat left .2rem center #fff; background-size: .3rem auto;}
+	.LoginRegForm p input.tel{background: url({&resource/shophelper/icon/ico63.png&}) no-repeat left .2rem center #fff; background-size: .3rem auto;}
+	.LoginRegForm p input.email{background: url({&resource/shophelper/icon/ico67.png&}) no-repeat left .2rem center #fff; background-size: .36rem auto;}
+	.LoginRegForm p input.tel_code{background: url({&resource/shophelper/icon/ico64.png&}) no-repeat left .2rem center #fff; background-size: .3rem auto;}
+	.LoginRegForm p input.email_code{background: url({&resource/shophelper/icon/ico69.png&}) no-repeat left .2rem center #fff; background-size: .3rem auto;}
+	.LoginRegForm p input.tel_code,.LoginRegForm p input.email_code{ width: 61%; float: left; margin-right: 2%;}
+	.LoginRegForm .passtab{position: absolute; width: .4rem; height: .2rem; left: 88%; top: .46rem;background: url({&resource/shophelper/icon/ico65.png&}) no-repeat;background-size: .36rem auto;}
+	.LoginRegForm .passtab.curr{background: url({&resource/shophelper/icon/ico70.png&}) no-repeat;background-size: .36rem auto;}
+	.LoginRegForm .code{ float: right; padding: 0; width: 37%; display: block; line-height: .7rem; margin-top: .2rem; background: #f87777; color: #fff; border-radius: .06rem;}
+	.LoginRegForm ul{width: 90%; padding:.2rem 5% 0;}
+	.LoginRegForm ul li{ font-size: .22rem; float: left; color: #666;}
+	.LoginRegForm ul li:last-child{float: right;}
+	.LoginRegForm ul li.on{color: #000000;}
+	.reg input.select{ margin-right: .1rem;}
+	.reg .Agreement{ color: #777; line-height: .24rem; padding-top: .4rem;}
+	.reg .Agreement a{ color: #000000;}
+	#reg-submit{ display:block; font-size: .24rem; width: 80%; margin: .6rem auto 0;  color: #fff;background: #000000; line-height: .6rem; border-radius: .08rem;}
+	.popup-container{ -webkit-overflow-scrolling:touch !important; overflow:auto !important; }
+	.popup-container iframe{ border:none; margin-bottom:-5px; }
+
+</style>
+<section class="LoginRegForm">
+	<ul class="regTab"><li class="on">[$MobileReg$]</li><li>[$EmailReg$]</li></ul>
+	<div class="reg">
+		<p id="Change"><input class="tel" type="tel" placeholder="[$Mobile$]" /></p>
+		<p id="Change_code"><input class="tel_code" type="number" placeholder="[$VerCode$]" maxlength=6 /><button class="code">[$GetCode$]</button></p>
+		<p class="pass"><input id="reg-pass" class="pass" type="password" placeholder="[$SetPass$]" /><i class="passtab"></i></p>
+		<p class="pass"><input id="reg-confirmpass" class="ConfirmPass" type="password" placeholder="[$ReSetPass$]" /><i class="passtab"></i></p>
+		<p class="Agreement"><input class="select" type="checkbox" checked/>[$Agree$]<a id="reg-terms">[$Clause$]</a></p>
+		<p><button id="reg-submit">[$RegNow$]</button></p>
+	</div>
+</section>

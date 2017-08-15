@@ -1,0 +1,128 @@
+<style>
+	.x-innerhtml{height:100%; display:-webkit-box; -webkit-box-orient:vertical; display:flex; flex-direction:column;}
+	#list-wrapper{position: relative;
+		height: 100%;
+		width: 100%;
+		padding: 0 .2rem;
+		z-index: 1;
+		overflow: hidden;
+		box-sizing: border-box;
+		flex: 1;
+		-webkit-box-flex: 1;}
+	#nomore{text-align:center; font-size:.2rem; line-height:.6rem; color:#777; display:none;}
+	#scan-btn {top: 0; line-height: .72rem; height: .72rem; background: url({&resource/shophelper/icon/barcode_64.png&}) no-repeat center center; background-size: .56rem .6rem; width: 1rem; border: 1px solid #000; box-sizing: border-box;}
+	.w-search {padding: .2rem; display: -webkit-flex; display: flex;}
+	.g-search {display: -webkit-flex; display: flex;}
+	.g-search {width: 100%; line-height: .7rem; height: .72rem; border: 1px solid #000; border-radius: 0; margin: 0; padding: 0;}
+	.g-search-ipt {width: 82%; line-height: .7rem; height: .7rem; padding-left: .2rem; font-size: .23rem;}
+	.g-search-btn {width: 18%; background: url({&resource/shophelper/icon/search.png&}) no-repeat center; background-size: .4rem auto; line-height: .7rem; height: .7rem; vertical-align: middle;}
+	.item-container .desc-container div, .item-container .desc-container span, .item-container .desc-container a {color: #000;}
+	#search-wrapper {position: relative; overflow: hidden;}
+
+    #list-con {padding-bottom: .3rem;}
+
+	.list-right-con{position:relative;}
+	.list-right-con .item-container i{position:absolute; background:url({&resource/shophelper/icon/cart-icon.png&}) no-repeat center #555; background-size:60% auto;}
+	.list-right-con .item-container i .number-input{position:absolute; width:.24rem; height:.24rem; text-align:center; top:-.14rem; right:-.06rem; line-height:.24rem; font-style:normal; font-size:.14rem; color:#fff; border-radius:50%; z-index:9;}
+	.list-right-con .item-container i .number-input.hide{display:none;}
+	/* list mode */
+	.single-row .item-container{position: relative; display: -webkit-box; display: flex; width: 100%; margin: .24rem 0; background: #eaeaea; overflow: hidden;}
+	.single-row .item-container:first-child{margin-top: 0;}
+	.single-row .item-container .photo-container{width: 24.5%; margin-right:.2rem; height:3.2rem; display:block; border:1px solid #e5e5e5; background:#fff no-repeat center; background-size:contain;}
+	.single-row .item-container .desc-container{-webkit-box-flex:1; flex:1; width:60%; padding: .1rem .1rem .1rem 0;}
+	/*.single-row .item-container .desc-container a{}*/
+	.single-row .item-container .desc-container div:nth-child(1){font-weight: 300; font-size: .28rem; line-height: .3rem; padding-bottom: .06rem;}
+	.single-row .item-container .desc-container div:nth-child(2){padding-bottom:.1rem; font-size:.26rem; font-weight: 500;}
+	.single-row .item-container .desc-container div:nth-child(3){display:none; font-size:.2rem; line-height:.8rem; overflow: hidden;}
+	.single-row .item-container .desc-container div:nth-child(2) b.price-sale{font-size:.3rem;}
+	.single-row .item-container .desc-container div:nth-child(2) b.price-old{color:#444; padding-right: .1rem; text-decoration:line-through;}
+	.single-row .item-container .desc-container div:nth-child(2) b.price-old span{color:#444;}
+	.single-row .item-container .desc-container div:nth-child(4){font-weight: 300; font-size:.2rem; color:#555; line-height: .3rem; padding-bottom: .1rem;}
+	.single-row .item-container .desc-container div:nth-child(4) span:first-child{padding-right:.4rem;}
+	.single-row .item-container div, .single-row .item-container a, .single-row .item-container span{position: relative; color: #000;}
+	.single-row .item-container a i{width:.58rem; height:.58rem; bottom:0; right:0;}
+
+	.search-wrap{width: 100%;height: 100%; position: absolute; top: 0; left: 0; overflow: hidden; box-sizing: border-box; display: -webkit-box; -webkit-box-orient: vertical; display: flex; flex-direction: column;}
+</style>
+<div class="search-wrap">
+	<div id="search-wrapper">
+		<div class="w-search">
+			<button id="scan-btn">&nbsp;</button>
+			<div class="g-search">
+				<input id="search-ipt" class="g-search-ipt" type="search" placeholder="[$PleaseInputKeyword$]">
+				<button id="search-btn" class="g-search-btn"></button>
+			</div>
+		</div>
+	</div>
+	<div id="list-wrapper">
+		<div>
+			<div id="list-con" class="list-right-con g-clearfix single-row">
+			</div>
+			<div id="nomore">[$NoMoreRecord$]</div>
+		</div>
+	</div>
+</div>
+
+<style>
+	/*cart popup*/
+	#attr-select{display:none;background:#fff;width:85%;box-sizing:border-box;border-radius:0;}
+	.m-popup-fullmask #attr-select{display:-webkit-box;display:flex;top:50%;bottom:auto;}
+	#attr-select .attr-itemimage{width:40%;display:none;overflow:hidden;background-size:contain;background-repeat:no-repeat;background-position:center;}
+	#attr-select .attr-itemwrap{width:100%;}
+	#attr-select .attr-itemcon{padding:.3rem;}
+	#attr-select dl dt{width:1.6rem;max-height:1.6rem;margin-right:.2rem;background:no-repeat center center;background-size:contain;outline:#ddd solid 1px;}
+	#attr-select dl dd{-webkit-box-flex:1;flex:1;}
+	#attr-select dl dd div{line-height:.26rem;padding:.1rem 0 .1rem;}
+	#attr-select dl dd div:nth-child(1){font-size:.36rem;line-height:.36rem;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;}
+	#attr-select dl dd div:nth-child(2){font-size:.22rem;font-weight:300;}
+	#attr-select dl dd div:nth-child(3){font-size:.22rem;color:#000000;padding-top:.16rem;}
+	#attr-select dl dd div:nth-child(4){font-size:.22rem;font-weight:300;padding: .2rem 0;}
+	#attr-select dl dd span{padding-left:0;}
+	#attr-select dl dd span.attr-itemprice, #attr-select dl dd div:nth-child(3) b:nth-child(2){color:#000000;font-size:.34rem;font-weight:600;margin-right:.1rem;}
+	#attr-select dl dd span.attr-itempriceold, #attr-select dl dd div:nth-child(3) b:nth-child(1){color:#8e8e8e;font-size:.3rem;font-weight:600;margin-right:.1rem;text-decoration:line-through;}
+	#attr-select dl dd span.attr-discount{color:#000000;font-weight:300;font-size:.44rem;font-style:italic;}
+	#attr-select div.g-dis-flex{margin-top:.2rem;line-height:.5rem;flex-wrap:wrap;}
+	#attr-select .g-dis-flex>span{display:block;font-size:.24rem;width:22%;min-width: 1.4rem;font-weight:600;}
+	#attr-select .g-dis-flex>div{width:80%;}
+	#attr-select .g-dis-flex div{-webkit-flex:1;flex:1;}
+	#attr-select .a-attr-options{display:inline-block;min-width: .6rem; text-align: center;font-size:.22rem;font-weight:600;padding:0 .14rem;margin-right:.1rem;margin-bottom:.1rem;color:#686868;border:1px solid #d7d7d7;}
+	#attr-select .a-attr-options.selected{color:#000000;}
+	#attr-select .a-attr-options.disabled{display:none;}
+	#attr-select input{text-align:center;}
+	#attr-select button{display:block;margin:.4rem auto 0;width:100%;height:.8rem;line-height:.8rem;font-size:.26rem;font-weight:600;color:#fff;border-radius:0;}
+	.quantity-decrease, .quantity, .quantity-increase{float:left;font-size:.4rem;text-align:center;height:100%;}
+	.quantity{font-weight:bold;font-size:.3rem;width:.8rem;line-height:.48rem;border:none;border-top:1px solid #fff;border-bottom:1px solid #fff;border-radius:0;appearance:none;-webkit-appearance:none;}
+	.quantity-decrease, .quantity-increase{color:#fff;display:block;height:.5rem;line-height:.5rem;width:.5rem;overflow:hidden;}
+	.quantity-decrease{border-radius:0;}
+	.quantity-increase{border-radius:0;}
+	.price-old{text-decoration:line-through;}
+	.disabled{pointer-events:none;}
+</style>
+
+<div id="attr-select">
+	<div class="attr-itemimage"></div>
+	<div class="attr-itemwrap">
+		<div class="attr-itemcon">
+			<dl class="g-dis-flex">
+				<!--<dt class="attr-itemimage"></dt>-->
+				<dd>
+					<div class="attr-itemdesc"></div>
+					<div><span class="attr-itemstyle"></span></div>
+					<div><b>$ <span class="attr-itempriceold"></span></b><b>$ <span class="attr-itemprice"></span></b><span class="attr-discount"></span></div>
+					<div><span class="attr-itemlongdesc"></span></div>
+				</dd>
+			</dl>
+			<div class="g-dis-flex attr-itemcolor-wrap"><span>[$Color$]:</span><div class="attr-itemcolor" onclick="TApi.search.doSelect(arguments[0], true)"></div></div>
+			<div class="g-dis-flex attr-itemsize-wrap"><span>[$Size$]:</span><div class="attr-itemsize" onclick="TApi.search.doSelect(arguments[0], false)"></div></div>
+			<div class="g-dis-flex">
+				<span>[$Count$]:</span>
+				<div>
+					<span class="quantity-decrease" onclick="TApi.search.qtyMinus(arguments[0])">-</span>
+					<input type="number" class="quantity" size="4" value=1>
+					<span class="quantity-increase" onclick="TApi.search.qtyAdd(arguments[0])">+</span>
+				</div>
+			</div>
+		</div>
+		<button id="arrt-btn">[$AddToCart$]</button>
+	</div>
+</div>

@@ -1,0 +1,25 @@
+<style>
+	#ext-viewport .x-layout-card-item{ background: #efefef;}
+	.LoginRegForm div{ width: 100%; padding:0 5%; height: auto; overflow: hidden;}
+	.LoginRegForm div p{ width: 100%; height: auto; overflow: hidden;}
+	.LoginRegForm p.pass{ position: relative;}
+	.LoginRegForm p input:not(.select){ box-sizing: border-box; width: 100%; line-height: .5rem; padding: .1rem 0 .1rem .6rem; display: block; margin-top: .2rem; background: #fff; font-size: .22rem; border: 1px solid #ccc; border-radius: .1rem; color: #666;}
+	.LoginRegForm p input:focus{ border: 1px solid #fb6769;}
+	.LoginRegForm p input.pass,.LoginRegForm p input.ConfirmPass{background: url({&resource/shophelper/icon/ico62.png&}) no-repeat left .2rem center #fff; background-size: .3rem auto;}
+	.LoginRegForm p input.tel_code{background: url({&resource/shophelper/icon/ico69.png&}) no-repeat left .2rem center #fff; background-size: .3rem auto;}
+	.LoginRegForm p input.tel_code{ width: 61%; float: left; margin-right: 2%;}
+	.LoginRegForm p input.telEmail{background: url({&resource/shophelper/icon/ico68.png&}) no-repeat left .2rem center #fff; background-size: .3rem auto;}
+	.LoginRegForm .passtab{position: absolute; width: .4rem; height: .2rem; left: 88%; top: .46rem;background: url({&resource/shophelper/icon/ico65.png&}) no-repeat;background-size: .36rem auto;}
+	.LoginRegForm .passtab.curr{background: url({&resource/shophelper/icon/ico70.png&}) no-repeat;background-size: .36rem auto;}
+	.LoginRegForm .code{ float: right; padding: 0; width: 37%; display: block; line-height: .7rem; margin-top: .2rem; background: #f87777; color: #fff; border-radius: .06rem;}
+	#reset-submit{ display:block; font-size: .24rem; width: 80%; margin: .6rem auto 0;  color: #fff;background: #000000; line-height: .6rem; border-radius: .08rem;}
+</style>
+<section class="LoginRegForm">
+	<div class="modifyPass">
+		<p class="pass"><input id="old-pass" class="pass" type="password" placeholder="[$OldPass$]" /><i class="passtab"></i></p>
+		<p class="pass"><input id="reset-pass" class="pass" type="password" placeholder="[$SetNewPass$]" /><i class="passtab"></i></p>
+		<p class="pass"><input id="reset-confirmpass" class="ConfirmPass" type="password" placeholder="[$ReSetNewPass$]" /><i class="passtab"></i></p>
+
+		<p><button id="reset-submit">[$Submit$]</button></p>
+	</div>
+</section>

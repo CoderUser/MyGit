@@ -1,0 +1,30 @@
+<style>
+	.address_con{ background: #fff;}
+	.address_con ul li{ width: 100%; padding: .3rem 3% .08rem; border-bottom: 1px solid #ddd; color: #000; line-height: .3rem; font-size: .24rem;}
+/*	.address_con ul li:first-child{ border-top: 1px solid #ddd; }
+*/	.address_con ul li p{ padding-bottom: .12rem; height: auto; overflow: hidden;}
+	.address_con ul li p:first-child span{ padding-left: .4rem; }
+	.address_con ul li p:first-child em{ float: right; color: #000000;}
+	.address_con ul li p:last-child span{ float: right;color: #000; font-size: .24rem;line-height: .48rem;width: 1.4rem;margin-top: .12rem;text-align: right;padding: 0 .3rem;}
+	.address_con ul li p:last-child .delete{background:url({&resource/shophelper/icon/delete.png&}) no-repeat right center ;background-size: .24rem auto;}
+	.address_con ul li p:last-child .modify{background:url({&resource/shophelper/icon/modify.png&}) no-repeat right center ; background-size: .24rem auto;}
+	#add-addr{display: block;margin: .8rem auto .4rem;width: 60%;line-height: .66rem;font-size:.3rem;color: #fff;border-radius: .1rem;}
+</style>
+<section class="address_con">
+	<_vipAddress>
+	<ul class="address">
+		<repeat_vipAddress>
+			<li data-addrid="{[addrId]}">
+				<p>[$Name$]: {[receiverName]}{={[isDefault]}?<em class="default">[$DefaultAdd$]</em>::=}</p>
+				<p>[$Tel$]: {[receiverTel]}</p>
+				<p>[$Address$]: {[receiverAddress]}</p>
+				<p>
+					<span class="delete">[$Delete$]</span>
+					<span class="modify">[$Modify$]</span>
+				</p>
+			</li>
+		</repeat_vipAddress>
+	</ul>
+	</_vipAddress>
+	<button id="add-addr">[$AddAddress$]</button>
+</section>

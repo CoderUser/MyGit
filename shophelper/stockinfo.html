@@ -1,0 +1,124 @@
+<style>
+	.clear{zoom:1}
+	.clear:after{display:block; clear:both; content:""; visibility:hidden; height:0;}
+	.gray{-webkit-filter:grayscale(100%); filter:grayscale(100%); filter:gray;}
+	#search-icon{position:absolute; width:.8rem; height:.8rem; line-height:.74rem; right:.4rem; bottom:.4rem; font-size:.48rem; text-align:center; border-radius:100%; background-color:rgba(255, 82, 84, .9); color:white; z-index:9;}
+	#search-icon:before{content:"\e60f"; font-family:"iconfont"}
+	/* list left */
+	#list-left-bg{position:absolute; width:28%; max-width: 2.8rem; height:100%; z-index:1; top:0; left:0; overflow:hidden;}
+	.list-left{color:#fff;}
+	.list-left li{position:relative; line-height:.3rem; padding: .18rem 0; font-size:.22rem; width:100%; text-align: center;}
+	.list-left li.curr{color:#000; background-color:#fff;}
+	.list-left li.curr i{position:absolute; right:-2px; top:.3rem; width:0; height:0; border-top:.18rem solid transparent; border-right:.2rem solid #fff; border-bottom:.18rem solid transparent;}
+	/* list right */
+	.list-right{width:72%; height:100%; color: #000; position:absolute; top:0; right:0; overflow:hidden; box-sizing:border-box; display:-webkit-box; -webkit-box-orient:vertical; display:flex; flex-direction:column;}
+	.list-right-filter{box-shadow:0 -1px 5px rgba(0, 0, 0, .08) inset; -webkit-box-shadow:0 -1px 5px rgba(0, 0, 0, .08) inset; background:#fff; z-index:99; text-align:right;}
+	.list-right-filter li{padding:0 .2rem; height:.7rem; line-height:.7rem; border-bottom:1px solid #fff; margin:0; display:inline-block; vertical-align:middle;}
+	.list-right-filter li.curr{color:#000000; border-bottom-color:#000000;}
+	.list-right-filter li:last-child{width:.7rem; padding:0; background:no-repeat center center; background-size:.32rem auto;}
+	.list-right-filter li.row{background-image:url({&resource/shophelper/icon/style-icon1.png&});}
+	.list-right-filter li.col{background-image:url({&resource/shophelper/icon/style-icon2.png&});}
+	#list-con-bg{position:relative; height:100%; width:100%; z-index:1; left:0; overflow:hidden; box-sizing:border-box; flex:1; -webkit-box-flex:1;}
+	#list-con-wrapper{position:absolute; top:0; left:0; width:100%; padding:0 2%; background:#fff;}
+	#nomore{text-align:center; font-size:.2rem; line-height:.6rem; color:#000; display:none;}
+	.list-right-con{position:relative;}
+	.list-right-con .item-container i{position:absolute; border-radius:.06rem; background:url({&resource/shophelper/icon/cart-icon.png&}) no-repeat center #fa949f; background-size:70% auto;}
+	.list-right-con .item-container i .number-input{position:absolute; width:.24rem; height:.24rem; text-align:center; top:-.14rem; right:-.06rem; line-height:.24rem; font-style:normal; font-size:.14rem; background:#000000; color:#fff; border-radius:50%; z-index:9;}
+	.list-right-con .item-container i .number-input.hide{display:none;}
+	.item-container .desc-container p, .item-container .desc-container span, .item-container .desc-container a {color: #000;}
+	/*.item-wrap{overflow-x: scroll;	overflow-y: hidden;}*/
+	.item-wrap-content{white-space: nowrap; display: inline-block;}
+	/* list mode */
+	.single-row .item-container{position:relative; display:-webkit-box; display:flex; width:100%; border-radius: .06rem; color: #000;}
+	.single-row .item-container .photo-container{width: 30%; margin-right:.2rem; height:2rem; display:block; border:1px solid #e5e5e5; background:#fff no-repeat center; background-size:contain;}
+	.single-row .item-container .desc-container{-webkit-box-flex:1; flex:1; width:60%;}
+	.single-row .item-container .desc-container p span:nth-child(1) {width: 1rem;}
+	.single-row .item-container .desc-container p span {width: .8rem; font-size: .26rem; padding: 0 .08rem; display: inline-block;}
+	.single-row .item-container i{width:.58rem; height:.58rem; bottom:.3rem; right:5px;}
+	.single-row .item-container.title {font-weight: bold; color: #000; background: #fff; border-radius: .06rem;}
+	.single-row .item-container.title b {padding: 0 .08rem; font-size: .26rem; color: #000;}
+	.single-row .item-container.title span {font-weight: normal;}
+	.single-row .item-container.header {font-weight: bold; color: #000; background: #fff; padding: .3rem 0 0 .4rem; border-radius: .06rem;}
+	.single-row .item-container.header p {font-size: .24rem;}
+	.colorWrap{padding: 0 0 0 .4rem;}
+	.single-row .item-wrap {padding: .04rem; margin-bottom: .8rem; border-radius: .06rem;}
+	.single-row .colorWrap .item-container:nth-of-type(even) {background: #fff;}
+	
+	.single-row .item-container .desc-container p span.size {text-align:center;}
+	.single-row .item-container.header .desc-container p span.size {}
+	.single-row .filter0T, .single-row .qoh0T {display:none;}
+	.single-row .item-container .desc-container p.intransitT {display:none;}
+	.single-row .item-container .desc-container p.reserveT {display:none;}
+	.single-row .item-container .desc-container p span.typeT {display:none;}
+	.single-row .item-container:not(.header) .desc-container p span.type {font-size: .18rem; font-weight: 300; border: 1px solid #000; text-align: center;}
+	.single-row .item-container .qoh + .intransit span.itemColor {visibility: hidden;}
+	.single-row .item-container .qoh + .intransit + .reserve span.itemColor {visibility: hidden;}
+	.single-row .item-container .qoh.filter0T + .intransit span.itemColor {visibility:visible;}
+	.single-row .item-container .qoh.filter0T + .intransit + .reserve span.itemColor {visibility:visible;}
+	.qoh.filter0T, .qoh.filter0T + .intransitT {padding: 0;}
+	.qoh.filter0T, .qoh.filter0T + .intransitT + .reserverT {padding: 0;}
+	
+	.list-control{padding: .1rem 0 0 0; overflow: hidden; position: absolute; bottom: 0;}
+	.list-control .control-item {float: left; line-height: .3rem; display: -webkit-box; margin-right: .2rem;}
+	.list-control .control-item:last-child{margin-right: 0;}
+
+	.list-header{background: #fff; display: flex; display: -webkit-box; height: 3.5rem; padding: .24rem;}
+	.list-header .photo-container{width: 2rem; height: 3rem; margin-right: .2rem; display: block; border-radius: .06rem; border: 1px solid #ddd; background: #fff no-repeat center; background-size: contain;}
+	.list-header .desc-container {width: 65%; height: 3rem; position: relative;}
+	.list-header .desc-container p{padding: .14rem 0;}
+	.list-header .desc-container p span{font-weight: bold; font-size: .26rem;}
+	.list-header .style-wrap div{font-size: .24rem; color: #000;}
+	.list-header .style-wrap div:nth-child(1) {font-size: .3rem; font-weight: 400;}
+	.list-header .style-wrap div:nth-child(3){color: #333; font-size: .22rem; font-weight: 300; padding: .2rem 0 0 0;}
+
+	.control-item .rb-label{font-size: .24rem;line-height: .5rem; overflow: hidden; display: inline-block;}
+	.control-item .lbl {position: relative; display: block; margin: .1rem; height: .33rem; width: .66rem; background: #898989; border-radius: 100px; cursor: pointer; transition: all 0.3s ease;}
+	.control-item .lbl:after {position: absolute; left: -2px; top: -3px; display: block; width: .4rem; height: .4rem; border-radius: 100px; background: #fff; box-shadow: 0px 3px 3px rgba(0,0,0,0.1); content: ''; transition: all 0.3s ease;}
+	.control-item .lbl:active:after {transform: scale(1.15, 0.85);}	
+	.control-item .cbx:checked ~ label {background: #cfcfcf;}
+	.control-item .cbx:checked ~ label:after {background: #000;}
+	.control-item .cbx:disabled ~ label {background: #d5d5d5; pointer-events: none;}
+	.control-item .cbx:disabled ~ label:after {background: #bcbdbc;}
+	.hidden, .item-container.hidden {display: none;}
+
+	.control-item input[type=checkbox] {display:block; width: .5rem; height: .5rem; line-height: .5rem;background: url({&resource/shophelper/icon/check_circle.png&}) no-repeat center center; background-size: .3rem auto;}
+	.control-item input[type=checkbox]:checked {background: url({&resource/shophelper/icon/checked_circle.png&}) no-repeat center center; background-size: .3rem auto;}
+</style>
+<div id="list-left-bg">
+	<ul class="list-left" id="list-left">
+	</ul>
+</div>
+<div class="list-right" id="list-right">
+	<!-- <span id="search-icon"></span> -->
+
+	<div class="list-header">
+		<div class="photo-container"></div>
+		<div class="desc-container">
+			<div class="style-wrap">
+				<div id="style-desc"></div>
+				<div id="style-code"></div>
+				<div id="long-desc"></div>
+			</div>
+			<div class="list-control">
+				<div class="control-item">
+					<input type="checkbox" id="filter0" class="" checked/>
+					<label class="rb-label" for="filter0">
+						[$Filter0$]
+					</label>
+				</div>
+				<div class="control-item">
+					<input type="checkbox" id="qohOnly" class="" checked/>
+					<label class="rb-label" for="qohOnly">
+						[$QohOnly$]
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="list-con-bg">
+		<div id="list-con-wrapper">
+			<div id="list-con" class="list-right-con single-row clear"></div>
+			<div id="nomore">[$NoMoreRecords$]...</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,86 @@
+<style>
+	#ext-viewport .x-layout-card-item{ background: #efefef;}
+	.a-order-no{color: #666;width: 100%;padding-left: 5%;line-height: .66rem;font-size: .26rem;border-top: 1px solid #d6d3d3;border-bottom: 1px solid #d6d3d3;margin-top: .16rem;background: #fff;overflow: hidden;}
+	.a-status-list{ margin-top: .1rem; background: #fff; border-top: 1px solid #dadada; border-bottom: 1px solid #dadada; overflow: hidden;}
+	.a-status-list dl{width: 100%; margin: 0 auto; padding: .2rem 0; color: #625f5f; height: auto; overflow: hidden;}
+	.a-status-list dl dt{width:25%; min-width:25%; height:1.6rem; margin-right:.2rem; overflow:hidden; background:transparent center no-repeat; background-size:contain;}
+	.a-status-list dl dd{flex: 1;}
+	.a-status-list dl dd p{line-height: .4rem; white-space: nowrap; text-overflow:ellipsis; overflow: hidden;}	
+	.a-status-list dl dd em{font-size: .24rem; color:#000000 ;}
+	/*address*/
+	.a-set-addr{position: relative; width: 100%; height: auto; background: #fff; margin-top: .16rem; padding: .2rem 10%; overflow: hidden;}
+	.a-set-addr p{ color: #666; font-size: .22rem; line-height: .32rem; padding-top: .06rem; padding-bottom:.08rem;}
+	.a-set-addr p:first-child{ font-size: .26rem;}
+	.a-set-addr p:first-child #recv-tel{ float: right;}
+	.a-set-addr i{position: absolute;}
+	.a-set-addr i.ico1{ left: .21rem; width: .3rem; top: 50%; margin-top: -.2rem;}
+	.a-set-addr i.ico2,
+	.a-set-addr i.ico3{ width: 100%; height: .306rem; left: 0;  background: url({&resource/shophelper/icon/ico45.png&}) no-repeat top left; background-size: 100% auto; overflow: hidden;}
+	.a-set-addr i.ico2{top: 0; left: .1rem;}
+	.a-set-addr i.ico3{bottom: 0;}
+	/*other*/
+	.a-order-sub{ width: 100%; border-top: 1px solid #d6d3d3; margin-top: .16rem; background: #fff; overflow: hidden;}
+	.a-order-sub p,
+	.a-order-sub>div{color: #666; width: 100%; padding: 0 5%; line-height: .66rem; font-size: .26rem; border-bottom: 1px solid #d6d3d3;}
+	.a-order-sub p span,
+	.a-order-sub>div span{ color: #b9b8b8; font-size: .2rem; padding-left: .1rem;}
+	.a-order-sub p em{ float: right;color: #b9b8b8; font-size: .2rem;}
+	.a-order-sub p em select{ border: 1px solid #b9b8b8; color: #777; background: #fff;}
+	.a-order-sub>div ul{padding: 0 0 .2rem; overflow: hidden;}
+	.a-order-sub>div ul li{ width: 50%; float: left;}
+	.a-order-sub>div ul li label{ display: inline-block; width: 100%;}
+	.a-order-sub>div ul li img{ width: .6rem; margin-right: .1rem; vertical-align: middle;}
+	.a-order-sub>div p{ border-bottom: none; width: 100%; padding: 0;}
+	.a-order-sub>div span{color: #000000;float:right;}
+	.a-order-sub p em{ font-size: .26rem; color: #000000;}
+	.a-order-sub textarea{ width: 96%;}
+</style>
+<div class="a-order-no" id="orderstatus-orderno">[$OrderNo$]：{[orderNo]}</div>
+<_orderDetail>
+	<div class="a-status-list">
+	<repeat_orderDetail>
+		<dl class="g-dis-flex">
+			<dt style="background-image: url({[photoSrc]});"></dt>
+			<dd>
+				<p>{[itemDesc]}</p>
+				<p><_itemColor>[$Color$]：{[itemColor]}</_itemColor> <_itemSize>[$Size$]：{[itemSize]}</_itemSize></p>
+				<p>[$Qty$]：{[qty]}</p>
+				<p>[$Price$]：<em>{[price]}</em></p>
+			</dd>
+		</dl>
+	</repeat_orderDetail>
+	</div>
+</_orderDetail>
+{=showAddress?
+<section class="a-set-addr" id="settle-addr" hidden>
+	<p>[$Receiver$]：{[receiverName]}<span>{[receiverTel]}</span></p>
+	<p>[$ReceiverAddress$]：{[receiverAddress]}</p>
+	<i class="ico1"><img src="{&resource/shophelper/icon/ico43.png&}"/></i>
+	<i class="ico2"></i>
+	<i class="ico3"></i>
+</section>
+::=}
+<section class="a-order-sub">
+	<div>
+		<p>[$Payment$]<span>{[payment]}</span></p>
+	</div>
+	<div {=topupOrder?hidden::=} hidden>
+		<p>[$ShippingMethod$]<span>{[shipping]}</span></p>
+	</div>
+	{=selfPick?
+	<div hidden>
+		<p>[$PickUpStore$]<span>{[pickUpStore]}</span></p>
+	</div>
+	::=}
+	<!-- <div>
+		<p>[$ShippingTime$]<span>{[ShippingTime]}</span></p>
+	</div> -->
+</section>
+<section class="a-order-sub">
+	<p>[$AmountWithCarriage$]<em>${[totalAmt]}</em></p>
+</section>
+<section class="a-order-sub">
+	<p>[$MessageBoard$]
+		<textarea class="g-texa" placeholder="[$None$]" rows="5" disabled>{[remark]}</textarea>
+	</p>
+</section>

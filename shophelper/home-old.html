@@ -1,0 +1,71 @@
+<style>
+	.banner{width:100%;height:auto;position:relative;overflow:hidden;}
+	.mod_01{background:#eee;display:table-cell;vertical-align:middle;}
+	.mod_01 img{display:block;height:auto;max-width:100%;max-height:100%;margin:0 auto;}
+	.dotModule_new{padding:0 6px;height:12px;line-height:12px;-webkit-border-radius:12px;position:relative;bottom:24px;margin:0 auto -15px auto;z-index:11;}
+	#slide_01_dot{text-align:center;margin:3px 0 0 0;}
+	#slide_01_dot span{display:inline-block;margin:0 3px;width:5px;height:5px;vertical-align:middle;background: #eaeaea;-webkit-border-radius:5px;}
+	#slide_01_dot .selected{background: #c6a958;}
+
+	/*index like01*/
+	/*.con3-tit{ width: 100%; padding: 0 5%; background: #fff;line-height: 3rem; font-size: 1.5rem; border-bottom: 1px solid #ebebeb;}
+	.con3-tit img{width: 1.5rem; height: 1.5rem;vertical-align: middle;  margin-right: .5rem;}*/
+	.con3 ul{width: 94%; padding:.2rem 3%; height: auto; background: #efefef; border-top: 1px solid #fff; overflow: hidden;}
+	.con3 ul li{  width: 42%; padding: .2rem 3%; margin: .06rem 0 .06rem .12rem; float: left; background: #fdfdfd; border: 1px solid #e5e5e5;-webkit-box-shadow:0 0 3px #ccc; box-shadow:0 0 3px #ccc;   overflow: hidden;}
+	.con3 ul li:nth-child(2n-1){ margin-left: 0;}
+	.con3 ul li a{width:2.4rem;height:2.4rem;display:table-cell;vertical-align:middle;}
+	.con3 ul li img{ max-width: 100%; max-height: 100%; display: block; margin: 0 auto;}
+	.like-tit{ line-height: .28rem; height: .56rem; font-size: .2rem; margin: .1rem 0; overflow: hidden;}
+	.like-tit span{ color: #b70c3a;}
+	.like-price{font-size: .2rem; color: #b70c3a;}
+	.like-price .price{font-size: .3rem;}
+	.like-price .price-old{text-decoration: line-through; color: #636060; padding-left: .1rem;font-size: .2rem; }
+	.con3 ul li button{ float:right; padding: 0 .1rem; font-size: .24rem; line-height: .4rem; background: #F15353; color: #fff; border-radius: .04rem;}
+
+	/*index like02*/
+	.con4{ padding: .2rem 0; background: #fff; height: auto; overflow: hidden;}
+	.con4-tit{ width: 70%; margin: 0 auto; border: .02rem solid #000; line-height: .5rem; color: #000; font-size: .24rem; text-align: center; text-transform: uppercase;}
+	.con4 ul{ border-top: 1px solid #d6d6d6; margin-top: .2rem; height: auto; overflow: hidden;}
+	.con4 ul li{position: relative; float: left; width: 45.8%; padding:.2rem 2%; border-right: 1px solid #d6d6d6;border-bottom: 1px solid #d6d6d6; overflow: hidden;}
+	.con4 ul li img{ max-width: 2.4rem; height: 2.4rem;display: block; margin: 0 auto;}
+	.con4 .like-price{color: #c92e23; font-size: .24rem;}
+	.con4 ul li:nth-child(2n){border-right:none;}
+</style>
+
+<div class="banner">
+	<_photolist>
+		<div class="slide_01" id="slide_01">
+			<repeat_photolist><div class="mod_01"><img class='itemphoto' src="{[photoSrc]}" alt=""></div></repeat_photolist>
+		</div>
+		<div class="dotModule_new">
+			<div id="slide_01_dot"></div>
+		</div>
+	</_photolist>
+</div>
+<_hotsale1>
+	<section class="con3">
+		<ul>
+			<repeat_hotsale1>
+				<li>
+					<a href="#VItemDetail/{[itemOrgId]}_{[style]}"><img src="{[photoSrc]}"/></a>
+					<p class="like-tit"><_discount><span>{[discount]}[$Discount$]</span> / </_discount>{[itemDesc]}</p>
+					<p class="like-price">$<span class="price">{[sellingPrice]}</span><_originPrice><span class="price-old">{[originPrice]}</span></_originPrice></p>
+				</li>
+			</repeat_hotsale1>
+		</ul>
+	</section>
+</_hotsale1>
+<_hotsale2>
+	<section class="con4">
+		<div class="con4-tit">[$HotSale$]</div>
+		<ul>
+			<repeat_hotsale2>
+				<li>
+					<a href="#VItemDetail/{[itemOrgId]}_{[style]}"><img src="{[photoSrc]}"/></a>
+					<p class="like-tit">{[itemDesc]}</p>
+					<p class="like-price">$<span class="price">{[sellingPrice]}</span><_originPrice><span class="price-old">{[originPrice]}</span></_originPrice></p>
+				</li>
+			</repeat_hotsale2>
+		</ul>
+	</section>
+</_hotsale2>

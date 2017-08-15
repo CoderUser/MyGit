@@ -1,0 +1,16 @@
+<_itemList>
+	<repeat_itemList>
+		<div class="item-container" data-href="#VItemDetail/{[itemOrg]}_{[style]}">
+			<a href="javascript:void(0);" class="photo-container" style="background-image:url({[itemPhoto]})">
+				<i class="basket-icon" data-org="{[itemOrg]}" data-style="{[style]}" data-longdesc="{[longDesc]}" data-colorsize='{[colorSize]}' data-colors="{[colors]}" data-sizes="{[sizes]}" data-discount="{[discount]}"></i>
+			</a>
+			<div class="desc-container">
+				<div class="a-item-desc">{[itemDesc]}</div>
+				<div><b class="price-old" style="display:{=equalSelling?none::inline=};">$ <span>{[originPrice]}</span></b>{=equalSelling?::<br />=}<b class="price-sale">$ <span>{[sellingPrice]}</span></b></div>
+				<div class="a-item-desc">{[itemDesc]}</div>
+				<div>{[longDesc]}</div>
+				<div style="display:none;"><em>货号:</em>{[style]}</div>
+			</div>
+		</div>
+	</repeat_itemList>
+</_itemList>

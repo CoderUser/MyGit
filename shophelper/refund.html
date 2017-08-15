@@ -1,0 +1,39 @@
+<style>
+.refund_msg{background: #fff; padding: .24rem 0; border-bottom: 1px solid #ddd;}
+.refund_type{width: 92%; padding: 0 4% .3rem; box-shadow: 0 2px 5px #ddd;}
+.refund_type p:first-child,.refund_reason p,.refund_dsc p{padding-bottom: .2rem; line-height: .48rem; font-size: .3rem; color: #333;}
+.refund_type .check{width: .3rem; height: .3rem; float: left; margin-right: .1rem; -webkit-appearance:none; outline: none; background: url({&resource/shophelper/icon/check_circle.png&}) no-repeat center center; background-size: .26rem auto;}
+.refund_type .check:checked{ background: url({&resource/shophelper/icon/checked_circle.png&}) no-repeat center center; background-size: .26rem auto;}
+.refund_type label{line-height: .3rem; color: #666; font-size: .26rem;}
+
+.refund_reason{width: 92%; padding: 0 4% .24rem; }
+.refund_reason p{padding: .2rem 0;}
+.refund_reason select{ color: #888; padding:.18rem 2%; width: 96%; font-size: .26rem; border: none; box-shadow: 0 0 2px 2px #eee; background: url({&resource/shophelper/icon/ico44.png&}) no-repeat center right .1rem; background-size: .32rem auto; appearance:none; -webkit-appearance:none; }
+
+.refund_dsc{background: #fff; width: 92%; padding: .2rem 4%; border-top: 1px solid #ddd; margin-top: .2rem; box-shadow: 0 2px 2px #ddd;}
+.refund_dsc textarea{ width: 100%; font-size: .26rem; padding: .1rem 3%; border:1px solid #d6d3d3; border-radius: 3px;-webkit-appearance:none;}
+
+.submit_btn{width: 70%; margin: .4rem 15%; line-height: .7rem; font-size: .3rem; text-align: center; background: #000000; color: #fff !important; border-radius: .1rem; box-sizing: border-box;}
+
+</style>
+<section class="refund_msg">
+	<div class="refund_type">
+		<p>[$RefundType$]</p>
+		<p><input class="check" checked="" type="radio" id="refund-rd"><label for="refund-rd">[$RefundOnly$]</label></p>
+	</div>
+	<div class="refund_reason">
+		<p>[$RefundReason$]</p>
+		<select name="[$SelectRefundReason$]">
+		<option value="[$SlowDelivery$]">[$SlowDelivery$]</option>
+		<option value="[$NoMatch$]">[$NoMatch$]</option>
+		<option value="[$Broken$]">[$Broken$]</option>
+		<option value="[$Other$]">[$Other$]</option>
+	</select>
+	</div>
+</section>
+
+<section class="refund_dsc">
+	<p>[$RefundDsc$]</p>
+	<textarea placeholder="[$RefundMsg$]" rows="5"></textarea>
+</section>
+<button class="submit_btn">[$Ok$]</button>

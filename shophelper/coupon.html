@@ -1,0 +1,96 @@
+<style>
+	#ext-viewport .x-layout-card-item{ background: #efefef;}
+	.dis_coupon_tab{ width: 100%; height: .8rem; background: #fff; box-shadow: 0 .06rem .06rem #999;}
+	.dis_coupon_tab li{ width: 33.33%; float: left; line-height: .8rem; font-size: .3rem; text-align: center; color: #777;}
+	.dis_coupon_tab li.curr{ color: #000000;}
+	.dis_coupon_s2{ width: 100%; padding: .2rem 5%; height: auto; overflow: hidden;}
+	.dis_coupon_s2 .dis_img{position: relative; border-radius:.3rem .3rem 0 0; color: #fff;  height: auto; overflow: hidden;}
+	.dis_coupon_s2 .dis_img img{width: 100%; max-height: 360px;}
+	.dis_coupon_s2 .dis_img i{ position: absolute; width: 100%; height: .12rem; bottom: .04rem; left: 0; background: url({&resource/shophelper/icon/circle-bg.png&}) no-repeat; background-size: 100% auto; }
+	.dis_coupon_s2 .dis_ewm ul{display: inline-block;width: 70%;vertical-align: top;}
+	.dis_coupon_s2 ul li{ line-height: .44rem; font-size: .2rem; color: #000; height: auto; overflow: hidden;}
+	.dis_coupon_s2 ul li span{ display: inline-block; float: left; width: .6rem; height: 100%; overflow: hidden;}
+	.dis_coupon_s2 ul li p{float:left; width:81.3%; line-height: .36rem; padding-top: .06rem; overflow: hidden;}
+	.dis_coupon_s2 .dis_ewm{position: relative;background: #fff;border: 1px solid #ddd;border-top: none;border-radius: 0 0 .3rem .3rem;padding: .2rem 1.5%;margin-top: -.06rem;}
+	.dis_coupon_s2 .dis_ewm img{display: inline-block;width: 25%; opacity: .8;}
+	.con_discount button{ color: #fff; font-size: .3rem; line-height: .6rem; padding: 0 .2rem; border-radius: .06rem; float: right; margin-right: 3%; margin-bottom: .4rem;}
+	.dis_coupon .on{position:relative; opacity: 1;}
+	.dis_coupon .on ul{border: 1px solid #f26464; border-top: 0;}
+	.dis_coupon .on>i{position: absolute; width: .4rem; height: .4rem; border-radius: .2rem; left: 1%;background: url({&resource/shophelper/icon/uncheck.png&}) no-repeat center center #cf2801; background-size: 60% auto;}
+	.cannot_use .dis_coupon_s{position: relative; opacity: 0.8;}
+	.cannot_use .dis_coupon_s>i{position: absolute; width: 41%; height: auto; right: 5%; top: .4rem;}
+	.cannot_use .dis_coupon_s>i img{ width: 100%;}
+	.dis_coupon_s2 .dis_ewm ul li:last-child{ line-height: .32rem;}
+
+	#nomore{ text-align:center; font-size:.26rem; color: #777; height: .6rem; line-height:.6rem; display:none; }
+</style>
+<section class="con_discount">
+	<ul class="dis_coupon_tab">
+		<li class="curr">[$NotUsed$]</li>
+		<li>[$HasExpired$]</li>
+		<li>[$AlreadyUsed$]</li>
+	</ul>
+	<div class="dis_coupon_con">
+		<div class="dis_coupon">
+			<_couponList>
+			<repeat_couponList>
+				<div class="dis_coupon_s dis_coupon_s2">
+					<div class="dis_img">
+						<img src="{[couponSrc]}"/>
+						<i></i>
+					</div>
+					<div class="dis_ewm">
+						<ul>
+							<li>[$TicketNumber$]：{[TicketNumber]}</li>
+							<_effectDate><li>[$EffectDate$]：{[effectDate]}</li></_effectDate>
+							<_expiryDate><li>[$ExpiryDate$]：{[expiryDate]}</li></_expiryDate>
+							<_terms><li>[$Terms$]：{[terms]}</li></_terms>
+						</ul>
+						<img src="{[QRCode]}">
+					</div>
+				</div>
+			</repeat_couponList>
+			</_couponList>
+			<!--<button class="givebtn">[$GiftFriend$]</button>-->
+		</div>
+		<div class="dis_coupon cannot_use" style="display: none;">
+			<_couponExpire>
+				<repeat_couponExpire>
+					<div class="dis_coupon_s dis_coupon_s2">
+						<div class="dis_img">
+							<img class="gary" src="{[couponSrc]}"/>
+							<i></i>
+						</div>
+						<ul class="dis_ewm">
+							<li>[$TicketNumber$]：{[TicketNumber]}</li>
+							<_effectDate><li>[$EffectDate$]：{[effectDate]}</li></_effectDate>
+							<_expiryDate><li>[$ExpiryDate$]：{[expiryDate]}</li></_expiryDate>
+							<_terms><li>[$Terms$]：{[terms]}</li></_terms>
+						</ul>
+						<i><img src="{&resource/shophelper/icon/ico58.png&}"></i>
+					</div>
+				</repeat_couponExpire>
+			</_couponExpire>
+		</div>
+		<div class="dis_coupon cannot_use" style="display: none;">
+			<_couponUsed>
+				<repeat_couponUsed>
+					<div class="dis_coupon_s dis_coupon_s2">
+						<div class="dis_img">
+							<img class="gary" src="{[couponSrc]}"/>
+							<i></i>
+						</div>
+						<ul class="dis_ewm">
+							<li>[$TicketNumber$]：{[TicketNumber]}</li>
+							<_effectDate><li>[$EffectDate$]：{[effectDate]}</li></_effectDate>
+							<_useDate><li>[$UseDate$]：{[useDate]}</li></_useDate>
+							<_terms><li>[$Terms$]：{[terms]}</li></_terms>
+						</ul>
+						<i><img src="{&resource/shophelper/icon/ico59.png&}"></i>
+					</div>
+				</repeat_couponUsed>
+			</_couponUsed>
+		</div>
+	</div>
+	<div id="nomore" class="absolute-center">[$NoMore$]</div>
+</section>

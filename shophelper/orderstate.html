@@ -1,0 +1,109 @@
+<style>
+	#ext-viewport .x-layout-card-item{background: #efefef;}
+	.order-status-con{width: 100%; height: auto; overflow: hidden;}
+	.order-status-nav{width: 100%; line-height: .63rem; background: #fff; color: #706b6b; height: .64rem; margin-top: .1rem; border-top: 1px solid #dadada; border-bottom: 1px solid #dadada; overflow: hidden;}
+	.order-status-nav li{width: 25%; float: left; text-align: center; font-size: .28rem;}
+	.order-status-nav li.order-status-curr{color: #000000;}
+	.order-status-list{margin-top: .1rem; background: #fff; border-top: 1px solid #dadada; border-bottom: 1px solid #dadada; overflow: hidden;}
+	.order-status-list h3{color: #807f7f; width: 100%; padding: 0 5%; font-size: .22rem; border-bottom: 1px solid #dadada; line-height: 280%;}
+	.order-status-list h3 span{float: right; font-size: .2rem; color: #9f9d9d;}
+	.order-status-list dl{width: 100%; margin: 0 auto; padding: .2rem 0; border-bottom: 1px solid #dadada; color: #625f5f; height: auto; overflow: hidden;}
+	.order-status-list dl dt{float: left; width: 30%; height: 1.6rem; margin-right: .2rem; line-height: 1.6rem;display: table; text-align: center; overflow: hidden;}
+	.order-status-list dl dt a{width: 100%; height: 100%;display: table-cell; vertical-align: middle;}
+	.order-status-list dl dt img{max-width: 100%; max-height: 1.6rem;vertical-align: middle;}
+	.order-status-list dl dd p{line-height: .4rem; white-space: nowrap; text-overflow:ellipsis; overflow: hidden;}
+	.order-status-list dl dd p:nth-child(4){font-size: .26rem; color:#000000 ;}
+	.order-status-list>p{width: 100%; padding: .16rem 5%; line-height: .46rem; font-size: .22rem; color: #8f8b8b;}
+	.order-status-list>p em{color: #000000; padding: 0 .04rem;}
+	.order-status-list>p button{color: #000000; border-radius: .06rem; float: right; margin-left: .1rem; line-height: .3rem; padding: .04rem .1rem;}
+</style>
+<section class="order-status-con">
+	<!--<ul class="order-status-nav">
+		<li class="order-status-curr">[$All$]</li>
+		<li>[$WaitDelivery$]</li>
+		<li>[$WaitReceive$]</li>
+		<li>[$WaitEvaluate$]</li>
+	</ul>-->
+	<div class="OrderStatus">
+		<_orderList>
+		<div class="OrderStatusList">
+			<repeat_orderList>
+				<div class="order-status-list">
+					<h3>[$OrderNumber$]：{[OrderNumber]}<span>{{Date}}</span></h3>
+					<_orderDetail>
+					<repeat_orderDetail>
+						<dl>
+							<dt><a href=""><img src="{[photoSrc]}"/></a></dt>
+							<dd>
+								<p>{[itemDesc]}</p>
+								<p>[$Color$]：{[itemColor]} [$Size$]：{[itemSize]}</p>
+								<p>[$Qty$]：{[QTY]}</p>
+								<p>{[sellingPrice]}</p>
+							</dd>
+						</dl>
+					</repeat_orderDetail>
+					</_orderDetail>
+					<p>[$Total$]<em>{[TotalNum]}</em>[$Items$] [$Paid$]：<em>{[PaidNum]}</em><button>{[OrderStatus]}</button></p>
+				</div>
+			</repeat_orderList>
+		</div>
+		</_orderList>
+		<!--<div class="OrderStatusList" style="display: none;">
+			<repeat>
+				<div class="order-status-list">
+					<h3>[$OrderNumber$]：{[OrderNumber]}<span>{{Date}}</span></h3>
+					<repeat>
+						<dl>
+							<dt><a href=""><img src="{[photoSrc]}"/></a></dt>
+							<dd>
+								<p>{[itemDesc]}</p>
+								<p>[$Color$]：{[itemColor]} [$Size$]：{[itemSize]}</p>
+								<p>[$QTY$]：{[QTY]}</p>
+								<p>{[sellingPrice]}</p>
+							</dd>
+						</dl>
+					</repeat>
+					<p>[$Total$]<em>{[TotalNum]}</em>[$Items$] [$Paid$]：<em>{[PaidNum]}</em><button>[$Remind$]</button><button>[$Cancel$]</button></p>
+				</div>
+			</repeat>
+		</div>
+		<div class="OrderStatusList" style="display: none;">
+			<repeat>
+				<div class="order-status-list">
+					<h3>[$OrderNumber$]：{[OrderNumber]}<span>{{Date}}</span></h3>
+					<repeat>
+						<dl>
+							<dt><a href=""><img src="{[photoSrc]}"/></a></dt>
+							<dd>
+								<p>{[itemDesc]}</p>
+								<p>[$Color$]：{[itemColor]} [$Size$]：{[itemSize]}</p>
+								<p>[$QTY$]：{[QTY]}</p>
+								<p>{[sellingPrice]}</p>
+							</dd>
+						</dl>
+					</repeat>
+					<p>[$Total$]<em>{[TotalNum]}</em>[$Items$] [$Paid$]：<em>{[PaidNum]}</em><button>[$ConfirmReceipt$]</button><button>[$ViewLogistics$]</button></p>
+				</div>
+			</repeat>
+		</div>
+		<div class="OrderStatusList" style="display: none;">
+			<repeat>
+				<div class="order-status-list">
+					<h3>[$OrderNumber$]：{[OrderNumber]}<span>{{Date}}</span></h3>
+					<repeat>
+						<dl>
+							<dt><a href=""><img src="{[photoSrc]}"/></a></dt>
+							<dd>
+								<p>{[itemDesc]}</p>
+								<p>[$Color$]：{[itemColor]} [$Size$]：{[itemSize]}</p>
+								<p>[$QTY$]：{[QTY]}</p>
+								<p>{[sellingPrice]}</p>
+							</dd>
+						</dl>
+					</repeat>
+					<p>[$Total$]<em>{[TotalNum]}</em>[$Items$] [$Paid$]：<em>{[PaidNum]}</em><button>[$Customer$]</button><button>[$Evaluate$]</button></p>
+				</div>
+			</repeat>
+		</div>-->
+	</div>
+</section>

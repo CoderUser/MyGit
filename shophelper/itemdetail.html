@@ -1,0 +1,91 @@
+<style>
+	/*.itemphotos>div:first-child,.itemphotos>div:first-child>div{ width: 99999px;}*/
+	.itemphotos{width:100%;height:auto;min-height:3.6rem;position:relative;overflow:hidden;}
+	.mod_01{background:#eee;height:360px;height:100vw;display:table-cell;vertical-align:middle;}
+	.mod_01 img{display:block;height:auto;max-width:100%;max-height:100%;margin:0 auto;}
+	.dotModule_new{padding:0 6px;height:12px;line-height:12px;-webkit-border-radius:12px;position:relative;bottom:24px;margin:0 auto -15px auto;z-index:11;}
+	#slide_01_dot{text-align:center;margin:3px 0 0 0;}
+	#slide_01_dot span{display:inline-block;margin:0 3px;width:5px;height:5px;vertical-align:middle;background: #eaeaea;-webkit-border-radius:5px;}
+	#slide_01_dot .selected{background: #c6a958;}
+
+	.con1,.con2{ position: relative; width: 100%; height: auto; padding: .3rem 3%; background:#fbfdeb;}
+	.con1_1{position: absolute; height: .48rem; line-height: .48rem; padding:0 .2rem; background: #f76c03; color: #fff; top: -.48rem; right: -1px; font-size: .22rem; border: 1px solid #d44900;}
+	.con1 h3{ font-size: .3rem; color: #292828; font-weight: normal;}
+	.desc{ font-size: .22rem; color: #f76c03; padding: .2rem 0; font-weight: normal;}
+	.p-price{font-size: .2rem; color: #d20001;}
+	.p-price .price{font-size: .4rem;color: #d20001;}
+	.p-price .price-old{ padding-left: .3rem; text-decoration: line-through; color: #818080;}
+	.p-price .freight{ float: right;color: #818080; padding-top: .12rem;}
+	.con2{ background: #fff; overflow: hidden;}
+	.part-note-msg{float: left;white-space: nowrap;display: inline-block;line-height: .65rem;font-size: .22rem;color: #848689;}
+	.pro-attr{ height: auto; margin-bottom: .1rem; overflow: hidden;}
+	.pro-attr p{ margin-left: .6rem;overflow: hidden;}
+	.pro-attr p a{border: 1px solid #d7d7d7; font-size: .2rem;color: #686868;float: left;margin: 0 .1rem .1rem .15rem;padding: .15rem .2rem;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;max-width: 100%;box-sizing: border-box;text-decoration: none;}
+	.pro-attr p a.selected{border: 1px solid #f15353; color: #f15353;}
+	.pro-attr p a.disabled{display:none;}
+	.quantity-wrapper {	float: left; display: inline-block; margin-left: .3rem; margin-top: .1rem;}
+	.quantity-decrease, .quantity, .quantity-increase {float: left; font-size: .4rem;text-align: center; height: 100%;}
+	.quantity{font-size: .3rem; width: 1rem; line-height: .5rem; line-height: .5rem; border: none; border-top:1px solid #d7d7d7;border-bottom:1px solid #d7d7d7; border-radius: 0; appearance:none; -webkit-appearance:none;}
+	.quantity-decrease, .quantity-increase {background: #fff;border: 1px solid #d7d7d7;color: #666;display: block;height: .5rem;line-height: .5rem; width: .5rem; overflow: hidden;}
+	.quantity-decrease{border-radius: .05rem 0 0 .05rem;}
+	.quantity-increase{border-radius: 0 .05rem .05rem 0;}
+	
+	.fixed_right{position: absolute; right: 0; bottom: 20%; background: #000; width: .6rem; height: 1.2rem; color: #fff; border-radius: .08rem 0 0 .08rem; opacity: .8;}
+	.fixed_right>li{ text-indent: -999rem; height: .6rem;}
+	.fixed_right>li:first-child{background: url({&resource/shophelper/icon/rt-more.png&}) no-repeat center center; background-size: .4rem auto; border-bottom: 1px solid #333; position: relative;}
+	.fixed_right>li:last-child{background: url({&resource/shophelper/icon/rt-service.png&}) no-repeat center center; background-size: .4rem auto;}
+	.fixed_right a{text-align: center; text-indent: 0; display: block; color: #333; border-top: 1px solid #ccc; line-height: .5rem;}
+	.fixed_right a:first-child{border-top: none;}
+	.fixed_right .TipsLayer{ right: 3px; bottom: .72rem; padding: .1rem; background: #eee; opacity: 1; border: 1px solid #aaa;}
+	.fixed_right .TipsLayer .triangle-down{ margin-left: .1rem; border-top-color: #aaa;}
+	.fixed_right .TipsLayer .dbl{ bottom: -.1rem; border-top-color: #eee;}
+	
+	#Load_detail{display: block; outline: none; padding:0 .4rem; padding-left:  .7rem; margin: .4rem auto .2rem; border-radius: .06rem; line-height: .5rem; color: #fff; background: url({&resource/shophelper/icon/ico96.png&}) no-repeat center left .3rem #000000; background-size: .3rem auto;}
+	#detail_con{width: 100%; padding: .2rem 3%; height: auto; background: #fff; display: none;} 
+</style>
+<main id="itemdetail-container" data-org="{[itemorgid]}" data-style="{[style]}">
+	<div class="itemphotos">
+		<_photolist>
+			<div class="slide_01" id="slide_01">
+				<repeat_photolist><div class="mod_01"><img class='itemphoto' src="{[photoSrc]}" alt=""></div></repeat_photolist>
+			</div>
+			<div class="dotModule_new">
+				<div id="slide_01_dot"></div>
+			</div>
+		</_photolist>
+	</div>
+	<section class="con1">
+		<span class="con1_1">[$AlreadySold$]</span>
+		<h3 id="itemname">{[desci]}</h3>
+		<p id="itemdesc" class="desc">{[longDesc]}</p>
+		<p class="p-price">$<span class="price" id="seluprice">{[sellingPrice]}</span><_originPrice><span class="price-old">{[originPrice]}</span></_originPrice><span class="freight">[$Carriage$]:{[carriage]}</span></p>
+	</section>
+	<section class="con2" data-colorsize="{[colorsize]}">
+		<_colorlist>
+			<div class="pro-attr">
+				<span class="part-note-msg">[$Color$]</span>
+				<p id="itemcolor" onclick="TApi.itemdetail.doSelect(arguments[0], true)">
+					<repeat_colorlist><a data-itemcolor="{[colorid]}" href="javascript:;">{[color]}</a></repeat_colorlist>
+				</p>
+			</div>
+		</_colorlist>
+		<_sizelist>
+			<div class="pro-attr">
+				<span class="part-note-msg">[$Size$]</span>
+				<p id="itemsize" onclick="TApi.itemdetail.doSelect(arguments[0], false)">
+					<repeat_sizelist><a data-itemsize="{[sizeid]}" href="javascript:;">{[size]}</a></repeat_sizelist>
+				</p>
+			</div>
+		</_sizelist>
+		<div class="pro-attr">
+			<span class="part-note-msg">[$Qty$]</span>
+			<div class="quantity-wrapper">
+				<span class="quantity-decrease" onclick="TApi.itemdetail.qtyMinus(arguments[0])">-</span>
+				<input type="text" class="quantity" size="4" value=1>
+				<span class="quantity-increase" onclick="TApi.itemdetail.qtyAdd(arguments[0])">+</span>
+			</div>
+		</div>
+		<button id="Load_detail" style="display:none;">[$ShowDetail$]</button>
+	</section>
+	<section id="detail_con"></section>
+</main>

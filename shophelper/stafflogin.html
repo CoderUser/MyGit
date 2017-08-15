@@ -1,0 +1,27 @@
+<style type="text/css">
+#ext-viewport .x-layout-card-item{ background: #efefef;}
+#login-form div{ width: 100%; padding:0 5%; height: auto; overflow: hidden;}
+#login-form div p{ width: 100%; height: auto; overflow: hidden;}
+#login-form p.pass{ position: relative;}
+#login-form p input{ width: 100%; box-sizing: border-box; line-height: .5rem; padding: .1rem 0 .1rem .6rem; display: block; margin-top: .3rem; background: #fff; font-size: .28rem; border: 1px solid #ccc; border-radius: .1rem; color: #666;}
+#login-form p input.user{ background: url({&resource/shophelper/icon/ico61.png&}) no-repeat left .2rem center #fff; background-size: .3rem auto;}
+#login-form p input.pass{background: url({&resource/shophelper/icon/ico62.png&}) no-repeat left .2rem center #fff; background-size: .3rem auto;}
+#login-form .passtab{position: absolute; width: .4rem; height: .2rem; right: 5%; top: .56rem;background: url({&resource/shophelper/icon/ico65.png&}) no-repeat;background-size: .36rem auto;}
+#login-form .passtab.curr{background: url({&resource/shophelper/icon/ico70.png&}) no-repeat;background-size: .36rem auto;}
+.login p.txt{ padding: .2rem 0;}
+.login p.txt a{ color: #bb0d19; font-size: .22rem;}
+.login p.txt a:last-child{ color: #666; float: right;}
+.login button{ display: inline-block; margin-top: .4rem; font-size: .28rem; font-weight: 500; width: 40%; float: left;  color: #fff; line-height: .6rem; border-radius: .08rem;}
+.login button:first-child{ width: 100%; box-sizing: border-box;}
+/* .login button:last-child{ background: #3c5a9a; width: 20%; box-sizing: border-box; float: right;} */
+#login-form .SystemSet{position: absolute; bottom: .2rem; left: 3%; padding-left: .46rem; line-height: .38rem; font-size: .28rem; color: #666;  background: url({&resource/shophelper/icon/ico42.png&}) no-repeat left center; background-size: .42rem auto;}
+#logout-btn{background: #696969 url({&resource/shophelper/icon/logout.png&}) no-repeat center center; background-size: .4rem auto;}
+</style>
+<section id="login-form">
+	<div class="login">
+		<p><input id="login-user" class="user" type="text" placeholder="[$StaffCode$]"/></p>
+		<p class="pass"><input id="login-pwd" class="pass" type="password" placeholder="[$Password$]" /><i class="passtab"></i></p>
+		<p><button id="login-btn">[$SignIn$]</button><!-- <button id="logout-btn">&nbsp;</button> --></p>
+	</div>
+	<a href="#VConfig"><span class="SystemSet">[$Configuration$]</span></a>
+</section>

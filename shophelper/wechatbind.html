@@ -1,0 +1,23 @@
+<style type="text/css">
+#ext-viewport .x-layout-card-item{ background: #f1f1f1;}
+.wechat_bind{ width: 100%; padding: .5rem 5% .4rem; text-align: center; font-size: .2rem; color: #888;}
+.wechat_bind img{ width: 40%; margin-bottom: .4em;}
+.wechat_bind p{ line-height: .36rem;}
+.wechat_bind ul{ border: 1px solid #ddd; background: #fff; margin: .5rem 0 .2rem;}
+.wechat_bind ul li{ width: 100%; margin: 0 auto; padding:.2rem 0; text-align: left; color: #333;}
+.wechat_bind ul li:first-child{ border-bottom: 1px solid #ddd;}
+.wechat_bind ul li:first-child span{ color: #888;}
+.wechat_bind ul li:last-child span{ color: #08a50f;}
+.wechat_bind button{ background: #000000; border-radius: .16rem; width: 90%; color: #fff; font-size: .3rem; margin:.5rem auto 0; line-height: .76rem;}
+</style>
+<section class="wechat_bind">
+	<img src="{&resource/shophelper/icon/wechat_bind.png&}" alt="" />
+	<p>[$BindTxt$]</p>
+	<ul>
+		<li>[$WechatName$]：<span>{[wechatName]}</span></li>
+		<li>[$Status$]：<span id="bind-status"></span></li>
+	</ul>
+	<button id="btn-bind" hidden>[$Bind$]</button>
+	<button id="btn-rebind" hidden>[$Rebind$]</button>
+	<button id="btn-unbind" hidden>[$Unbind$]</button>
+</section>

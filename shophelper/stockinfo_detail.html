@@ -1,0 +1,26 @@
+<_stockList>
+	<repeat_stockList>
+		<div class="item-container{=isHeader? header::=}{=isIntransit? intransit::=}">
+			<div class="desc-container">
+				<p>
+					<span>{[storeCode]}{[color]}</span>
+					<_sizeArr>
+						<repeat_sizeArr>
+							<span>{[size]}</span>
+						</repeat_sizeArr>
+					</_sizeArr>
+					<!-- <span>{[sumtrfintransit]}</span>
+					<span>{[sumtrfouttransit]}</span> -->
+				</p>
+				<_intransitArr>
+					<p>
+						<span></span>
+						<repeat_intransitArr>
+							<span>{[size]}</span>
+						</repeat_intransitArr>
+					</p>
+				</_intransitArr>
+			</div>
+		</div>
+	</repeat_stockList>
+</_stockList>

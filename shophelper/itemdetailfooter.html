@@ -1,0 +1,38 @@
+<style>
+	footer{ width:100%; padding-left: 2%; height:1rem; background:#fff; border-top: .02rem solid #e5e5e5; font-size:.24rem;}
+	.mune{ float:left; width:18%; padding-top:.1rem;height:.8rem; text-align:center; position:relative;}
+	.mune p{ font-size:.22rem; color:#656565;}
+	.mune img{ width:.45rem; height:.4rem;}
+	/*.mune-btn{  float: right; padding: 0 1rem; margin-right: .4rem; margin-top: .4rem; height: 3.45rem; line-height: 3.45rem; background: #ff8700; border-radius: .25rem; color: #fff;}
+	.mune-btn img{ float: left; width: 2.35rem; height: 2.3rem; margin-top: .4rem; margin-right: .4rem;}*/
+	.mune-btn{  float: right;  width: 28%; margin-right: 2%; text-align: center; margin-top: .1rem; height: .69rem; line-height: .69rem; border-radius: .05rem; color: #fff;font-size: .26rem;}
+	.mune>.badge {right:24%; top: 13%;}
+</style>
+<footer class="all-foot">
+	<!--{=showShare?
+	<div class="mune" id="item-share">
+		<img src="{&resource/shophelper/icon/share01.png&}">
+		<p>[$Share$]</p>
+	</div>
+	::=}-->
+	<div class="mune" id="item-like">
+		<img {=like?hidden::=} class="like" src="{&resource/shophelper/icon/like.png&}">
+		<img {=like?::hidden=} class="alreadylike" src="{&resource/shophelper/icon/alreadylike.png&}">
+		<p>{=like?[$AlreadyLike$]::[$Like$]=}</p>
+	</div>
+	<!--<div class="mune">
+		<img src="{&resource/shophelper/icon/comment01.png&}">
+		<p>[$Comment$]</p>
+	</div>-->
+	<a class="mune" href="#VCart">
+		<img id="cart-icon" src="{&resource/shophelper/icon/detail_footer-cart.png&}">
+		<p>[$Cart$]</p>
+		<span id="footer-cartcount" class="badge"></span>
+	</a>
+	<div class="mune-btn" id="add-cart">
+		<span>[$AddToCart$]</span>
+	</div>
+	<div class="mune-btn c-btn-primary" id="buy-now">
+        <span>[$BuyNow$]</span>
+    </div>
+</footer>

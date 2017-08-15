@@ -1,0 +1,145 @@
+<style>
+.report table{width:100%;margin-bottom: .5rem;}
+#report_title{text-align: center;font-weight: bold;}
+.hide{display:none;}
+</style>
+<section class="report">
+    <div id="report_title">
+        [$TTRetail$]<br>
+        <span {=IsZRead?::class="hide"=}>[$ZReadTitle$]</span>
+        <span {=IsZRead?class="hide"::=}>[$XReadTitle$]</span>
+    </div>
+    <div class="report_hdr">
+        <ul>
+            <li>[$Store$]: {[Store]}({[StoreCode]}-{[TillId]})</li>
+            <li>[$WorkingDate$]: {[WorkingDate]}</li>
+            <li>[$PostingDate$]: </li><!-- {[PostingDate]} -->
+            <li>[$PageNo$]: </li><!-- {[PageNo]} -->
+        </ul>
+    </div>
+    <div class="cashierinfo {=IsZRead?::hide=}">
+        <_cashierlist>
+            <repeat_cashierlist>
+                <table cellpadding="0" cellspacing="0">
+                     <tr style="font-weight: normal">
+                         [$Cashier$]:{[StaffName]}({[StaffCode]})
+                     </tr>
+                    <_cashierlistitem>
+                        <tr>
+                            <th>[$Tender$]</th>
+                            <th>[$Currency$]</th>
+                            <th>[$Amount$]</th>
+                            <th>[$BaseAmount$]</th>
+                        </tr>
+                        <repeat_cashierlistitem>
+                            <tr>
+                                <td style="font-weight: normal;">{[Group]}</td>
+                            </tr>
+                            <_clistitemdetail>
+                                <repeat_clistitemdetail>
+                                    <tr>
+                                        <td>{[ItemName]}</td>
+                                        <td>{[Currency]}</td>
+                                        <td>{[ItemAmount]}</td>
+                                        <td>{[BaseAmount]}</td>
+                                    </tr>
+                                </repeat_clistitemdetail>
+                            </_clistitemdetail>
+                        </repeat_cashierlistitem>
+                    </_cashierlistitem>
+                </table>
+            </repeat_cashierlist>
+        </_cashierlist>
+    </div>
+    <div class="report_detail">
+        <_itemlist>
+            <table cellpadding="0" cellspacing="0">
+                <tr {=IsZRead?::class="hide"=}>[$ZReadTotal$]</tr>
+                <tr>
+                    <th>[$Tender$]</th>
+                    <th>[$Currency$]</th>
+                    <th>[$Amount$]</th>
+                    <th>[$BaseAmount$]</th>
+                </tr>
+                <repeat_itemlist>
+                    <tr>
+                        <td style="font-weight: normal;">{[Group]}</td>
+                    </tr>
+                    <_itemlistdetail>
+                        <repeat_itemlistdetail>
+                            <tr>
+                                <td>{[ItemName]}</td>
+                                <td>{[Currency]}</td>
+                                <td>{[ItemAmount]}</td>
+                                <td>{[BaseAmount]}</td>
+                            </tr>
+                        </repeat_itemlistdetail>
+                    </_itemlistdetail>
+                </repeat_itemlist>
+                <br>
+            </table>
+        </_itemlist>
+
+        <_msales>
+            <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th>[$MerchandiseSales$]</th>
+                <th>[$Issue$]</th>
+                <th>[$Amount$]</th>
+            </tr>
+            <repeat_msales>
+                <tr>
+                    <td>{[SalesName]}</td>
+                    <td>{[Issue]}</td>
+                    <td>{[SalesAmount]}</td>
+                </tr>
+            </repeat_msales>
+            <tr>
+                <td></td>
+                <td>[$Total$]</td>
+                <td>{[SalesTotal]}</td>
+            </tr>
+            </table>
+        </_msales>
+        <br>
+        <_voucher>
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <th>[$GiftVoucherNo$]</th>
+                    <th>[$NoOfSettled$]</th>
+                    <th>[$TotalValue$]</th>
+                </tr>
+                <repeat_voucher>
+                     <tr>
+                        <td>{[VoucherNo]}</td>
+                        <td>{[Settled]}</td>
+                        <td>{[TotalValue]}</td>
+                     </tr>
+                </repeat_voucher>
+                <tr>
+                    <td>[$Total$]</td>
+                    <td>{[VoucherQty]}</td>
+                    <td>{[VoucherTotal]}</td>
+                </tr>
+            </table>
+        </_voucher>
+        <br>
+        <_ttlvoucher>
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <th>[$GiftVoucherSales$]</th>
+                    <th>[$Amount$]</th>
+                </tr>
+                <repeat_ttlvoucher>
+                    <tr>
+                        <td>{[gvsales]}</td>
+                        <td>{[gvamount]}</td>
+                    </tr>
+                </repeat_ttlvoucher>
+            </table>
+        </_ttlvoucher>
+    </div>
+    <div id="errorMsg" {=GetError?::Class="hide"=}>
+        <span style="width:100%; position: absolute; top:50%; text-align: center; font-size: 0.4rem;">{[errorMsg]}</span>
+    </div>
+</section>

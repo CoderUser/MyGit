@@ -1,0 +1,36 @@
+<style>
+	.list-art-con{width: 100%; height: auto; background: #fff; overflow: hidden;}
+	.list-art-nav{ width: 100%; line-height: .6rem; color: #333; height: .64rem; overflow: hidden;}
+	.list-art-nav li{ width: 33.3%; float: left; text-align: center; font-size: .28rem;}
+	.list-art-nav li.list-art-curr{ border-bottom: .06rem solid #000000;}
+	.list-art-con dl{position: relative; width: 100%; padding: .22rem 3%; height: 1.6rem; border-top: 1px solid #ccc; overflow: hidden;}
+	.list-art-con dl dt{ float: left; width: 1.6rem; height: 1.6rem; border:1px solid #ddd; margin-right: .2rem;}
+	.list-art-con dl dt img{ width: 100%;}
+	.list-art-con dl dd p{ padding-top: .1rem; padding-bottom: .04rem;}
+	.list-art-con dl dd p:nth-child(1){ height: .52rem; overflow: hidden;}
+	.list-art-con dl dd p:nth-child(3){ color: #818181;}
+	.list-art-price{ color: #ff6000; font-size: .2rem; }
+	.list-art-price .price{color: #ff6000; padding-right: .2rem; font-size: .3rem; font-weight: normal;}
+	.list-art-price .price-old{  color: #9e9d9d; text-decoration: line-through;}
+	.list-art-con dl i{position: absolute; width: .55rem; height: .55rem; bottom: .6rem; right: .2rem; border-radius: 50%; background:url({&resource/shophelper/icon/ico16.png&}) no-repeat center #fac8c9;background-size: 65% auto;}
+</style>
+<section class="list-art-con">
+	<ul class="list-art-nav">
+		<li class="list-art-curr">[$Default$]</li>
+		<li>[$Price$]</li>
+		<li>[$Sales$]</li>
+	</ul>
+	<div class="DetailList">
+		<repeat>
+			<dl><a href="">
+				<dt><img src="{[photoSrc]}"></dt>
+				<dd>
+					<p>{[itemDesc]}</p>
+					<p class="list-art-price">$<span class="price">{[sellingPrice]}</span><span class="price-old">{[originPrice]}</span></p>
+					<p>[$AlreadySold$]&nbsp;&nbsp;[$Carriage$]：{[Carriage]}</p>
+					<i></i>
+				</dd></a>
+			</dl>
+		</repeat>
+	</div>
+</section>

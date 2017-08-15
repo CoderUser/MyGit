@@ -1,0 +1,32 @@
+<style type="text/css">
+#ext-viewport .x-layout-card-item{ background: #efefef;}
+#login-form div{ width: 100%; padding:0 5%; height: auto; overflow: hidden;}
+#login-form div p{ width: 100%; height: auto; overflow: hidden;}
+#login-form p.pass{ position: relative;}
+#login-form p input{ width: 92.9%; line-height: .5rem; padding: .1rem 0 .1rem .6rem; display: block; margin-top: .2rem; background: #fff; font-size: .22rem; border-radius: 0; border: 1px solid #ccc; border-radius: .1rem; color: #666;}
+#login-form p input.user{ background: url({&resource/shophelper/icon/ico61.png&}) no-repeat left .2rem center #fff; background-size: .3rem auto;}
+#login-form p input.pass{background: url({&resource/shophelper/icon/ico62.png&}) no-repeat left .2rem center #fff; background-size: .3rem auto;}
+#login-form .passtab{position: absolute; width: .4rem; height: .2rem; left: 88%; top: .46rem;background: url({&resource/shophelper/icon/ico65.png&}) no-repeat;background-size: .36rem auto;}
+#login-form .passtab.curr{background: url({&resource/shophelper/icon/ico70.png&}) no-repeat;background-size: .36rem auto;}
+.login p.txt{ padding: .2rem 0;}
+.login p.txt a{ color: #bb0d19; font-size: .22rem;}
+.login p.txt a:last-child{ color: #666; float: right;}
+.login button{ display: inline-block; box-sizing: border-box; margin-top: .4rem; font-size: .24rem; width: 100%; float: left;  color: #fff; line-height: .6rem; border-radius: .08rem;}
+.login button:first-child{}
+.login button:last-child{float: right;}
+#login-form .SystemSet{position: absolute; bottom: .2rem; left: 3%; padding-left: .4rem; line-height: .38rem; font-size: .2rem; color: #666;  background: url({&resource/shophelper/icon/ico42.png&}) no-repeat left center; background-size: .34rem auto;}
+#login-form p input#login-user{width: 80%; box-sizing: border-box; float: left;}
+#login-form p button#searchvip-btn{box-sizing: border-box; background: url({&resource/shophelper/icon/search.png&}) no-repeat center center; background-size: .4rem auto; width: 15%; margin-top: .2rem; line-height: .5rem; padding: .1rem 0 .1rem .6rem;}
+</style>
+<section id="login-form">
+	<div class="login">
+		<p>&nbsp;</p>
+		<p><input id="login-user" class="user" type="text" placeholder="[$TelOrEmailOrVipcode$]"/><button id="searchvip-btn">&nbsp;</button></p>
+		<p><button id="scanqrcode-btn">[$ScanQrcode$]</button></p>
+		<p><button id="keeplogin-btn">&nbsp;</button></p>
+		<p><button id="login-btn">&nbsp;</button></p>
+		<p><button id="register-btn">[$Register$]</button></p>
+		<p><button id="logout-btn">[$Logout$]</button></p>
+	</div>
+	<!-- <a href="#VSetting"><span class="SystemSet">[$Set$]</span></a> -->
+</section>

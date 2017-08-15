@@ -1,0 +1,64 @@
+<style>
+	#container{width: 100%; min-height: 100%; overflow-x: hidden;}
+	#container{color:#333; font-size:12px; background: url({&resource/shophelper/game/btm_bg.jpg&}) no-repeat bottom #fa8d32 ; background-size: 100% auto;}
+	img{ width: 100%; height: auto;}
+	em,i{font-style: normal;}
+	.hide{display:none;}
+	
+	.prize{width:22rem; height:10rem; padding:.5rem; margin:auto; position:relative; background: url({&resource/shophelper/game/layer_bg.png&}) no-repeat; background-size: 100% 100%;}
+	#prize_con{display:block; width: 100%; height: 100%; z-index: 9; padding: 1rem 0; text-align:center; box-sizing: border-box;}
+    #prize_con p:first-child{ font-size: 1.4rem; color: #926f39;padding-left: 4rem; line-height: 2rem; background: url({&resource/shophelper/game/gift_icon.png&}) no-repeat left 2rem top; background-size: 4rem auto; }
+	#prize_con p:first-child em{ color: #f65341;}
+	#prize_con p:first-child span{font-size: 1.1rem;}
+	#prize_con p:last-child{ color: #c3a65d; padding-top: 1.2rem;font-size: 1.1rem;}
+	#prize_con p.noprize{ padding-top: 1rem; padding-bottom: 1rem;}
+	.canvas{ width:22rem; height:10rem; position: absolute;  left: .5rem; top: .5rem; z-index: 10;}
+	.chance{ text-align: center; color: #fff; line-height: 3rem; font-size: 1.2rem; padding: 1rem 0; text-shadow: 1px 2px 2px #888;}
+	.chance em{ font-size: 2rem; padding: 0 .3rem; color: #b22b25;}
+	#retry{display:block; width:40%; margin:auto; background: #b22b25; color: #feea21; font-size: 1.2rem; line-height: 3rem; border-radius: .3rem;}
+	.rule{position: relative; width: 85%; margin: 2rem auto; padding: 2rem 1rem 1rem;  color: #b22b25; font-size: 1.1rem; line-height: 2rem;}
+	.rule_bg{ width: 100%; height: 100%; position: absolute; background: #fff; opacity: .1;  border-radius: .5rem; left: 0; top: 0;} 
+	.rule dl{ padding: .3rem 0; height: auto; overflow: hidden;}
+	.rule dl:last-child{ border-bottom: none;}
+	.rule dl dt{ float: left; width: 6rem; overflow: hidden;}
+	.rule dl dd{ width: 20.5rem; overflow: hidden;}
+	.rule fieldset { width: 67%; margin: 0 auto 1rem; border-top: .15rem solid #b22b25;text-align: center;padding: 0 4rem;}
+	.rule fieldset legend {font-size: 1.5rem; padding: 0 2rem; }
+</style>
+<div id="container">
+	<img id="top_img" src="{&resource/shophelper/game/top_bg.jpg&}"/>
+	<div class="prize">
+		<div id="prize_con" class="hide">
+			<p id="prize_txt"></p>
+			<p id='prize_ts'></p>
+		</div>
+		<canvas class="canvas" id="canvas"></canvas>
+	</div>
+	<div class="chance">
+		<p id="day-chance">[$TodayRemain$]<em></em>[$Chance$]</p>
+		<p id="total-chance">[$TotalRemain$]<em></em>[$Chance$]</p>
+	</div>
+	<button id="retry" class="hide">[$TryAgain$]</button>
+	<div class="rule">
+		<div class="rule_bg"></div>
+		<fieldset>
+			<legend>[$Rule$]</legend>
+		</fieldset>
+		<dl>
+			<dt>[$EffectDate$]</dt>
+			<dd>{[effectDate]}</dd>
+		</dl>
+		<_expiryDate>
+		<dl>
+			<dt>[$ExpiryDate$]</dt>
+			<dd>{[expiryDate]}</dd>
+		</dl>
+		</_expiryDate>
+		<_terms>
+		<dl>
+			<dt>[$Terms$]</dt>
+			<dd>{[terms]}</dd>
+		</dl>
+		</_terms>
+	</div>
+</div>

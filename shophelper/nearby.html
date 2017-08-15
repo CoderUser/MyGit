@@ -1,0 +1,20 @@
+<style>
+	.nearby dl{position: relative; width: 100%; padding: .24em 3%; height: auto; border-bottom: 1px solid #ddd; }
+	.nearby dl dt{ float: left; width: 1.6rem; height: 1.2rem; line-height: 1.2rem; text-align: center; padding: .06rem; border:1px solid #ddd; margin-right: .2rem; overflow: hidden;}
+	.nearby dl dt img{max-width: 100%; max-height: 1.2rem;}
+	.nearby dl dd p{ line-height: .4rem;  color: #777;}
+	.nearby dl dd p:first-child{padding-bottom: .16rem; font-size: .28rem; color: #333;}
+	.nearby dl dd p:first-child span{float: right; font-size: .2rem; padding-left: .36rem; color: #999;background:url({&resource/shophelper/icon/ico85.png&}) no-repeat center left;background-size: .26rem auto;}
+</style>
+<section class="nearby">
+	<repeat>
+		<dl>
+			<dt><img src="{[ShopPic]}"></dt>
+			<dd>
+				<p>{[ShopName]}<span>{[Distance]}</span></p>
+				<p>[$Address$]：{[Address]}</p>
+				<p>[$Tel$]：{[Tel]}</p>
+			</dd>
+		</dl>
+	</repeat>
+</section>

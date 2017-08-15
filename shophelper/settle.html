@@ -1,0 +1,995 @@
+<_orderItems>
+	<div class="order_item_list" hidden>
+		<repeat_orderItems>
+			<dl>
+				<dt><img src="{[photoSrc]}"/></dt>
+				<dd>
+					<p>{[itemDesc]}</p>
+					<p>[$Color$]：{[itemColor]} <span>&nbsp;&nbsp;&nbsp;</span>[$Size$]：{[itemSize]}</p>
+					<p>[$Qty$]：{[qty]}</p>
+					<p>[$Price$]：<em>{[sellingPrice]}</em></p>
+					<p>[$PLU$]：{[plu]}</p>
+				</dd>
+			</dl>
+		</repeat_orderItems>
+	</div>
+	<p id="item-more" class="item-more" hidden>[$More$]</p>
+</_orderItems>
+<section id="prom_input_container" class="order_sub">
+</section>
+<section class="order_sub order_sub_l2">
+	<div>
+		<dl><dt>[$Price$]:</dt><dd>$<em id="em-amount">{[totalAmt]}</em></dd></dl>
+		<dl><dt>[$Discount$]:</dt><dd>- $<em id="em-discount">0.00</em></dd></dl>
+		<dl><dt>[$Total$]:</dt><dd>$<em id="em-totalamount">{[totalAmt]}</em></dd></dl>
+		<dl><dt>[$Paid$]:</dt><dd>$<em id="em-paid">0.00</em></dd></dl>
+		<dl><dt>[$Change$]:</dt><dd>$<em id="em-change">0.00</em></dd></dl>
+	</div>
+</section>
+<section id="tender-option" class="order_sub order_sub_l5">
+	<div>
+		<_payment>
+		<ul>
+			<repeat_payment>
+				<li data-basecurrcode="{[baseCurrCode]}" data-tendercode="{[tenderCode]}" data-tendertype="{[tenderType]}" data-paymethod="{[payMethod]}" data-currcode="{[currCode]}" data-buyexchrate="{[buyExchRate]}" data-allowrefund="{[allowRefund]}" ><i><img src="{[tenderImage]}"/></i><div>{[tenderDesc]}</div></li>
+			</repeat_payment>
+		</ul>
+		</_payment>
+	</div>
+	<input id="numpad-input" type="text" value="" hidden/>
+</section>
+<section class="order_sub order_sub_l4">
+	<div class="tender-head"><span>[$Currency$]</span><span>[$PaidAmount$]</span><span>[$BaseAmount$]</span></div>
+	<div>
+		<ul id="tender-select"></ul>
+	</div>
+</section>
+<section class="order_sub order_sub_l1" hidden>
+	<!-- <div hidden><p class="radio-title">[$Payment$]<span id="payment" data-paydefault="{[payDefault]}">[$Required$]</span></p>
+		<_payment>
+		<ul hidden>
+			<repeat_payment>
+			<li><label><input class="check" name="rb-payment" type="radio" data-basecurrcode="{[baseCurrCode]}" data-tendercode="{[tenderCode]}" value="{[payMethod]}"><img src="{[tenderImage]}">{[tenderDesc]}</label></li>
+			</repeat_payment>
+		</ul>
+		</_payment>
+	</div> -->
+	<div><p class="radio-title">[$DeliveryMethod$]<span id="shipping" data-shipdefault="{[shipDefault]}">[$Required$]</span></p>
+		<ul hidden>
+			<li><label><input class="check" name="rb-shipping" type="radio" value="1">[$Express$]</label></li>
+			<li><label><input class="check" name="rb-shipping" type="radio" value="2">[$PickUpBySelf$]</label></li>
+		</ul>
+	</div>
+</section>
+<a href="{=hasAddress?#VAddressList/tc::#VAddress=}" hidden>
+	<section class="set_addr" id="settle-addr" data-addrid="{[addrId]}">
+		{=hasAddress?
+		<p>[$Receiver$]：<span id="recv-name">{[receiverName]}</span><span id="recv-tel">{[receiverTel]}</span></p>
+		<p>[$ReceiverAddress$]：<span id="recv-addr">{[receiverAddress]}</span></p>
+		::
+		<p>[$SelectAddress$]</p>
+		=}
+		<i class="ico1"><img src="{&resource/shophelper/icon/ico43.png&}"/></i>
+		<i class="ico2"></i>
+		<i class="ico3"></i>
+	</section>
+</a>
+<section class="set_addr" hidden id="settle-pickstore">
+	<p>[$PickUpStore$]：<span id="recv-storename"></span></p>
+	<p>[$PickUpAddress$]：<span id="recv-storeaddr"></span></p>
+	<i class="ico1"><img src="{&resource/shophelper/icon/ico43.png&}"/></i>
+	<!--<i class="ico2"></i>-->
+	<!--<i class="ico3"></i>-->
+</section>
+<section class="set_addr coupon" id="settle-coupon" hidden>
+	<p>Use GiftCert or Coupon</p>
+</section>
+<section class="PickUpAdd popup-container center" id="PickUpAdd">
+	<_pickupstore>
+		<ul id="pickupstore">
+			<repeat_pickupstore>
+				<li data-storecode="{[storecode]}">
+					<p>{[storename]} ({[storecode]})</p>
+					<p>{[storeaddress]}</p>
+				</li>
+			</repeat_pickupstore>
+		</ul>
+	</_pickupstore>
+</section>
+<br /><br /><br />
+<!--todo bonus & coupon not support now-->
+<!--<section class="order_sub">
+	<p>[$Bonus$]<span>[$BonusDesc$]</span><em><input type="number" value="0" min="0" max="{[availBonus]}"></em></p>
+	<_coupon>
+	<p><label>[$Coupon$]
+		<select>
+			<repeat><option value="{[cpNo]}">{[cpDesc]}</option></repeat>
+		</select>
+	</label></p>
+	</_coupon>
+</section>-->
+<section class="order_sub" hidden>
+	<p>[$MessageBoard$]<br />
+		<textarea id="settle-remark" placeholder="[$LeaveAMessageHere$]" rows="5">{[remark]}</textarea>
+	</p>
+</section>
+<div class="tc_UserMsg" id="tc_UserMsg">
+	<p class="tc_UserMsg_h"><span id="UserMsg_close" hidden>[$Cancel$]</span><span id="UserMsg_title"></span><span id="UserMsg_confirm" hidden>&nbsp;</span></p>
+	<div class="div_gcc" id="div-gcc" style="display: none; height: 6rem;">
+		<ul></ul>
+		<span id="addCoupon">Add Coupon +</span>
+		<!-- <div><span id="confirmCoupon">Confirm</span></div> -->
+	</div>
+	<div class="div_mobilepayopt" id="div-mobilepayopt" style="display: none; height: 2.8rem;">
+		<ul>
+			<li data-type="1">[$ShowQrcode$]</li>
+			<li data-type="2">[$ScanQrcode$]</li>
+		</ul>
+	</div>
+</div>
+
+<div id="popup-input-wrap">
+	<div id="popup-input-title"></div>
+	<div id="popup-input-content">
+		<div id="popup-input-scroller">
+		</div>
+	</div>
+	<p class="a-btn-add">+</p>
+	<button class="a-btn-confirm">[$Confirm$]</button>
+</div>
+
+<style>
+	.dialog-wrapper {width: 80%; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto;}
+	.dialog-wrapper.m-popup-container {border-radius: 0;}
+	.dialog-wrapper .hdr{height: .9rem; line-height: .9rem; width: 100%; background: #000; text-align: center; color: #fff; font-size: .3rem; font-weight: 500;}
+	.dialog-wrapper .con {background: #fff;}
+	.dialog-wrapper .ftr{background: #000; height: .9rem; line-height: .9rem; width: 100%; position: absolute; bottom: 0; text-align: center;}
+	.dialog-wrapper .close-btn {position: absolute;right: 0;width: .9rem; height: .9rem; background: #000000 url({&resource/shophelper/icon/close.png&}) no-repeat center center;}
+	.dialog-wrapper .done-btn {line-height: .9rem; width: 100%; font-size: .3rem; font-weight: 500; box-sizing: border-box; border: 1px solid #000;}
+
+	.dialog-wrapper div p{ display: flex; display: -webkit-flex; width: 100%; height: .7rem; line-height: .5rem; margin-bottom: .2rem; overflow: hidden;}
+	.dialog-wrapper p input{    width: 100%; padding: 0 .3rem; display: block; background: #fff; font-size: .3rem; border: 1px solid #000; border-radius: 0; color: #000;}
+	.dialog-wrapper p input.g-ipt{padding-left: .2rem;}
+	.dialog-wrapper button{font-size: .3rem; color: #fff; background: #000000; }
+
+	#lineup-qrcode-dialog .con{padding: .3rem 0; }
+	#lineup-qrcode-dialog .con p:nth-child(1){height: auto; margin-bottom: .2rem;}
+	#lineup-qrcode-dialog .con p:nth-child(1) img {width: 5rem; height: 5rem; margin: 0 auto;}
+	#lineup-qrcode-dialog .con p:nth-child(2) {line-height: 1rem; height: 1rem;}
+	#lineup-qrcode-dialog .con p:nth-child(2) b { width: 4.4rem; margin: 0 auto; border: 1px solid #000; text-align: center; font-size: .7rem;}
+	#lineup-qrcode-dialog .close-btn{display:none;}
+
+	#lineup-input-dialog {height: 4rem;}
+	#lineup-input-dialog .con{padding: .7rem .5rem;}
+	#lineup-input-dialog .scan-btn {width: 2rem;}
+	#lineup-input-dialog .close-btn{display:none;}
+
+</style>
+<div id="lineup-qrcode-dialog" class="dialog-wrapper" style="display: none;">
+	<div class="hdr">[$LineUpQrcode$]<button class="close-btn"></button></div>
+	<div class="con">
+		<p></p>
+		<p><b></b></p>
+	</div>
+	<div class="ftr"><button class="done-btn">[$Confirm$]</button></div>
+</div>
+
+<div id="lineup-input-dialog" class="dialog-wrapper" style="display: none;">
+	<div class="hdr">[$LineUpInput$]<button class="close-btn"></button></div>
+	<div class="con">
+		<p>
+			<input id="lineup-ipt" class="g-ipt" type="number" maxlength="5" size="5" placeholder="[$LineUpNum$]" style="text-transform: uppercase" onkeypress='return TApi.settle.checkLineUpInput(event);'/><button class="scan-btn">[$Scan$]</button>
+		</p>
+	</div>
+	<div class="ftr"><button class="done-btn">[$Confirm$]</button></div>
+</div>
+
+<style>
+	#ext-viewport .x-layout-card-item {
+		background: #efefef;
+	}
+
+	input.check {
+		width: .26rem;
+		height: .32rem;
+		margin-right: .1rem;
+		-webkit-appearance: none;
+		background: url({&resource/shophelper/icon/check_circle.png&}) no-repeat center top;
+		background-size: .24rem auto;
+		vertical-align: middle;
+	}
+
+	input.check:checked {
+		background: url({&resource/shophelper/icon/checked_circle.png&}) no-repeat center top;
+		background-size: .24rem auto;
+	}
+
+	.order_item_list {
+		margin-top: .1rem;
+		background: #fff;
+		border-top: 1px solid #dadada;
+		border-bottom: 1px solid #dadada;
+		overflow: hidden;
+	}
+
+	.order_item_list dl {
+		width: 90%;
+		margin: 0 auto;
+		padding: .2rem 0;
+		color: #625f5f;
+		height: auto;
+		overflow: hidden;
+		border-bottom: 1px solid #dfdfdf;
+	}
+
+	.order_item_list dl dt {
+		float: left;
+		width: 30%;
+		height: 1.6rem;
+		margin-right: .2rem;
+		line-height: 1.6rem;
+		display: table;
+		text-align: center;
+		overflow: hidden;
+	}
+
+	.order_item_list dl dt a {
+		width: 100%;
+		height: 100%;
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	/* .order_item_list dl dt img{max-width: 100%; max-height: 8rem;vertical-align: middle;} */
+	.order_item_list dl dt img {
+		max-width: 100%;
+		max-height: 2rem;
+		vertical-align: middle;
+	}
+
+	.order_item_list dl dd p {
+		line-height: .4rem;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+
+	.order_item_list dl dd em {
+		font-size: .24rem;
+		color: #000000;
+	}
+
+	.order_item_list dl dd p:first-child {
+		height: .44rem;
+		line-height: .28rem;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		font-weight: bold;
+	}
+
+	.order_item_list dl:last-child {
+		border-bottom: 0;
+	}
+
+	.item-more {
+		text-align: center;
+		border-top: 1px solid #dfdfdf;
+		background: #fff;
+		line-height: .8rem;
+	}
+
+	.set_addr {
+		position: relative;
+		width: 100%;
+		height: auto;
+		margin-top: .16rem;
+		padding: .2rem 10%;
+		border-bottom: 1px solid #d6d3d3;
+		background: url({&resource/shophelper/icon/arr-right.png&}) no-repeat center right 1rem #fff;
+		background-size: .16rem auto;
+		overflow: hidden;
+	}
+
+	.set_addr p {
+		color: #000;
+		font-size: .24rem;
+		line-height: .32rem;
+		padding-top: .06rem;
+		padding-bottom: .08rem;
+	}
+
+	.set_addr p:first-child {
+		font-size: .26rem;
+	}
+
+	.set_addr p:first-child #recv-tel {
+		float: right;
+	}
+
+	/*#settle-addr p:nth-child(3){font-size: .9rem; color: #adabab;}*/
+	.set_addr i {
+		position: absolute;
+	}
+
+	.set_addr i img {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+	.set_addr i.ico1 {
+		left: .2rem;
+		width: .3rem;
+		top: 50%;
+		margin-top: -.2rem;
+	}
+
+	.set_addr i.ico2, .set_addr i.ico3 {
+		width: 100%;
+		height: .06rem;
+		left: 0;
+		background: url({&resource/shophelper/icon/ico45.png&}) no-repeat top left;
+		background-size: 100% auto;
+		overflow: hidden;
+	}
+
+	.set_addr i.ico2 {
+		top: 0;
+		left: .1rem;
+	}
+
+	.set_addr i.ico3 {
+		bottom: 0;
+	}
+
+	.order_sub {
+		width: 100%;
+		margin-top: .16rem;
+		height: auto;
+		background: #fff;
+		overflow: hidden;
+	}
+
+	.order_sub p, .order_sub > div {
+		color: #000;
+		width: 100%;
+		padding-left: .4rem;
+		line-height: .66rem;
+		font-size: .26rem;
+		border-bottom: 1px solid #d6d3d3;
+	}
+
+	.order_sub p span, .order_sub > div span {
+		font-size: .24rem;
+	}
+
+	.order_sub p em {
+		float: right;
+		color: #b9b8b8;
+		font-size: .2rem;
+	}
+
+	.order_sub p em select {
+		border: 1px solid #b9b8b8;
+		color: #000;
+		background: #fff;
+	}
+
+	/*.order_sub .Delivery_add{background: none; display: none;} .order_sub .Delivery_add span{color: #666; line-height: 3.3rem; font-size: 1.3rem; padding-left: 0;} .order_sub .Delivery_add select{float: right; border: 0; font-size: 1rem; color: #888; direction: rtl; margin-right: 5%; padding:.9rem 1.3rem .7rem 1rem; background: url({&resource/shophelper/icon/ico44.png&}) no-repeat center right; background-size: 1.2rem auto;  -webkit-appearance:none; } .order_sub .Delivery_add select option{direction: rtl;}*/
+	.order_sub div ul {
+		overflow: hidden;
+	}
+
+	.order_sub div ul li {
+		width: 50%;
+		float: left;
+	}
+
+	.order_sub div ul li label {
+		display: inline-block;
+		width: 100%;
+	}
+
+	.order_sub div ul li img {
+		width: .6rem;
+		margin-right: .1rem;
+		vertical-align: middle;
+	}
+
+	.order_sub_l1 div {
+		background: url({&resource/shophelper/icon/arr-down.png&}) no-repeat top .24rem right .2rem;
+		background-size: .28rem auto;
+	}
+
+	.order_sub_l1 p {
+		border-bottom: none;
+		width: 100%;
+		padding: 0;
+	}
+
+	.order_sub_l1 > div span {
+		color: #000000;
+		font-weight: 600;
+	}
+
+	.order_sub_l3 p em {
+		font-size: .26rem;
+		color: #000000;
+		padding-right: 5%;
+	}
+
+	.order_sub textarea {
+		width: 95%;
+		padding: .1rem 3%;
+		border: 1px solid #d6d3d3;
+		border-radius: 3px;
+		-webkit-appearance: none;
+	}
+
+	.PickUpAdd {
+		position: fixed;
+		-webkit-transition: 0.4s ease-in-out;
+		-webkit-transform: scale(0);
+		transform: scale(0);
+		background: #fff;
+		overflow: auto;
+		box-shadow: none;
+		z-index: 9;
+	}
+
+	.PickUpAdd ul {
+		width: 96%;
+		height: 0 auto;
+		margin: 0 auto;
+	}
+
+	.PickUpAdd ul li {
+		width: 100%;
+		padding: .3rem 0 .16rem;
+		border-bottom: 1px solid #ddd;
+	}
+
+	.PickUpAdd ul li p {
+		line-height: .3rem;
+		padding: .06rem .6rem .06rem .4rem;
+		color: #000;
+		font-size: .2rem;
+		background: url({&resource/shophelper/icon/add_icon.png&}) no-repeat left top .06rem;
+		background-size: .34rem auto;
+	}
+
+	.PickUpAdd ul li p:first-child {
+		font-size: .24rem;
+		color: #333;
+		background: url({&resource/shophelper/icon/shop_icon.png&}) no-repeat left top .06rem;
+		background-size: .34rem auto;
+	}
+
+	.checked-add {
+		background: url({&resource/shophelper/icon/ico79.png&}) no-repeat center right;
+		background-size: .46rem auto;
+	}
+
+	.bg_fullmask {
+		background-color: rgba(0, 0, 0, 0.8);
+		z-index: 10;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+
+	.set_addr.coupon {
+		padding: 1rem 5%;
+	}
+
+	.tc_UserMsg {
+		display: none;
+		width: 75%;
+		background: #fff;
+		color: #000;
+		overflow: hidden;
+		z-index: 11;
+	}
+
+	.tc_UserMsg > div {
+		width: 100%;
+		padding: .1rem 5%;
+		height: 4.8rem;
+		overflow: hidden;
+	}
+
+	.tc_UserMsg_h {
+		width: 100%;
+		padding: .1rem 5%;
+		font-size: .24rem;
+		line-height: .4rem;
+		color: #000000;
+		background: #eee;
+		position: relative;
+	}
+
+	.tc_UserMsg_h span {
+		padding-right: .4rem;
+		height: 100%;
+		display: inline-block;
+	}
+
+	.tc_UserMsg_h span:last-child {
+		float: right;
+		padding-left: .4rem;
+		padding-right: 0;
+	}
+
+	.tc_UserMsg input {
+		width: 100%;
+		border: 1px solid #ddd;
+		line-height: .7rem;
+		padding: 0 5%;
+		-webkit-appearance: none;
+	}
+
+	.tc_UserMsg input[type=text]:focus, .tc_UserMsg input[type=tel]:focus, .tc_UserMsg input[type=email]:focus {
+		border: 1px solid #000;
+	}
+
+	.tc_UserMsg #UserMsg_title {
+		position: absolute;
+		left: 30%;
+		width: 40%;
+		height: 80%;
+		padding: 0;
+		text-align: center;
+		color: #000;
+		font-weight: bold;
+		font-size: .26rem;
+	}
+
+	.div_gcc ul li {
+	}
+
+	.div_gcc div {
+		overflow: hidden;
+		padding: .06rem 0;
+	}
+
+	.div_gcc div.div_input {
+	}
+
+	.div_gcc div.msg_warn {
+		padding: 0 1rem;
+		margin-bottom: .24rem;
+	}
+
+	.div_gcc input.edt_name {
+		line-height: .68rem;
+		font-size: .26rem;
+		border-radius: .1rem;
+		width: 90%;
+		padding: 0 .2rem;
+		background: #fff;
+	}
+
+	.div_gcc span.btn_remove, .div_gcc span.btn_cancel {
+		float: right;
+		font-size: .24rem;
+		padding: 0 .26rem;
+		color: #000000;
+		display: inline-block;
+		text-align: center;
+	}
+
+	.div_gcc span.btn_cancel {
+		color: #777;
+	}
+
+	.div_gcc span.btn_remove {
+		width: .2rem;
+		height: .6rem;
+		opacity: 0.8;
+		background: url({&resource/shophelper/icon/cross.png&}) no-repeat center right;
+		background-size: .34rem;
+	}
+
+	.div_gcc input.edt_name.warn {
+		border: 1px solid #000;
+	}
+
+	.div_gcc #addCoupon {
+		color: #000;
+	}
+
+	.div_gcc #confirmCoupon {
+		border: 2px solid #000;
+		padding: .2rem;
+		border-radius: .3rem;
+		display: block;
+		width: 40%;
+		text-align: center;
+		margin: .2rem auto;
+		color: #000;
+	}
+
+	.div_mobilepayopt div {
+		overflow: hidden;
+		padding: .06rem 0;
+	}
+
+	.order_sub_l2 > div {
+		border-bottom: 1px solid #d6d3d3;
+		padding: .1rem .2rem;
+		overflow: hidden;
+	}
+
+	.order_sub_l2 div .col50 {
+		width: 50%;
+		float: left;
+	}
+
+	.order_sub_l2 dl {
+		display: flex;
+		display: -webkit-box;
+		color: #000;
+		font-size: .28rem;
+		line-height: .5rem;
+		padding: 0 .2rem;
+	}
+
+	.order_sub_l2 dt {
+		width: 30%;
+	}
+
+	.order_sub_l2 dd {
+		width: 70%;
+		text-align: right;
+	}
+
+	.order_sub_l2 dl:nth-child(1) {
+	}
+
+	.order_sub_l2 dl:nth-child(2) {
+	}
+
+	.order_sub_l2 dl:nth-child(3) {
+		padding-top: .2rem;
+	}
+
+	.order_sub_l2 dl:nth-child(3) dt, .order_sub_l2 dl:nth-child(3) dd, .order_sub_l2 dl:nth-child(3) em {
+		font-weight: bold;
+	}
+
+	.order_sub_l2 dl:nth-child(5) {
+	}
+
+	.order_sub_l4 div.tender-head {
+		padding-left: 1.4rem;
+	}
+
+	.order_sub_l4 div.tender-head span {
+		color: #000;
+		width: 33%;
+		display: inline-block;
+	}
+
+	.order_sub_l4 ul#tender-select {
+	}
+
+	.order_sub_l4 li {
+		position: relative;
+	}
+
+	.order_sub_l4 li:odd {
+	}
+
+	.order_sub_l4 li.tender {
+		width: 100%;
+		border-bottom: 1px solid #ccc;
+		padding: .1rem 0;
+	}
+
+	.order_sub_l4 li.tender:last-child {
+		border-bottom: 0;
+	}
+
+	.order_sub_l4 li.tender div {
+		line-height: .4rem;
+		padding-left: 1rem;
+	}
+
+	.order_sub_l4 li.tender span {
+		color: #000;
+		width: 33%;
+		font-size: .24rem;
+		display: inline-block;
+	}
+
+	.order_sub_l4 div span:nth-child(1) {
+	}
+
+	.order_sub_l4 div span:nth-child(2) {
+		width: 28%;
+		text-align: right;
+	}
+
+	.order_sub_l4 div span:nth-child(3) {
+		width: 28%;
+		text-align: right;
+	}
+
+	.order_sub_l4 div.tenderico {
+		position: absolute;
+		left: 0;
+		height: .8rem;
+		width: .8rem;
+	}
+
+	.order_sub_l4 div i.delete {
+		position: absolute;
+		right: .2rem;
+		top: .3rem;
+		width: .4rem;
+		height: .4rem;
+		background: url({&resource/shophelper/icon/delete.png&}) no-repeat center right;
+		background-size: .4rem;
+	}
+
+	.order_sub_l5 > div {
+		padding-left: .2rem;
+		height: 2.8rem;
+		position: relative;
+	}
+
+	.order_sub_l5 div ul {
+		position: absolute;
+		white-space: nowrap;
+		padding: .1rem 0 .2rem 0;
+	}
+
+	.order_sub_l5 div ul li {
+		display: inline-block;
+		float: initial;
+		width: 2rem;
+		height: 2.5rem;
+		margin-right: .1rem;
+	}
+
+	.order_sub_l5 div ul li:last-child {
+		margin-right: .4rem;
+	}
+
+	.order_sub_l5 div ul li i {
+		width: 1.4rem;
+		height: 1.4rem;
+		margin: .3rem;
+		overflow: hidden;
+		display: block;
+	}
+
+	.order_sub_l5 div ul li div {
+		line-height: .2rem;
+		width: 80%;
+		text-align: center;
+		padding: .1rem 0;
+		margin: 0 auto;
+		border-radius: .15rem;
+		font-size: .2rem;
+	}
+
+	.order_sub_l5 div ul li i img {
+		height: 100%;
+		width: 100%;
+	}
+
+	.div_mobilepayopt ul {
+	}
+
+	.div_mobilepayopt ul li {
+		border: 1px solid #ddd;
+		margin: .2rem;
+		padding: .3rem;
+		border-radius: .1rem;
+		font-size: .26rem;
+	}
+
+	.manual-input {
+		width: .5rem;
+		line-height: .3rem;
+		height: .3rem;
+		text-align: center;
+		font-size: .6rem !important;
+		-webkit-box-flex: 1;
+		flex: 1;
+		display: block;
+	}
+
+	.manual-input-desc {
+		line-height: .3rem;
+		height: .3rem;
+		display: block;
+		-webkit-box-flex: 12;
+		flex: 12;
+	}
+
+	.manual-input-header {
+		font-weight: bold;
+		font-size: .28rem !important;
+	}
+
+	.manual-input-promdesc {
+		line-height: .48rem;
+		font-size: .24rem;
+		border-top: 1px dashed #aaa;
+		padding: .1rem .1rem 0 0;
+		margin-top: .1rem;
+	}
+
+	.manual-input-cpgc {
+		align-items: center;
+		-webkit-align-items: center;
+		line-height: .36rem;
+		padding: 0 .1rem .1rem .15rem;
+	}
+
+	.manual-result {
+		display: block;
+		line-height: .36rem;
+		padding: 0 .1rem .1rem .85rem;
+	}
+
+	.manual-bonusdesc:nth-child(1) {
+		-webkit-box-flex: 1;
+		flex: 1;
+		display:block;
+	}
+
+	.manual-bonusdesc:nth-child(1) em {
+		width: .3rem;
+		display: inline-block;
+	}
+
+	.manual-bonusdesc:nth-child(2) {
+		width: 2.5rem;
+		display:block;
+	}
+
+	.manual-bonusinput, .manual-quotainput {
+		margin-right: .2rem;
+		line-height: .36rem;
+		padding: .04rem;
+		border: 1px solid #888;
+		border-radius: .06rem;
+		color: #888;
+		width: .8rem;
+	}
+
+	.manual-quota {
+		display: block;
+		border-top: 1px dashed #aaa;
+		line-height: .6rem;
+	}
+
+	#popup-input-wrap {
+		background: #fff;
+		display: none;
+		width: 85%;
+		border-radius: 0;
+	}
+
+	#popup-input-title {
+		color: #fff;
+		text-align: center;
+		line-height: .8rem;
+		font-size: .3rem;
+		font-weight: 500;
+	}
+
+	#popup-input-content {
+		position: relative;
+		width: 90%;
+		max-height: 3rem;
+		margin: .3rem auto .2rem;
+		overflow: hidden;
+	}
+
+	.a-inputvalue, .a-inputqty.a-numpad {
+		line-height: .36rem;
+		padding: .1rem;
+		border: 1px solid #000;
+		border-radius: 0;
+		color: #000;
+		font-size: .28rem;
+		display: block;
+	}
+
+	.a-inputvalue:focus, .a-inputqty.a-numpad:focus, .manual-bonusinput:focus, .manual-quotainput:focus {
+		border: 1px solid #555;
+	}
+
+	.a-inputvalue {
+		-webkit-box-flex: 1;
+		flex: 1;
+		display: block;
+		margin-right: .1rem;
+	}
+
+	.a-inputqty {
+		width: .5rem;
+		margin-left: .1rem;
+		display: block;
+	}
+	.a-inputqty.a-numpad
+	{
+		width: 1rem;
+	}
+
+	#popup-input-scroller {
+		padding-right: 0;
+	}
+
+	#popup-input-scroller div.g-dis-flex {
+		padding-bottom: 0;
+		align-items: center;
+		-webkit-box-align: center;
+	}
+
+	#popup-input-scroller p.a-text-err {
+		padding: 0 0 .1rem .1rem;
+		color: #a50000;
+		font-size: .24rem;
+	}
+
+	#popup-input-wrap .a-btn-del {
+		width: .6rem;
+		font-size: .6rem;
+		text-align: center;
+		margin-left: .2rem;
+		padding: 0 .1rem;
+	}
+
+	#popup-input-wrap .a-btn-add {
+		width: 90%;
+		line-height: .4rem;
+		margin: .3rem auto 0;
+		font-size: .6rem;
+		color: #000;
+		text-align: center;
+		background: #fff;
+		border-radius: .3rem;
+		border: 1px solid #ccc;
+		padding: .1rem .3rem;
+	}
+
+	#popup-input-wrap .a-btn-confirm {
+		display: block;
+		width: 100%;
+		font-size: .28rem;
+		margin-top: .3rem;
+		margin-bottom: 0;
+		line-height: .7rem;
+		color: #fff;
+		background: #000;
+		border-radius: 0;
+	}
+
+	#prom_input_container > div {
+		padding-bottom: .1rem;
+	}
+
+	.manual-input-promdesc:nth-child(1) {
+		margin-top: 0;
+	}
+
+	.manual-input-promdesc span:nth-child(1) {
+		-webkit-box-flex: 1;
+		flex: 1;
+		display: block;
+	}
+
+	.manual-input-promdesc span:nth-child(2) {
+		width: 2.5rem;
+		display:block;
+	}
+</style>

@@ -1,0 +1,92 @@
+<style>
+	#ext-viewport .x-layout-card-item{ background: #efefef;}
+	.dis_giftcert_tab { width: 100%; height: .8rem; background: #fff; box-shadow: 0 .06rem .06rem #999;}
+	.dis_giftcert_tab li{ width: 33.33%; float: left; line-height: .8rem; font-size: .3rem; text-align: center; color: #777;}
+	.dis_giftcert_tab li.curr{ color: #000000;}
+	.dis_giftcert_s1{ width: 100%; padding: .2rem 5%; height: auto; overflow: hidden;}
+	.dis_giftcert_s1 dl{position: relative; height: 1.32rem; background-color: #000; background-size: 100% auto; border-radius:.3rem .3rem 0 0; color: #fff; padding: .2rem .24rem; font-size: .24rem; line-height: .4rem; overflow: hidden;}
+	.dis_giftcert_s1 .nodetail{border-radius:.3rem;}
+	.dis_giftcert_s1 dl dt{ float: left; display: table;line-height: .4rem;}
+	.dis_giftcert_s1 dl dt>p:nth-child(1){font-size: .4rem;padding: .08rem 0;font-weight: bold;}
+	.dis_giftcert_s1 dl dt>p:nth-child(2){font-weight: 500;}
+	.dis_giftcert_s1 dl dd{ float: right; width: 1.12rem; height: 1.12rem; overflow: hidden;}
+	.dis_giftcert_s1 dl dd img{ width: 100%; height: 100%; background-color: #fff;}
+	.dis_giftcert_s1 ul{ background: #fff; border-top: none; border-radius:0 0 .3rem .3rem ;  padding: .2rem 1.5%; border: 1px solid #ddd;}
+	.dis_giftcert_s1 ul li,.cannot_use .dis_giftcert_s2 ul li{ width: 95%; margin: 0 auto; line-height: .44rem; font-size: .2rem; color: #000; height: auto; overflow: hidden;}
+	.dis_giftcert_s1 ul li span,.cannot_use .dis_giftcert_s2 ul li span{ display: inline-block; float: left; /*width: 3rem;*/ height: 100%; overflow: hidden;}
+	.dis_giftcert_s1 ul li p,.cannot_use .dis_giftcert_s2 ul li p{float:left; width:83%; line-height: .36rem; padding-top: .04rem; overflow: hidden;}
+	.con_discount button{ color: #fff; font-size: .3rem; line-height: .6rem; padding: 0 .2rem; border-radius: .06rem; float: right; margin-right: 3%; margin-bottom: .4rem;}
+	.dis_giftcert .on{position:relative; opacity: 1;}
+	.dis_giftcert .on ul{border: 1px solid #f26464; border-top: 0;}
+	.dis_giftcert .on>i{position: absolute; width: .4rem; height: .4rem; border-radius: .2rem; left: 1%;background: url({&resource/shophelper/icon/uncheck.png&}) no-repeat center center #cf2801; background-size: 60% auto;}
+	.cannot_use .dis_giftcert_s{position: relative; opacity: 0.8;}
+	.cannot_use .dis_giftcert_s>i{position: absolute; width: 41%; height: auto; right: 5%; top: .4rem;}
+	.cannot_use .dis_giftcert_s>i img{ width: 100%;}
+
+	#nomore{ text-align:center; font-size:.26rem; color: #777; height: .6rem; line-height:.6rem; display:none; }
+</style>
+<section class="con_discount">
+	<ul class="dis_giftcert_tab">
+		<li class="curr">[$NotUsed$]</li>
+		<li>[$HasExpired$]</li>
+		<li>[$AlreadyUsed$]</li>
+	</ul>
+	<div class="dis_giftcert_con">
+		<div class="dis_giftcert">
+			<_giftcertList>
+			<repeat_giftcertList>
+				<div class="dis_giftcert_s dis_giftcert_s1">
+					<dl class="{=hasDetail?::nodetail=}" data-src="{[giftcertSrc]}">
+						<dt><p>[$Giftcert$]</p><p>{[giftcertDesc]}</p></dt>
+						<dd><img src="{[giftcertQRCode]}" data-ticket="{[TicketNumber]}"></dd>
+					</dl>
+					<ul>
+						<li>[$TicketNumber$]：{[TicketNumber]}</li>
+						<_effectDate><li>[$EffectDate$]：{[effectDate]}</li></_effectDate>
+						<_expiryDate><li>[$ExpiryDate$]：{[expiryDate]}</li></_expiryDate>
+						<_terms><li><span>[$Terms$]：</span><p>{[terms]}</p></li></_terms>
+					</ul>
+				</div>
+			</repeat_giftcertList>
+			</_giftcertList>
+			<!--<button class="givebtn">[$GiftFriend$]</button>-->
+		</div>
+		<div class="dis_giftcert cannot_use" style="display: none;">
+			<_giftcertExpire>
+			<repeat_giftcertExpire>
+				<div class="dis_giftcert_s dis_giftcert_s1">
+					<dl class="{=hasDetail?::nodetail=}">
+						<dt><p>[$Giftcert$]</p><p>{[giftcertDesc]}</p></dt>
+					</dl>
+					<ul>
+						<li>[$TicketNumber$]：{[TicketNumber]}</li>
+						<_effectDate><li>[$EffectDate$]：{[effectDate]}</li></_effectDate>
+						<_expiryDate><li>[$ExpiryDate$]：{[expiryDate]}</li></_expiryDate>
+						<_terms><li><span>[$Terms$]：</span><p>{[terms]}</p></li></_terms>
+					</ul>
+					<i><img src="{&resource/shophelper/icon/ico58.png&}"></i>
+				</div>
+			</repeat_giftcertExpire>
+			</_giftcertExpire>
+		</div>
+		<div class="dis_giftcert cannot_use" style="display: none;">
+			<_giftcertUsed>
+			<repeat_giftcertUsed>
+				<div class="dis_giftcert_s dis_giftcert_s1">
+					<dl class="{=hasDetail?::nodetail=}">
+						<dt><p>[$Giftcert$]</p><p>{[giftcertDesc]}</p></dt>
+					</dl>
+					<ul>
+						<li>[$TicketNumber$]：{[TicketNumber]}</li>
+						<_effectDate><li>[$EffectDate$]：{[effectDate]}</li></_effectDate>
+						<_useDate><li>[$UseDate$]：{[useDate]}</li></_useDate>
+						<_terms><li><span>[$Terms$]：</span><p>{[terms]}</p></li></_terms>
+					</ul>
+					<i><img src="{&resource/shophelper/icon/ico59.png&}"></i>
+				</div>
+			</repeat_giftcertUsed>
+			</_giftcertUsed>
+		</div>
+	</div>
+	<div id="nomore" class="absolute-center">[$NoMore$]</div>
+</section>

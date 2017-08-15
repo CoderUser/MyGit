@@ -1,0 +1,156 @@
+<style>
+	.g-dis-flex{display: -webkit-box; display: flex;}
+	.cart-con{padding:1px 0;}
+	.cart_list{width: 100%;margin:.2rem 0; background: #fff; overflow: hidden;}
+	.cart_list .cart_list_con{margin-right: 3%; margin-bottom:.16rem; -webkit-box-flex:1; flex:1;}
+    .cart_list .cart_info{background: #eaeaea; -webkit-box-shadow: 4px 4px 15px 1px rgba(0,0,0,.35); box-shadow: 4px 4px 15px 1px rgba(0,0,0,.35)}
+	.cart_list dl dt{ width: 2.4rem; margin-right: .2rem; align-items: stretch;  background-color: #fff;}
+	.cart_list dl dd{position: relative; -webkit-box-flex:1; flex:1;padding: .1rem 0; }
+	.cart_list dl dd > div{ overflow: hidden; font-size: .24rem; color: #333;}
+    .cart_list dl dd > div.amt{ width:100%;}
+    .cart_list dl dd div.arr{height: 1.2rem;margin-bottom:.1rem;}
+    .cart_list dl dd div.arr.amt{height: auto;}
+    .cart_list dl dd div.arr > div {margin-bottom: 0rem;}
+    .cart_list dl dd div.arr > div.qty {line-height: .4rem;}
+    .cart_list dl dd div.arr > div:last-child {margin-bottom: 0;}
+    .cart_list dl dd div.arr .con{ float: right; padding: 0 .2rem; font-weight: 600;}
+    .cart_list dl dd div.arr div.prom-desci-wrapper .con{font-weight: 400;}
+    .cart_list dl dd div.arr div.line{ border-top: 1px solid #000; margin: .02rem .2rem .14rem 0; clear:both;}
+	.cart_info p{ line-height: .5rem;}
+	.cart_info p:first-child{ color: #000; font-size: .26rem; font-weight: bold; line-height: .28rem; height: .3rem; overflow: hidden; text-overflow: ellipsis;}
+	.cart_info dt{ background: no-repeat center center; background-size: contain;}
+    .cart_info dd p:nth-child(2) { margin-bottom: 0; line-height: .28rem; font-weight: 300; font-size: .2rem; }
+    .cart_info dd p:nth-child(3){ font-weight: 300; color: #333; padding: .2rem 0; font-size: .2rem; overflow: hidden; height: .86rem; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; }
+	.cart_info .quantity-decrease,
+	.cart_info .quantity-increase{ font-size: .24rem;}
+	.cart_info .quantity {font-size: .25rem; font-weight: bold; width: .6rem;}
+	.cart_info .colorsize {padding-left: .4rem;}
+	.cart_list .delete{margin: 0 auto; display: -webkit-box; width: .5rem; height: .5rem; background: url({&resource/shophelper/icon/delete.png&}) no-repeat; background-size: 100% auto;}
+	.cart_coupon{ align-items: center; margin-top: .1rem;}
+	.cart_coupon dt span{font-size: .28rem; font-weight: bold; color: #000000;}
+	.cart_coupon p{font-size: .2rem; color: #888;}
+	.cart_coupon p span:first-child{height: .3rem; color: #000000; padding: 0 .04rem; margin-right: .1rem; border-radius: .06rem;}
+	.cart_coupon p span:last-child{-webkit-box-flex:1; flex:1;}
+	.cart_coupon p em{ color: #fff; padding: 0 .06rem;}
+	.cart_list .check{width: 11%; height: 1rem; padding: 1.2rem 0;min-width: 1rem; margin-right: 0; background: url({&resource/shophelper/icon/check_circle.png&}) no-repeat center center; background-size: .5rem auto;}
+	.cart_list .check:checked{ background: url({&resource/shophelper/icon/checked_circle.png&}) no-repeat center center; background-size: .5rem auto;}
+    .cart_list:last-child{margin-bottom:1.5rem;}
+
+	.quantity-decrease, .quantity, .quantity-increase {float: left; font-size: .4rem;text-align: center; height: 100%;}
+	.quantity{font-size: .3rem; width: 1rem; height: .4rem;line-height: .4rem; border: none; border-radius: 0; -webkit-appearance:none;}
+	.quantity-decrease, .quantity-increase {color: #fff;display: block;height: .4rem;line-height: .4rem; width: .5rem; overflow: hidden;}
+
+	.EmptyCartImg{ width: 30%; margin: 45% auto 0;}
+	.EmptyCartImg img{ width: 100%;}
+	.cart-empty p{ line-height: .84rem; font-size: .28rem; text-align: center; color: #999;}
+	.cart-empty button{display: block; margin: 0 auto; border-radius: .1rem; color: #fff; font-size: .24rem; line-height: .52rem;}
+	.cart-empty button a{display: inline-block; color: #fff; padding: 0 .12rem;}
+
+    .prom-desci-wrapper { font-size: .2rem; font-weight: 300;}
+
+    #search-icon{position:absolute;width:.8rem;height:.8rem;line-height:.74rem;right:1.5rem;bottom:1.2rem;font-size:.48rem;text-align:center;border-radius:100%;color:white;z-index:9;background: url({&resource/shophelper/icon/barcode_64.png&}) no-repeat center center; background-size: .5rem auto;background-color:rgba(255, 82, 84, .8);}
+    #temp-sales-icon{position:absolute;width:.8rem;height:.8rem;line-height:.74rem;right:.4rem;bottom:1.2rem;font-size:.48rem;text-align:center;border-radius:100%;color:white;z-index:9;/*background: url({&resource/shophelper/icon/barcode_64.png&}) no-repeat center center; background-size: .5rem auto;*/background-color:rgba(255, 82, 84, .8);}
+    #temp-sales-icon:before{content:"\e60c";font-family:"iconfont"}
+
+    .dialog-wrapper {width: 80%; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto;}
+    .dialog-wrapper.m-popup-container {border-radius: 0;}
+    .dialog-wrapper .hdr{height: .9rem; line-height: .9rem; width: 100%; background: #000; text-align: center; color: #fff; font-size: .3rem; font-weight: 500;}
+    .dialog-wrapper .con {background: #fff;}
+    .dialog-wrapper .ftr{background: #000; height: .9rem; line-height: .9rem; width: 100%; position: absolute; bottom: 0; text-align: center;}
+    .dialog-wrapper .close-btn {position: absolute;right: 0;width: .9rem; height: .9rem; background: #000000 url({&resource/shophelper/icon/close.png&}) no-repeat center center;}
+    .dialog-wrapper .done-btn {line-height: .9rem; width: 100%; font-size: .3rem; font-weight: 500; box-sizing: border-box; border: 1px solid #000;}
+
+    .dialog-wrapper div p{ display: flex; display: -webkit-flex; width: 100%; height: .7rem; line-height: .5rem; margin-bottom: .2rem; overflow: hidden;}
+    .dialog-wrapper p input{    width: 100%; padding: 0 .3rem; display: block; background: #fff; font-size: .3rem; border: 1px solid #000; border-radius: 0; color: #000;}
+    .dialog-wrapper p input.g-ipt{padding-left: .2rem;}
+    .dialog-wrapper button{font-size: .3rem; color: #fff; background: #000000; }
+
+    #lineup-qrcode-dialog .con{padding: .3rem 0; }
+    #lineup-qrcode-dialog .con p:nth-child(1){height: auto; margin-bottom: .2rem;}
+    #lineup-qrcode-dialog .con p:nth-child(1) img {width: 5rem; height: 5rem; margin: 0 auto;}
+    #lineup-qrcode-dialog .con p:nth-child(2) {line-height: 1rem; height: 1rem;}
+    #lineup-qrcode-dialog .con p:nth-child(2) b { width: 4.4rem; margin: 0 auto; border: 1px solid #000; text-align: center; font-size: .7rem;}
+    #lineup-qrcode-dialog .close-btn{display:none;}
+
+    #lineup-input-dialog {height: 4rem;}
+    #lineup-input-dialog .con{padding: .7rem .5rem;}
+    #lineup-input-dialog .scan-btn {width: 2rem;}
+    #lineup-input-dialog .close-btn{display:none;}
+</style>
+<_cartlist>
+	<section class="cart-con" id="cartTable">
+		<repeat_cartlist>
+			<div class="cart_list g-dis-flex" id="{[itemOrgId]}_{[plu]}_{[rowId]}" data-rowid="{[rowId]}" data-href="#VItemDetail/{[itemOrgId]}_{[style]}" data-sellingprice="{[sellingPrice]}" data-orgid="{[itemOrgId]}" data-plu="{[plu]}">
+                <div class="cart_list_ctr">
+                    <input class="check check-item" title="" type="checkbox" data-rowid="{[rowId]}" data-orgid="{[itemOrgId]}" data-plu="{[plu]}"/>
+                    <div><i class="delete"></i></div>
+                </div>
+				<div class="cart_list_con">
+					<dl class="cart_info g-dis-flex">
+						<dt class="item-img" style="background-image: url({[photoSrc]});"></dt>
+						<dd>
+							<p>{[itemDesc]}</p>
+                            <p>({[itemOrgId]} - {[plu]})</p>
+                            <p>{[longDesc]}</p>
+							<div class="arr">
+                                <_itemColor>
+                                    <div>
+                                        [$Color$]<div class="con">{[itemColor]}</div>
+                                    </div>
+                                </_itemColor>
+                                <_itemSize>
+                                    <div>
+                                        [$Size$]<div class="con">{[itemSize]}</div>
+                                    </div>
+                                </_itemSize>
+                                <div class="qty">
+                                    [$Quantity$]
+                                    <div class="con">
+                                        <span class="quantity-decrease">-</span>
+                                        <input type="number" class="quantity" value=1 data-subtotal="{[sellingPrice]}" />
+                                        <span class="quantity-increase">+</span>
+                                    </div>
+                                </div>
+							</div>
+                            <div class="arr amt">
+                                <div>
+                                    [$Price$]<div class="con">$<span class="subtotal">{[sellingPrice]}</span></div>
+                                </div>
+                                <div>
+                                    [$Discount$]<div class="con">$<span class="discount">0.00</span></div>
+                                </div>
+								<div class="prom-desci-wrapper"></div>
+                                <div class="line"></div>
+                                <div>
+                                    [$Amount$]：<div class="con">$<span class="item-netamt"></span></div>
+                                </div>
+                            </div>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</repeat_cartlist>
+	</section>
+</_cartlist>
+<_tempSales>
+    <repeat_tempSales>
+        <div hidden id="temp-sales-tender" data-basecurrcode="{[baseCurrCode]}" data-tendercode="{[tenderCode]}" data-tendertype="{[tenderType]}" data-paymethod="{[payMethod]}" data-currcode="{[currCode]}" data-buyexchrate="{[buyExchRate]}"></div>
+    </repeat_tempSales>
+</_tempSales>
+<div id="lineup-qrcode-dialog" class="dialog-wrapper" style="display: none;">
+    <div class="hdr">[$LineUpQrcode$]<button class="close-btn"></button></div>
+    <div class="con">
+        <p></p>
+        <p><b></b></p>
+    </div>
+    <div class="ftr"><button class="done-btn">[$Confirm$]</button></div>
+</div>
+<div id="lineup-input-dialog" class="dialog-wrapper" style="display: none;">
+    <div class="hdr">[$LineUpInput$]<button class="close-btn"></button></div>
+    <div class="con">
+        <p>
+            <input id="lineup-ipt" class="g-ipt" type="number" maxlength="5" size="5" placeholder="[$LineUpNum$]" style="text-transform: uppercase" onkeypress='return TApi.cart.checkLineUpInput(event);'/><button class="scan-btn">[$Scan$]</button>
+        </p>
+    </div>
+    <div class="ftr"><button class="done-btn">[$Confirm$]</button></div>
+</div>
